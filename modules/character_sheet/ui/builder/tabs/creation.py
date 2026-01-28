@@ -11,6 +11,7 @@ from pathlib import Path
 import shutil
 
 from modules.character_sheet.model import CharacterSheet, ABILITY_NAMES
+from modules.character_sheet.model.schema import CharacterData
 from modules.compendium.modifiers.state import ModifierStateSnapshot
 from modules.compendium.service import Compendium
 from modules.character_sheet.services.library import DEFAULT_LIBRARY_PATH
@@ -32,10 +33,12 @@ class CreationTab(QWidget):
         self,
         sheet: CharacterSheet,
         modifier_snapshot: ModifierStateSnapshot,
+        data: CharacterData,
         parent: QWidget | None = None,
     ) -> None:
         super().__init__(parent)
         self._sheet = sheet
+        self._data = data
         self._modifier_snapshot = modifier_snapshot
         self._compendium = Compendium.load()
         
@@ -160,7 +163,9 @@ class CreationTab(QWidget):
         layout.addWidget(self._pb_summary_label)
         
         # 3. Scores Group
-        initial_scores = {abil: self._sheet.get_ability(abil).score for abil in ABILITY_NAMES}
+        # Load BASE scores from Data (Source of Truth)
+        initial_scores = {abil: self._data.base_stats.get(abil, 10) for abil in ABILITY_NAMES}
+        # Modifiers come from Sheet (calculated)
         initial_modifiers = {abil: self._sheet.get_ability(abil).effective_modifier() for abil in ABILITY_NAMES}
         
         self.ability_group = AbilityScoresGroup(
@@ -289,6 +294,7 @@ class CreationTab(QWidget):
         try:
             shutil.copy2(src, dest)
             self._sheet.identity.portrait_path = dest_name
+            self._data.identity.portrait_path = dest_name
             self._refresh_portrait_preview()
             self.dataChanged.emit()
         except Exception:
@@ -296,6 +302,7 @@ class CreationTab(QWidget):
 
     def _on_name_changed(self, text: str):
         self._sheet.identity.name = text
+        self._data.identity.name = text
         self.dataChanged.emit()
 
     def _on_species_changed(self):
@@ -305,6 +312,7 @@ class CreationTab(QWidget):
         
         name = str(data.get("name", ""))
         self._sheet.identity.ancestry = name
+        self._data.identity.ancestry = name
         
         # Store saved subtype before clearing
         saved_subtype = self._sheet.identity.ancestry_subtype
@@ -342,6 +350,7 @@ class CreationTab(QWidget):
         elif isinstance(data, str):
             name = data
         self._sheet.identity.ancestry_subtype = name
+        self._data.identity.ancestry_subtype = name
         self.dataChanged.emit()
 
 
@@ -352,10 +361,12 @@ class CreationTab(QWidget):
         
         name = str(data.get("name", ""))
         self._sheet.identity.background = name
+        self._data.identity.background = name
         self.dataChanged.emit()
         
     def _on_score_changed(self, ability: str, value: int):
         self._sheet.get_ability(ability).score = value
+        self._data.base_stats[ability] = value
         if self._gen_method_combo and self._gen_method_combo.currentData() == "point_buy":
             self._recalc_point_buy()
         self.dataChanged.emit()

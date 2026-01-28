@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import List, Optional, Callable
 from PySide6.QtCore import Qt, Signal
+from PySide6.QtGui import QColor, QBrush
 from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QFrame, QToolButton, QComboBox, QPushButton
 )
@@ -222,8 +223,6 @@ class LevelEntry(QWidget):
                 combo.model().item(idx).setEnabled(False)
                 
                 # Set Color (Gray)
-                from PySide6.QtCore import Qt
-                from PySide6.QtGui import QColor, QBrush
                 combo.setItemData(idx, QBrush(QColor("gray")), Qt.ForegroundRole)
             
             if val == current:

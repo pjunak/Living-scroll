@@ -250,12 +250,20 @@ class CharacterSheetHubWindow(FramelessWindow):
             callback()
 
     def _create_character(self) -> None:
+        # Create a temporary record for the builder
+        temp_record = CharacterRecord(
+            identifier="new_char",
+            sheet=CharacterSheet(),
+            modifiers={}
+        )
         snapshot = self._ensure_modifier_snapshot({})
-        dialog = CharacterBuilderDialog(CharacterSheet(), snapshot, self)
+        
+        dialog = CharacterBuilderDialog(temp_record, snapshot, self)
         if dialog.exec() != QDialog.DialogCode.Accepted:
             return
-        sheet, modifiers = dialog.get_result()
-        record = self._library.create_record(sheet, modifiers)
+            
+        sheet, modifiers, data = dialog.get_result()
+        record = self._library.create_record(sheet, modifiers, data=data)
         self._set_active_record(record.identifier, broadcast=True, refresh_tiles=True)
         QMessageBox.information(self, "Character Created", f"Added {record.display_name} to the roster.")
 
@@ -264,16 +272,30 @@ class CharacterSheetHubWindow(FramelessWindow):
         if not record:
             return
         snapshot = self._ensure_modifier_snapshot(record.modifiers)
-        dialog = CharacterBuilderDialog(record.sheet, snapshot, self)
+        dialog = CharacterBuilderDialog(record, snapshot, self)
         if dialog.exec() != QDialog.DialogCode.Accepted:
             return
-        sheet, modifiers = dialog.get_result()
-        self._library.update_record(record.identifier, sheet, modifiers)
+        
+        # Dialog now returns updated record/sheet/data
+        # We need to update library with whatever changed
+        updated_sheet, updated_modifiers, updated_data = dialog.get_result()
+        
+        # Library update needs to handle data argument
+        # We can directly update the record in library or use update helper
+        # Since library.update_record(id, sheet, mods) exists, we might need to update it
+        # But for now let's assume we patch the record object directly if library doesn't support data update yet
+        # Better: Update library.update_record signature or set record.data directly
+        
+        record.sheet = updated_sheet
+        record.modifiers = updated_modifiers
+        record.data = updated_data
+        self._library.save() # Persist changes
+        
         if record.identifier == self._selected_character_id:
             self._set_active_record(record.identifier, broadcast=True, refresh_tiles=True)
         else:
             self._refresh_tiles()
-        QMessageBox.information(self, "Character Updated", f"Saved changes to {sheet.identity.name or 'Unnamed Adventurer'}.")
+        QMessageBox.information(self, "Character Updated", f"Saved changes to {updated_sheet.identity.name or 'Unnamed Adventurer'}.")
 
     def _open_character_sheet(self, identifier: str) -> None:
         record = self._library.get(identifier)

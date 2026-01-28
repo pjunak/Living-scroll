@@ -56,6 +56,7 @@ class Compendium:
     def __init__(self, payload: Mapping[str, object]) -> None:
         self._payload = payload
         self._classes = _index_by_name(_record_iterable_from(payload.get("classes")))
+        self._backgrounds = _index_by_name(_record_iterable_from(payload.get("backgrounds")))
         self._feats = _index_by_name(_record_iterable_from(payload.get("feats")))
         self._invocations = _index_by_name(_record_iterable_from(payload.get("invocations")))
         self.point_buy = payload.get("point_buy", {})
@@ -196,6 +197,9 @@ class Compendium:
         if not klass:
             return None
         return _index_by_name(klass.get("subclasses", [])).get(_key(subclass_name))
+
+    def background_record(self, name: str) -> Optional[dict]:
+        return self._backgrounds.get(_key(name))
 
     def feat_record(self, name: str) -> Optional[dict]:
         return self._feats.get(_key(name))

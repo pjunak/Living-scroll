@@ -1,0 +1,51 @@
+{
+  "id": "f31f6b11-f73b-46dd-983c-fbcdcf5847eb",
+  "modifiers": {
+    "Boon: Blessing of the Archmage": false,
+    "Feat: Elemental Adept": false,
+    "Feat: Resilient (Constitution)": false,
+    "Feat: Spell Sniper": false,
+    "Feat: War Caster": false,
+    "Agonizing Blast": false,
+    "Flame Mastery": false,
+    "Grasp of Hadar": false,
+    "Metamagic: Empowered Spell": false,
+    "Metamagic: Quickened Spell": false,
+    "Repelling Blast": false,
+    "Storm Channeling": false
+  },
+  "data": {
+    "version": "1.0",
+    "id": "df2a059f-bcf3-46ab-a531-15967a8e8f26",
+    "identity": {
+      "name": "Testard",
+      "ancestry": "Tiefling",
+      "ancestry_subtype": "Variant Human",
+      "background": "Charlatan",
+      "alignment": "",
+      "player_name": "",
+      "portrait_path": "",
+      "xp": 0,
+      "level_cap": 20
+    },
+    "base_stats": {
+      "STR": 8,
+      "DEX": 15,
+      "CON": 14,
+      "INT": 12,
+      "WIS": 8,
+      "CHA": 14
+    },
+    "classes": [
+      {
+        "class_name": "Rogue",
+        "level": 1,
+        "subclass": null,
+        "feature_choices": {}
+      }
+    ],
+    "background_choices": {},
+    "equipment": [],
+    "notes": {}
+  }
+}

@@ -722,21 +722,28 @@ class CharacterDashboard(QWidget):
         if not snapshot:
              snapshot = ModifierStateSnapshot([], self._record.modifiers)
 
-        dialog = CharacterBuilderDialog(self._sheet, snapshot, self)
+        # Pass the full record now
+        dialog = CharacterBuilderDialog(self._record, snapshot, self)
         if dialog.exec() != QDialog.DialogCode.Accepted:
             return
             
         # Save changes
-        new_sheet, new_modifiers = dialog.get_result()
+        new_sheet, new_modifiers, new_data = dialog.get_result()
         
-        library = self._app_context.ensure_library()
+        # Update Library
         try:
-            library.update_record(self._record.identifier, new_sheet, new_modifiers)
-            self._record = library.get(self._record.identifier)
-            self._sheet = self._record.sheet
-            self._modifier_snapshot = ModifierStateSnapshot(snapshot.definitions, new_modifiers)
+            self._app_context.character_library.update_record(
+                self._record.identifier, 
+                new_sheet, 
+                new_modifiers, 
+                data=new_data
+            )
             
-            # Legacy refresh trigger (might need to update Dashboard vars)
+            # Update local refs
+            self._sheet = new_sheet
+            self._modifier_snapshot = ModifierStateSnapshot([], new_modifiers)
+            
+            # Refresh
             self._refresh_ui()
             
         except Exception as e:

@@ -13,13 +13,13 @@ from modules.compendium.service import Compendium
 from modules.dnd24_mechanics.character_rules.service import CharacterRulesService
 
 class ClassSelectionDialog(QDialog):
-    def __init__(self, sheet: CharacterSheet, parent: QWidget | None = None) -> None:
+    def __init__(self, sheet: CharacterSheet, parent: QWidget | None = None, compendium: Compendium | None = None) -> None:
         super().__init__(parent)
         self.setWindowTitle("Add Class Level")
         self.resize(400, 500)
         
         self._sheet = sheet
-        self._compendium = Compendium.load()
+        self._compendium = compendium if compendium else Compendium.load()
         self._rules_service = CharacterRulesService()
         self._selected_class: Optional[str] = None
         

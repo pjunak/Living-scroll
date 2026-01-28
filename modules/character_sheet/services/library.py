@@ -4,11 +4,13 @@ from __future__ import annotations
 
 import json
 import uuid
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, asdict
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional
 
 from modules.character_sheet.model import CharacterSheet, character_sheet_from_dict, character_sheet_to_dict
+from modules.character_sheet.model.schema import CharacterData
+from modules.character_sheet.services.rules_engine import RulesEngine
 from modules.compendium.service import Compendium
 
 DEFAULT_LIBRARY_PATH = Path(__file__).resolve().parents[1] / "database" / "characters"
@@ -21,6 +23,7 @@ class CharacterRecord:
     identifier: str
     sheet: CharacterSheet = field(default_factory=CharacterSheet)
     modifiers: Dict[str, bool] = field(default_factory=dict)
+    data: Optional[CharacterData] = None # The Source of Truth (Decisions)
 
     @property
     def display_name(self) -> str:
@@ -39,20 +42,55 @@ class CharacterRecord:
 
 
 def _serialise_record(record: CharacterRecord, compendium: Compendium | None = None) -> dict:
-    return {
+    # Strict 2024 Persistence: Decisions Only
+    payload = {
         "id": record.identifier,
-        "sheet": character_sheet_to_dict(record.sheet, compendium=compendium),
         "modifiers": dict(record.modifiers),
     }
+    
+    if record.data:
+        payload["data"] = asdict(record.data)
+    else:
+        # Should not happen in new system, but if it does, we save nothing?
+        # Or we must initialize data?
+        pass
+        
+    return payload
 
 
 def _deserialise_record(payload: dict, compendium: Compendium | None = None) -> CharacterRecord:
     identifier = str(payload.get("id") or uuid.uuid4())
-    sheet_payload = payload.get("sheet", {}) or {}
     modifiers_payload = payload.get("modifiers", {}) or {}
-    sheet = character_sheet_from_dict(sheet_payload, compendium=compendium) if sheet_payload else CharacterSheet()
+    data_payload = payload.get("data")
+    
     modifiers: Dict[str, bool] = {str(key): bool(value) for key, value in modifiers_payload.items()}
-    return CharacterRecord(identifier=identifier, sheet=sheet, modifiers=modifiers)
+    
+    # Strict Path: Must have Data
+    if not data_payload:
+        # If strict, we ignore legacy files.
+        # Create an empty shell to avoid crashing, or raise?
+        # Let's return a blank slate so the user sees *something* (or nothing).
+        # Returning a blank slate prompts them to create new.
+        data = CharacterData() 
+    else:
+        try:
+            data = CharacterData.from_dict(data_payload)
+        except Exception:
+            data = CharacterData()
+
+    # Hydrate Sheet
+    # Needs Compendium (Dependency Injection)
+    # If compendium is missing (e.g. test env), RuleEngine might fail or load default.
+    rules_compendium = compendium if compendium else Compendium.load()
+    engine = RulesEngine(rules_compendium)
+    
+    try:
+        sheet = engine.hydrate(data)
+    except Exception:
+        # If hydration fails, return safe default
+        sheet = CharacterSheet()
+        
+    return CharacterRecord(identifier=identifier, sheet=sheet, modifiers=modifiers, data=data)
 
 
 class CharacterLibrary:
@@ -206,9 +244,9 @@ class CharacterLibrary:
         else:
             self._active_id = self._order[0]
 
-    def create_record(self, sheet: CharacterSheet | None = None, modifiers: Dict[str, bool] | None = None) -> CharacterRecord:
+    def create_record(self, sheet: CharacterSheet | None = None, modifiers: Dict[str, bool] | None = None, data: CharacterData | None = None) -> CharacterRecord:
         identifier = str(uuid.uuid4())
-        record = CharacterRecord(identifier=identifier, sheet=sheet or CharacterSheet(), modifiers=dict(modifiers or {}))
+        record = CharacterRecord(identifier=identifier, sheet=sheet or CharacterSheet(), modifiers=dict(modifiers or {}), data=data)
         self._records[identifier] = record
         self._order.append(identifier)
         if not self._active_id:
@@ -216,11 +254,12 @@ class CharacterLibrary:
         self.save()
         return record
 
-    def update_record(self, identifier: str, sheet: CharacterSheet, modifiers: Dict[str, bool]) -> None:
+    def update_record(self, identifier: str, sheet: CharacterSheet, modifiers: Dict[str, bool], data: CharacterData | None = None) -> None:
         if identifier not in self._records:
             raise KeyError(f"Unknown character id: {identifier}")
         self._records[identifier].sheet = sheet
         self._records[identifier].modifiers = dict(modifiers)
+        self._records[identifier].data = data
         self.save()
 
     def delete_record(self, identifier: str) -> None:
