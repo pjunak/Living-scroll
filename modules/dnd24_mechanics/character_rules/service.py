@@ -76,7 +76,7 @@ class CharacterRulesService:
             return group.default
         return next(iter(valid_values), "")
 
-    def validate_multiclass_requirements(self, sheet: CharacterSheet, new_class_name: str) -> List[str]:
+    def validate_multiclass_requirements(self, sheet: CharacterSheet, new_class_name: str, compendium: Any) -> List[str]:
         """
         Check if the character meets prerequisites for multiclassing into `new_class_name`.
         Returns a list of failure reasons (strings). Empty list = Valid.
@@ -88,15 +88,25 @@ class CharacterRulesService:
         
         # 1. Check existing classes
         for entry in sheet.identity.classes:
-            failures.extend(self._check_class_req(sheet, entry.name))
+            failures.extend(self._check_class_req(sheet, entry.name, compendium))
             
         # 2. Check new class (if not already present - technically same check)
-        failures.extend(self._check_class_req(sheet, new_class_name))
+        failures.extend(self._check_class_req(sheet, new_class_name, compendium))
         
         return sorted(list(set(failures)))
 
-    def _check_class_req(self, sheet: CharacterSheet, class_name: str) -> List[str]:
-        reqs = MULTICLASS_REQUIREMENTS.get(class_name.lower())
+    def _check_class_req(self, sheet: CharacterSheet, class_name: str, compendium: Any) -> List[str]:
+        # Look up class in compendium
+        class_record = None
+        for record in compendium.records("classes"):
+             if record.get("name", "").lower() == class_name.lower() or record.get("id") == f"class:{class_name.lower()}":
+                 class_record = record
+                 break
+                 
+        if not class_record:
+            return []
+            
+        reqs = class_record.get("multiclass_requirements")
         if not reqs:
             return []
             
@@ -113,23 +123,6 @@ class CharacterRulesService:
         return failures
 
 
-# Hardcoded 5e 2024 / 2014 Multiclass Requirements
-# Note: Using lower case keys for normalization
-MULTICLASS_REQUIREMENTS = {
-    "barbarian": {"STR": 13},
-    "bard": {"CHA": 13},
-    "cleric": {"WIS": 13},
-    "druid": {"WIS": 13},
-    "fighter": {"STR|DEX": 13},
-    "monk": {"DEX": 13, "WIS": 13},
-    "paladin": {"STR": 13, "CHA": 13},
-    "ranger": {"DEX": 13, "WIS": 13},
-    "rogue": {"DEX": 13},
-    "sorcerer": {"CHA": 13},
-    "warlock": {"CHA": 13},
-    "wizard": {"INT": 13},
-    "artificer": {"INT": 13}, 
-}
 
 
 __all__ = ["CharacterRulesService"]

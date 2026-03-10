@@ -29,13 +29,13 @@ class FeatureSelector(QWidget):
         
         # Label
         self.label = QLabel(group.label)
-        self.label.setStyleSheet("font-weight: bold;")
+        self.label.setProperty("class", "BoldLabel")
         layout.addWidget(self.label)
         
         if group.description:
             desc = QLabel(group.description)
             desc.setWordWrap(True)
-            desc.setStyleSheet("color: #888; font-size: 0.9em;")
+            desc.setProperty("class", "MutedItalicLabel")
             layout.addWidget(desc)
             
         # ComboBox
@@ -45,9 +45,9 @@ class FeatureSelector(QWidget):
         else:
             self.combo.setMinimumWidth(150)
             
-        # Add "Clear" or "Select" option if not required?
-        if not group.required:
-            self.combo.addItem("(None)", "")
+        # Always add a placeholder option to prevent accidental selection without user action
+        placeholder = "(Select...)" if group.required else "(None)"
+        self.combo.addItem(placeholder, "")
             
         index_to_select = 0
         actual_index = 0
@@ -69,11 +69,7 @@ class FeatureSelector(QWidget):
             
             # Check selection
             if current_selection and choice.value == current_selection:
-                # offset by 1 if we added (None)
-                if not group.required:
-                    index_to_select = actual_index + 1
-                else:
-                    index_to_select = actual_index
+                index_to_select = actual_index + 1
             actual_index += 1
                     
         self.combo.setCurrentIndex(index_to_select)

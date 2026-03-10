@@ -13,26 +13,22 @@ features:
 - name: Halfling Nimbleness
   description: You can move through the space of any creature that is of a size larger
     than yours.
-subtypes:
-- name: Lightfoot
-  ability_bonus:
-    ability: CHA
-    amount: 1
-  features:
-  - name: Naturally Stealthy
-    description: You can attempt to hide even when obscured only by a creature that
-      is at least one size larger than you.
-- name: Stout
-  ability_bonus:
-    ability: CON
-    amount: 1
-  grants:
-    resistances:
-    - poison
-  features:
-  - name: Stout Resilience
-    description: You have advantage on saving throws against poison, and you have
-      resistance to poison damage.
+- name: Halfling Lineage
+  description: You are part of a lineage that grants you supernatural abilities. Choose
+    one of the following lineages - Lightfoot or Stout.
+  options:
+  - label: Lightfoot
+    value: Lightfoot
+    grants:
+      unquantifiable_modifiers:
+      - "Naturally Stealthy: You can attempt to hide even when you are obscured only by a creature that is at least one size larger than you."
+  - label: Stout
+    value: Stout
+    grants:
+      unquantifiable_modifiers:
+      - "Stout Resilience: You have advantage on saving throws against poison, and you have resistance against poison damage."
+      resistances:
+      - poison
 id: species:halfling
 ---
 

@@ -104,5 +104,4 @@ def _point_buy_rules() -> Mapping[str, Any]:
         block = rules.get("point_buy") if isinstance(rules, Mapping) else None
     return block if isinstance(block, Mapping) else {}
 
-
 __all__ = ["max_character_level", "point_buy_rules", "PointBuyRules"]

@@ -95,6 +95,9 @@ progression:
   features:
   - Subclass Feature
 id: class:paladin
+multiclass_requirements:
+  STR: 13
+  CHA: 13
 ---
 
 Paladins are united by their oaths to stand against the forces of evil. Whether sworn before a god's altar and the witness of a priest, in a sacred glade before nature spirits and fey beings, or in a moment of desperation and grief with the dead as the only witness, a paladin's oath is a powerful bond.

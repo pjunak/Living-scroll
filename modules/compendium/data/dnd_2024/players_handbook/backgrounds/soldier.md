@@ -15,10 +15,18 @@ equipment:
 - insignia of rank
 - trophy from a fallen enemy
 - pouch with 10 gp
-starting_feat: Tavern Brawler
+starting_feat: Savage Attacker
 notes: Tables focused on weapon mastery may swap the starting feat for Savage Attacker.
 id: background:soldier
+ability_bonus_options:
+  choose: 3
+  abilities:
+  - STR
+  - DEX
+  - CON
+...
 ---
+
 
 You began training for war as soon as you reached adulthood and carry precious few memories of life before you took up arms. Battle is in your blood. Sometimes you catch yourself reflexively performing the basic fighting exercises you learned first. Eventually, you put that training to use on the battlefield, protecting the realm by waging war.
 

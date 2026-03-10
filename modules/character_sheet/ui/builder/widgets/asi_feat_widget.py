@@ -34,6 +34,7 @@ class ASIFeatWidget(QWidget):
         current_selection: str = "",
         current_scores: Dict[str, int] | None = None,
         character_level: int = 1,
+        feat_only: bool = False,
         parent: QWidget | None = None
     ) -> None:
         super().__init__(parent)
@@ -43,6 +44,7 @@ class ASIFeatWidget(QWidget):
         self._current_selection = current_selection
         self._current_scores = current_scores or {}
         self._character_level = character_level
+        self._feat_only = feat_only
         
         self._layout_ui()
         self._update_display()
@@ -55,21 +57,25 @@ class ASIFeatWidget(QWidget):
         self.setMinimumHeight(90)
         
         # Header
-        header = QLabel(f"Level {self._level}: Ability Score Improvement or Feat")
-        header.setStyleSheet("font-weight: bold;")
+        if self._feat_only:
+            header = QLabel("Bonus Feat")
+        else:
+            header = QLabel(f"Level {self._level}: Ability Score Improvement or Feat")
+        header.setProperty("class", "BoldLabel")
         layout.addWidget(header)
         
         # Current selection display
         self._selection_label = QLabel("")
-        self._selection_label.setStyleSheet("color: #4ec9b0; font-style: italic;")
+        self._selection_label.setProperty("class", "SuccessItalicLabel")
         layout.addWidget(self._selection_label)
         
         # Buttons
         btn_layout = QHBoxLayout()
         
-        self._btn_asi = QPushButton("Ability Score Improvement")
-        self._btn_asi.clicked.connect(self._on_asi_clicked)
-        btn_layout.addWidget(self._btn_asi)
+        if not self._feat_only:
+            self._btn_asi = QPushButton("Ability Score Improvement")
+            self._btn_asi.clicked.connect(self._on_asi_clicked)
+            btn_layout.addWidget(self._btn_asi)
         
         self._btn_feat = QPushButton("Choose Feat")
         self._btn_feat.clicked.connect(self._on_feat_clicked)

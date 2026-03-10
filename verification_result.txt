@@ -1,0 +1,40 @@
+PASS: Pydantic imported (v2.12.5)
+PASS: Compendium modules imported
+
+--- Unit Test Results ---
+test_constant_per_die_applies_shift (test_calculations.ChainSpellDistributionTests.test_constant_per_die_applies_shift) ... ok
+test_distribution_normalized_and_levels_stack (test_calculations.ChainSpellDistributionTests.test_distribution_normalized_and_levels_stack) ... ok
+test_effective_modifier_override (test_character_model.TestAbilityBlock.test_effective_modifier_override) ... ok
+test_effective_modifier_standard (test_character_model.TestAbilityBlock.test_effective_modifier_standard) ... ok
+test_save_modifier (test_character_model.TestAbilityBlock.test_save_modifier) ... ok
+test_level_calculation (test_character_model.TestCharacterIdentity.test_level_calculation) ... ok
+test_round_trip (test_character_model.TestSerialization.test_round_trip) ... ok
+test_reset_slots_long_rest (test_character_model.TestSpellcastingData.test_reset_slots_long_rest) ... ok
+test_reset_slots_short_rest (test_character_model.TestSpellcastingData.test_reset_slots_short_rest) ... ok
+test_sync_slot_schedule_aggregates_slots (test_character_model.TestSpellcastingData.test_sync_slot_schedule_aggregates_slots) ... ok
+test_sync_slot_schedule_initializes_empty (test_character_model.TestSpellcastingData.test_sync_slot_schedule_initializes_empty) ... ok
+test_filter_by_custom_predicate (test_compendium.TestCompendium.test_filter_by_custom_predicate) ... ok
+test_filter_by_type (test_compendium.TestCompendium.test_filter_by_type) ... ok
+test_record_by_id (test_compendium.TestCompendium.test_record_by_id) ... ok
+test_load_filters_modules (test_compendium.TestCompendiumLoader.test_load_filters_modules) ... ok
+test_load_merges_modules (test_compendium.TestCompendiumLoader.test_load_merges_modules) ... ok
+test_multiple_rolls_distribution (test_dices.CombinationDistributionTests.test_multiple_rolls_distribution) ... ok
+test_single_roll_with_modifier (test_dices.CombinationDistributionTests.test_single_roll_with_modifier) ... ok
+test_compare_spells_requires_uniform_types (test_plotting.CompareSpellsTests.test_compare_spells_requires_uniform_types) ... ok
+test_compare_spells_requires_valid_count (test_plotting.CompareSpellsTests.test_compare_spells_requires_valid_count) ... ok
+test_compare_spells_returns_figure (test_plotting.CompareSpellsTests.test_compare_spells_returns_figure) ... ok
+test_extract_effect_params_handles_absent_damage (test_plotting.ExtractEffectParamsTests.test_extract_effect_params_handles_absent_damage) ... ok
+test_extract_effect_params_returns_expected_fields (test_plotting.ExtractEffectParamsTests.test_extract_effect_params_returns_expected_fields) ... ok
+test_plot_spell_creates_figure (test_plotting.PlotSpellTests.test_plot_spell_creates_figure) ... ok
+test_plot_spell_without_damage_raises (test_plotting.PlotSpellTests.test_plot_spell_without_damage_raises) ... ok
+test_active_modules_parsing (test_settings.TestSettings.test_active_modules_parsing) ... ok
+test_defaults (test_settings.TestSettings.test_defaults) ... ok
+test_env_var_override (test_settings.TestSettings.test_env_var_override) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.043s
+
+OK
+
+
+OVERALL: PASS

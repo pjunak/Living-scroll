@@ -14,17 +14,13 @@ from typing import List, Dict, Set, TYPE_CHECKING
 if TYPE_CHECKING:
     from modules.character_sheet.model import CharacterSheet
 
+from modules.core.enums import Skill, Ability
+
 # All standard D&D 5e/2024 skills
-ALL_SKILLS = [
-    "Acrobatics", "Animal Handling", "Arcana", "Athletics", 
-    "Deception", "History", "Insight", "Intimidation",
-    "Investigation", "Medicine", "Nature", "Perception",
-    "Performance", "Persuasion", "Religion", "Sleight of Hand",
-    "Stealth", "Survival"
-]
+ALL_SKILLS = [s.value for s in Skill]
 
 # All attribute abbreviations
-ALL_ATTRIBUTES = ["STR", "DEX", "CON", "INT", "WIS", "CHA"]
+ALL_ATTRIBUTES = [a.value for a in Ability]
 
 # All standard tools
 ALL_TOOLS = [
@@ -169,7 +165,9 @@ def get_available_attributes(
     
     for attr in ALL_ATTRIBUTES:
         # Get current score including bonuses
-        breakdown = sheet.get_ability_breakdown(attr, compendium)
+        from modules.dnd24_mechanics.engine import CharacterEngine
+        engine = CharacterEngine(sheet, compendium)
+        breakdown = engine.get_ability_breakdown(attr)
         current_score = breakdown['total']
         
         # Count pending increases for this attribute

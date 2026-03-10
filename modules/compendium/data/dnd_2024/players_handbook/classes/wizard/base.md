@@ -42,6 +42,8 @@ progression:
   features:
   - Arcane Tradition
 id: class:wizard
+multiclass_requirements:
+  INT: 13
 ---
 
 Wizards are defined by their exhaustive study of magic's inner workings. They cast spells of explosive fire, arcing lightning, subtle deception, and spectacular transformations. Their magic conjures monsters from other planes of existence, glimpses the future, or forms protective barriers. Their mightiest spells change one substance into another, call meteors from the sky, or open portals to other worlds.

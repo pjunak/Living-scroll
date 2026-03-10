@@ -83,6 +83,15 @@ progression:
   features:
   - Primal Champion
 id: class:barbarian
+multiclass_requirements:
+  STR: 13
+armor_class_formula:
+  type: unarmored_defense
+  base: 10
+  add:
+  - DEX
+  - CON
+  allow_shield: true
 ---
 
 Barbarians are mighty warriors who are powered by primal forces of the multiverse that manifest as a Rage. More than a mere emotion—and not limited to anger—this Rage is an incarnation of a predator’s ferocity, a storm's fury, and a sea's turmoil.

@@ -97,6 +97,8 @@ progression:
   features:
   - Three Extra Attacks
 id: class:fighter
+multiclass_requirements:
+  STR|DEX: 13
 ---
 # Fighter
 

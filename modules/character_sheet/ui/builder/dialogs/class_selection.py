@@ -43,7 +43,7 @@ class ClassSelectionDialog(QDialog):
         # Info Area
         self.info_label = QLabel("")
         self.info_label.setWordWrap(True)
-        self.info_label.setStyleSheet("color: #d95c5c; font-style: italic;")
+        self.info_label.setProperty("class", "WarningItalicLabel")
         layout.addWidget(self.info_label)
         
         # Buttons
@@ -79,7 +79,7 @@ class ClassSelectionDialog(QDialog):
             existing = existing_names.get(name.lower())
             
             # Check validation
-            failures = self._rules_service.validate_multiclass_requirements(self._sheet, name)
+            failures = self._rules_service.validate_multiclass_requirements(self._sheet, name, self._compendium)
             is_valid = len(failures) == 0
             
             display_text = name

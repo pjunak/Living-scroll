@@ -48,7 +48,7 @@ class LevelingTab(QWidget):
         
         self.btn_add_level = QPushButton("Add Class Level...")
         self.btn_add_level.clicked.connect(self._on_add_level_clicked)
-        self.btn_add_level.setStyleSheet("font-weight: bold; background-color: #4ec9b0; color: black;")
+        self.btn_add_level.setProperty("class", "PrimaryButton")
         controls.addWidget(self.btn_add_level)
         layout.addLayout(controls)
         
@@ -74,6 +74,8 @@ class LevelingTab(QWidget):
             if item.widget():
                 item.widget().deleteLater()
                 
+
+            
         # Iterate classes
         # Note: This logic assumes classes are processed in order.
         for class_prog in self._sheet.identity.classes:
@@ -426,7 +428,7 @@ class LevelingTab(QWidget):
 
     def _on_feat_selected(self, feat_name: str, entry: 'LevelEntry', group_key: str):
         """Handle feat selection - show inline options for the feat."""
-        entry.clear_dynamic_options()
+        entry.clear_dynamic_options(group_id=group_key)
         self._populate_feat_options(feat_name, entry, group_key)
     
     def _populate_feat_options(self, feat_name: str, entry: 'LevelEntry', group_key: str):
@@ -458,7 +460,6 @@ class LevelingTab(QWidget):
         attr_increase = feat_record.get("attribute_increase")
         if attr_increase and isinstance(attr_increase, list):
             attr_key = f"{feat_key_base}_attribute"
-            current_attr = self._selections.get(attr_key, "")
             
             # Get available attributes (not at 20+)
             available_attrs = get_available_attributes(
@@ -474,16 +475,19 @@ class LevelingTab(QWidget):
             else:
                 options = [a for a in attr_increase if a.upper() in available_attrs]
             
-                if options:
-                    # Use fixed width constant from helpers
-                    
-                    entry.add_dynamic_option(
-                        label="Choose Attribute (+1)",
-                        options=options,
-                        current=current_attr,
-                        key=attr_key,
-                        width=SKILL_DROPDOWN_WIDTH
-                    )
+            increase_amount = 1 # Assuming 1 for now, but could be dynamic
+            for i in range(increase_amount):
+                opt_key = f"{attr_key}_{i}"
+                current_selection = self._selections.get(opt_key, "")
+                
+                entry.add_dynamic_option(
+                    label=f"Choose Attribute (+1)",
+                    options=options,
+                    current=current_selection,
+                    key=opt_key,
+                    width=SKILL_DROPDOWN_WIDTH,
+                    group_id=group_key
+                )
         
         # Skill proficiency options
         proficiency = feat_record.get("proficiency")

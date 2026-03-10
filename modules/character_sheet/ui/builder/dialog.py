@@ -21,6 +21,8 @@ from modules.character_sheet.model import CharacterSheet
 from modules.compendium.modifiers.state import ModifierStateSnapshot
 from modules.character_sheet.ui.builder.tabs.creation import CreationTab
 from modules.character_sheet.ui.builder.tabs.leveling import LevelingTab
+from modules.character_sheet.ui.builder.tabs.species import SpeciesTab
+from modules.character_sheet.ui.builder.tabs.origin import OriginTab
 
 
 class CharacterBuilderDialog(QDialog):
@@ -50,13 +52,21 @@ class CharacterBuilderDialog(QDialog):
         self.tabs = QTabWidget()
         layout.addWidget(self.tabs)
 
-        # 1. Creation Tab
+        # 1. Identity & Stats
         self.creation_tab = CreationTab(self._sheet, self._modifier_snapshot, parent=self)
-        self.tabs.addTab(self.creation_tab, "Creation")
+        self.tabs.addTab(self.creation_tab, "Identity")
 
-        # 2. Leveling Tab
+        # 2. Species Tab
+        self.species_tab = SpeciesTab(self._sheet, self._modifier_snapshot, parent=self)
+        self.tabs.addTab(self.species_tab, "Species")
+
+        # 3. Origin Tab
+        self.origin_tab = OriginTab(self._sheet, self._modifier_snapshot, parent=self)
+        self.tabs.addTab(self.origin_tab, "Origin")
+
+        # 4. Class Tab
         self.leveling_tab = LevelingTab(self._sheet, self._modifier_snapshot, parent=self)
-        self.tabs.addTab(self.leveling_tab, "Leveling")
+        self.tabs.addTab(self.leveling_tab, "Class")
 
         # Connect signals for cross-tab updates?
         # e.g., if Name changes in Creation, title might change.

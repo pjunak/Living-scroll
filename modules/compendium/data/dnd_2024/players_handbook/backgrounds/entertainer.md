@@ -2,7 +2,16 @@
 name: Entertainer
 type: background
 id: background:entertainer
+ability_bonus_options:
+  choose: 3
+  abilities:
+  - STR
+  - DEX
+  - CHA
+starting_feat: Musician
+...
 ---
+
 
 You spent much of your youth following roving fairs and carnivals, performing odd jobs for musicians and acrobats in exchange for lessons. You may have learned how to walk a tightrope, how to play a lute in a distinct style, or how to recite poetry with impeccable diction. To this day, you thrive on applause and long for the stage.
 

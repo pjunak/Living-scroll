@@ -1,6 +1,27 @@
 ---
 name: Gnome
 type: species
+source_id: dnd-2024-basic
+size: small
+speed: 30
+features:
+- name: Darkvision
+  description: You have Darkvision with a range of 60 feet.
+- name: Gnomish Cunning
+  description: You have Advantage on Intelligence, Wisdom, and Charisma saving throws.
+- name: Gnomish Lineage
+  description: You are part of a lineage that grants you supernatural abilities.
+  options:
+  - label: Forest Gnome
+    value: Forest Gnome
+    grants:
+      unquantifiable_modifiers:
+      - "Forest Gnome Lineage: Minor Illusion and Speak with Animals."
+  - label: Rock Gnome
+    value: Rock Gnome
+    grants:
+      unquantifiable_modifiers:
+      - "Rock Gnome Lineage: Mending and Prestidigitation."
 id: species:gnome
 ---
 

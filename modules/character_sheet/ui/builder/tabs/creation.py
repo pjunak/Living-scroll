@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Dict, List, Mapping, Optional
 from PySide6.QtCore import Qt, Signal
 from PySide6.QtWidgets import (
-    QWidget, QVBoxLayout, QHBoxLayout, QFormLayout, QLineEdit, QComboBox, 
+    QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QComboBox, 
     QGroupBox, QPushButton, QLabel, QScrollArea, QFrame, QToolButton, QFileDialog
 )
 from PySide6.QtGui import QPixmap
@@ -41,9 +41,6 @@ class CreationTab(QWidget):
         
         # UI State
         self._portrait_label: QLabel | None = None
-        self._species_combo: QComboBox | None = None
-        self._subtype_combo: QComboBox | None = None
-        self._background_combo: QComboBox | None = None
         self.ability_group: AbilityScoresGroup | None = None
         
         self._layout_ui()
@@ -62,11 +59,7 @@ class CreationTab(QWidget):
         # 1. Identity Group
         self.form_layout.addWidget(self._build_identity_section())
         
-        # 2. Race & Class Group
-        self.form_layout.addWidget(self._build_origin_section())
-        
-        # 3. Background Group
-        self.form_layout.addWidget(self._build_background_section())
+
         
         # 4. Ability Scores Group
         self.form_layout.addWidget(self._build_ability_scores_section())
@@ -83,7 +76,7 @@ class CreationTab(QWidget):
         portrait_layout = QVBoxLayout()
         self._portrait_label = QLabel()
         self._portrait_label.setFixedSize(100, 100)
-        self._portrait_label.setStyleSheet("background-color: #2d2d30; border: 1px solid #3e3e42; border-radius: 4px;")
+        self._portrait_label.setProperty("class", "BuildPortrait")
         self._portrait_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
         btn = QPushButton("Select Portrait...")
@@ -94,44 +87,18 @@ class CreationTab(QWidget):
         layout.addLayout(portrait_layout)
         
         # Name
-        form = QFormLayout()
+        form = QHBoxLayout()
+        form.addWidget(QLabel("Name:"))
         self.name_edit = QLineEdit()
         self.name_edit.setPlaceholderText("Character Name")
+        self.name_edit.setMinimumWidth(200)
         self.name_edit.textChanged.connect(self._on_name_changed)
-        form.addRow("Name:", self.name_edit)
+        form.addWidget(self.name_edit)
+        form.addStretch()
         
         layout.addLayout(form, 1)
         return group
 
-    def _build_origin_section(self) -> QWidget:
-        group = QGroupBox("Ancestry")
-        form = QFormLayout(group)
-        
-        # Species
-        self._species_combo = QComboBox()
-        self._species_combo.addItem("(Select Species)", "")
-        self._species_combo.currentIndexChanged.connect(self._on_species_changed)
-        form.addRow("Species:", self._species_combo)
-        
-        self._subtype_combo = QComboBox()
-        self._subtype_combo.setEnabled(False)
-        self._subtype_combo.currentIndexChanged.connect(self._on_subtype_changed)
-        form.addRow("Subtype:", self._subtype_combo)
-        
-        return group
-
-    def _build_background_section(self) -> QWidget:
-        group = QGroupBox("Background")
-        form = QFormLayout(group)
-        
-        self._background_combo = QComboBox()
-        self._background_combo.addItem("(Select Background)", "")
-        self._background_combo.currentIndexChanged.connect(self._on_background_changed)
-        form.addRow("Origins:", self._background_combo)
-        
-        # TODO: Add Origin Feat / Proficiency selection based on background
-        
-        return group
 
     def _build_ability_scores_section(self) -> QWidget:
         group = QGroupBox("Ability Scores")
@@ -140,10 +107,11 @@ class CreationTab(QWidget):
         # 1. Method Selection
         self._point_buy_rules = point_buy_rules()
         self._gen_method_combo = QComboBox()
-        self._gen_method_combo.addItem("Manual Entry", "manual")
         
         if self._point_buy_rules:
             self._gen_method_combo.addItem("Point Buy", "point_buy")
+            
+        self._gen_method_combo.addItem("Manual Entry", "manual")
             
         self._gen_method_combo.currentIndexChanged.connect(self._on_gen_method_changed)
         
@@ -155,7 +123,7 @@ class CreationTab(QWidget):
         
         # 2. Point Buy Summary (Hidden by default)
         self._pb_summary_label = QLabel()
-        self._pb_summary_label.setStyleSheet("font-weight: bold; color: #4ec9b0;")
+        self._pb_summary_label.setProperty("class", "SuccessBoldLabel")
         self._pb_summary_label.hide()
         layout.addWidget(self._pb_summary_label)
         
@@ -212,14 +180,19 @@ class CreationTab(QWidget):
         
         if not valid:
              self._pb_summary_label.setText("Invalid score detected for Point Buy.")
-             self._pb_summary_label.setStyleSheet("color: #d95c5c;")
+             self._pb_summary_label.setProperty("class", "WarningItalicLabel")
+             self._pb_summary_label.style().unpolish(self._pb_summary_label)
+             self._pb_summary_label.style().polish(self._pb_summary_label)
              return
              
         self._pb_summary_label.setText(f"Points Remaining: {remaining} / {self._point_buy_rules.pool}")
         if remaining < 0:
-            self._pb_summary_label.setStyleSheet("color: #d95c5c; font-weight: bold;")
+            self._pb_summary_label.setProperty("class", "WarningItalicLabel")
         else:
-            self._pb_summary_label.setStyleSheet("color: #4ec9b0; font-weight: bold;")
+            self._pb_summary_label.setProperty("class", "SuccessBoldLabel")
+            
+        self._pb_summary_label.style().unpolish(self._pb_summary_label)
+        self._pb_summary_label.style().polish(self._pb_summary_label)
 
 
 
@@ -227,31 +200,6 @@ class CreationTab(QWidget):
         # Identity
         self.name_edit.setText(self._sheet.identity.name)
         self._refresh_portrait_preview()
-        
-        # Species
-        species_records = [r for r in self._compendium.records("species") if isinstance(r, Mapping)]
-        sorted_species = sorted(species_records, key=lambda x: str(x.get("name", "")))
-        for r in sorted_species:
-            self._species_combo.addItem(str(r.get("name")), r)
-            
-        current_species = self._sheet.identity.ancestry
-        if current_species:
-            self._species_combo.setCurrentText(current_species)
-            # Also restore subtype if it was saved
-            current_subtype = self._sheet.identity.ancestry_subtype
-            if current_subtype:
-                # Trick: Species change will populate subtypes, then we set the text
-                # Need to do this AFTER species is set so subtypes are populated
-                pass  # Will be handled in _on_species_changed
-            
-        # Backgrounds
-        backgrounds = sorted([r for r in self._compendium.records("backgrounds") if isinstance(r, Mapping)], key=lambda x: str(x.get("name", "")))
-        for b in backgrounds:
-            self._background_combo.addItem(str(b.get("name")), b)
-            
-        current_bg = self._sheet.identity.background
-        if current_bg:
-            self._background_combo.setCurrentText(current_bg)
         
         # Restore Ability Generation Method
         saved_method = self._sheet.identity.ability_generation
@@ -298,61 +246,7 @@ class CreationTab(QWidget):
         self._sheet.identity.name = text
         self.dataChanged.emit()
 
-    def _on_species_changed(self):
-        data = self._species_combo.currentData()
-        if not isinstance(data, dict):
-            return
-        
-        name = str(data.get("name", ""))
-        self._sheet.identity.ancestry = name
-        
-        # Store saved subtype before clearing
-        saved_subtype = self._sheet.identity.ancestry_subtype
-        
-        # Block signals to prevent _on_subtype_changed from firing during population
-        self._subtype_combo.blockSignals(True)
-        
-        # Update subtypes
-        self._subtype_combo.clear()
-        self._subtype_combo.addItem("(None)", "")
-        subtypes = data.get("subtypes", [])
-        if subtypes and isinstance(subtypes, list):
-            self._subtype_combo.setEnabled(True)
-            for s in subtypes:
-                if isinstance(s, dict):
-                    self._subtype_combo.addItem(str(s.get("name")), s)
-            # Restore saved subtype if it exists
-            if saved_subtype:
-                idx = self._subtype_combo.findText(saved_subtype)
-                if idx >= 0:
-                    self._subtype_combo.setCurrentIndex(idx)
-        else:
-            self._subtype_combo.setEnabled(False)
-        
-        # Restore signals
-        self._subtype_combo.blockSignals(False)
-            
-        self.dataChanged.emit()
 
-    def _on_subtype_changed(self):
-        data = self._subtype_combo.currentData()
-        name = ""
-        if isinstance(data, dict):
-            name = str(data.get("name", ""))
-        elif isinstance(data, str):
-            name = data
-        self._sheet.identity.ancestry_subtype = name
-        self.dataChanged.emit()
-
-
-    def _on_background_changed(self):
-        data = self._background_combo.currentData()
-        if not isinstance(data, dict):
-            return
-        
-        name = str(data.get("name", ""))
-        self._sheet.identity.background = name
-        self.dataChanged.emit()
         
     def _on_score_changed(self, ability: str, value: int):
         self._sheet.get_ability(ability).score = value

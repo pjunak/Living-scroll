@@ -470,6 +470,58 @@ QLabel[class="InfoBorder"] {{
     border-radius: 8px;
     padding: 12px;
 }}
+/* Character Builder Level Entry */
+QFrame[class="LevelEntry"] {{
+    background-color: {COLORS['bg_secondary']};
+    border: 1px solid {COLORS['border_dim']};
+    border-radius: 4px;
+    margin-bottom: 8px;
+}}
+QFrame[class="LevelEntryBody"] {{
+    border-left: 2px solid {COLORS['accent_primary']};
+    margin-left: 8px;
+    padding-left: 10px;
+}}
+QPushButton[class="DestructiveButton"] {{
+    background-color: transparent;
+    color: {COLORS['accent_red']};
+    border: none;
+    font-weight: bold;
+    padding: 2px 6px;
+}}
+QPushButton[class="DestructiveButton"]:hover {{
+    color: #ff6b6b;
+    background-color: {COLORS['bg_tertiary']};
+}}
+
+/* Typography Overrides */
+QLabel[class="BoldLabel"] {{
+    font-weight: bold;
+}}
+QLabel[class="MutedItalicLabel"] {{
+    color: {COLORS['text_secondary']};
+    font-style: italic;
+    font-size: 0.9em;
+}}
+QLabel[class="WarningItalicLabel"] {{
+    color: {COLORS['accent_red']};
+    font-style: italic;
+}}
+QLabel[class="SuccessItalicLabel"] {{
+    color: {COLORS['accent_green']};
+    font-style: italic;
+}}
+QLabel[class="SuccessBoldLabel"] {{
+    color: {COLORS['accent_green']};
+    font-weight: bold;
+}}
+
+/* Build Portrait */
+QLabel[class="BuildPortrait"] {{
+    background-color: {COLORS['bg_tertiary']};
+    border: 1px solid {COLORS['border_dim']};
+    border-radius: 4px;
+}}
 """
 
 # Combine all blocks

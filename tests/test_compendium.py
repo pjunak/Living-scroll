@@ -1,7 +1,8 @@
 import unittest
-from unittest.mock import MagicMock, patch, PropertyMock
+from unittest.mock import MagicMock, patch
 from pathlib import Path
-from modules.compendium.service import Compendium, _load_payload
+from modules.compendium.service import Compendium
+from modules.compendium.loader import CompendiumLoader
 
 class TestCompendium(unittest.TestCase):
     def setUp(self):
@@ -56,48 +57,75 @@ class TestCompendium(unittest.TestCase):
         self.assertEqual(results[0]["name"], "Fireball")
 
 
-class TestCompendiumLoading(unittest.TestCase):
-    @patch("modules.compendium.service.Path")
-    @patch("modules.compendium.service._load_dataset_directory")
-    def test_load_payload_iterates_modules(self, mock_load_dir, mock_path_cls):
+class TestCompendiumLoader(unittest.TestCase):
+    def setUp(self):
+        self.mock_root = MagicMock(spec=Path)
+        self.loader = CompendiumLoader(self.mock_root)
+
+    @patch("modules.compendium.loader.CompendiumLoader._load_module")
+    def test_load_merges_modules(self, mock_load_module):
         # Setup mocks
-        mock_root = MagicMock()
-        mock_path_cls.return_value = mock_root
+        ruleset_path = MagicMock(spec=Path)
+        self.mock_root.__truediv__.return_value = ruleset_path
+        ruleset_path.exists.return_value = True
         
-        # Determine behavior of the root path
-        mock_root.is_file.return_value = False
-        mock_root.is_dir.return_value = True
+        # Mock module directories
+        mod1 = MagicMock(spec=Path)
+        mod1.is_dir.return_value = True
+        mod1.name = "core"
+        # Fix sorting
+        mod1.__lt__ = lambda s, o: s.name < o.name
         
-        # Create mock module directories
-        mod_1 = MagicMock()
-        mod_1.is_dir.return_value = True
-        mod_1.name = "core_rules"
-        # Make comparable for sorted()
-        mod_1.__lt__ = lambda self, other: self.name < other.name
+        mod2 = MagicMock(spec=Path)
+        mod2.is_dir.return_value = True
+        mod2.name = "expansion"
+        mod2.__lt__ = lambda s, o: s.name < o.name
+
+        ruleset_path.iterdir.return_value = [mod1, mod2]
         
-        mod_2 = MagicMock()
-        mod_2.is_dir.return_value = True
-        mod_2.name = "expansion"
-        mod_2.__lt__ = lambda self, other: self.name < other.name
-        
-        mock_root.iterdir.return_value = [mod_1, mod_2]
-        
-        # Mock payload returns - must use valid keys like 'spells'
-        mock_load_dir.side_effect = [
-            {"spells": [{"name": "S1", "id": "s1"}]}, 
-            {"spells": [{"name": "S2", "id": "s2"}]}
+        # Mock module payloads
+        mock_load_module.side_effect = [
+            {"spells": [{"id": "s1", "name": "Spell 1"}]},
+            {"spells": [{"id": "s2", "name": "Spell 2"}]}
         ]
-        
-        # Test 1: Load all
-        result = _load_payload(mock_root)
+
+        # Action
+        result = self.loader.load("dnd_2024")
+
+        # Assert
         self.assertEqual(len(result["spells"]), 2)
+        spells = {s["id"] for s in result["spells"]}
+        self.assertEqual(spells, {"s1", "s2"})
+
+    @patch("modules.compendium.loader.CompendiumLoader._load_module")
+    def test_load_filters_modules(self, mock_load_module):
+        # Setup mocks
+        ruleset_path = MagicMock(spec=Path)
+        self.mock_root.__truediv__.return_value = ruleset_path
+        ruleset_path.exists.return_value = True
         
-        # Test 2: Filter modules
-        mock_load_dir.reset_mock()
-        mock_load_dir.side_effect = [{"spells": [{"name": "S1", "id": "s1"}]}] # Called once
+        mod1 = MagicMock(spec=Path)
+        mod1.is_dir.return_value = True
+        mod1.name = "core"
+        mod1.__lt__ = lambda s, o: s.name < o.name
         
-        result_filtered = _load_payload(mock_root, active_modules={"core_rules"})
-        self.assertEqual(len(result_filtered["spells"]), 1)
+        mod2 = MagicMock(spec=Path)
+        mod2.is_dir.return_value = True
+        mod2.name = "expansion"
+        mod2.__lt__ = lambda s, o: s.name < o.name
+
+        ruleset_path.iterdir.return_value = [mod1, mod2]
+        
+        # Mock payload
+        mock_load_module.return_value = {"spells": [{"id": "s1"}]}
+
+        # Action: Only load 'core'
+        result = self.loader.load("dnd_2024", active_modules={"core"})
+
+        # Assert
+        # _load_module should be called once (for core)
+        self.assertEqual(mock_load_module.call_count, 1)
+        self.loader._load_module.assert_called_with(mod1)
 
 if __name__ == "__main__":
     unittest.main()

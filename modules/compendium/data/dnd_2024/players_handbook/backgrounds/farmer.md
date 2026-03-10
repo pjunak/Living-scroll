@@ -2,7 +2,16 @@
 name: Farmer
 type: background
 id: background:farmer
+ability_bonus_options:
+  choose: 3
+  abilities:
+  - STR
+  - CON
+  - WIS
+starting_feat: Tough
+...
 ---
+
 
 You grew up close to the land. Years tending animals and cultivating the earth rewarded you with patience and good health. You have a keen appreciation for nature’s bounty alongside a healthy respect for nature's wrath.
 

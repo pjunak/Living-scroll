@@ -142,10 +142,18 @@ def derive_armor_class(
 			species_formula = _species_armor_class_formula(compendium, species_name, species_subtype_name)
 			if isinstance(species_formula, Mapping):
 				candidates.append(species_formula)
-			if "barbarian" in classes:
-				candidates.append({"type": "unarmored_defense", "base": 10, "add": ["DEX", "CON"], "allow_shield": True})
-			if "monk" in classes:
-				candidates.append({"type": "unarmored_defense", "base": 10, "add": ["DEX", "WIS"], "allow_shield": False})
+				
+			# Dynamic class AC formulas
+			if compendium and classes:
+				for cls_name in classes:
+					cls_key = cls_name.strip().lower()
+					for cb in compendium.records("classes"):
+						name = str(cb.get("name") or "").strip().lower()
+						if name == cls_key or cb.get("id") == f"class:{cls_key}":
+							candidate_formula = cb.get("armor_class_formula")
+							if isinstance(candidate_formula, Mapping):
+								candidates.append(candidate_formula)
+							break
 
 		for candidate_formula in candidates:
 			if not isinstance(candidate_formula, Mapping):
