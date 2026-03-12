@@ -1,0 +1,12 @@
+Updated barbarian
+Updated bard
+Updated cleric
+Updated druid
+Updated fighter
+Updated monk
+Updated paladin
+Updated ranger
+Updated rogue
+Updated sorcerer
+Updated warlock
+Updated wizard

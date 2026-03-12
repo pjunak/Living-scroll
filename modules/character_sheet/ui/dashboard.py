@@ -30,6 +30,7 @@ from modules.character_sheet.ui.builder.dialog import CharacterBuilderDialog
 from modules.character_sheet.model import CharacterSheet, ABILITY_NAMES, EquipmentItem
 from modules.character_sheet.services.library import CharacterRecord, DEFAULT_LIBRARY_PATH
 from modules.compendium.modifiers.state import ModifierStateSnapshot
+from modules.dnd24_mechanics.engine import CharacterEngine
 from modules.equipment.ui.window import EquipmentWindow
 from modules.core.ui.dialogs.equipment_entry_dialog import EquipmentEntryDialog
 from modules.core.application_context import ApplicationContext
@@ -113,11 +114,18 @@ class CharacterDashboard(QWidget):
 
     def __init__(self, record: CharacterRecord, app_context: ApplicationContext, parent: QWidget | None = None) -> None:
         super().__init__(parent)
-        self._record = record
-        self._sheet = record.sheet
         self._app_context = app_context
+        # Initialize the Unidirectional State Store
+        from modules.character_sheet.store import CharacterStore
+        self._store = CharacterStore(record, self._app_context.ensure_library(), self._app_context.ensure_compendium(), self)
+        self._store.character_updated.connect(self._on_character_updated)
+
+        self._record = self._store.record
+        self._sheet = self._store.sheet
+        self._engine = self._store.engine
+        
         # Placeholder for modifier snapshot
-        self._modifier_snapshot = ModifierStateSnapshot([], record.modifiers)
+        self._modifier_snapshot = ModifierStateSnapshot([], self._record.modifiers)
         
         # Helper map for spellcasting
         self._class_casting_map = {
@@ -128,34 +136,26 @@ class CharacterDashboard(QWidget):
 
         self._init_ui()
 
-    def _init_ui(self):
+    def _init_ui(self, is_rebuild=False):
         # Main Layout
-        self.setLayout(QHBoxLayout())
+        if not is_rebuild:
+            self.setLayout(QVBoxLayout())
+            self.layout().setContentsMargins(0, 0, 0, 0)
+            self.layout().setSpacing(0)
+            self.setStyleSheet(f"background-color: {DASH_COLORS['bg_base']}; color: {DASH_COLORS['text_main']}; font-family: 'Segoe UI';")
+            
         main_layout = self.layout()
-        main_layout.setContentsMargins(0, 0, 0, 0)
-        main_layout.setSpacing(0)
-        self.setStyleSheet(f"background-color: {DASH_COLORS['bg_base']}; color: {DASH_COLORS['text_main']}; font-family: 'Segoe UI';")
-
-        # --- Sidebar ---
-        self._sidebar = self._build_sidebar()
-        main_layout.addWidget(self._sidebar)
-
-        # --- Center Stage (Vitals + Split Area) ---
-        center_stage = QWidget()
-        center_layout = QVBoxLayout(center_stage)
-        center_layout.setContentsMargins(0, 0, 0, 0)
-        center_layout.setSpacing(10)
 
         # 1. Header (Identity + Vitals)
         self._header = self._build_header_section()
-        center_layout.addWidget(self._header)
+        main_layout.addWidget(self._header)
 
         # 2. Main Split Area
         main_split = QSplitter(Qt.Orientation.Horizontal)
         main_split.setHandleWidth(1)
         main_split.setStyleSheet(f"QSplitter::handle {{ background: {DASH_COLORS['border']}; }}")
         
-        # 1. Column 1: Quick Stats (Skills, Feats, Traits)
+        # 1. Column 1: Attributes, Saves, Skills
         left_panel = self._build_left_panel()
         main_split.addWidget(left_panel)
 
@@ -185,6 +185,15 @@ class CharacterDashboard(QWidget):
         self._grimoire_page.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self._stack.addWidget(self._grimoire_page)
         
+        # Page 3: Features
+        self._features_page = FeaturesPage(self._record, self._app_context, self)
+        self._stack.addWidget(self._features_page)
+        
+        # Page 4: Notes (Placeholder)
+        self._notes_page = QLabel("Notes (Coming Soon)")
+        self._notes_page.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self._stack.addWidget(self._notes_page)
+        
         center_panel_layout.addWidget(self._stack)
         main_split.addWidget(center_panel)
 
@@ -192,14 +201,12 @@ class CharacterDashboard(QWidget):
         self._inspector_panel = self._build_inspector_panel()
         main_split.addWidget(self._inspector_panel)
         
-        # Set Split Ratios (20%, 50%, 30%)
-        main_split.setStretchFactor(0, 2)
-        main_split.setStretchFactor(1, 5)
-        main_split.setStretchFactor(2, 3)
+        # Set Split Ratios (25%, 50%, 25%)
+        main_split.setStretchFactor(0, 1)
+        main_split.setStretchFactor(1, 2)
+        main_split.setStretchFactor(2, 1)
 
-        center_layout.addWidget(main_split, 1)
-        
-        main_layout.addWidget(center_stage, 1)
+        main_layout.addWidget(main_split, 1)
         
         # Refresh on tab change
         self._stack.currentChanged.connect(self._on_tab_changed)
@@ -229,6 +236,8 @@ class CharacterDashboard(QWidget):
              self._refresh_overview()
         elif index == 1:
              self._inventory_page.refresh()
+        elif index == 3:
+             self._features_page.refresh()
             
     def _refresh_overview(self):
         # We need to refresh the Equipped items list
@@ -256,70 +265,36 @@ class CharacterDashboard(QWidget):
              layout.addStretch()
 
     def _refresh_ui(self):
-        # Global refresh
-        self._refresh_overview()
-        if hasattr(self, '_inventory_page'):
-            self._inventory_page.refresh()
-
-
-    def _refresh_ui(self):
-        self._rebuild_ui()
+        # Store current tab if it exists
+        current_idx = 0
+        if hasattr(self, '_stack') and self._stack:
+            current_idx = self._stack.currentIndex()
+            
+        # Clear main layout and rebuild
+        layout = self.layout()
+        if layout:
+            while layout.count():
+                child = layout.takeAt(0)
+                if child.widget():
+                    child.widget().deleteLater()
+                    
+        self._init_ui(is_rebuild=True)
+        
+        # Restore tab
+        if hasattr(self, '_stack') and self._stack:
+            self._stack.setCurrentIndex(current_idx)
 
     def _drawer_closed(self):
         self._refresh_ui()
 
 
-    def _build_sidebar(self) -> QWidget:
-        container = QFrame()
-        container.setFixedWidth(90)
-        container.setStyleSheet(f"background-color: {DASH_COLORS['bg_card']}; border-right: 1px solid {DASH_COLORS['border']};")
-        
-        layout = QVBoxLayout(container)
-        layout.setContentsMargins(10, 20, 10, 20)
-        layout.setSpacing(15)
+        # (Sidebar removed to merge into left_panel)
 
-        for name in ABILITY_NAMES:
-            score_obj = self._sheet.get_ability(name)
-            
-            # Get breakdown with all bonuses
-            compendium = self._app_context.ensure_compendium()
-            breakdown = self._sheet.get_ability_breakdown(name, compendium)
-            total_score = breakdown['total']
-            mod = (total_score - 10) // 2
-            
-            hex_widget = _StatHex(name, total_score, mod, tooltip_text=breakdown['tooltip'])
-            layout.addWidget(hex_widget, 0, Qt.AlignmentFlag.AlignHCenter)
-
-        layout.addStretch()
-        
-        # Edit Button (Moved from Header)
-        edit_btn = QPushButton("✎")
-        edit_btn.setToolTip("Edit Character")
-        edit_btn.setCursor(Qt.CursorShape.PointingHandCursor)
-        edit_btn.setStyleSheet(f"""
-            QPushButton {{
-                background-color: transparent;
-                color: {DASH_COLORS['text_dim']};
-                border: 1px solid {DASH_COLORS['border']};
-                border-radius: 4px;
-                padding: 8px;
-                font-weight: 700;
-                font-size: 16px;
-            }}
-            QPushButton:hover {{
-                color: {DASH_COLORS['accent']};
-                border-color: {DASH_COLORS['accent']};
-                background-color: rgba(155, 89, 182, 0.1);
-            }}
-        """)
-        edit_btn.clicked.connect(self._open_editor)
-        layout.addWidget(edit_btn, 0, Qt.AlignmentFlag.AlignHCenter)
-
-        return container
 
     def _build_header_section(self) -> QWidget:
         container = QFrame()
-        container.setStyleSheet(f"background: {DASH_COLORS['bg_hero']}; border-radius: 12px; border: 1px solid {DASH_COLORS['border']};")
+        container.setObjectName("HeaderContainer")
+        container.setStyleSheet(f"QFrame#HeaderContainer {{ background: {DASH_COLORS['bg_hero']}; border-radius: 12px; border: 1px solid {DASH_COLORS['border']}; }}")
         container.setFixedHeight(140)
         
         layout = QHBoxLayout(container)
@@ -330,7 +305,8 @@ class CharacterDashboard(QWidget):
         # Check portrait
         portrait_widget = QLabel()
         portrait_widget.setFixedSize(100, 100)
-        portrait_widget.setStyleSheet(f"background-color: {DASH_COLORS['bg_base']}; border-radius: 8px; border: 1px solid {DASH_COLORS['accent']};")
+        portrait_widget.setObjectName("PortraitWidget")
+        portrait_widget.setStyleSheet(f"QLabel#PortraitWidget {{ background-color: {DASH_COLORS['bg_base']}; border-radius: 8px; border: 1px solid {DASH_COLORS['accent']}; }}")
         portrait_widget.setAlignment(Qt.AlignmentFlag.AlignCenter)
         
         p_path = self._record.sheet.identity.portrait_path
@@ -363,9 +339,35 @@ class CharacterDashboard(QWidget):
         layout.addStretch()
 
         layout.addStretch()
-        # Edit button removed from here
-        # layout.addWidget(edit_btn)
-        # layout.addSpacing(20)
+
+        # Edit button
+        edit_btn = QPushButton("✎ Edit Character")
+        edit_btn.setToolTip("Edit Character")
+        edit_btn.setCursor(Qt.CursorShape.PointingHandCursor)
+        edit_btn.setStyleSheet(f"""
+            QPushButton {{
+                background-color: transparent;
+                color: {DASH_COLORS['text_dim']};
+                border: 1px solid {DASH_COLORS['border']};
+                border-radius: 4px;
+                padding: 8px 12px;
+                font-weight: 700;
+                font-size: 12px;
+            }}
+            QPushButton:hover {{
+                color: {DASH_COLORS['accent']};
+                border-color: {DASH_COLORS['accent']};
+                background-color: rgba(155, 89, 182, 0.1);
+            }}
+        """)
+        edit_btn.clicked.connect(self._open_editor)
+        
+        vitals_layout = QVBoxLayout()
+        top_row = QHBoxLayout()
+        top_row.addStretch()
+        top_row.addWidget(edit_btn)
+        
+        vitals_layout.addLayout(top_row)
 
         # Vitals (AC, HP, Init)
         # Using a grid for tight packing
@@ -374,7 +376,7 @@ class CharacterDashboard(QWidget):
         vitals_grid.setVerticalSpacing(5)
 
         # AC
-        ac_breakdown = self._sheet.get_ac_breakdown()
+        ac_breakdown = self._engine.get_ac_breakdown()
         ac_val = QLabel(str(ac_breakdown['total']))
         ac_val.setAlignment(Qt.AlignmentFlag.AlignCenter)
         ac_val.setStyleSheet("font-size: 28px; font-weight: bold; color: white;")
@@ -387,7 +389,7 @@ class CharacterDashboard(QWidget):
         vitals_grid.addWidget(ac_lbl, 1, 0)
 
         # HP (Simple text for now, bar later)
-        hp_breakdown = self._sheet.get_hp_breakdown()
+        hp_breakdown = self._engine.get_hp_breakdown()
         hp_str = f"{self._sheet.combat.current_hp} / {hp_breakdown['total']}"
         hp_val = QLabel(hp_str)
         hp_val.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -401,16 +403,11 @@ class CharacterDashboard(QWidget):
         vitals_grid.addWidget(hp_lbl, 1, 1)
         
         # Initiative
-        dex_mod = self._sheet.abilities["DEX"].effective_modifier()
-        init_bonus = self._sheet.combat.initiative_bonus
-        init_tooltip = f"DEX Modifier: {dex_mod:+d}"
-        if init_bonus != dex_mod:
-            init_tooltip += f"\nOther Bonuses: {init_bonus - dex_mod:+d}"
-        init_tooltip += f"\nTotal: {init_bonus:+d}"
-        init_val = QLabel(f"{init_bonus:+d}")
+        init_breakdown = self._engine.get_initiative_breakdown()
+        init_val = QLabel(f"{init_breakdown['total']:+d}")
         init_val.setAlignment(Qt.AlignmentFlag.AlignCenter)
         init_val.setStyleSheet("font-size: 28px; font-weight: bold; color: white;")
-        init_val.setToolTip(init_tooltip)
+        init_val.setToolTip(init_breakdown['tooltip'])
         init_lbl = QLabel("INITIATIVE")
         init_lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
         init_lbl.setStyleSheet(f"font-size: 10px; font-weight: bold; color: {DASH_COLORS['text_dim']};")
@@ -419,7 +416,7 @@ class CharacterDashboard(QWidget):
         vitals_grid.addWidget(init_lbl, 1, 2)
 
         # Proficiency
-        prof_breakdown = self._sheet.get_proficiency_breakdown()
+        prof_breakdown = self._engine.get_proficiency_breakdown()
         prof_val = QLabel(f"{prof_breakdown['total']:+d}")
         prof_val.setAlignment(Qt.AlignmentFlag.AlignCenter)
         prof_val.setStyleSheet("font-size: 28px; font-weight: bold; color: white;")
@@ -431,14 +428,28 @@ class CharacterDashboard(QWidget):
         vitals_grid.addWidget(prof_val, 0, 3)
         vitals_grid.addWidget(prof_lbl, 1, 3)
 
+        # Speed
+        speed_breakdown = self._engine.get_speed_breakdown()
+        speed_val = QLabel(str(speed_breakdown['total']))
+        speed_val.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        speed_val.setStyleSheet("font-size: 28px; font-weight: bold; color: white;")
+        speed_val.setToolTip(speed_breakdown['tooltip'])
+        speed_lbl = QLabel("SPEED")
+        speed_lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        speed_lbl.setStyleSheet(f"font-size: 10px; font-weight: bold; color: {DASH_COLORS['text_dim']};")
+        
+        vitals_grid.addWidget(speed_val, 0, 4)
+        vitals_grid.addWidget(speed_lbl, 1, 4)
+
         # Spell Stats (Conditional)
         cast_ability = self._get_primary_spellcasting_ability()
         
         if cast_ability:
             try:
                 ability_obj = self._sheet.get_ability(cast_ability)
-                mod = ability_obj.effective_modifier()
-                prof = self._sheet.proficiency_bonus()
+                # Ensure we use engine logic for the cast ability
+                mod = (self._engine.get_ability_breakdown(cast_ability)["total"] - 10) // 2
+                prof = self._engine.calculated_proficiency_bonus()
                 
                 dc = 8 + prof + mod
                 atk = prof + mod
@@ -451,8 +462,8 @@ class CharacterDashboard(QWidget):
                 dc_lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
                 dc_lbl.setStyleSheet(f"font-size: 10px; font-weight: bold; color: {DASH_COLORS['text_dim']};")
                 
-                vitals_grid.addWidget(dc_val, 0, 4)
-                vitals_grid.addWidget(dc_lbl, 1, 4)
+                vitals_grid.addWidget(dc_val, 0, 5)
+                vitals_grid.addWidget(dc_lbl, 1, 5)
 
                 # Attack
                 atk_val = QLabel(f"{atk:+d}")
@@ -462,13 +473,14 @@ class CharacterDashboard(QWidget):
                 atk_lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
                 atk_lbl.setStyleSheet(f"font-size: 10px; font-weight: bold; color: {DASH_COLORS['text_dim']};")
                 
-                vitals_grid.addWidget(atk_val, 0, 5)
-                vitals_grid.addWidget(atk_lbl, 1, 5)
+                vitals_grid.addWidget(atk_val, 0, 6)
+                vitals_grid.addWidget(atk_lbl, 1, 6)
                 
             except KeyError:
                 pass # Should not happen with valid map
 
-        layout.addLayout(vitals_grid)
+        vitals_layout.addLayout(vitals_grid)
+        layout.addLayout(vitals_layout)
 
         return container
         
@@ -525,13 +537,15 @@ class CharacterDashboard(QWidget):
         return area
         
     def _build_left_panel(self) -> QWidget:
-        """Skills List (Grouped by Attribute)"""
+        """Attributes, Saves, and Skills List"""
         panel = QFrame()
-        panel.setStyleSheet(f"background-color: {DASH_COLORS['bg_card']}; border-right: 1px solid {DASH_COLORS['border']};")
+        panel.setObjectName("LeftPanel")
+        panel.setStyleSheet(f"QFrame#LeftPanel {{ background-color: {DASH_COLORS['bg_card']}; border-right: 1px solid {DASH_COLORS['border']}; }}")
+        panel.setFixedWidth(340)  # Wider to fit Hex + Saves + Skills horizontally
         layout = QVBoxLayout(panel)
         layout.setContentsMargins(10, 10, 10, 10)
         
-        lbl = QLabel("SKILLS")
+        lbl = QLabel("ATTRIBUTES & SKILLS")
         lbl.setStyleSheet(f"font-weight: bold; color: {DASH_COLORS['text_dim']}; font-size: 12px; letter-spacing: 1px;")
         layout.addWidget(lbl)
         
@@ -541,7 +555,7 @@ class CharacterDashboard(QWidget):
         scroll.setWidgetResizable(True)
         content = QWidget()
         c_layout = QVBoxLayout(content)
-        c_layout.setSpacing(2)  # Reduce item spacing
+        c_layout.setSpacing(8)  # Space between attribute groups
         
         # Group skills by attribute
         from modules.character_sheet.ui.builder.utils.selection_helpers import SKILL_ABILITY_MAP, ALL_SKILLS
@@ -553,79 +567,147 @@ class CharacterDashboard(QWidget):
                 grouped_skills[attr] = []
             grouped_skills[attr].append(skill)
             
-        # Display order
         attr_order = ["STR", "DEX", "CON", "INT", "WIS", "CHA"]
         
         # Helper to calculate bonus
-        def calc_bonus(skill_name, attr_name):
-            # Base attribute mod
-            compendium = self._app_context.ensure_compendium()
-            breakdown = self._sheet.get_ability_breakdown(attr_name, compendium)
+        def calc_skill_bonus(skill_name, attr_name):
+            breakdown = self._engine.get_ability_breakdown(attr_name)
             total = breakdown['total']
             mod = (total - 10) // 2
             
-            # Proficiency
             prof_level = self._sheet.proficiencies.skills.get(skill_name, 0)
-            pb = self._sheet.calculated_proficiency_bonus()
+            pb = self._engine.calculated_proficiency_bonus()
             
             bonus = mod
             if prof_level >= 1:
                 bonus += pb
-            if prof_level >= 2: # Expertise adds PB again
+            if prof_level >= 2: # Expertise
                 bonus += pb
                 
             return bonus, prof_level
-        
-        for attr in attr_order:
-            skills = grouped_skills.get(attr)
-            if not skills:
-                continue
-                
-            # Attribute Header
-            attr_lbl = QLabel(attr)
-            attr_lbl.setStyleSheet(f"color: {DASH_COLORS['accent']}; font-weight: bold; font-size: 10px; margin-top: 4px; margin-bottom: 0px;")
-            c_layout.addWidget(attr_lbl)
             
-            for skill in skills:
-                bonus, prof_level = calc_bonus(skill, attr)
-                sign = "+" if bonus >= 0 else ""
+        for attr in attr_order:
+            skills = grouped_skills.get(attr, [])
+            attr_block = QFrame()
+            attr_block.setObjectName("AttrBlock")
+            attr_block.setStyleSheet(f"QFrame#AttrBlock {{ background-color: {DASH_COLORS['bg_base']}; border-radius: 6px; }}")
+            attr_layout = QHBoxLayout(attr_block)
+            attr_layout.setContentsMargins(6, 6, 6, 6)
+            attr_layout.setSpacing(10)
+            
+            # Left side: Hex ONLY
+            hex_col = QVBoxLayout()
+            hex_col.setAlignment(Qt.AlignmentFlag.AlignTop)
+            
+            # 1. Hex
+            breakdown = self._engine.get_ability_breakdown(attr)
+            total = breakdown['total']
+            mod = (total - 10) // 2
+            hex_widget = _StatHex(attr, total, mod, tooltip_text=breakdown['tooltip'])
+            hex_col.addWidget(hex_widget, 0, Qt.AlignmentFlag.AlignHCenter)
+            
+            attr_layout.addLayout(hex_col)
+            
+            # Right side: Save and Skills
+            right_col = QVBoxLayout()
+            right_col.setAlignment(Qt.AlignmentFlag.AlignTop)
+            right_col.setSpacing(2)
+            right_col.setContentsMargins(10, 0, 0, 0)
+            
+            # 2. Saving Throw Row
+            save_row = QWidget()
+            sr_layout = QHBoxLayout(save_row)
+            sr_layout.setContentsMargins(0, 0, 0, 0)
+            sr_layout.setSpacing(4)
+            
+            # Proficiencies are stored as a list in 'saves', so we check membership
+            is_proficient = attr in getattr(self._sheet.proficiencies, "saves", [])
+            save_prof = 1 if is_proficient else 0
+            
+            save_bonus = mod
+            if save_prof >= 1:
+                save_bonus += self._engine.calculated_proficiency_bonus()
                 
-                # Styling
-                # Normal: dim text
-                # Proficient: bold, bright text
-                # Expertise: bold, bright text, underline
+            sign = "+" if save_bonus >= 0 else ""
+            
+            save_prof_indicator = QLabel("●" if save_prof >= 1 else "○")
+            save_prof_indicator.setFixedWidth(15)
+            save_prof_indicator.setStyleSheet(f"color: {DASH_COLORS['accent'] if save_prof >= 1 else DASH_COLORS['text_dim']}; font-size: 12px;")
+            
+            save_lbl_val = QLabel(f"{sign}{save_bonus}")
+            save_lbl_val.setFixedWidth(25)
+            save_lbl_val.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
+            save_lbl_val.setStyleSheet(f"color: {DASH_COLORS['accent']}; font-weight: bold;")
+            
+            save_lbl_name = QLabel("Saving Throw")
+            save_lbl_name.setStyleSheet(f"color: {DASH_COLORS['text_dim']}; font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;")
+            
+            sr_layout.addWidget(save_prof_indicator)
+            sr_layout.addWidget(save_lbl_val)
+            sr_layout.addWidget(save_lbl_name)
+            sr_layout.addStretch()
+            
+            right_col.addWidget(save_row)
+            
+            # Skills
+            if skills:
+                # Add a subtle separator
+                sep = QFrame()
+                sep.setFrameShape(QFrame.Shape.HLine)
+                sep.setStyleSheet(f"background-color: {DASH_COLORS['border']};")
+                sep.setFixedHeight(1)
+                right_col.addWidget(sep)
                 
-                style = f"color: {DASH_COLORS['text_dim']};"
-                font_weight = "normal"
-                text_decoration = "none"
-                
-                if prof_level >= 1:
-                    style = f"color: {DASH_COLORS['text_main']};"
-                    font_weight = "bold"
+                for skill in skills:
+                    bonus, prof_level = calc_skill_bonus(skill, attr)
+                    sign = "+" if bonus >= 0 else ""
                     
-                if prof_level >= 2:
-                    text_decoration = "underline"
+                    style = f"color: {DASH_COLORS['text_dim']};"
+                    font_weight = "normal"
+                    text_decoration = "none"
+                    indicator = "○"
+                    indicator_color = DASH_COLORS['text_dim']
+                    
+                    if prof_level >= 1:
+                        style = f"color: {DASH_COLORS['text_main']};"
+                        font_weight = "bold"
+                        indicator = "●"
+                        indicator_color = DASH_COLORS['accent']
+                        
+                    if prof_level >= 2:
+                        text_decoration = "underline"
+                        indicator = "★"
+                    
+                    row = QWidget()
+                    r_layout = QHBoxLayout(row)
+                    r_layout.setContentsMargins(0, 0, 0, 0)
+                    r_layout.setSpacing(4)
+                    
+                    # Indicator
+                    ind_lbl = QLabel(indicator)
+                    ind_lbl.setFixedWidth(15)
+                    ind_lbl.setStyleSheet(f"color: {indicator_color}; font-size: 12px;")
+                    
+                    # Bonus
+                    bonus_lbl = QLabel(f"{sign}{bonus}")
+                    bonus_lbl.setFixedWidth(25)
+                    bonus_lbl.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
+                    bonus_lbl.setStyleSheet(f"color: {DASH_COLORS['accent']}; font-weight: bold;")
+                    
+                    # Name
+                    name_lbl = QLabel(skill)
+                    name_lbl.setStyleSheet(f"{style} font-weight: {font_weight}; text-decoration: {text_decoration};")
+                    
+                    r_layout.addWidget(ind_lbl)
+                    r_layout.addWidget(bonus_lbl)
+                    r_layout.addWidget(name_lbl)
+                    r_layout.addStretch()
+                    
+                    right_col.addWidget(row)
+                    
+            attr_layout.addLayout(right_col)
                 
-                row = QWidget()
-                r_layout = QHBoxLayout(row)
-                r_layout.setContentsMargins(5, 0, 0, 0) # Compact row
-                r_layout.setSpacing(6)
-                
-                # Bonus display
-                bonus_lbl = QLabel(f"{sign}{bonus}")
-                bonus_lbl.setFixedWidth(25)
-                bonus_lbl.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignVCenter)
-                bonus_lbl.setStyleSheet(f"color: {DASH_COLORS['accent']}; font-weight: bold;")
-                
-                # Name display
-                name_lbl = QLabel(skill)
-                name_lbl.setStyleSheet(f"{style} font-weight: {font_weight}; text-decoration: {text_decoration};")
-                
-                r_layout.addWidget(bonus_lbl)
-                r_layout.addWidget(name_lbl)
-                r_layout.addStretch()
-                
-                c_layout.addWidget(row)
+            c_layout.addWidget(attr_block)
 
         c_layout.addStretch()
         scroll.setWidget(content)
@@ -703,18 +785,19 @@ class CharacterDashboard(QWidget):
         return card
 
     def _save_changes(self):
-        library = self._app_context.ensure_library()
-        try:
-            library.update_record(self._record.identifier, self._sheet, self._record.modifiers)
-        except Exception:
-            pass # Handle error gracefully
+        self._store.dispatch_update(self._sheet, self._record.modifiers)
 
-    def _refresh_ui(self):
-        # Brute force refresh: delete layout and rebuild
-        # In a real app we'd use signals or cleaner wiring
-        # For this prototype, let's close and reopen or just accept the flicker if we rebuild layout?
-        # Rebuilding 'action_area' specifically is better.
-        pass
+    def _on_character_updated(self, updated_record, updated_engine):
+        """Unified callback whenever character state changes in the Store."""
+        self._record = updated_record
+        self._sheet = updated_record.sheet
+        self._engine = updated_engine
+        
+        # In a generic single-page app, we could trigger granular UI target updates here.
+        # For our MVP dashboard, we rebuild the dynamic view.
+        self._refresh_ui()
+
+        # Delete the duplicate MessageBox refresh logic. The master _refresh_ui handles this transparently now.
 
     def _open_editor(self):
         # Open Character Builder
@@ -722,32 +805,14 @@ class CharacterDashboard(QWidget):
         if not snapshot:
              snapshot = ModifierStateSnapshot([], self._record.modifiers)
 
-        # Pass the full record now
-        dialog = CharacterBuilderDialog(self._record, snapshot, self)
+        dialog = CharacterBuilderDialog(self._sheet, snapshot, self)
         if dialog.exec() != QDialog.DialogCode.Accepted:
             return
             
-        # Save changes
-        new_sheet, new_modifiers, new_data = dialog.get_result()
-        
-        # Update Library
-        try:
-            self._app_context.character_library.update_record(
-                self._record.identifier, 
-                new_sheet, 
-                new_modifiers, 
-                data=new_data
-            )
-            
-            # Update local refs
-            self._sheet = new_sheet
-            self._modifier_snapshot = ModifierStateSnapshot([], new_modifiers)
-            
-            # Refresh
-            self._refresh_ui()
-            
-        except Exception as e:
-            QMessageBox.critical(self, "Error", f"Failed to save changes: {e}")
+        # Save changes via Store
+        new_sheet, new_modifiers = dialog.get_result()
+        self._modifier_snapshot = ModifierStateSnapshot(snapshot.definitions, new_modifiers)
+        self._store.dispatch_update(new_sheet, new_modifiers)
 
     def _build_nav_bar(self) -> QWidget:
         # Replaces _build_dock
@@ -960,6 +1025,207 @@ class InventoryPage(QWidget):
         self._sheet.equipment.extend(items)
         self._dashboard._save_changes()
         self.refresh()
+
+class FeaturesPage(QWidget):
+    """
+    Displays ASI choices, Feats, and active Traits from Origin/Classes.
+    """
+    def __init__(self, record: CharacterRecord, app_context: ApplicationContext, dashboard: CharacterDashboard):
+        super().__init__()
+        self._record = record
+        self._sheet = record.sheet
+        self._app_context = app_context
+        self._dashboard = dashboard
+        
+        self._init_ui()
+
+    def _init_ui(self):
+        layout = QVBoxLayout(self)
+        layout.setContentsMargins(20, 20, 20, 20)
+        layout.setSpacing(20)
+        
+        # Controls / Title
+        title = QLabel("Features & Traits")
+        title.setStyleSheet(f"font-size: 24px; font-weight: bold; color: {DASH_COLORS['text_main']};")
+        layout.addWidget(title)
+        
+        # Scroll Area for Features
+        self._scroll = QScrollArea()
+        self._scroll.setWidgetResizable(True)
+        self._scroll.setFrameShape(QFrame.Shape.NoFrame)
+        self._scroll.setStyleSheet("background: transparent;")
+        
+        self._content = QWidget()
+        self._content_layout = QVBoxLayout(self._content)
+        self._content_layout.setContentsMargins(0, 0, 0, 0)
+        self._content_layout.setSpacing(8)
+        
+        self._scroll.setWidget(self._content)
+        layout.addWidget(self._scroll)
+        
+        self.refresh()
+
+    def refresh(self):
+        # Clear existing
+        while self._content_layout.count():
+             child = self._content_layout.takeAt(0)
+             if child.widget(): child.widget().deleteLater()
+             
+        # Add sections: Active Feats, ASI Choices, Racial Traits, Class Features
+        features: list[dict] = []
+        
+        # Gather ASI selections
+        import re
+        for key, val in self._sheet.feature_options.items():
+            if not val:
+                continue
+            if "_asi_" in key and val.startswith("ASI:"):
+                level_match = re.search(r'_asi_(\d+)$', key)
+                lvl = level_match.group(1) if level_match else "?"
+                features.append({
+                    "name": f"Ability Score Improvement (Level {lvl})",
+                    "source": "ASI",
+                    "description": val
+                })
+            elif ("_feat" in key or "_asi" in key) and not val.startswith("ASI:"):
+                # Exclude if the key is an origin feat (handled below) or an attribute sub-choice
+                if key.startswith("origin_feat_") or val in ["STR", "DEX", "CON", "INT", "WIS", "CHA"]:
+                    continue
+                    
+                features.append({
+                    "name": val,
+                    "source": "Feat",
+                    "description": "Selected Feat"
+                })
+        
+        # Origin features (Background / Species)
+        origin_feats = []
+        compendium = self._app_context.ensure_compendium()
+        
+        def build_feature_dict(tf: dict, source: str) -> dict:
+            name = tf.get("name", "Unknown")
+            desc = tf.get("description", "")
+            
+            # Check if this feature has any saved options in the sheet
+            feat_name_lower = name.lower().replace(' ', '_')
+            base_key = f"origin_feat_{feat_name_lower}"
+            
+            # Collect any choices made for this trait
+            choices_made = []
+            for k, v in self._sheet.feature_options.items():
+                if k.startswith(base_key) and v:
+                    if k == base_key:
+                        # Root choice for this feature
+                        choices_made.append(f"Choice: {v}")
+                    else:
+                        # Sub-choice (e.g. skills, attributes)
+                        opt_name = k.replace(f"{base_key}_", "").replace("_", " ").title()
+                        choices_made.append(f"{opt_name}: {v}")
+                    
+            if choices_made:
+                desc = desc + "\n\n**Selected:**\n" + "\n".join(f"- {c}" for c in choices_made)
+                
+            return {
+                "name": name,
+                "source": source,
+                "description": desc
+            }
+        
+        if compendium:
+            sp_name = self._sheet.identity.ancestry
+            sp_record = next((s for s in compendium.records("species") if isinstance(s, dict) and str(s.get("name", "")).lower() == str(sp_name).lower()), None)
+            if sp_record:
+                # Species Ability Score Increase Choices
+                sp_key = sp_name.lower().replace(' ', '_')
+                ability_choices = []
+                for k, v in self._sheet.feature_options.items():
+                    if k.startswith(f"{sp_key}_ability_") and v:
+                        ability_choices.append(v)
+                if ability_choices:
+                    features.append({
+                        "name": "Ability Score Increase",
+                        "source": f"Species ({sp_name})",
+                        "description": "Selected Attributes: " + ", ".join(ability_choices)
+                    })
+                    
+                for tf in sp_record.get("features", []):
+                    features.append(build_feature_dict(tf, f"Species ({sp_name})"))
+                            
+            bg_name = self._sheet.identity.background
+            bg_record = next((b for b in compendium.records("backgrounds") if isinstance(b, dict) and str(b.get("name", "")).lower() == str(bg_name).lower()), None)
+            if bg_record:
+                 bg_ability_choices = []
+                 for k, v in self._sheet.feature_options.items():
+                     if k.startswith("background_ability_") and v:
+                         bg_ability_choices.append(v)
+                 if bg_ability_choices:
+                     features.append({
+                         "name": "Ability Score Increase",
+                         "source": f"Background ({bg_name})",
+                         "description": "Selected Attributes: " + ", ".join(bg_ability_choices)
+                     })
+                     
+                 bg_feat = bg_record.get("starting_feat")
+                 if bg_feat:
+                     feat_key_base = bg_feat.lower().replace(' ', '_')
+                     choices_made = []
+                     for k, v in self._sheet.feature_options.items():
+                         if k.startswith(feat_key_base) and v:
+                             opt_name = k.replace(f"{feat_key_base}_", "").replace("_", " ").title()
+                             choices_made.append(f"{opt_name}: {v}")
+                     
+                     desc = "Starting Feat"
+                     if choices_made:
+                         desc += "\n\n**Selected:**\n" + "\n".join(f"- {c}" for c in choices_made)
+                         
+                     features.append({
+                         "name": bg_feat,
+                         "source": f"Background ({bg_name})",
+                         "description": desc
+                     })
+                     
+        # Class features are harder without pulling full compendium class data for the current level.
+        # Could add class traits here if we loop over them.
+        
+        # Populate
+        for f in features:
+            card = self._create_feature_card(f)
+            self._content_layout.addWidget(card)
+            
+        self._content_layout.addStretch()
+
+    def _create_feature_card(self, f: dict) -> QWidget:
+        card = QFrame()
+        card.setStyleSheet(f"""
+            QFrame {{
+                background-color: {DASH_COLORS['bg_card']};
+                border-radius: 6px;
+                border: 1px solid {DASH_COLORS['border']};
+            }}
+        """)
+        l = QVBoxLayout(card)
+        l.setContentsMargins(12, 12, 12, 12)
+        
+        row1 = QHBoxLayout()
+        name = QLabel(f["name"])
+        name.setStyleSheet(f"font-weight: bold; font-size: 15px; color: {DASH_COLORS['text_main']};")
+        row1.addWidget(name)
+        
+        row1.addStretch()
+        
+        source = QLabel(f["source"])
+        source.setStyleSheet(f"font-size: 11px; font-weight: bold; color: {DASH_COLORS['accent']}; text-transform: uppercase;")
+        row1.addWidget(source)
+        
+        l.addLayout(row1)
+        
+        if f.get("description"):
+            desc = QLabel(f["description"])
+            desc.setWordWrap(True)
+            desc.setStyleSheet(f"font-size: 13px; color: {DASH_COLORS['text_dim']}; margin-top: 4px;")
+            l.addWidget(desc)
+            
+        return card
 
 
 

@@ -18,13 +18,11 @@ from PySide6.QtWidgets import (
 )
 
 from modules.character_sheet.model import CharacterSheet
-from modules.character_sheet.model.schema import CharacterData
-from modules.character_sheet.services.library import CharacterRecord
-from modules.character_sheet.services.rules_engine import RulesEngine
-from modules.compendium.service import Compendium
 from modules.compendium.modifiers.state import ModifierStateSnapshot
 from modules.character_sheet.ui.builder.tabs.creation import CreationTab
 from modules.character_sheet.ui.builder.tabs.leveling import LevelingTab
+from modules.character_sheet.ui.builder.tabs.species import SpeciesTab
+from modules.character_sheet.ui.builder.tabs.origin import OriginTab
 
 
 class CharacterBuilderDialog(QDialog):
@@ -37,7 +35,7 @@ class CharacterBuilderDialog(QDialog):
 
     def __init__(
         self,
-        record: CharacterRecord,
+        sheet: CharacterSheet,
         modifier_snapshot: ModifierStateSnapshot | None,
         parent: QWidget | None = None,
     ) -> None:
@@ -45,22 +43,8 @@ class CharacterBuilderDialog(QDialog):
         self.setWindowTitle("Character Builder")
         self.resize(1024, 768)
 
-        self._record = record
-        
-        # Initialize Compendium & Engine
-        self._compendium = Compendium.load()
-        self._engine = RulesEngine(self._compendium)
-        
-        # Resolve 'Source of Truth'
-        if record.data:
-            self._data = copy.deepcopy(record.data)
-            # Hydrate to get working sheet
-            self._sheet = self._engine.hydrate(self._data)
-        else:
-            # New Character (or strictly fresh start)
-            self._data = CharacterData()
-            self._sheet = self._engine.hydrate(self._data)
-            
+        # Working copies
+        self._sheet = copy.deepcopy(sheet)
         self._modifier_snapshot = modifier_snapshot or ModifierStateSnapshot([], {})
         
         # Layout
@@ -68,19 +52,21 @@ class CharacterBuilderDialog(QDialog):
         self.tabs = QTabWidget()
         layout.addWidget(self.tabs)
 
-        # 1. Creation Tab
-        self.creation_tab = CreationTab(self._sheet, self._modifier_snapshot, self._data, parent=self)
-        self.tabs.addTab(self.creation_tab, "Creation")
+        # 1. Identity & Stats
+        self.creation_tab = CreationTab(self._sheet, self._modifier_snapshot, parent=self)
+        self.tabs.addTab(self.creation_tab, "Identity")
 
-        # 2. Leveling Tab
-        self.leveling_tab = LevelingTab(
-            self._sheet, 
-            self._modifier_snapshot, 
-            data=self._data,
-            engine=self._engine,
-            parent=self
-        )
-        self.tabs.addTab(self.leveling_tab, "Leveling")
+        # 2. Species Tab
+        self.species_tab = SpeciesTab(self._sheet, self._modifier_snapshot, parent=self)
+        self.tabs.addTab(self.species_tab, "Species")
+
+        # 3. Origin Tab
+        self.origin_tab = OriginTab(self._sheet, self._modifier_snapshot, parent=self)
+        self.tabs.addTab(self.origin_tab, "Origin")
+
+        # 4. Class Tab
+        self.leveling_tab = LevelingTab(self._sheet, self._modifier_snapshot, parent=self)
+        self.tabs.addTab(self.leveling_tab, "Class")
 
         # Connect signals for cross-tab updates?
         # e.g., if Name changes in Creation, title might change.
@@ -98,11 +84,7 @@ class CharacterBuilderDialog(QDialog):
         # Signal Leveling tab to refresh its base assumptions
         self.leveling_tab.refresh_from_sheet()
 
-    def get_result(self) -> Tuple[CharacterSheet, dict, CharacterData]:
-        """Return the modified sheet, modifier states, and Source Data."""
+    def get_result(self) -> Tuple[CharacterSheet, dict]:
+        """Return the modified sheet and modifier states."""
         # Finalize data from tabs if needed
-        # We should ensure self._data is updated from UI state if UI acts on Sheet
-        
-        # TEMP: Since we haven't fully refactored tabs to write to _data yet,
-        # we might have a drift. But we are refactoring LevelingTab next.
-        return self._sheet, self._modifier_snapshot.states, self._data
+        return self._sheet, self._modifier_snapshot.states

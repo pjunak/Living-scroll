@@ -2,21 +2,16 @@
 name: Charlatan
 type: background
 id: background:charlatan
-proficiencies:
-  skills:
-    - Deception
-    - Sleight of Hand
-  tools:
-    - Forgery Kit
-equipment:
-  choices:
-    - - Forgery Kit
-      - Costume
-      - Fine Clothes
-      - 15 gp
-    - - 50 gp
-feat: Skilled
+ability_bonus_options:
+  choose: 3
+  abilities:
+  - DEX
+  - CON
+  - CHA
+starting_feat: Skilled
+...
 ---
+
 
 Once you were old enough to order an ale, you soon had a favorite stool in every tavern within ten miles of where you were born. As you traveled the circuit from public house to watering hole, you learned to prey on unfortunates who were in the market for a comforting lie or two—perhaps a sham potion or forged ancestry records.
 

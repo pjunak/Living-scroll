@@ -38,11 +38,11 @@ progression:
   options:
   - key: rogue_expertise_1_1
     type: expertise
-    label: "Expertise (1st skill)"
+    label: Expertise (1st skill)
     choices: any_proficient_skill
   - key: rogue_expertise_1_2
     type: expertise
-    label: "Expertise (2nd skill)"
+    label: Expertise (2nd skill)
     choices: any_proficient_skill
 - level: 2
   features:
@@ -64,11 +64,11 @@ progression:
   options:
   - key: rogue_expertise_6_1
     type: expertise
-    label: "Expertise (3rd skill)"
+    label: Expertise (3rd skill)
     choices: any_proficient_skill
   - key: rogue_expertise_6_2
     type: expertise
-    label: "Expertise (4th skill)"
+    label: Expertise (4th skill)
     choices: any_proficient_skill
 - level: 7
   features:
@@ -114,6 +114,8 @@ progression:
   features:
   - Stroke of Luck
 id: class:rogue
+multiclass_requirements:
+  DEX: 13
 ---
 
 Rogues rely on skill, stealth, and their foes' vulnerabilities to get the upper hand in any situation. They have a knack for finding the solution to just about any problem, demonstrating a resourcefulness and versatility that is the cornerstone of any successful adventuring party.

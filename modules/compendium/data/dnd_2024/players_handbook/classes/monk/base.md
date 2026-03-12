@@ -37,6 +37,16 @@ progression:
   features:
   - Monastic Tradition
 id: class:monk
+multiclass_requirements:
+  DEX: 13
+  WIS: 13
+armor_class_formula:
+  type: unarmored_defense
+  base: 10
+  add:
+  - DEX
+  - WIS
+  allow_shield: false
 ---
 
 Monks use rigorous combat training and mental discipline to align themselves with the multiverse and focus their internal reservoirs of power. Different Monks conceptualize this power in various ways: as breath, energy, life force, essence, or self, for example. Whether channeled as a striking display of martial prowess or as a subtler manifestation of defense and speed, this power infuses all that a Monk does.

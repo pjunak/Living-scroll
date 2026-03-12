@@ -5,29 +5,12 @@ source_id: dnd-2024-basic
 size: medium
 speed: 30
 features:
-- name: Versatile Talent
-  description: Gain proficiency in one skill of your choice.
+- name: Skillful
+  description: You gain proficiency in one skill of your choice.
+- name: Versatile
+  description: You gain an Origin feat of your choice. Skilled is recommended.
 - name: Resourceful
-  description: Whenever you roll a 1 on a d20 Test, you can reroll the die, and you
-    must use the new roll.
-subtypes:
-- name: Variant Human
-  ability_bonus_options:
-    choose: 2
-    amount: 1
-    abilities:
-    - STR
-    - DEX
-    - CON
-    - INT
-    - WIS
-    - CHA
-    allow_same_target: false
-  features:
-  - name: Bonus Feat
-    description: You gain one feat of your choice for which you meet the prerequisites.
-  - name: Skilled
-    description: Gain proficiency in one additional skill of your choice.
+  description: You gain Heroic Inspiration whenever you finish a Long Rest.
 id: species:human
 ---
 

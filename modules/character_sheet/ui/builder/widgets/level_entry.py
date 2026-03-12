@@ -7,7 +7,7 @@ from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QFrame, QToolButton, QComboBox, QPushButton
 )
 
-class LevelEntry(QWidget):
+class LevelEntry(QFrame):
     """
     Represents a single level step in the builder (e.g. "Wizard Level 3").
     Contains:
@@ -33,15 +33,7 @@ class LevelEntry(QWidget):
         self.features = features
         
         # Main container with border
-        self.setObjectName("LevelEntryContainer")
-        self.setStyleSheet("""
-            #LevelEntryContainer {
-                border: 1px solid #555;
-                border-radius: 6px;
-                background-color: rgba(40, 40, 45, 0.8);
-                margin: 4px 0;
-            }
-        """)
+        self.setProperty("class", "LevelEntry")
         
         self._layout = QVBoxLayout(self)
         self._layout.setContentsMargins(8, 4, 8, 8)
@@ -57,7 +49,7 @@ class LevelEntry(QWidget):
         self._header.setChecked(True) # Expanded by default
         self._header.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonTextBesideIcon)
         self._header.setArrowType(Qt.ArrowType.DownArrow)
-        self._header.setStyleSheet("font-weight: bold; background: none; border: none; text-align: left;")
+        self._header.setProperty("class", "BoldLabel")
         self._header.toggled.connect(self._toggle_body)
         header_layout.addWidget(self._header)
         
@@ -67,20 +59,7 @@ class LevelEntry(QWidget):
         self._remove_btn = QPushButton("✕")
         self._remove_btn.setFixedSize(24, 24)
         self._remove_btn.setToolTip(f"Remove Level {level}")
-        self._remove_btn.setStyleSheet("""
-            QPushButton {
-                background: transparent;
-                border: 1px solid #666;
-                border-radius: 4px;
-                color: #888;
-                font-weight: bold;
-            }
-            QPushButton:hover {
-                background: #e74c3c;
-                color: white;
-                border-color: #e74c3c;
-            }
-        """)
+        self._remove_btn.setProperty("class", "DestructiveButton")
         self._remove_btn.clicked.connect(lambda: self.removeClicked.emit(self.level))
         header_layout.addWidget(self._remove_btn)
         
@@ -88,8 +67,7 @@ class LevelEntry(QWidget):
         
         # Body
         self._body = QFrame()
-        self._body.setObjectName("LevelEntryBody")
-        self._body.setStyleSheet("#LevelEntryBody { border-left: 2px solid #444; margin-left: 10px; padding-left: 10px; }")
+        self._body.setProperty("class", "LevelEntryBody")
         self._body_layout = QVBoxLayout(self._body)
         self._body_layout.setContentsMargins(0, 4, 0, 8)
         self._layout.addWidget(self._body)
@@ -97,6 +75,8 @@ class LevelEntry(QWidget):
         # Dynamic options container (for feat-specific choices)
         self._dynamic_options_container = QVBoxLayout()
         self._body_layout.addLayout(self._dynamic_options_container)
+        
+        self._dynamic_widgets: Dict[str, List[QWidget]] = {}
         
         self._populate_features()
         
@@ -115,7 +95,7 @@ class LevelEntry(QWidget):
             h.setContentsMargins(0,0,0,0)
             
             lbl = QLabel(f"• {name}")
-            lbl.setStyleSheet("font-weight: 500;")
+            lbl.setProperty("class", "BoldLabel")
             h.addWidget(lbl)
             
             # If complex description, maybe tooltip or expander?
@@ -163,14 +143,24 @@ class LevelEntry(QWidget):
         """External caller adds choice widgets (Subclass selector, etc) here."""
         self._body_layout.addWidget(widget)
     
-    def clear_dynamic_options(self):
-        """Remove all dynamic option widgets."""
-        while self._dynamic_options_container.count():
-            item = self._dynamic_options_container.takeAt(0)
-            if item.widget():
-                item.widget().deleteLater()
+    def clear_dynamic_options(self, group_id: str = None):
+        """Remove dynamic option widgets. If group_id is given, remove only that group."""
+        if group_id:
+            widgets = self._dynamic_widgets.get(group_id, [])
+            for w in widgets:
+                item = self._dynamic_options_container.indexOf(w)
+                if item != -1:
+                    self._dynamic_options_container.takeAt(item)
+                w.deleteLater()
+            self._dynamic_widgets[group_id] = []
+        else:
+            while self._dynamic_options_container.count():
+                item = self._dynamic_options_container.takeAt(0)
+                if item.widget():
+                    item.widget().deleteLater()
+            self._dynamic_widgets.clear()
     
-    def add_dynamic_option(self, label: str, options: List[any], current: str, key: str, exclude: List[str] = None, width: int = None):
+    def add_dynamic_option(self, label: str, options: List[any], current: str, key: str, exclude: List[str] = None, width: int = None, group_id: str = None):
         """
         Add a dynamic dropdown for feat-specific options (attribute choice, skill, etc).
         
@@ -181,6 +171,7 @@ class LevelEntry(QWidget):
             key: Unique key for this option
             exclude: Values to exclude from options
             width: Optional fixed width for the combobox
+            group_id: Optional group ID for targeted clearing
         """
         from PySide6.QtWidgets import QComboBox
         
@@ -192,7 +183,7 @@ class LevelEntry(QWidget):
         h.setContentsMargins(20, 4, 0, 4)  # Indented to show it's a sub-option
         
         lbl = QLabel(f"  ↳ {label}:")
-        lbl.setStyleSheet("color: #888; font-style: italic;")
+        lbl.setProperty("class", "MutedItalicLabel")
         h.addWidget(lbl)
         
         combo = QComboBox()
@@ -201,6 +192,8 @@ class LevelEntry(QWidget):
         else:
             combo.setMinimumWidth(150)
         combo.addItem("(Select...)", "")
+        h.addWidget(combo)
+        h.addStretch()
         
         for opt in options:
             if hasattr(opt, 'label') and hasattr(opt, 'value'):
@@ -232,5 +225,8 @@ class LevelEntry(QWidget):
             lambda text: self.choiceChanged.emit(key, combo.currentData())
         )
         
-        self.add_choice_widget(row)
         self._dynamic_options_container.addWidget(row)
+        if group_id:
+            if group_id not in self._dynamic_widgets:
+                self._dynamic_widgets[group_id] = []
+            self._dynamic_widgets[group_id].append(row)

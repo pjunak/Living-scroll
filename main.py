@@ -53,17 +53,13 @@ def main() -> int:
     
     logging.info("Starting Living Scroll application")
 
-    # Suppress Qt warnings about monitor handles which are often false positives on Windows
+    # Suppress Qt warnings about Wayland and DBUS typical in Linux environments
+    os.environ["QT_LOGGING_RULES"] = "qt.qpa.wayland*=false;qt.qpa.services*=false"
     os.environ["QT_ENABLE_HIGHDPI_SCALING"] = "1"
     
     app = QApplication.instance()
     owns_app = app is None
     if app is None:
-        # High DPI Scaling
-        if hasattr(Qt.ApplicationAttribute, "AA_EnableHighDpiScaling"):
-            QApplication.setAttribute(Qt.ApplicationAttribute.AA_EnableHighDpiScaling)
-        if hasattr(Qt.ApplicationAttribute, "AA_UseHighDpiPixmaps"):
-            QApplication.setAttribute(Qt.ApplicationAttribute.AA_UseHighDpiPixmaps)
 
         app = QApplication(sys.argv)
         app.setApplicationName("Living Scroll")

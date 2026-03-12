@@ -15,7 +15,15 @@ equipment:
 starting_feat: Magic Initiate
 notes: Many acolytes choose the Divine spell list for their Magic Initiate feat.
 id: background:acolyte
+ability_bonus_options:
+  choose: 3
+  abilities:
+  - INT
+  - WIS
+  - CHA
+...
 ---
+
 
 You devoted yourself to service in a temple, either nestled in a town or secluded in a sacred grove. There you performed rites in honor of a god or pantheon. You served under a priest and studied religion. Thanks to your priest's instruction and your own devotion, you also learned how to channel a modicum of divine power in service to your place of worship and the people who prayed there.
 

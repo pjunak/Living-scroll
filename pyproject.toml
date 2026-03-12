@@ -19,6 +19,7 @@ dependencies = [
   "requests",
   "beautifulsoup4",
   "markdownify",
+  "pydantic>=2.0.0",
 ]
 
 [project.optional-dependencies]

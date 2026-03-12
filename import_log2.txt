@@ -1,0 +1,2137 @@
+import _frozen_importlib # frozen
+import _imp # builtin
+import '_thread' # <class '_frozen_importlib.BuiltinImporter'>
+import '_warnings' # <class '_frozen_importlib.BuiltinImporter'>
+import '_weakref' # <class '_frozen_importlib.BuiltinImporter'>
+import '_io' # <class '_frozen_importlib.BuiltinImporter'>
+import 'marshal' # <class '_frozen_importlib.BuiltinImporter'>
+import 'posix' # <class '_frozen_importlib.BuiltinImporter'>
+import '_frozen_importlib_external' # <class '_frozen_importlib.FrozenImporter'>
+# installing zipimport hook
+import 'time' # <class '_frozen_importlib.BuiltinImporter'>
+import 'zipimport' # <class '_frozen_importlib.FrozenImporter'>
+# installed zipimport hook
+# /usr/lib64/python3.14/encodings/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/encodings/__init__.py
+# code object from '/usr/lib64/python3.14/encodings/__pycache__/__init__.cpython-314.pyc'
+import '_codecs' # <class '_frozen_importlib.BuiltinImporter'>
+import 'codecs' # <class '_frozen_importlib.FrozenImporter'>
+# /usr/lib64/python3.14/encodings/__pycache__/aliases.cpython-314.pyc matches /usr/lib64/python3.14/encodings/aliases.py
+# code object from '/usr/lib64/python3.14/encodings/__pycache__/aliases.cpython-314.pyc'
+import 'encodings.aliases' # <_frozen_importlib_external.SourceFileLoader object at 0x7f86079c9f90>
+import 'encodings' # <_frozen_importlib_external.SourceFileLoader object at 0x7f86079452b0>
+# /usr/lib64/python3.14/encodings/__pycache__/utf_8.cpython-314.pyc matches /usr/lib64/python3.14/encodings/utf_8.py
+# code object from '/usr/lib64/python3.14/encodings/__pycache__/utf_8.cpython-314.pyc'
+import 'encodings.utf_8' # <_frozen_importlib_external.SourceFileLoader object at 0x7f86079ca0d0>
+import '_signal' # <class '_frozen_importlib.BuiltinImporter'>
+import '_abc' # <class '_frozen_importlib.BuiltinImporter'>
+import 'abc' # <class '_frozen_importlib.FrozenImporter'>
+import '_stat' # <class '_frozen_importlib.BuiltinImporter'>
+import 'stat' # <class '_frozen_importlib.FrozenImporter'>
+import '_collections_abc' # <class '_frozen_importlib.FrozenImporter'>
+import 'errno' # <class '_frozen_importlib.BuiltinImporter'>
+import 'genericpath' # <class '_frozen_importlib.FrozenImporter'>
+import 'posixpath' # <class '_frozen_importlib.FrozenImporter'>
+import 'os' # <class '_frozen_importlib.FrozenImporter'>
+import '_sitebuiltins' # <class '_frozen_importlib.FrozenImporter'>
+Processing user site-packages
+Adding directory: '/home/pjunak/.local/lib/python3.14/site-packages'
+Processing global site-packages
+Adding directory: '/usr/lib64/python3.14/site-packages'
+Adding directory: '/usr/lib/python3.14/site-packages'
+Processing .pth file: '/usr/lib/python3.14/site-packages/Paste-3.10.1-py3.14-nspkg.pth'
+# /usr/lib64/python3.14/encodings/__pycache__/utf_8_sig.cpython-314.pyc matches /usr/lib64/python3.14/encodings/utf_8_sig.py
+# code object from '/usr/lib64/python3.14/encodings/__pycache__/utf_8_sig.cpython-314.pyc'
+import 'encodings.utf_8_sig' # <_frozen_importlib_external.SourceFileLoader object at 0x7f86079ce060>
+# /usr/lib64/python3.14/__pycache__/types.cpython-314.pyc matches /usr/lib64/python3.14/types.py
+# code object from '/usr/lib64/python3.14/__pycache__/types.cpython-314.pyc'
+import '_types' # <class '_frozen_importlib.BuiltinImporter'>
+import 'types' # <_frozen_importlib_external.SourceFileLoader object at 0x7f86079ce8b0>
+# /usr/lib64/python3.14/importlib/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/importlib/__init__.py
+# code object from '/usr/lib64/python3.14/importlib/__pycache__/__init__.cpython-314.pyc'
+import 'importlib' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9974b90>
+# /usr/lib64/python3.14/importlib/__pycache__/_abc.cpython-314.pyc matches /usr/lib64/python3.14/importlib/_abc.py
+# code object from '/usr/lib64/python3.14/importlib/__pycache__/_abc.cpython-314.pyc'
+import 'importlib._abc' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9957130>
+import 'importlib.util' # <class '_frozen_importlib.FrozenImporter'>
+import 'importlib.machinery' # <class '_frozen_importlib.FrozenImporter'>
+# possible namespace for /usr/lib/python3.14/site-packages/paste
+Processing .pth file: '/usr/lib/python3.14/site-packages/abrt3.pth'
+# /usr/lib/python3.14/site-packages/__pycache__/abrt_exception_handler3.cpython-314.pyc matches /usr/lib/python3.14/site-packages/abrt_exception_handler3.py
+# code object from '/usr/lib/python3.14/site-packages/__pycache__/abrt_exception_handler3.cpython-314.pyc'
+import 'abrt_exception_handler3' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9957570>
+Processing .pth file: '/usr/lib/python3.14/site-packages/distutils-precedence.pth'
+# /usr/lib/python3.14/site-packages/_distutils_hack/__pycache__/__init__.cpython-314.pyc matches /usr/lib/python3.14/site-packages/_distutils_hack/__init__.py
+# code object from '/usr/lib/python3.14/site-packages/_distutils_hack/__pycache__/__init__.cpython-314.pyc'
+import '_distutils_hack' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9952050>
+import 'site' # <class '_frozen_importlib.FrozenImporter'>
+Python 3.14.2 (main, Dec  5 2025, 00:00:00) [GCC 15.2.1 20251111 (Red Hat 15.2.1-4)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+# /usr/lib64/python3.14/__pycache__/linecache.cpython-314.pyc matches /usr/lib64/python3.14/linecache.py
+# code object from '/usr/lib64/python3.14/__pycache__/linecache.cpython-314.pyc'
+import 'linecache' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9952450>
+# /home/pjunak/Documents/GitHub/Living-scroll/tests/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/Documents/GitHub/Living-scroll/tests/__init__.py
+# code object from '/home/pjunak/Documents/GitHub/Living-scroll/tests/__pycache__/__init__.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/warnings.cpython-314.pyc matches /usr/lib64/python3.14/warnings.py
+# code object from '/usr/lib64/python3.14/__pycache__/warnings.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/_py_warnings.cpython-314.pyc matches /usr/lib64/python3.14/_py_warnings.py
+# code object from '/usr/lib64/python3.14/__pycache__/_py_warnings.cpython-314.pyc'
+import '_contextvars' # <class '_frozen_importlib.BuiltinImporter'>
+import '_py_warnings' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f993c050>
+import 'warnings' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f99799a0>
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__init__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/__init__.cpython-314.pyc'
+import 'atexit' # <class '_frozen_importlib.BuiltinImporter'>
+# /usr/lib64/python3.14/collections/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/collections/__init__.py
+# code object from '/usr/lib64/python3.14/collections/__pycache__/__init__.cpython-314.pyc'
+import 'itertools' # <class '_frozen_importlib.BuiltinImporter'>
+# /usr/lib64/python3.14/__pycache__/keyword.cpython-314.pyc matches /usr/lib64/python3.14/keyword.py
+# code object from '/usr/lib64/python3.14/__pycache__/keyword.cpython-314.pyc'
+import 'keyword' # <_frozen_importlib_external.SourceFileLoader object at 0x7f8607956d50>
+# /usr/lib64/python3.14/__pycache__/operator.cpython-314.pyc matches /usr/lib64/python3.14/operator.py
+# code object from '/usr/lib64/python3.14/__pycache__/operator.cpython-314.pyc'
+import '_operator' # <class '_frozen_importlib.BuiltinImporter'>
+import 'operator' # <_frozen_importlib_external.SourceFileLoader object at 0x7f86079574d0>
+# /usr/lib64/python3.14/__pycache__/reprlib.cpython-314.pyc matches /usr/lib64/python3.14/reprlib.py
+# code object from '/usr/lib64/python3.14/__pycache__/reprlib.cpython-314.pyc'
+import 'reprlib' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f99c7540>
+import '_collections' # <class '_frozen_importlib.BuiltinImporter'>
+import 'collections' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f990e820>
+# /usr/lib64/python3.14/__pycache__/contextlib.cpython-314.pyc matches /usr/lib64/python3.14/contextlib.py
+# code object from '/usr/lib64/python3.14/__pycache__/contextlib.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/functools.cpython-314.pyc matches /usr/lib64/python3.14/functools.py
+# code object from '/usr/lib64/python3.14/__pycache__/functools.cpython-314.pyc'
+import '_functools' # <class '_frozen_importlib.BuiltinImporter'>
+import 'functools' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f98102d0>
+import 'contextlib' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f99c6990>
+# /usr/lib64/python3.14/__pycache__/inspect.cpython-314.pyc matches /usr/lib64/python3.14/inspect.py
+# code object from '/usr/lib64/python3.14/__pycache__/inspect.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/annotationlib.cpython-314.pyc matches /usr/lib64/python3.14/annotationlib.py
+# code object from '/usr/lib64/python3.14/__pycache__/annotationlib.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/ast.cpython-314.pyc matches /usr/lib64/python3.14/ast.py
+# code object from '/usr/lib64/python3.14/__pycache__/ast.cpython-314.pyc'
+import '_ast' # <class '_frozen_importlib.BuiltinImporter'>
+import 'ast' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9855cd0>
+# /usr/lib64/python3.14/__pycache__/enum.cpython-314.pyc matches /usr/lib64/python3.14/enum.py
+# code object from '/usr/lib64/python3.14/__pycache__/enum.cpython-314.pyc'
+import 'enum' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f98bb350>
+import 'annotationlib' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9815880>
+# /usr/lib64/python3.14/__pycache__/dis.cpython-314.pyc matches /usr/lib64/python3.14/dis.py
+# code object from '/usr/lib64/python3.14/__pycache__/dis.cpython-314.pyc'
+import 'io' # <class '_frozen_importlib.FrozenImporter'>
+# /usr/lib64/python3.14/__pycache__/opcode.cpython-314.pyc matches /usr/lib64/python3.14/opcode.py
+# code object from '/usr/lib64/python3.14/__pycache__/opcode.cpython-314.pyc'
+import '_opcode' # <class '_frozen_importlib.BuiltinImporter'>
+# /usr/lib64/python3.14/__pycache__/_opcode_metadata.cpython-314.pyc matches /usr/lib64/python3.14/_opcode_metadata.py
+# code object from '/usr/lib64/python3.14/__pycache__/_opcode_metadata.cpython-314.pyc'
+import '_opcode_metadata' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f97182f0>
+import 'opcode' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f98bdda0>
+import 'dis' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f98bc8a0>
+# /usr/lib64/python3.14/re/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/re/__init__.py
+# code object from '/usr/lib64/python3.14/re/__pycache__/__init__.cpython-314.pyc'
+# /usr/lib64/python3.14/re/__pycache__/_compiler.cpython-314.pyc matches /usr/lib64/python3.14/re/_compiler.py
+# code object from '/usr/lib64/python3.14/re/__pycache__/_compiler.cpython-314.pyc'
+import '_sre' # <class '_frozen_importlib.BuiltinImporter'>
+# /usr/lib64/python3.14/re/__pycache__/_parser.cpython-314.pyc matches /usr/lib64/python3.14/re/_parser.py
+# code object from '/usr/lib64/python3.14/re/__pycache__/_parser.cpython-314.pyc'
+# /usr/lib64/python3.14/re/__pycache__/_constants.cpython-314.pyc matches /usr/lib64/python3.14/re/_constants.py
+# code object from '/usr/lib64/python3.14/re/__pycache__/_constants.cpython-314.pyc'
+import 're._constants' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9719b50>
+import 're._parser' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9719070>
+# /usr/lib64/python3.14/re/__pycache__/_casefix.cpython-314.pyc matches /usr/lib64/python3.14/re/_casefix.py
+# code object from '/usr/lib64/python3.14/re/__pycache__/_casefix.cpython-314.pyc'
+import 're._casefix' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f99b3b30>
+import 're._compiler' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9718c50>
+# /usr/lib64/python3.14/__pycache__/copyreg.cpython-314.pyc matches /usr/lib64/python3.14/copyreg.py
+# code object from '/usr/lib64/python3.14/__pycache__/copyreg.cpython-314.pyc'
+import 'copyreg' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f99b3950>
+import 're' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9718650>
+# /usr/lib64/python3.14/__pycache__/tokenize.cpython-314.pyc matches /usr/lib64/python3.14/tokenize.py
+# code object from '/usr/lib64/python3.14/__pycache__/tokenize.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/token.cpython-314.pyc matches /usr/lib64/python3.14/token.py
+# code object from '/usr/lib64/python3.14/__pycache__/token.cpython-314.pyc'
+import 'token' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9718f50>
+import '_tokenize' # <class '_frozen_importlib.BuiltinImporter'>
+import 'tokenize' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f99b36b0>
+# /usr/lib64/python3.14/__pycache__/weakref.cpython-314.pyc matches /usr/lib64/python3.14/weakref.py
+# code object from '/usr/lib64/python3.14/__pycache__/weakref.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/_weakrefset.cpython-314.pyc matches /usr/lib64/python3.14/_weakrefset.py
+# code object from '/usr/lib64/python3.14/__pycache__/_weakrefset.cpython-314.pyc'
+import '_weakrefset' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f971adb0>
+import 'weakref' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f99b3a10>
+import 'inspect' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9811b30>
+# /usr/lib64/python3.14/__pycache__/locale.cpython-314.pyc matches /usr/lib64/python3.14/locale.py
+# code object from '/usr/lib64/python3.14/__pycache__/locale.cpython-314.pyc'
+import '_locale' # <class '_frozen_importlib.BuiltinImporter'>
+import 'locale' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f98688f0>
+# /usr/lib64/python3.14/logging/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/logging/__init__.py
+# code object from '/usr/lib64/python3.14/logging/__pycache__/__init__.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/traceback.cpython-314.pyc matches /usr/lib64/python3.14/traceback.py
+# code object from '/usr/lib64/python3.14/__pycache__/traceback.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/textwrap.cpython-314.pyc matches /usr/lib64/python3.14/textwrap.py
+# code object from '/usr/lib64/python3.14/__pycache__/textwrap.cpython-314.pyc'
+import 'textwrap' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f97a3a10>
+# /usr/lib64/python3.14/__pycache__/codeop.cpython-314.pyc matches /usr/lib64/python3.14/codeop.py
+# code object from '/usr/lib64/python3.14/__pycache__/codeop.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/__future__.cpython-314.pyc matches /usr/lib64/python3.14/__future__.py
+# code object from '/usr/lib64/python3.14/__pycache__/__future__.cpython-314.pyc'
+import '__future__' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f97a3dd0>
+import 'codeop' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f97a3b90>
+# /usr/lib64/python3.14/__pycache__/_colorize.cpython-314.pyc matches /usr/lib64/python3.14/_colorize.py
+# code object from '/usr/lib64/python3.14/__pycache__/_colorize.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/dataclasses.cpython-314.pyc matches /usr/lib64/python3.14/dataclasses.py
+# code object from '/usr/lib64/python3.14/__pycache__/dataclasses.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/copy.cpython-314.pyc matches /usr/lib64/python3.14/copy.py
+# code object from '/usr/lib64/python3.14/__pycache__/copy.cpython-314.pyc'
+import 'copy' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f97d1a30>
+import 'dataclasses' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f97d0b90>
+import '_colorize' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f97a3d70>
+import 'traceback' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f97a05f0>
+# /usr/lib64/python3.14/string/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/string/__init__.py
+# code object from '/usr/lib64/python3.14/string/__pycache__/__init__.cpython-314.pyc'
+import '_string' # <class '_frozen_importlib.BuiltinImporter'>
+import 'string' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f97d1670>
+# /usr/lib64/python3.14/__pycache__/threading.cpython-314.pyc matches /usr/lib64/python3.14/threading.py
+# code object from '/usr/lib64/python3.14/__pycache__/threading.cpython-314.pyc'
+import 'threading' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f97d3230>
+import 'logging' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f971b8f0>
+# /usr/lib64/python3.14/pathlib/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/pathlib/__init__.py
+# code object from '/usr/lib64/python3.14/pathlib/__pycache__/__init__.cpython-314.pyc'
+import 'ntpath' # <class '_frozen_importlib.FrozenImporter'>
+# /usr/lib64/python3.14/__pycache__/glob.cpython-314.pyc matches /usr/lib64/python3.14/glob.py
+# code object from '/usr/lib64/python3.14/__pycache__/glob.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/fnmatch.cpython-314.pyc matches /usr/lib64/python3.14/fnmatch.py
+# code object from '/usr/lib64/python3.14/__pycache__/fnmatch.cpython-314.pyc'
+import 'fnmatch' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9678170>
+import 'glob' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9642f90>
+import 'pwd' # <class '_frozen_importlib.BuiltinImporter'>
+# extension module 'grp' loaded from '/usr/lib64/python3.14/lib-dynload/grp.cpython-314-x86_64-linux-gnu.so'
+# extension module 'grp' executed from '/usr/lib64/python3.14/lib-dynload/grp.cpython-314-x86_64-linux-gnu.so'
+import 'grp' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85f9646510>
+# /usr/lib64/python3.14/pathlib/__pycache__/_os.cpython-314.pyc matches /usr/lib64/python3.14/pathlib/_os.py
+# code object from '/usr/lib64/python3.14/pathlib/__pycache__/_os.cpython-314.pyc'
+# extension module 'fcntl' loaded from '/usr/lib64/python3.14/lib-dynload/fcntl.cpython-314-x86_64-linux-gnu.so'
+# extension module 'fcntl' executed from '/usr/lib64/python3.14/lib-dynload/fcntl.cpython-314-x86_64-linux-gnu.so'
+import 'fcntl' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85f97dfc50>
+import 'pathlib._os' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9643110>
+import 'pathlib' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f971bad0>
+# /usr/lib64/python3.14/__pycache__/pprint.cpython-314.pyc matches /usr/lib64/python3.14/pprint.py
+# code object from '/usr/lib64/python3.14/__pycache__/pprint.cpython-314.pyc'
+import 'pprint' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9678950>
+# /usr/lib64/python3.14/__pycache__/shutil.cpython-314.pyc matches /usr/lib64/python3.14/shutil.py
+# code object from '/usr/lib64/python3.14/__pycache__/shutil.cpython-314.pyc'
+# extension module 'zlib' loaded from '/usr/lib64/python3.14/lib-dynload/zlib.cpython-314-x86_64-linux-gnu.so'
+# extension module 'zlib' executed from '/usr/lib64/python3.14/lib-dynload/zlib.cpython-314-x86_64-linux-gnu.so'
+import 'zlib' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85f96a8050>
+# /usr/lib64/python3.14/__pycache__/bz2.cpython-314.pyc matches /usr/lib64/python3.14/bz2.py
+# code object from '/usr/lib64/python3.14/__pycache__/bz2.cpython-314.pyc'
+# /usr/lib64/python3.14/compression/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/compression/__init__.py
+# code object from '/usr/lib64/python3.14/compression/__pycache__/__init__.cpython-314.pyc'
+import 'compression' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f967ad50>
+# /usr/lib64/python3.14/compression/_common/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/compression/_common/__init__.py
+# code object from '/usr/lib64/python3.14/compression/_common/__pycache__/__init__.cpython-314.pyc'
+import 'compression._common' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f967adb0>
+# /usr/lib64/python3.14/compression/_common/__pycache__/_streams.cpython-314.pyc matches /usr/lib64/python3.14/compression/_common/_streams.py
+# code object from '/usr/lib64/python3.14/compression/_common/__pycache__/_streams.cpython-314.pyc'
+import 'compression._common._streams' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f967aed0>
+# extension module '_bz2' loaded from '/usr/lib64/python3.14/lib-dynload/_bz2.cpython-314-x86_64-linux-gnu.so'
+# extension module '_bz2' executed from '/usr/lib64/python3.14/lib-dynload/_bz2.cpython-314-x86_64-linux-gnu.so'
+import '_bz2' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85f967da70>
+import 'bz2' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f967a510>
+# /usr/lib64/python3.14/__pycache__/lzma.cpython-314.pyc matches /usr/lib64/python3.14/lzma.py
+# code object from '/usr/lib64/python3.14/__pycache__/lzma.cpython-314.pyc'
+# extension module '_lzma' loaded from '/usr/lib64/python3.14/lib-dynload/_lzma.cpython-314-x86_64-linux-gnu.so'
+# extension module '_lzma' executed from '/usr/lib64/python3.14/lib-dynload/_lzma.cpython-314-x86_64-linux-gnu.so'
+import '_lzma' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85f967e2c0>
+import 'lzma' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f967a570>
+# /usr/lib64/python3.14/compression/zstd/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/compression/zstd/__init__.py
+# code object from '/usr/lib64/python3.14/compression/zstd/__pycache__/__init__.cpython-314.pyc'
+# extension module '_zstd' loaded from '/usr/lib64/python3.14/lib-dynload/_zstd.cpython-314-x86_64-linux-gnu.so'
+# extension module '_zstd' executed from '/usr/lib64/python3.14/lib-dynload/_zstd.cpython-314-x86_64-linux-gnu.so'
+import '_zstd' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85f964b530>
+# /usr/lib64/python3.14/compression/zstd/__pycache__/_zstdfile.cpython-314.pyc matches /usr/lib64/python3.14/compression/zstd/_zstdfile.py
+# code object from '/usr/lib64/python3.14/compression/zstd/__pycache__/_zstdfile.cpython-314.pyc'
+import 'compression.zstd._zstdfile' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f96c8110>
+import 'compression.zstd' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f967bb90>
+import 'shutil' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f96790d0>
+# /usr/lib64/python3.14/__pycache__/subprocess.cpython-314.pyc matches /usr/lib64/python3.14/subprocess.py
+# code object from '/usr/lib64/python3.14/__pycache__/subprocess.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/signal.cpython-314.pyc matches /usr/lib64/python3.14/signal.py
+# code object from '/usr/lib64/python3.14/__pycache__/signal.cpython-314.pyc'
+import 'signal' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f96ca0f0>
+# extension module '_posixsubprocess' loaded from '/usr/lib64/python3.14/lib-dynload/_posixsubprocess.cpython-314-x86_64-linux-gnu.so'
+# extension module '_posixsubprocess' executed from '/usr/lib64/python3.14/lib-dynload/_posixsubprocess.cpython-314-x86_64-linux-gnu.so'
+import '_posixsubprocess' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85f96d45a0>
+# extension module 'select' loaded from '/usr/lib64/python3.14/lib-dynload/select.cpython-314-x86_64-linux-gnu.so'
+# extension module 'select' executed from '/usr/lib64/python3.14/lib-dynload/select.cpython-314-x86_64-linux-gnu.so'
+import 'select' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85f96d46b0>
+# /usr/lib64/python3.14/__pycache__/selectors.cpython-314.pyc matches /usr/lib64/python3.14/selectors.py
+# code object from '/usr/lib64/python3.14/__pycache__/selectors.cpython-314.pyc'
+# extension module 'math' loaded from '/usr/lib64/python3.14/lib-dynload/math.cpython-314-x86_64-linux-gnu.so'
+# extension module 'math' executed from '/usr/lib64/python3.14/lib-dynload/math.cpython-314-x86_64-linux-gnu.so'
+import 'math' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85f9652950>
+import 'selectors' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f96ca390>
+import 'subprocess' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f96c8a10>
+# /usr/lib64/python3.14/__pycache__/tempfile.cpython-314.pyc matches /usr/lib64/python3.14/tempfile.py
+# code object from '/usr/lib64/python3.14/__pycache__/tempfile.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/random.cpython-314.pyc matches /usr/lib64/python3.14/random.py
+# code object from '/usr/lib64/python3.14/__pycache__/random.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/bisect.cpython-314.pyc matches /usr/lib64/python3.14/bisect.py
+# code object from '/usr/lib64/python3.14/__pycache__/bisect.cpython-314.pyc'
+# extension module '_bisect' loaded from '/usr/lib64/python3.14/lib-dynload/_bisect.cpython-314-x86_64-linux-gnu.so'
+# extension module '_bisect' executed from '/usr/lib64/python3.14/lib-dynload/_bisect.cpython-314-x86_64-linux-gnu.so'
+import '_bisect' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85f9653550>
+import 'bisect' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f93d0170>
+# extension module '_random' loaded from '/usr/lib64/python3.14/lib-dynload/_random.cpython-314-x86_64-linux-gnu.so'
+# extension module '_random' executed from '/usr/lib64/python3.14/lib-dynload/_random.cpython-314-x86_64-linux-gnu.so'
+import '_random' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85f96f4d70>
+import 'random' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f96cab70>
+import 'tempfile' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f96c8d10>
+# /usr/lib/python3.14/site-packages/packaging/__pycache__/__init__.cpython-314.pyc matches /usr/lib/python3.14/site-packages/packaging/__init__.py
+# code object from '/usr/lib/python3.14/site-packages/packaging/__pycache__/__init__.cpython-314.pyc'
+import 'packaging' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f96c8a70>
+# /usr/lib/python3.14/site-packages/packaging/__pycache__/version.cpython-314.pyc matches /usr/lib/python3.14/site-packages/packaging/version.py
+# code object from '/usr/lib/python3.14/site-packages/packaging/__pycache__/version.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/typing.cpython-314.pyc matches /usr/lib64/python3.14/typing.py
+# code object from '/usr/lib64/python3.14/__pycache__/typing.cpython-314.pyc'
+import '_typing' # <class '_frozen_importlib.BuiltinImporter'>
+import 'typing' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f93d09b0>
+# /usr/lib/python3.14/site-packages/packaging/__pycache__/_structures.cpython-314.pyc matches /usr/lib/python3.14/site-packages/packaging/_structures.py
+# code object from '/usr/lib/python3.14/site-packages/packaging/__pycache__/_structures.cpython-314.pyc'
+import 'packaging._structures' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f93d29f0>
+import 'packaging.version' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f96c9a30>
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/_api/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/_api/__init__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/_api/__pycache__/__init__.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/_api/__pycache__/deprecation.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/_api/deprecation.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/_api/__pycache__/deprecation.cpython-314.pyc'
+import 'matplotlib._api.deprecation' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9411850>
+import 'matplotlib._api' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f93d0530>
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/_version.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/_version.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/_version.cpython-314.pyc'
+import 'matplotlib._version' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9411670>
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/cbook.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/cbook.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/cbook.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/gzip.cpython-314.pyc matches /usr/lib64/python3.14/gzip.py
+# code object from '/usr/lib64/python3.14/__pycache__/gzip.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/struct.cpython-314.pyc matches /usr/lib64/python3.14/struct.py
+# code object from '/usr/lib64/python3.14/__pycache__/struct.cpython-314.pyc'
+# extension module '_struct' loaded from '/usr/lib64/python3.14/lib-dynload/_struct.cpython-314-x86_64-linux-gnu.so'
+# extension module '_struct' executed from '/usr/lib64/python3.14/lib-dynload/_struct.cpython-314-x86_64-linux-gnu.so'
+import '_struct' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85f9407d40>
+import 'struct' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9488b30>
+import 'gzip' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9411bb0>
+# /usr/lib64/python3.14/__pycache__/shlex.cpython-314.pyc matches /usr/lib64/python3.14/shlex.py
+# code object from '/usr/lib64/python3.14/__pycache__/shlex.cpython-314.pyc'
+import 'shlex' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9488d10>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/__init__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/__pycache__/__init__.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/__pycache__/version.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/version.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/__pycache__/version.cpython-314.pyc'
+import 'numpy.version' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9489550>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/__pycache__/_expired_attrs_2_0.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_expired_attrs_2_0.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/__pycache__/_expired_attrs_2_0.cpython-314.pyc'
+import 'numpy._expired_attrs_2_0' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9489670>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/__pycache__/_globals.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_globals.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/__pycache__/_globals.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_utils/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_utils/__init__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_utils/__pycache__/__init__.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_utils/__pycache__/_convertions.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_utils/_convertions.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_utils/__pycache__/_convertions.cpython-314.pyc'
+import 'numpy._utils._convertions' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9489fd0>
+import 'numpy._utils' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9489d30>
+import 'numpy._globals' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9489b50>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/__pycache__/_distributor_init.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_distributor_init.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/__pycache__/_distributor_init.cpython-314.pyc'
+import 'numpy._distributor_init' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9489c10>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/__pycache__/__config__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/__config__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/__pycache__/__config__.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__init__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/__init__.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/multiarray.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/multiarray.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/multiarray.cpython-314.pyc'
+# extension module 'numpy._core._multiarray_umath' loaded from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/_multiarray_umath.cpython-314-x86_64-linux-gnu.so'
+# /usr/lib64/python3.14/__pycache__/datetime.cpython-314.pyc matches /usr/lib64/python3.14/datetime.py
+# code object from '/usr/lib64/python3.14/__pycache__/datetime.cpython-314.pyc'
+import '_datetime' # <class '_frozen_importlib.BuiltinImporter'>
+import 'datetime' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f948a990>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/__pycache__/exceptions.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/exceptions.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/__pycache__/exceptions.cpython-314.pyc'
+import 'numpy.exceptions' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f948aab0>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_exceptions.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/_exceptions.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_exceptions.cpython-314.pyc'
+import 'numpy._core._exceptions' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f948ae10>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/printoptions.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/printoptions.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/printoptions.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/contextvars.cpython-314.pyc matches /usr/lib64/python3.14/contextvars.py
+# code object from '/usr/lib64/python3.14/__pycache__/contextvars.cpython-314.pyc'
+import 'contextvars' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f948b350>
+import 'numpy._core.printoptions' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f948b290>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/__pycache__/dtypes.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/dtypes.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/__pycache__/dtypes.cpython-314.pyc'
+import 'numpy.dtypes' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f948bd10>
+# extension module 'numpy._core._multiarray_umath' executed from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/_multiarray_umath.cpython-314-x86_64-linux-gnu.so'
+import 'numpy._core._multiarray_umath' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85f9492510>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/overrides.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/overrides.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/overrides.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_utils/__pycache__/_inspect.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_utils/_inspect.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_utils/__pycache__/_inspect.cpython-314.pyc'
+import 'numpy._utils._inspect' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f92d70b0>
+import 'numpy._core.overrides' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f92d6c90>
+import 'numpy._core.multiarray' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f948a3f0>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/umath.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/umath.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/umath.cpython-314.pyc'
+import 'numpy._core.umath' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f92d76b0>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/numerictypes.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/numerictypes.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/numerictypes.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/numbers.cpython-314.pyc matches /usr/lib64/python3.14/numbers.py
+# code object from '/usr/lib64/python3.14/__pycache__/numbers.cpython-314.pyc'
+import 'numbers' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f92d7650>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_dtype.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/_dtype.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_dtype.cpython-314.pyc'
+import 'numpy._core._dtype' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f92d7d70>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_string_helpers.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/_string_helpers.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_string_helpers.cpython-314.pyc'
+import 'numpy._core._string_helpers' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6f5c050>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_type_aliases.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/_type_aliases.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_type_aliases.cpython-314.pyc'
+import 'numpy._core._type_aliases' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6f5c110>
+import 'numpy._core.numerictypes' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f92d7710>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/einsumfunc.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/einsumfunc.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/einsumfunc.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/numeric.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/numeric.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/numeric.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/shape_base.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/shape_base.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/shape_base.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/fromnumeric.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/fromnumeric.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/fromnumeric.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_methods.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/_methods.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_methods.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/pickle.cpython-314.pyc matches /usr/lib64/python3.14/pickle.py
+# code object from '/usr/lib64/python3.14/__pycache__/pickle.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/_compat_pickle.cpython-314.pyc matches /usr/lib64/python3.14/_compat_pickle.py
+# code object from '/usr/lib64/python3.14/__pycache__/_compat_pickle.cpython-314.pyc'
+import '_compat_pickle' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6f9d2b0>
+# extension module '_pickle' loaded from '/usr/lib64/python3.14/lib-dynload/_pickle.cpython-314-x86_64-linux-gnu.so'
+# extension module '_pickle' executed from '/usr/lib64/python3.14/lib-dynload/_pickle.cpython-314-x86_64-linux-gnu.so'
+import '_pickle' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85f6f7b3f0>
+import 'pickle' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6f5f170>
+import 'numpy._core._methods' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6f5e990>
+import 'numpy._core.fromnumeric' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6f5deb0>
+import 'numpy._core.shape_base' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6f5cbf0>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_ufunc_config.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/_ufunc_config.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_ufunc_config.cpython-314.pyc'
+import 'numpy._core._ufunc_config' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6f9e390>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_asarray.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/_asarray.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_asarray.cpython-314.pyc'
+import 'numpy._core._asarray' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6f9e9f0>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/arrayprint.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/arrayprint.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/arrayprint.cpython-314.pyc'
+import 'numpy._core.arrayprint' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6f9eab0>
+import 'numpy._core.numeric' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6f5c4d0>
+import 'numpy._core.einsumfunc' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f92d75f0>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/function_base.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/function_base.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/function_base.cpython-314.pyc'
+import 'numpy._core.function_base' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6f5c2f0>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/getlimits.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/getlimits.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/getlimits.cpython-314.pyc'
+import 'numpy._core.getlimits' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6f9f530>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/memmap.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/memmap.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/memmap.cpython-314.pyc'
+import 'numpy._core.memmap' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6ff8230>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/records.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/records.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/records.cpython-314.pyc'
+import 'numpy._core.records' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6ff8410>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_add_newdocs.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/_add_newdocs.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_add_newdocs.cpython-314.pyc'
+import 'numpy._core._add_newdocs' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6ff88f0>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_add_newdocs_scalars.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/_add_newdocs_scalars.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_add_newdocs_scalars.cpython-314.pyc'
+import 'numpy._core._add_newdocs_scalars' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6ff8e30>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_dtype_ctypes.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/_dtype_ctypes.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_dtype_ctypes.cpython-314.pyc'
+import 'numpy._core._dtype_ctypes' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6ff90d0>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_internal.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/_internal.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_core/__pycache__/_internal.cpython-314.pyc'
+# /usr/lib64/python3.14/ctypes/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/ctypes/__init__.py
+# code object from '/usr/lib64/python3.14/ctypes/__pycache__/__init__.cpython-314.pyc'
+# /usr/lib64/python3.14/sysconfig/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/sysconfig/__init__.py
+# code object from '/usr/lib64/python3.14/sysconfig/__pycache__/__init__.cpython-314.pyc'
+import 'sysconfig' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6ffb290>
+# extension module '_ctypes' loaded from '/usr/lib64/python3.14/lib-dynload/_ctypes.cpython-314-x86_64-linux-gnu.so'
+# extension module '_ctypes' executed from '/usr/lib64/python3.14/lib-dynload/_ctypes.cpython-314-x86_64-linux-gnu.so'
+import '_ctypes' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85f6fd6c30>
+# /usr/lib64/python3.14/ctypes/__pycache__/_endian.cpython-314.pyc matches /usr/lib64/python3.14/ctypes/_endian.py
+# code object from '/usr/lib64/python3.14/ctypes/__pycache__/_endian.cpython-314.pyc'
+import 'ctypes._endian' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6ffbd10>
+import 'ctypes' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6ff9970>
+import 'numpy._core._internal' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6ff9190>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/__pycache__/_pytesttester.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_pytesttester.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/__pycache__/_pytesttester.cpython-314.pyc'
+import 'numpy._pytesttester' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6ff99d0>
+import 'numpy._core' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f948a1b0>
+import 'numpy.__config__' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9489df0>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__init__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/__init__.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_arraypad_impl.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/_arraypad_impl.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_arraypad_impl.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_index_tricks_impl.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/_index_tricks_impl.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_index_tricks_impl.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/matrixlib/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/matrixlib/__init__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/matrixlib/__pycache__/__init__.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/matrixlib/__pycache__/defmatrix.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/matrixlib/defmatrix.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/matrixlib/__pycache__/defmatrix.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/linalg/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/linalg/__init__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/linalg/__pycache__/__init__.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/linalg/__pycache__/_linalg.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/linalg/_linalg.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/linalg/__pycache__/_linalg.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/__init__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/__pycache__/__init__.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/__pycache__/_array_like.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/_array_like.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/__pycache__/_array_like.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/__pycache__/_nbit_base.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/_nbit_base.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/__pycache__/_nbit_base.cpython-314.pyc'
+import 'numpy._typing._nbit_base' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6b69370>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/__pycache__/_nested_sequence.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/_nested_sequence.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/__pycache__/_nested_sequence.cpython-314.pyc'
+import 'numpy._typing._nested_sequence' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6b696d0>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/__pycache__/_shape.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/_shape.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/__pycache__/_shape.cpython-314.pyc'
+import 'numpy._typing._shape' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6b69850>
+import 'numpy._typing._array_like' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6b691f0>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/__pycache__/_char_codes.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/_char_codes.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/__pycache__/_char_codes.cpython-314.pyc'
+import 'numpy._typing._char_codes' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6b69a30>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/__pycache__/_dtype_like.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/_dtype_like.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/__pycache__/_dtype_like.cpython-314.pyc'
+import 'numpy._typing._dtype_like' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6b6b230>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/__pycache__/_nbit.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/_nbit.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/__pycache__/_nbit.cpython-314.pyc'
+import 'numpy._typing._nbit' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6b6b4d0>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/__pycache__/_scalars.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/_scalars.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/__pycache__/_scalars.cpython-314.pyc'
+import 'numpy._typing._scalars' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6b6b590>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/__pycache__/_ufunc.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/_ufunc.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/_typing/__pycache__/_ufunc.cpython-314.pyc'
+import 'numpy._typing._ufunc' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6b6b5f0>
+import 'numpy._typing' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6b69070>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_twodim_base_impl.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/_twodim_base_impl.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_twodim_base_impl.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_stride_tricks_impl.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/_stride_tricks_impl.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_stride_tricks_impl.cpython-314.pyc'
+import 'numpy.lib._stride_tricks_impl' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6b6bbf0>
+import 'numpy.lib._twodim_base_impl' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6b69190>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/array_utils.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/array_utils.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/array_utils.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_array_utils_impl.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/_array_utils_impl.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_array_utils_impl.cpython-314.pyc'
+import 'numpy.lib._array_utils_impl' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6bd0110>
+import 'numpy.lib.array_utils' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6b6bfb0>
+# extension module 'numpy.linalg._umath_linalg' loaded from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/linalg/_umath_linalg.cpython-314-x86_64-linux-gnu.so'
+# extension module 'numpy.linalg._umath_linalg' executed from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/linalg/_umath_linalg.cpython-314-x86_64-linux-gnu.so'
+import 'numpy.linalg._umath_linalg' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85f6ffdcd0>
+import 'numpy.linalg._linalg' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6b684d0>
+import 'numpy.linalg' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6b682f0>
+import 'numpy.matrixlib.defmatrix' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6b680b0>
+import 'numpy.matrixlib' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6b68050>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_function_base_impl.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/_function_base_impl.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_function_base_impl.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_histograms_impl.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/_histograms_impl.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_histograms_impl.cpython-314.pyc'
+import 'numpy.lib._histograms_impl' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6b68410>
+import 'numpy.lib._function_base_impl' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6b68110>
+import 'numpy.lib._index_tricks_impl' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6ffbef0>
+import 'numpy.lib._arraypad_impl' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f948a150>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_arraysetops_impl.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/_arraysetops_impl.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_arraysetops_impl.cpython-314.pyc'
+import 'numpy.lib._arraysetops_impl' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6ffb050>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_arrayterator_impl.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/_arrayterator_impl.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_arrayterator_impl.cpython-314.pyc'
+import 'numpy.lib._arrayterator_impl' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6bd3650>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_nanfunctions_impl.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/_nanfunctions_impl.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_nanfunctions_impl.cpython-314.pyc'
+import 'numpy.lib._nanfunctions_impl' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6bd37d0>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_npyio_impl.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/_npyio_impl.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_npyio_impl.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/format.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/format.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/format.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_format_impl.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/_format_impl.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_format_impl.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_utils_impl.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/_utils_impl.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_utils_impl.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/platform.cpython-314.pyc matches /usr/lib64/python3.14/platform.py
+# code object from '/usr/lib64/python3.14/__pycache__/platform.cpython-314.pyc'
+import 'platform' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6525f70>
+import 'numpy.lib._utils_impl' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6525a90>
+import 'numpy.lib._format_impl' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6524c50>
+import 'numpy.lib.format' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6524a10>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_datasource.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/_datasource.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_datasource.cpython-314.pyc'
+import 'numpy.lib._datasource' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6524dd0>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_iotools.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/_iotools.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_iotools.cpython-314.pyc'
+import 'numpy.lib._iotools' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6526450>
+import 'numpy.lib._npyio_impl' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f65248f0>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_polynomial_impl.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/_polynomial_impl.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_polynomial_impl.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_type_check_impl.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/_type_check_impl.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_type_check_impl.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_ufunclike_impl.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/_ufunclike_impl.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_ufunclike_impl.cpython-314.pyc'
+import 'numpy.lib._ufunclike_impl' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6578ef0>
+import 'numpy.lib._type_check_impl' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6578890>
+import 'numpy.lib._polynomial_impl' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6527890>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_shape_base_impl.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/_shape_base_impl.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_shape_base_impl.cpython-314.pyc'
+import 'numpy.lib._shape_base_impl' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6579370>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_version.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/_version.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_version.cpython-314.pyc'
+import 'numpy.lib._version' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6579bb0>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/introspect.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/introspect.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/introspect.cpython-314.pyc'
+import 'numpy.lib.introspect' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6579c10>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/mixins.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/mixins.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/mixins.cpython-314.pyc'
+import 'numpy.lib.mixins' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6579cd0>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/npyio.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/npyio.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/npyio.cpython-314.pyc'
+import 'numpy.lib.npyio' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6579e50>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/scimath.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/scimath.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/scimath.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_scimath_impl.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/_scimath_impl.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/_scimath_impl.cpython-314.pyc'
+import 'numpy.lib._scimath_impl' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6579eb0>
+import 'numpy.lib.scimath' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6579f10>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/stride_tricks.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/stride_tricks.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/lib/__pycache__/stride_tricks.cpython-314.pyc'
+import 'numpy.lib.stride_tricks' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f6579f70>
+import 'numpy.lib' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f948a030>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/__pycache__/_array_api_info.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/_array_api_info.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/__pycache__/_array_api_info.cpython-314.pyc'
+import 'numpy._array_api_info' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f657a150>
+import 'numpy' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9488dd0>
+# extension module 'matplotlib._c_internal_utils' loaded from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/_c_internal_utils.cpython-314-x86_64-linux-gnu.so'
+# extension module 'matplotlib._c_internal_utils' executed from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/_c_internal_utils.cpython-314-x86_64-linux-gnu.so'
+import 'matplotlib._c_internal_utils' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85f6bd74d0>
+import 'matplotlib.cbook' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9411cd0>
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/_docstring.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/_docstring.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/_docstring.cpython-314.pyc'
+import 'matplotlib._docstring' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9412c30>
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/rcsetup.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/rcsetup.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/rcsetup.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/backends/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/backends/__init__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/backends/__pycache__/__init__.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/backends/__pycache__/registry.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/backends/registry.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/backends/__pycache__/registry.cpython-314.pyc'
+import 'matplotlib.backends.registry' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f657b530>
+import 'matplotlib.backends' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f657a630>
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/colors.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/colors.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/colors.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/base64.cpython-314.pyc matches /usr/lib64/python3.14/base64.py
+# code object from '/usr/lib64/python3.14/__pycache__/base64.cpython-314.pyc'
+# extension module 'binascii' loaded from '/usr/lib64/python3.14/lib-dynload/binascii.cpython-314-x86_64-linux-gnu.so'
+# extension module 'binascii' executed from '/usr/lib64/python3.14/lib-dynload/binascii.cpython-314-x86_64-linux-gnu.so'
+import 'binascii' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85f65c3330>
+import 'base64' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f65dd2b0>
+# /usr/lib64/python3.14/site-packages/PIL/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/site-packages/PIL/__init__.py
+# code object from '/usr/lib64/python3.14/site-packages/PIL/__pycache__/__init__.cpython-314.pyc'
+# /usr/lib64/python3.14/site-packages/PIL/__pycache__/_version.cpython-314.pyc matches /usr/lib64/python3.14/site-packages/PIL/_version.py
+# code object from '/usr/lib64/python3.14/site-packages/PIL/__pycache__/_version.cpython-314.pyc'
+import 'PIL._version' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f65dfbf0>
+import 'PIL' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f65df890>
+# /usr/lib64/python3.14/site-packages/PIL/__pycache__/Image.cpython-314.pyc matches /usr/lib64/python3.14/site-packages/PIL/Image.py
+# code object from '/usr/lib64/python3.14/site-packages/PIL/__pycache__/Image.cpython-314.pyc'
+# /usr/lib64/python3.14/site-packages/PIL/__pycache__/ExifTags.cpython-314.pyc matches /usr/lib64/python3.14/site-packages/PIL/ExifTags.py
+# code object from '/usr/lib64/python3.14/site-packages/PIL/__pycache__/ExifTags.cpython-314.pyc'
+import 'PIL.ExifTags' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e7912b10>
+# /usr/lib64/python3.14/site-packages/PIL/__pycache__/ImageMode.cpython-314.pyc matches /usr/lib64/python3.14/site-packages/PIL/ImageMode.py
+# code object from '/usr/lib64/python3.14/site-packages/PIL/__pycache__/ImageMode.cpython-314.pyc'
+# /usr/lib64/python3.14/site-packages/PIL/__pycache__/_deprecate.cpython-314.pyc matches /usr/lib64/python3.14/site-packages/PIL/_deprecate.py
+# code object from '/usr/lib64/python3.14/site-packages/PIL/__pycache__/_deprecate.cpython-314.pyc'
+import 'PIL._deprecate' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e79604d0>
+import 'PIL.ImageMode' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e7960290>
+# /usr/lib64/python3.14/site-packages/PIL/__pycache__/TiffTags.cpython-314.pyc matches /usr/lib64/python3.14/site-packages/PIL/TiffTags.py
+# code object from '/usr/lib64/python3.14/site-packages/PIL/__pycache__/TiffTags.cpython-314.pyc'
+import 'PIL.TiffTags' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e7960410>
+# /usr/lib64/python3.14/site-packages/PIL/__pycache__/_binary.cpython-314.pyc matches /usr/lib64/python3.14/site-packages/PIL/_binary.py
+# code object from '/usr/lib64/python3.14/site-packages/PIL/__pycache__/_binary.cpython-314.pyc'
+import 'PIL._binary' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e7998410>
+# /usr/lib64/python3.14/site-packages/PIL/__pycache__/_util.cpython-314.pyc matches /usr/lib64/python3.14/site-packages/PIL/_util.py
+# code object from '/usr/lib64/python3.14/site-packages/PIL/__pycache__/_util.cpython-314.pyc'
+# /usr/lib64/python3.14/site-packages/PIL/__pycache__/_typing.cpython-314.pyc matches /usr/lib64/python3.14/site-packages/PIL/_typing.py
+# code object from '/usr/lib64/python3.14/site-packages/PIL/__pycache__/_typing.cpython-314.pyc'
+import 'PIL._typing' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e7998830>
+import 'PIL._util' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e7998530>
+# extension module 'PIL._imaging' loaded from '/usr/lib64/python3.14/site-packages/PIL/_imaging.cpython-314-x86_64-linux-gnu.so'
+# extension module 'PIL._imaging' executed from '/usr/lib64/python3.14/site-packages/PIL/_imaging.cpython-314-x86_64-linux-gnu.so'
+import 'PIL._imaging' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85e79094f0>
+import 'PIL.Image' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f65dfd70>
+# /usr/lib64/python3.14/site-packages/PIL/__pycache__/PngImagePlugin.cpython-314.pyc matches /usr/lib64/python3.14/site-packages/PIL/PngImagePlugin.py
+# code object from '/usr/lib64/python3.14/site-packages/PIL/__pycache__/PngImagePlugin.cpython-314.pyc'
+# /usr/lib64/python3.14/site-packages/PIL/__pycache__/ImageChops.cpython-314.pyc matches /usr/lib64/python3.14/site-packages/PIL/ImageChops.py
+# code object from '/usr/lib64/python3.14/site-packages/PIL/__pycache__/ImageChops.cpython-314.pyc'
+import 'PIL.ImageChops' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e799a090>
+# /usr/lib64/python3.14/site-packages/PIL/__pycache__/ImageFile.cpython-314.pyc matches /usr/lib64/python3.14/site-packages/PIL/ImageFile.py
+# code object from '/usr/lib64/python3.14/site-packages/PIL/__pycache__/ImageFile.cpython-314.pyc'
+import 'PIL.ImageFile' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e799a870>
+# /usr/lib64/python3.14/site-packages/PIL/__pycache__/ImagePalette.cpython-314.pyc matches /usr/lib64/python3.14/site-packages/PIL/ImagePalette.py
+# code object from '/usr/lib64/python3.14/site-packages/PIL/__pycache__/ImagePalette.cpython-314.pyc'
+# extension module 'array' loaded from '/usr/lib64/python3.14/lib-dynload/array.cpython-314-x86_64-linux-gnu.so'
+# extension module 'array' executed from '/usr/lib64/python3.14/lib-dynload/array.cpython-314-x86_64-linux-gnu.so'
+import 'array' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85f65f3e30>
+# /usr/lib64/python3.14/site-packages/PIL/__pycache__/GimpGradientFile.cpython-314.pyc matches /usr/lib64/python3.14/site-packages/PIL/GimpGradientFile.py
+# code object from '/usr/lib64/python3.14/site-packages/PIL/__pycache__/GimpGradientFile.cpython-314.pyc'
+import 'PIL.GimpGradientFile' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e79e0410>
+# /usr/lib64/python3.14/site-packages/PIL/__pycache__/GimpPaletteFile.cpython-314.pyc matches /usr/lib64/python3.14/site-packages/PIL/GimpPaletteFile.py
+# code object from '/usr/lib64/python3.14/site-packages/PIL/__pycache__/GimpPaletteFile.cpython-314.pyc'
+import 'PIL.GimpPaletteFile' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e79e0650>
+# /usr/lib64/python3.14/site-packages/PIL/__pycache__/ImageColor.cpython-314.pyc matches /usr/lib64/python3.14/site-packages/PIL/ImageColor.py
+# code object from '/usr/lib64/python3.14/site-packages/PIL/__pycache__/ImageColor.cpython-314.pyc'
+import 'PIL.ImageColor' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e79e07d0>
+# /usr/lib64/python3.14/site-packages/PIL/__pycache__/PaletteFile.cpython-314.pyc matches /usr/lib64/python3.14/site-packages/PIL/PaletteFile.py
+# code object from '/usr/lib64/python3.14/site-packages/PIL/__pycache__/PaletteFile.cpython-314.pyc'
+import 'PIL.PaletteFile' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e79e0a70>
+import 'PIL.ImagePalette' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e799b770>
+# /usr/lib64/python3.14/site-packages/PIL/__pycache__/ImageSequence.cpython-314.pyc matches /usr/lib64/python3.14/site-packages/PIL/ImageSequence.py
+# code object from '/usr/lib64/python3.14/site-packages/PIL/__pycache__/ImageSequence.cpython-314.pyc'
+import 'PIL.ImageSequence' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e79e03b0>
+import 'PIL.PngImagePlugin' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e7913f50>
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/_cm.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/_cm.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/_cm.cpython-314.pyc'
+import 'matplotlib._cm' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e7999010>
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/scale.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/scale.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/scale.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/ticker.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/ticker.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/ticker.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/transforms.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/transforms.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/transforms.cpython-314.pyc'
+# extension module 'matplotlib._path' loaded from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/_path.cpython-314-x86_64-linux-gnu.so'
+# extension module 'matplotlib._path' executed from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/_path.cpython-314-x86_64-linux-gnu.so'
+import 'matplotlib._path' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85e79eceb0>
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/path.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/path.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/path.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/bezier.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/bezier.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/bezier.cpython-314.pyc'
+import 'matplotlib.bezier' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e5588ef0>
+import 'matplotlib.path' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e5550ef0>
+import 'matplotlib.transforms' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e79e27b0>
+import 'matplotlib.ticker' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e79e16d0>
+import 'matplotlib.scale' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e79e15b0>
+# extension module 'matplotlib._image' loaded from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/_image.cpython-314-x86_64-linux-gnu.so'
+# extension module 'matplotlib._image' executed from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/_image.cpython-314-x86_64-linux-gnu.so'
+import 'matplotlib._image' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85e5535f40>
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/_color_data.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/_color_data.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/_color_data.cpython-314.pyc'
+import 'matplotlib._color_data' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e79e1d90>
+import 'matplotlib.colors' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f657ae10>
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/_fontconfig_pattern.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/_fontconfig_pattern.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/_fontconfig_pattern.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__init__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/__init__.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/warnings.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/warnings.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/warnings.cpython-314.pyc'
+import 'pyparsing.warnings' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e558a6f0>
+# /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/util.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/util.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/util.cpython-314.pyc'
+import 'pyparsing.util' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e558a750>
+# /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/exceptions.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/exceptions.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/exceptions.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/unicode.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/unicode.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/unicode.cpython-314.pyc'
+import 'pyparsing.unicode' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e558b650>
+import 'pyparsing.exceptions' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e558a810>
+# /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/actions.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/actions.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/actions.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/results.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/results.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/results.cpython-314.pyc'
+import 'pyparsing.results' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e558bc50>
+import 'pyparsing.actions' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e558bad0>
+# /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/core.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/core.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/core.cpython-314.pyc'
+import 'pyparsing.core' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e558be30>
+# /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/helpers.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/helpers.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/helpers.cpython-314.pyc'
+# /usr/lib64/python3.14/html/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/html/__init__.py
+# code object from '/usr/lib64/python3.14/html/__pycache__/__init__.cpython-314.pyc'
+# /usr/lib64/python3.14/html/__pycache__/entities.cpython-314.pyc matches /usr/lib64/python3.14/html/entities.py
+# code object from '/usr/lib64/python3.14/html/__pycache__/entities.cpython-314.pyc'
+import 'html.entities' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e5159a90>
+import 'html' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e5159610>
+import 'pyparsing.helpers' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f657a3f0>
+# /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/testing.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/testing.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/testing.cpython-314.pyc'
+# /usr/lib64/python3.14/unittest/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/unittest/__init__.py
+# code object from '/usr/lib64/python3.14/unittest/__pycache__/__init__.cpython-314.pyc'
+# /usr/lib64/python3.14/unittest/__pycache__/result.cpython-314.pyc matches /usr/lib64/python3.14/unittest/result.py
+# code object from '/usr/lib64/python3.14/unittest/__pycache__/result.cpython-314.pyc'
+# /usr/lib64/python3.14/unittest/__pycache__/util.cpython-314.pyc matches /usr/lib64/python3.14/unittest/util.py
+# code object from '/usr/lib64/python3.14/unittest/__pycache__/util.cpython-314.pyc'
+import 'unittest.util' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e515b290>
+import 'unittest.result' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e515ac90>
+# /usr/lib64/python3.14/unittest/__pycache__/case.cpython-314.pyc matches /usr/lib64/python3.14/unittest/case.py
+# code object from '/usr/lib64/python3.14/unittest/__pycache__/case.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/difflib.cpython-314.pyc matches /usr/lib64/python3.14/difflib.py
+# code object from '/usr/lib64/python3.14/__pycache__/difflib.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/heapq.cpython-314.pyc matches /usr/lib64/python3.14/heapq.py
+# code object from '/usr/lib64/python3.14/__pycache__/heapq.cpython-314.pyc'
+# extension module '_heapq' loaded from '/usr/lib64/python3.14/lib-dynload/_heapq.cpython-314-x86_64-linux-gnu.so'
+# extension module '_heapq' executed from '/usr/lib64/python3.14/lib-dynload/_heapq.cpython-314-x86_64-linux-gnu.so'
+import '_heapq' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85e4fbfa50>
+import 'heapq' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e503f1d0>
+import 'difflib' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e503cc50>
+import 'unittest.case' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e515b1d0>
+# /usr/lib64/python3.14/unittest/__pycache__/suite.cpython-314.pyc matches /usr/lib64/python3.14/unittest/suite.py
+# code object from '/usr/lib64/python3.14/unittest/__pycache__/suite.cpython-314.pyc'
+import 'unittest.suite' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e503c6b0>
+# /usr/lib64/python3.14/unittest/__pycache__/loader.cpython-314.pyc matches /usr/lib64/python3.14/unittest/loader.py
+# code object from '/usr/lib64/python3.14/unittest/__pycache__/loader.cpython-314.pyc'
+import 'unittest.loader' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e503f7d0>
+# /usr/lib64/python3.14/unittest/__pycache__/main.cpython-314.pyc matches /usr/lib64/python3.14/unittest/main.py
+# code object from '/usr/lib64/python3.14/unittest/__pycache__/main.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/argparse.cpython-314.pyc matches /usr/lib64/python3.14/argparse.py
+# code object from '/usr/lib64/python3.14/__pycache__/argparse.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/gettext.cpython-314.pyc matches /usr/lib64/python3.14/gettext.py
+# code object from '/usr/lib64/python3.14/__pycache__/gettext.cpython-314.pyc'
+import 'gettext' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e50952b0>
+import 'argparse' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e5094230>
+# /usr/lib64/python3.14/unittest/__pycache__/runner.cpython-314.pyc matches /usr/lib64/python3.14/unittest/runner.py
+# code object from '/usr/lib64/python3.14/unittest/__pycache__/runner.cpython-314.pyc'
+# /usr/lib64/python3.14/unittest/__pycache__/signals.cpython-314.pyc matches /usr/lib64/python3.14/unittest/signals.py
+# code object from '/usr/lib64/python3.14/unittest/__pycache__/signals.cpython-314.pyc'
+import 'unittest.signals' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4ec8170>
+import 'unittest.runner' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e5097e90>
+import 'unittest.main' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e503fcb0>
+import 'unittest' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e515aab0>
+import 'pyparsing.testing' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e515a030>
+# /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/common.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pyparsing/common.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pyparsing/__pycache__/common.cpython-314.pyc'
+import 'pyparsing.common' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e515a5d0>
+# /usr/lib64/python3.14/importlib/resources/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/importlib/resources/__init__.py
+# code object from '/usr/lib64/python3.14/importlib/resources/__pycache__/__init__.cpython-314.pyc'
+# /usr/lib64/python3.14/importlib/resources/__pycache__/_common.cpython-314.pyc matches /usr/lib64/python3.14/importlib/resources/_common.py
+# code object from '/usr/lib64/python3.14/importlib/resources/__pycache__/_common.cpython-314.pyc'
+# /usr/lib64/python3.14/importlib/resources/__pycache__/abc.cpython-314.pyc matches /usr/lib64/python3.14/importlib/resources/abc.py
+# code object from '/usr/lib64/python3.14/importlib/resources/__pycache__/abc.cpython-314.pyc'
+import 'importlib.resources.abc' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4ec9130>
+import 'importlib.resources._common' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4ec8a70>
+# /usr/lib64/python3.14/importlib/resources/__pycache__/_functional.cpython-314.pyc matches /usr/lib64/python3.14/importlib/resources/_functional.py
+# code object from '/usr/lib64/python3.14/importlib/resources/__pycache__/_functional.cpython-314.pyc'
+import 'importlib.resources._functional' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4ec9190>
+import 'importlib.resources' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4ec88f0>
+import 'pyparsing' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e558a390>
+import 'matplotlib._fontconfig_pattern' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f65dc770>
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/_enums.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/_enums.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/_enums.cpython-314.pyc'
+import 'matplotlib._enums' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4ec97f0>
+# /home/pjunak/.local/lib/python3.14/site-packages/cycler/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/cycler/__init__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/cycler/__pycache__/__init__.cpython-314.pyc'
+import 'cycler' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4ec9850>
+import 'matplotlib.rcsetup' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f657a450>
+# extension module 'matplotlib.ft2font' loaded from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/ft2font.cpython-314-x86_64-linux-gnu.so'
+# extension module 'matplotlib.ft2font' executed from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/ft2font.cpython-314-x86_64-linux-gnu.so'
+import 'matplotlib.ft2font' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85e4f15ad0>
+# /usr/lib/python3.14/site-packages/dateutil/__pycache__/__init__.cpython-314.pyc matches /usr/lib/python3.14/site-packages/dateutil/__init__.py
+# code object from '/usr/lib/python3.14/site-packages/dateutil/__pycache__/__init__.cpython-314.pyc'
+# /usr/lib/python3.14/site-packages/dateutil/__pycache__/_version.cpython-314.pyc matches /usr/lib/python3.14/site-packages/dateutil/_version.py
+# code object from '/usr/lib/python3.14/site-packages/dateutil/__pycache__/_version.cpython-314.pyc'
+import 'dateutil._version' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4ecb050>
+import 'dateutil' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4ecae10>
+# /home/pjunak/.local/lib/python3.14/site-packages/kiwisolver/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/kiwisolver/__init__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/kiwisolver/__pycache__/__init__.cpython-314.pyc'
+# extension module 'kiwisolver._cext' loaded from '/home/pjunak/.local/lib/python3.14/site-packages/kiwisolver/_cext.cpython-314-x86_64-linux-gnu.so'
+# /home/pjunak/.local/lib/python3.14/site-packages/kiwisolver/__pycache__/exceptions.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/kiwisolver/exceptions.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/kiwisolver/__pycache__/exceptions.cpython-314.pyc'
+import 'kiwisolver.exceptions' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4ecb290>
+# extension module 'kiwisolver._cext' executed from '/home/pjunak/.local/lib/python3.14/site-packages/kiwisolver/_cext.cpython-314-x86_64-linux-gnu.so'
+import 'kiwisolver._cext' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85e4eb1f60>
+import 'kiwisolver' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4ecb110>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/ma/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/ma/__init__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/ma/__pycache__/__init__.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/ma/__pycache__/core.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/ma/core.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/ma/__pycache__/core.cpython-314.pyc'
+import 'numpy.ma.core' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4f68710>
+# /home/pjunak/.local/lib/python3.14/site-packages/numpy/ma/__pycache__/extras.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/numpy/ma/extras.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/numpy/ma/__pycache__/extras.cpython-314.pyc'
+import 'numpy.ma.extras' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4f6af90>
+import 'numpy.ma' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4f686b0>
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/cm.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/cm.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/cm.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/colorizer.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/colorizer.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/colorizer.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/artist.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/artist.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/artist.cpython-314.pyc'
+import 'matplotlib.artist' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4c2edb0>
+import 'matplotlib.colorizer' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4c2eb10>
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/_cm_listed.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/_cm_listed.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/_cm_listed.cpython-314.pyc'
+import 'matplotlib._cm_listed' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4c2fa70>
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/_cm_multivar.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/_cm_multivar.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/_cm_multivar.cpython-314.pyc'
+import 'matplotlib._cm_multivar' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4c2fad0>
+# /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/_cm_bivar.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/matplotlib/_cm_bivar.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/matplotlib/__pycache__/_cm_bivar.cpython-314.pyc'
+import 'matplotlib._cm_bivar' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4cc5190>
+import 'matplotlib.cm' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4c2e9f0>
+import 'matplotlib' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f9996eb0>
+import 'tests' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85f99798b0>
+# /home/pjunak/Documents/GitHub/Living-scroll/tests/__pycache__/test_character_model.cpython-314.pyc matches /home/pjunak/Documents/GitHub/Living-scroll/tests/test_character_model.py
+# code object from '/home/pjunak/Documents/GitHub/Living-scroll/tests/__pycache__/test_character_model.cpython-314.pyc'
+# /home/pjunak/Documents/GitHub/Living-scroll/modules/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/Documents/GitHub/Living-scroll/modules/__init__.py
+# code object from '/home/pjunak/Documents/GitHub/Living-scroll/modules/__pycache__/__init__.cpython-314.pyc'
+import 'modules' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4cf5fd0>
+# /home/pjunak/Documents/GitHub/Living-scroll/modules/character_sheet/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/Documents/GitHub/Living-scroll/modules/character_sheet/__init__.py
+# code object from '/home/pjunak/Documents/GitHub/Living-scroll/modules/character_sheet/__pycache__/__init__.cpython-314.pyc'
+import 'modules.character_sheet' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4cf5f10>
+# /home/pjunak/Documents/GitHub/Living-scroll/modules/character_sheet/model/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/Documents/GitHub/Living-scroll/modules/character_sheet/model/__init__.py
+# code object from '/home/pjunak/Documents/GitHub/Living-scroll/modules/character_sheet/model/__pycache__/__init__.cpython-314.pyc'
+# /home/pjunak/Documents/GitHub/Living-scroll/modules/character_sheet/model/__pycache__/model.cpython-314.pyc matches /home/pjunak/Documents/GitHub/Living-scroll/modules/character_sheet/model/model.py
+# code object from '/home/pjunak/Documents/GitHub/Living-scroll/modules/character_sheet/model/__pycache__/model.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/__init__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/__init__.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/_migration.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_migration.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/_migration.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/warnings.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/warnings.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/warnings.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/version.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/version.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/version.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic_core/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic_core/__init__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic_core/__pycache__/__init__.cpython-314.pyc'
+# /usr/lib/python3.14/site-packages/__pycache__/typing_extensions.cpython-314.pyc matches /usr/lib/python3.14/site-packages/typing_extensions.py
+# code object from '/usr/lib/python3.14/site-packages/__pycache__/typing_extensions.cpython-314.pyc'
+import 'typing_extensions' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4cf7c50>
+# extension module 'pydantic_core._pydantic_core' loaded from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic_core/_pydantic_core.cpython-314-x86_64-linux-gnu.so'
+# extension module 'pydantic_core._pydantic_core' executed from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic_core/_pydantic_core.cpython-314-x86_64-linux-gnu.so'
+import 'pydantic_core._pydantic_core' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85e4c042f0>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic_core/__pycache__/core_schema.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic_core/core_schema.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic_core/__pycache__/core_schema.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/decimal.cpython-314.pyc matches /usr/lib64/python3.14/decimal.py
+# code object from '/usr/lib64/python3.14/__pycache__/decimal.cpython-314.pyc'
+# extension module '_decimal' loaded from '/usr/lib64/python3.14/lib-dynload/_decimal.cpython-314-x86_64-linux-gnu.so'
+# extension module '_decimal' executed from '/usr/lib64/python3.14/lib-dynload/_decimal.cpython-314-x86_64-linux-gnu.so'
+import '_decimal' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85e4c1dc10>
+import 'decimal' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4c1d9d0>
+import 'pydantic_core.core_schema' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4cf7e30>
+import 'pydantic_core' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4cf7830>
+import 'pydantic.version' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4cf7230>
+import 'pydantic.warnings' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4cf6f30>
+import 'pydantic._migration' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4cf6930>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/errors.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/errors.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/errors.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/typing_inspection/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/typing_inspection/__init__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/typing_inspection/__pycache__/__init__.cpython-314.pyc'
+import 'typing_inspection' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4c1f590>
+# /home/pjunak/.local/lib/python3.14/site-packages/typing_inspection/__pycache__/introspection.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/typing_inspection/introspection.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/typing_inspection/__pycache__/introspection.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/typing_inspection/__pycache__/typing_objects.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/typing_inspection/typing_objects.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/typing_inspection/__pycache__/typing_objects.cpython-314.pyc'
+import 'typing_inspection.typing_objects' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4a68950>
+import 'typing_inspection.introspection' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4c1e3f0>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__init__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/__init__.cpython-314.pyc'
+import 'pydantic._internal' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4a6a210>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_repr.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_repr.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_repr.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_typing_extra.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_typing_extra.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_typing_extra.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_namespace_utils.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_namespace_utils.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_namespace_utils.cpython-314.pyc'
+import 'pydantic._internal._namespace_utils' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4a6b0b0>
+import 'pydantic._internal._typing_extra' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4a6a690>
+import 'pydantic._internal._repr' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4a6a390>
+import 'pydantic.errors' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4cf6e70>
+import 'pydantic' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4cf6270>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/main.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/main.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/main.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_config.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_config.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_config.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/aliases.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/aliases.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/aliases.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_internal_dataclass.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_internal_dataclass.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_internal_dataclass.cpython-314.pyc'
+import 'pydantic._internal._internal_dataclass' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4961610>
+import 'pydantic.aliases' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e49614f0>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/config.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/config.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/config.cpython-314.pyc'
+import 'pydantic.config' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e49619d0>
+import 'pydantic._internal._config' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4a6aff0>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_decorators.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_decorators.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_decorators.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_core_utils.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_core_utils.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_core_utils.cpython-314.pyc'
+import 'pydantic._internal._core_utils' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e49620f0>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_utils.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_utils.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_utils.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_import_utils.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_import_utils.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_import_utils.cpython-314.pyc'
+import 'pydantic._internal._import_utils' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4963f50>
+import 'pydantic._internal._utils' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4963530>
+import 'pydantic._internal._decorators' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e49613d0>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_fields.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_fields.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_fields.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_generics.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_generics.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_generics.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_forward_ref.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_forward_ref.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_forward_ref.cpython-314.pyc'
+import 'pydantic._internal._forward_ref' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e49ad730>
+import 'pydantic._internal._generics' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e49ad4f0>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_docs_extraction.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_docs_extraction.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_docs_extraction.cpython-314.pyc'
+import 'pydantic._internal._docs_extraction' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e49ad610>
+import 'pydantic._internal._fields' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4961250>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_mock_val_ser.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_mock_val_ser.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_mock_val_ser.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/plugin/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/plugin/__init__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/plugin/__pycache__/__init__.cpython-314.pyc'
+import 'pydantic.plugin' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e49ae630>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/plugin/__pycache__/_schema_validator.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/plugin/_schema_validator.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/plugin/__pycache__/_schema_validator.cpython-314.pyc'
+import 'pydantic.plugin._schema_validator' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e49ae5d0>
+import 'pydantic._internal._mock_val_ser' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e49ace30>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_model_construction.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_model_construction.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_model_construction.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_generate_schema.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_generate_schema.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_generate_schema.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/fractions.cpython-314.pyc matches /usr/lib64/python3.14/fractions.py
+# code object from '/usr/lib64/python3.14/__pycache__/fractions.cpython-314.pyc'
+import 'fractions' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e49f5970>
+# /usr/lib64/python3.14/__pycache__/ipaddress.cpython-314.pyc matches /usr/lib64/python3.14/ipaddress.py
+# code object from '/usr/lib64/python3.14/__pycache__/ipaddress.cpython-314.pyc'
+import 'ipaddress' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e43055b0>
+# /usr/lib64/python3.14/__pycache__/uuid.cpython-314.pyc matches /usr/lib64/python3.14/uuid.py
+# code object from '/usr/lib64/python3.14/__pycache__/uuid.cpython-314.pyc'
+# extension module '_uuid' loaded from '/usr/lib64/python3.14/lib-dynload/_uuid.cpython-314-x86_64-linux-gnu.so'
+# extension module '_uuid' executed from '/usr/lib64/python3.14/lib-dynload/_uuid.cpython-314-x86_64-linux-gnu.so'
+import '_uuid' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85e43406b0>
+import 'uuid' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4306bd0>
+# /usr/lib64/python3.14/zoneinfo/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/zoneinfo/__init__.py
+# code object from '/usr/lib64/python3.14/zoneinfo/__pycache__/__init__.cpython-314.pyc'
+# /usr/lib64/python3.14/zoneinfo/__pycache__/_tzpath.cpython-314.pyc matches /usr/lib64/python3.14/zoneinfo/_tzpath.py
+# code object from '/usr/lib64/python3.14/zoneinfo/__pycache__/_tzpath.cpython-314.pyc'
+# /usr/lib64/python3.14/__pycache__/_sysconfigdata__linux_x86_64-linux-gnu.cpython-314.pyc matches /usr/lib64/python3.14/_sysconfigdata__linux_x86_64-linux-gnu.py
+# code object from '/usr/lib64/python3.14/__pycache__/_sysconfigdata__linux_x86_64-linux-gnu.cpython-314.pyc'
+import '_sysconfigdata__linux_x86_64-linux-gnu' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4340ef0>
+import 'zoneinfo._tzpath' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e43408f0>
+# /usr/lib64/python3.14/zoneinfo/__pycache__/_common.cpython-314.pyc matches /usr/lib64/python3.14/zoneinfo/_common.py
+# code object from '/usr/lib64/python3.14/zoneinfo/__pycache__/_common.cpython-314.pyc'
+import 'zoneinfo._common' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4341190>
+# extension module '_zoneinfo' loaded from '/usr/lib64/python3.14/lib-dynload/_zoneinfo.cpython-314-x86_64-linux-gnu.so'
+# extension module '_zoneinfo' executed from '/usr/lib64/python3.14/lib-dynload/_zoneinfo.cpython-314-x86_64-linux-gnu.so'
+import '_zoneinfo' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85e43415b0>
+import 'zoneinfo' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4340710>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/annotated_handlers.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/annotated_handlers.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/annotated_handlers.cpython-314.pyc'
+import 'pydantic.annotated_handlers' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4340830>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/functional_validators.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/functional_validators.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/functional_validators.cpython-314.pyc'
+import 'pydantic.functional_validators' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4341850>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/json_schema.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/json_schema.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/json_schema.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_core_metadata.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_core_metadata.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_core_metadata.cpython-314.pyc'
+import 'pydantic._internal._core_metadata' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4c2e930>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_schema_generation_shared.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_schema_generation_shared.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_schema_generation_shared.cpython-314.pyc'
+import 'pydantic._internal._schema_generation_shared' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4c2e870>
+import 'pydantic.json_schema' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e43419d0>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_discriminated_union.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_discriminated_union.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_discriminated_union.cpython-314.pyc'
+import 'pydantic._internal._discriminated_union' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4c2dd30>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_known_annotated_metadata.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_known_annotated_metadata.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_known_annotated_metadata.cpython-314.pyc'
+import 'pydantic._internal._known_annotated_metadata' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4ecbc50>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_schema_gather.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_schema_gather.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_schema_gather.cpython-314.pyc'
+import 'pydantic._internal._schema_gather' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4ecb830>
+import 'pydantic._internal._generate_schema' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e49af950>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_signature.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_signature.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_signature.cpython-314.pyc'
+import 'pydantic._internal._signature' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4ecb530>
+import 'pydantic._internal._model_construction' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e49ae6f0>
+import 'pydantic.main' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4cf68d0>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/fields.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/fields.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/fields.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/annotated_types/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/annotated_types/__init__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/annotated_types/__pycache__/__init__.cpython-314.pyc'
+import 'annotated_types' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e43e0710>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_validators.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_validators.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_validators.cpython-314.pyc'
+import 'pydantic._internal._validators' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e43e1250>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/types.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/types.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/__pycache__/types.cpython-314.pyc'
+import 'pydantic.types' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e43e3830>
+import 'pydantic.fields' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4a6abd0>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/deprecated/__pycache__/__init__.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/deprecated/__init__.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/deprecated/__pycache__/__init__.cpython-314.pyc'
+import 'pydantic.deprecated' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e424ab70>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/deprecated/__pycache__/class_validators.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/deprecated/class_validators.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/deprecated/__pycache__/class_validators.cpython-314.pyc'
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_decorators_v1.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/_decorators_v1.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/_internal/__pycache__/_decorators_v1.cpython-314.pyc'
+import 'pydantic._internal._decorators_v1' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e424be30>
+import 'pydantic.deprecated.class_validators' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4249c10>
+# possible namespace for /home/pjunak/Documents/GitHub/Living-scroll/modules/core
+import 'modules.core' # <_frozen_importlib_external.NamespaceLoader object at 0x7f85e43574d0>
+# /home/pjunak/Documents/GitHub/Living-scroll/modules/core/__pycache__/enums.cpython-314.pyc matches /home/pjunak/Documents/GitHub/Living-scroll/modules/core/enums.py
+# code object from '/home/pjunak/Documents/GitHub/Living-scroll/modules/core/__pycache__/enums.cpython-314.pyc'
+import 'modules.core.enums' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e424b9b0>
+# /home/pjunak/.local/lib/python3.14/site-packages/pydantic/plugin/__pycache__/_loader.cpython-314.pyc matches /home/pjunak/.local/lib/python3.14/site-packages/pydantic/plugin/_loader.py
+# code object from '/home/pjunak/.local/lib/python3.14/site-packages/pydantic/plugin/__pycache__/_loader.cpython-314.pyc'
+# /usr/lib64/python3.14/importlib/metadata/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/importlib/metadata/__init__.py
+# code object from '/usr/lib64/python3.14/importlib/metadata/__pycache__/__init__.cpython-314.pyc'
+# /usr/lib64/python3.14/json/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/json/__init__.py
+# code object from '/usr/lib64/python3.14/json/__pycache__/__init__.cpython-314.pyc'
+# /usr/lib64/python3.14/json/__pycache__/decoder.cpython-314.pyc matches /usr/lib64/python3.14/json/decoder.py
+# code object from '/usr/lib64/python3.14/json/__pycache__/decoder.cpython-314.pyc'
+# /usr/lib64/python3.14/json/__pycache__/scanner.cpython-314.pyc matches /usr/lib64/python3.14/json/scanner.py
+# code object from '/usr/lib64/python3.14/json/__pycache__/scanner.cpython-314.pyc'
+# extension module '_json' loaded from '/usr/lib64/python3.14/lib-dynload/_json.cpython-314-x86_64-linux-gnu.so'
+# extension module '_json' executed from '/usr/lib64/python3.14/lib-dynload/_json.cpython-314-x86_64-linux-gnu.so'
+import '_json' # <_frozen_importlib_external.ExtensionFileLoader object at 0x7f85e42aeb10>
+import 'json.scanner' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e42ae990>
+import 'json.decoder' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e42ae510>
+# /usr/lib64/python3.14/json/__pycache__/encoder.cpython-314.pyc matches /usr/lib64/python3.14/json/encoder.py
+# code object from '/usr/lib64/python3.14/json/__pycache__/encoder.cpython-314.pyc'
+import 'json.encoder' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e42aeab0>
+import 'json' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e42ae390>
+# /usr/lib64/python3.14/email/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/email/__init__.py
+# code object from '/usr/lib64/python3.14/email/__pycache__/__init__.cpython-314.pyc'
+import 'email' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e42ad370>
+# /usr/lib64/python3.14/zipfile/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/zipfile/__init__.py
+# code object from '/usr/lib64/python3.14/zipfile/__pycache__/__init__.cpython-314.pyc'
+# /usr/lib64/python3.14/zipfile/_path/__pycache__/__init__.cpython-314.pyc matches /usr/lib64/python3.14/zipfile/_path/__init__.py
+# code object from '/usr/lib64/python3.14/zipfile/_path/__pycache__/__init__.cpython-314.pyc'
+# /usr/lib64/python3.14/zipfile/_path/__pycache__/glob.cpython-314.pyc matches /usr/lib64/python3.14/zipfile/_path/glob.py
+# code object from '/usr/lib64/python3.14/zipfile/_path/__pycache__/glob.cpython-314.pyc'
+import 'zipfile._path.glob' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e42ee330>
+import 'zipfile._path' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e42ed790>
+import 'zipfile' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e42aef30>
+# /usr/lib64/python3.14/importlib/metadata/__pycache__/_meta.cpython-314.pyc matches /usr/lib64/python3.14/importlib/metadata/_meta.py
+# code object from '/usr/lib64/python3.14/importlib/metadata/__pycache__/_meta.cpython-314.pyc'
+import 'importlib.metadata._meta' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e42edeb0>
+# /usr/lib64/python3.14/importlib/metadata/__pycache__/_collections.cpython-314.pyc matches /usr/lib64/python3.14/importlib/metadata/_collections.py
+# code object from '/usr/lib64/python3.14/importlib/metadata/__pycache__/_collections.cpython-314.pyc'
+import 'importlib.metadata._collections' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e42ee870>
+# /usr/lib64/python3.14/importlib/metadata/__pycache__/_functools.cpython-314.pyc matches /usr/lib64/python3.14/importlib/metadata/_functools.py
+# code object from '/usr/lib64/python3.14/importlib/metadata/__pycache__/_functools.cpython-314.pyc'
+import 'importlib.metadata._functools' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e42ee9f0>
+# /usr/lib64/python3.14/importlib/metadata/__pycache__/_itertools.cpython-314.pyc matches /usr/lib64/python3.14/importlib/metadata/_itertools.py
+# code object from '/usr/lib64/python3.14/importlib/metadata/__pycache__/_itertools.cpython-314.pyc'
+import 'importlib.metadata._itertools' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e42eecf0>
+# /usr/lib64/python3.14/importlib/__pycache__/abc.cpython-314.pyc matches /usr/lib64/python3.14/importlib/abc.py
+# code object from '/usr/lib64/python3.14/importlib/__pycache__/abc.cpython-314.pyc'
+import 'importlib.abc' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e42eedb0>
+import 'importlib.metadata' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e42acdd0>
+import 'pydantic.plugin._loader' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e42acb30>
+import 'modules.character_sheet.model.model' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4cf60f0>
+# /home/pjunak/Documents/GitHub/Living-scroll/modules/character_sheet/model/__pycache__/io.cpython-314.pyc matches /home/pjunak/Documents/GitHub/Living-scroll/modules/character_sheet/model/io.py
+# code object from '/home/pjunak/Documents/GitHub/Living-scroll/modules/character_sheet/model/__pycache__/io.cpython-314.pyc'
+import 'modules.character_sheet.model.io' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4cf6210>
+# /home/pjunak/Documents/GitHub/Living-scroll/modules/character_sheet/model/__pycache__/spell_profile.cpython-314.pyc matches /home/pjunak/Documents/GitHub/Living-scroll/modules/character_sheet/model/spell_profile.py
+# code object from '/home/pjunak/Documents/GitHub/Living-scroll/modules/character_sheet/model/__pycache__/spell_profile.cpython-314.pyc'
+import 'modules.character_sheet.model.spell_profile' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e42efb30>
+import 'modules.character_sheet.model' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4cf5eb0>
+import 'tests.test_character_model' # <_frozen_importlib_external.SourceFileLoader object at 0x7f85e4c2eab0>
+# clear sys.path_importer_cache
+# clear sys.path_hooks
+# clear builtins._
+# clear sys.path
+# clear sys.argv
+# clear sys.ps1
+# clear sys.ps2
+# clear sys.last_exc
+# clear sys.last_type
+# clear sys.last_value
+# clear sys.last_traceback
+# clear sys.__interactivehook__
+# clear sys.meta_path
+# restore sys.stdin
+# restore sys.stdout
+# restore sys.stderr
+# cleanup[2] removing sys
+# cleanup[2] removing builtins
+# cleanup[2] removing _frozen_importlib
+# cleanup[2] removing _imp
+# cleanup[2] removing _thread
+# cleanup[2] removing _warnings
+# cleanup[2] removing _weakref
+# cleanup[2] removing _io
+# cleanup[2] removing marshal
+# cleanup[2] removing posix
+# cleanup[2] removing _frozen_importlib_external
+# cleanup[2] removing time
+# cleanup[2] removing zipimport
+# destroy zipimport
+# cleanup[2] removing _codecs
+# cleanup[2] removing codecs
+# cleanup[2] removing encodings.aliases
+# cleanup[2] removing encodings
+# cleanup[2] removing encodings.utf_8
+# cleanup[2] removing _signal
+# cleanup[2] removing __main__
+# destroy __main__
+# cleanup[2] removing _abc
+# cleanup[2] removing abc
+# cleanup[2] removing _stat
+# cleanup[2] removing stat
+# cleanup[2] removing _collections_abc
+# cleanup[2] removing errno
+# cleanup[2] removing genericpath
+# cleanup[2] removing posixpath
+# cleanup[2] removing os.path
+# cleanup[2] removing os
+# cleanup[2] removing _sitebuiltins
+# cleanup[2] removing encodings.utf_8_sig
+# cleanup[2] removing _types
+# destroy _types
+# cleanup[2] removing types
+# cleanup[2] removing importlib._bootstrap
+# cleanup[2] removing importlib._bootstrap_external
+# cleanup[2] removing importlib
+# cleanup[2] removing importlib._abc
+# cleanup[2] removing importlib.util
+# cleanup[2] removing importlib.machinery
+# cleanup[2] removing paste
+# destroy paste
+# cleanup[2] removing abrt_exception_handler3
+# destroy abrt_exception_handler3
+# cleanup[2] removing _distutils_hack
+# destroy _distutils_hack
+# cleanup[2] removing site
+# destroy site
+# cleanup[2] removing linecache
+# cleanup[2] removing _contextvars
+# cleanup[2] removing _py_warnings
+# destroy _py_warnings
+# cleanup[2] removing warnings
+# cleanup[2] removing atexit
+# cleanup[2] removing collections.abc
+# cleanup[2] removing itertools
+# cleanup[2] removing keyword
+# cleanup[2] removing _operator
+# cleanup[2] removing operator
+# cleanup[2] removing reprlib
+# destroy reprlib
+# cleanup[2] removing _collections
+# cleanup[2] removing collections
+# cleanup[2] removing _functools
+# cleanup[2] removing functools
+# cleanup[2] removing contextlib
+# cleanup[2] removing _ast
+# destroy _ast
+# cleanup[2] removing ast
+# cleanup[2] removing enum
+# cleanup[2] removing annotationlib
+# cleanup[2] removing io
+# cleanup[2] removing _opcode
+# cleanup[2] removing _opcode_metadata
+# destroy _opcode_metadata
+# cleanup[2] removing opcode
+# destroy opcode
+# cleanup[2] removing dis
+# cleanup[2] removing _sre
+# cleanup[2] removing re._constants
+# cleanup[2] removing re._parser
+# cleanup[2] removing re._casefix
+# cleanup[2] removing re._compiler
+# cleanup[2] removing copyreg
+# cleanup[2] removing re
+# cleanup[2] removing token
+# cleanup[2] removing _tokenize
+# cleanup[2] removing tokenize
+# cleanup[2] removing _weakrefset
+# destroy _weakrefset
+# cleanup[2] removing weakref
+# cleanup[2] removing inspect
+# cleanup[2] removing _locale
+# cleanup[2] removing locale
+# cleanup[2] removing textwrap
+# cleanup[2] removing __future__
+# cleanup[2] removing codeop
+# cleanup[2] removing copy
+# cleanup[2] removing dataclasses
+# cleanup[2] removing _colorize
+# cleanup[2] removing traceback
+# cleanup[2] removing _string
+# cleanup[2] removing string
+# cleanup[2] removing threading
+# cleanup[2] removing logging
+# cleanup[2] removing ntpath
+# cleanup[2] removing fnmatch
+# cleanup[2] removing glob
+# destroy glob
+# cleanup[2] removing pwd
+# cleanup[2] removing grp
+# cleanup[2] removing fcntl
+# cleanup[2] removing pathlib._os
+# cleanup[2] removing pathlib
+# cleanup[2] removing pprint
+# cleanup[2] removing zlib
+# cleanup[2] removing compression
+# destroy compression
+# cleanup[2] removing compression._common
+# destroy compression._common
+# cleanup[2] removing compression._common._streams
+# cleanup[2] removing _bz2
+# cleanup[2] removing bz2
+# cleanup[2] removing _lzma
+# cleanup[2] removing lzma
+# cleanup[2] removing _zstd
+# cleanup[2] removing compression.zstd._zstdfile
+# cleanup[2] removing compression.zstd
+# cleanup[2] removing shutil
+# cleanup[2] removing signal
+# cleanup[2] removing _posixsubprocess
+# cleanup[2] removing select
+# cleanup[2] removing math
+# cleanup[2] removing selectors
+# cleanup[2] removing subprocess
+# cleanup[2] removing _bisect
+# cleanup[2] removing bisect
+# destroy bisect
+# cleanup[2] removing _random
+# cleanup[2] removing random
+# destroy random
+# cleanup[2] removing tempfile
+# cleanup[2] removing packaging
+# destroy packaging
+# cleanup[2] removing _typing
+# cleanup[2] removing typing
+# cleanup[2] removing packaging._structures
+# destroy packaging._structures
+# cleanup[2] removing packaging.version
+# destroy packaging.version
+# cleanup[2] removing matplotlib._api.deprecation
+# cleanup[2] removing matplotlib._api
+# cleanup[2] removing matplotlib._version
+# cleanup[2] removing _struct
+# cleanup[2] removing struct
+# cleanup[2] removing gzip
+# cleanup[2] removing shlex
+# cleanup[2] removing numpy.version
+# cleanup[2] removing numpy._expired_attrs_2_0
+# cleanup[2] removing numpy._utils._convertions
+# cleanup[2] removing numpy._utils
+# cleanup[2] removing numpy._globals
+# cleanup[2] removing numpy._distributor_init
+# cleanup[2] removing _datetime
+# cleanup[2] removing datetime
+# cleanup[2] removing numpy.exceptions
+# cleanup[2] removing numpy._core._exceptions
+# cleanup[2] removing contextvars
+# destroy contextvars
+# cleanup[2] removing numpy._core.printoptions
+# destroy numpy._core.printoptions
+# cleanup[2] removing numpy.dtypes
+# cleanup[2] removing numpy._core._multiarray_umath
+# cleanup[2] removing numpy._utils._inspect
+# cleanup[2] removing numpy._core.overrides
+# cleanup[2] removing numpy._core.multiarray
+# cleanup[2] removing numpy._core.umath
+# cleanup[2] removing numbers
+# cleanup[2] removing numpy._core._dtype
+# cleanup[2] removing numpy._core._string_helpers
+# cleanup[2] removing numpy._core._type_aliases
+# cleanup[2] removing numpy._core.numerictypes
+# cleanup[2] removing _compat_pickle
+# cleanup[2] removing _pickle
+# cleanup[2] removing pickle
+# cleanup[2] removing numpy._core._methods
+# cleanup[2] removing numpy._core.fromnumeric
+# cleanup[2] removing numpy._core.shape_base
+# cleanup[2] removing numpy._core._ufunc_config
+# cleanup[2] removing numpy._core._asarray
+# cleanup[2] removing numpy._core.arrayprint
+# cleanup[2] removing numpy._core.numeric
+# cleanup[2] removing numpy._core.einsumfunc
+# cleanup[2] removing numpy._core.function_base
+# cleanup[2] removing numpy._core.getlimits
+# cleanup[2] removing numpy._core.memmap
+# destroy numpy._core.memmap
+# cleanup[2] removing numpy._core.records
+# cleanup[2] removing numpy._core._add_newdocs
+# cleanup[2] removing numpy._core._add_newdocs_scalars
+# cleanup[2] removing numpy._core._dtype_ctypes
+# cleanup[2] removing sysconfig
+# cleanup[2] removing _ctypes
+# cleanup[2] removing ctypes._endian
+# cleanup[2] removing ctypes
+# cleanup[2] removing numpy._core._internal
+# cleanup[2] removing numpy._pytesttester
+# cleanup[2] removing numpy._core
+# cleanup[2] removing numpy.__config__
+# cleanup[2] removing numpy._typing._nbit_base
+# cleanup[2] removing numpy._typing._nested_sequence
+# cleanup[2] removing numpy._typing._shape
+# cleanup[2] removing numpy._typing._array_like
+# cleanup[2] removing numpy._typing._char_codes
+# cleanup[2] removing numpy._typing._dtype_like
+# cleanup[2] removing numpy._typing._nbit
+# cleanup[2] removing numpy._typing._scalars
+# cleanup[2] removing numpy._typing._ufunc
+# cleanup[2] removing numpy._typing
+# cleanup[2] removing numpy.lib._stride_tricks_impl
+# cleanup[2] removing numpy.lib._twodim_base_impl
+# cleanup[2] removing numpy.lib._array_utils_impl
+# cleanup[2] removing numpy.lib.array_utils
+# cleanup[2] removing numpy.linalg._umath_linalg
+# cleanup[2] removing numpy.linalg._linalg
+# cleanup[2] removing numpy.linalg
+# cleanup[2] removing numpy.matrixlib.defmatrix
+# cleanup[2] removing numpy.matrixlib
+# cleanup[2] removing numpy.lib._histograms_impl
+# cleanup[2] removing numpy.lib._function_base_impl
+# cleanup[2] removing numpy.lib._index_tricks_impl
+# cleanup[2] removing numpy.lib._arraypad_impl
+# cleanup[2] removing numpy.lib._arraysetops_impl
+# cleanup[2] removing numpy.lib._arrayterator_impl
+# cleanup[2] removing numpy.lib._nanfunctions_impl
+# cleanup[2] removing platform
+# cleanup[2] removing numpy.lib._utils_impl
+# cleanup[2] removing numpy.lib._format_impl
+# cleanup[2] removing numpy.lib.format
+# cleanup[2] removing numpy.lib._datasource
+# cleanup[2] removing numpy.lib._iotools
+# cleanup[2] removing numpy.lib._npyio_impl
+# cleanup[2] removing numpy.lib._ufunclike_impl
+# cleanup[2] removing numpy.lib._type_check_impl
+# cleanup[2] removing numpy.lib._polynomial_impl
+# cleanup[2] removing numpy.lib._shape_base_impl
+# cleanup[2] removing numpy.lib._version
+# cleanup[2] removing numpy.lib.introspect
+# cleanup[2] removing numpy.lib.mixins
+# cleanup[2] removing numpy.lib.npyio
+# cleanup[2] removing numpy.lib._scimath_impl
+# cleanup[2] removing numpy.lib.scimath
+# cleanup[2] removing numpy.lib.stride_tricks
+# cleanup[2] removing numpy.lib
+# cleanup[2] removing numpy._array_api_info
+# cleanup[2] removing numpy
+# cleanup[2] removing matplotlib._c_internal_utils
+# cleanup[2] removing matplotlib.cbook
+# cleanup[2] removing matplotlib._docstring
+# cleanup[2] removing matplotlib.backends.registry
+# cleanup[2] removing matplotlib.backends
+# cleanup[2] removing binascii
+# cleanup[2] removing base64
+# cleanup[2] removing PIL._version
+# destroy PIL._version
+# cleanup[2] removing PIL
+# destroy PIL
+# cleanup[2] removing PIL.ExifTags
+# cleanup[2] removing PIL._deprecate
+# destroy PIL._deprecate
+# cleanup[2] removing PIL.ImageMode
+# cleanup[2] removing PIL.TiffTags
+# cleanup[2] removing PIL._binary
+# destroy PIL._binary
+# cleanup[2] removing PIL._typing
+# destroy PIL._typing
+# cleanup[2] removing PIL._util
+# destroy PIL._util
+# cleanup[2] removing PIL._imaging
+# cleanup[2] removing PIL.Image
+# cleanup[2] removing PIL.ImageChops
+# cleanup[2] removing PIL.ImageFile
+# cleanup[2] removing array
+# cleanup[2] removing PIL.GimpGradientFile
+# cleanup[2] removing PIL.GimpPaletteFile
+# cleanup[2] removing PIL.ImageColor
+# cleanup[2] removing PIL.PaletteFile
+# cleanup[2] removing PIL.ImagePalette
+# cleanup[2] removing PIL.ImageSequence
+# cleanup[2] removing PIL.PngImagePlugin
+# destroy PIL.PngImagePlugin
+# cleanup[2] removing matplotlib._cm
+# cleanup[2] removing matplotlib._path
+# cleanup[2] removing matplotlib.bezier
+# cleanup[2] removing matplotlib.path
+# cleanup[2] removing matplotlib.transforms
+# cleanup[2] removing matplotlib.ticker
+# cleanup[2] removing matplotlib.scale
+# cleanup[2] removing matplotlib._image
+# cleanup[2] removing matplotlib._color_data
+# cleanup[2] removing matplotlib.colors
+# cleanup[2] removing pyparsing.warnings
+# destroy pyparsing.warnings
+# cleanup[2] removing pyparsing.util
+# cleanup[2] removing pyparsing.unicode
+# destroy pyparsing.unicode
+# cleanup[2] removing pyparsing.exceptions
+# cleanup[2] removing pyparsing.results
+# cleanup[2] removing pyparsing.actions
+# cleanup[2] removing pyparsing.core
+# cleanup[2] removing html.entities
+# cleanup[2] removing html
+# cleanup[2] removing pyparsing.helpers
+# cleanup[2] removing unittest.util
+# cleanup[2] removing unittest.result
+# cleanup[2] removing _heapq
+# cleanup[2] removing heapq
+# destroy heapq
+# cleanup[2] removing difflib
+# cleanup[2] removing unittest.case
+# cleanup[2] removing unittest.suite
+# cleanup[2] removing unittest.loader
+# cleanup[2] removing gettext
+# destroy gettext
+# cleanup[2] removing argparse
+# cleanup[2] removing unittest.signals
+# cleanup[2] removing unittest.runner
+# cleanup[2] removing unittest.main
+# destroy unittest.main
+# cleanup[2] removing unittest
+# cleanup[2] removing pyparsing.testing
+# destroy pyparsing.testing
+# cleanup[2] removing pyparsing.common
+# destroy pyparsing.common
+# cleanup[2] removing importlib.resources.abc
+# cleanup[2] removing importlib.resources._common
+# cleanup[2] removing importlib.resources._functional
+# cleanup[2] removing importlib.resources
+# cleanup[2] removing pyparsing
+# destroy pyparsing
+# cleanup[2] removing matplotlib._fontconfig_pattern
+# cleanup[2] removing matplotlib._enums
+# cleanup[2] removing cycler
+# destroy cycler
+# cleanup[2] removing matplotlib.rcsetup
+# cleanup[2] removing matplotlib.ft2font
+# cleanup[2] removing dateutil._version
+# cleanup[2] removing dateutil
+# destroy dateutil
+# cleanup[2] removing kiwisolver.exceptions
+# cleanup[2] removing kiwisolver._cext
+# cleanup[2] removing kiwisolver
+# destroy kiwisolver
+# destroy kiwisolver.exceptions
+# destroy kiwisolver._cext
+# cleanup[2] removing numpy.ma.core
+# cleanup[2] removing numpy.ma.extras
+# cleanup[2] removing numpy.ma
+# cleanup[2] removing matplotlib.artist
+# cleanup[2] removing matplotlib.colorizer
+# cleanup[2] removing matplotlib._cm_listed
+# cleanup[2] removing matplotlib._cm_multivar
+# cleanup[2] removing matplotlib._cm_bivar
+# cleanup[2] removing matplotlib.cm
+# cleanup[2] removing matplotlib
+# cleanup[2] removing tests
+# destroy tests
+# cleanup[2] removing modules
+# destroy modules
+# cleanup[2] removing modules.character_sheet
+# destroy modules.character_sheet
+# cleanup[2] removing typing_extensions
+# cleanup[2] removing pydantic_core._pydantic_core
+# cleanup[2] removing _decimal
+# cleanup[2] removing decimal
+# destroy decimal
+# cleanup[2] removing pydantic_core.core_schema
+# cleanup[2] removing pydantic_core
+# cleanup[2] removing pydantic.version
+# cleanup[2] removing pydantic.warnings
+# cleanup[2] removing pydantic._migration
+# cleanup[2] removing typing_inspection
+# destroy typing_inspection
+# cleanup[2] removing typing_inspection.typing_objects
+# cleanup[2] removing typing_inspection.introspection
+# destroy typing_inspection.introspection
+# cleanup[2] removing pydantic._internal
+# cleanup[2] removing pydantic._internal._namespace_utils
+# cleanup[2] removing pydantic._internal._typing_extra
+# cleanup[2] removing pydantic._internal._repr
+# cleanup[2] removing pydantic.errors
+# cleanup[2] removing pydantic
+# destroy pydantic
+# cleanup[2] removing pydantic._internal._internal_dataclass
+# cleanup[2] removing pydantic.aliases
+# cleanup[2] removing pydantic.config
+# cleanup[2] removing pydantic._internal._config
+# cleanup[2] removing pydantic._internal._core_utils
+# cleanup[2] removing pydantic._internal._import_utils
+# cleanup[2] removing pydantic._internal._utils
+# cleanup[2] removing pydantic._internal._decorators
+# cleanup[2] removing pydantic._internal._forward_ref
+# cleanup[2] removing pydantic._internal._generics
+# cleanup[2] removing pydantic._internal._docs_extraction
+# cleanup[2] removing pydantic._internal._fields
+# cleanup[2] removing pydantic.plugin
+# cleanup[2] removing pydantic.plugin._schema_validator
+# cleanup[2] removing pydantic._internal._mock_val_ser
+# cleanup[2] removing fractions
+# destroy fractions
+# cleanup[2] removing ipaddress
+# destroy ipaddress
+# cleanup[2] removing _uuid
+# cleanup[2] removing uuid
+# destroy uuid
+# cleanup[2] removing _sysconfigdata__linux_x86_64-linux-gnu
+# destroy _sysconfigdata__linux_x86_64-linux-gnu
+# cleanup[2] removing zoneinfo._tzpath
+# cleanup[2] removing zoneinfo._common
+# cleanup[2] removing _zoneinfo
+# cleanup[2] removing zoneinfo
+# destroy zoneinfo
+# cleanup[2] removing pydantic.annotated_handlers
+# cleanup[2] removing pydantic.functional_validators
+# cleanup[2] removing pydantic._internal._core_metadata
+# cleanup[2] removing pydantic._internal._schema_generation_shared
+# cleanup[2] removing pydantic.json_schema
+# cleanup[2] removing pydantic._internal._discriminated_union
+# cleanup[2] removing pydantic._internal._known_annotated_metadata
+# cleanup[2] removing pydantic._internal._schema_gather
+# cleanup[2] removing pydantic._internal._generate_schema
+# cleanup[2] removing pydantic._internal._signature
+# cleanup[2] removing pydantic._internal._model_construction
+# cleanup[2] removing pydantic.main
+# cleanup[2] removing annotated_types
+# cleanup[2] removing pydantic._internal._validators
+# cleanup[2] removing pydantic.types
+# cleanup[2] removing pydantic.fields
+# cleanup[2] removing pydantic.deprecated
+# cleanup[2] removing pydantic._internal._decorators_v1
+# cleanup[2] removing pydantic.deprecated.class_validators
+# cleanup[2] removing modules.core
+# destroy modules.core
+# cleanup[2] removing modules.core.enums
+# destroy modules.core.enums
+# cleanup[2] removing _json
+# cleanup[2] removing json.scanner
+# cleanup[2] removing json.decoder
+# cleanup[2] removing json.encoder
+# cleanup[2] removing json
+# cleanup[2] removing email
+# cleanup[2] removing zipfile._path.glob
+# cleanup[2] removing zipfile._path
+# cleanup[2] removing zipfile
+# cleanup[2] removing importlib.metadata._meta
+# cleanup[2] removing importlib.metadata._collections
+# cleanup[2] removing importlib.metadata._functools
+# cleanup[2] removing importlib.metadata._itertools
+# cleanup[2] removing importlib.abc
+# cleanup[2] removing importlib.metadata
+# cleanup[2] removing pydantic.plugin._loader
+# cleanup[2] removing modules.character_sheet.model.model
+# cleanup[2] removing modules.character_sheet.model.io
+# cleanup[2] removing modules.character_sheet.model.spell_profile
+# cleanup[2] removing modules.character_sheet.model
+# destroy modules.character_sheet.model
+# destroy modules.character_sheet.model.model
+# destroy modules.character_sheet.model.io
+# destroy modules.character_sheet.model.spell_profile
+# cleanup[2] removing tests.test_character_model
+# destroy tests.test_character_model
+# destroy matplotlib.backends.registry
+# destroy _sitebuiltins
+# destroy matplotlib._version
+# destroy matplotlib.backends
+# destroy matplotlib.bezier
+# destroy matplotlib.path
+# destroy matplotlib.ticker
+# destroy matplotlib._color_data
+# destroy matplotlib._fontconfig_pattern
+# destroy matplotlib._enums
+# destroy matplotlib.rcsetup
+# destroy matplotlib.colorizer
+# destroy matplotlib._cm_listed
+# destroy matplotlib._cm_multivar
+# destroy matplotlib._cm_bivar
+# destroy matplotlib.cm
+# destroy encodings
+# destroy _locale
+# destroy _signal
+# destroy _posixsubprocess
+# destroy selectors
+# destroy matplotlib._api.deprecation
+# destroy _datetime
+# destroy gzip
+# destroy shlex
+# destroy subprocess
+# destroy matplotlib._cm
+# destroy PIL.ImageMode
+# destroy PIL.TiffTags
+# destroy PIL._imaging
+# destroy PIL.ExifTags
+# destroy array
+# destroy PIL.GimpGradientFile
+# destroy PIL.GimpPaletteFile
+# destroy PIL.ImageColor
+# destroy PIL.PaletteFile
+# destroy PIL.Image
+# destroy PIL.ImageChops
+# destroy PIL.ImageFile
+# destroy PIL.ImagePalette
+# destroy PIL.ImageSequence
+# destroy locale
+# destroy matplotlib.transforms
+# destroy select
+# destroy pydantic._internal._import_utils
+# destroy pydantic._internal._docs_extraction
+# destroy pydantic._internal._schema_gather
+# destroy pydantic._internal._generate_schema
+# destroy pydantic._internal._signature
+# destroy pydantic.version
+# destroy pydantic.warnings
+# destroy pydantic._migration
+# destroy pydantic._internal
+# destroy pydantic.errors
+# destroy pydantic.aliases
+# destroy pydantic.config
+# destroy pydantic.plugin
+# destroy pydantic.annotated_handlers
+# destroy pydantic.functional_validators
+# destroy pydantic.json_schema
+# destroy pydantic.main
+# destroy pydantic.fields
+# destroy pydantic.deprecated
+# destroy pydantic.deprecated.class_validators
+# destroy unittest.signals
+# destroy pydantic.plugin._schema_validator
+# destroy pydantic.plugin._loader
+# destroy difflib
+# destroy unittest.case
+# destroy unittest.suite
+# destroy unittest.util
+# destroy signal
+# destroy unittest.result
+# destroy argparse
+# destroy unittest.loader
+# destroy unittest.runner
+# destroy _heapq
+# destroy matplotlib._docstring
+# destroy pyparsing.util
+# destroy pyparsing.exceptions
+# destroy pyparsing.results
+# destroy pyparsing.actions
+# destroy pyparsing.core
+# destroy pyparsing.helpers
+# destroy dateutil._version
+# destroy matplotlib.colors
+# destroy matplotlib.scale
+# destroy matplotlib.artist
+# destroy logging
+# destroy matplotlib
+# destroy matplotlib._api
+# destroy matplotlib.cbook
+# destroy zoneinfo._tzpath
+# destroy unittest
+# cleanup[3] wiping importlib.metadata
+# destroy importlib.metadata._meta
+# destroy importlib.metadata._collections
+# destroy importlib.metadata._functools
+# destroy importlib.metadata._itertools
+# destroy json
+# destroy email
+# cleanup[3] wiping importlib.abc
+# cleanup[3] wiping zipfile
+# destroy zipfile._path
+# destroy bz2
+# destroy lzma
+# destroy compression.zstd
+# cleanup[3] wiping zipfile._path.glob
+# cleanup[3] wiping json.encoder
+# cleanup[3] wiping json.decoder
+# cleanup[3] wiping json.scanner
+# cleanup[3] wiping _json
+# cleanup[3] wiping pydantic._internal._decorators_v1
+# cleanup[3] wiping pydantic.types
+# destroy pydantic._internal._validators
+# destroy base64
+# cleanup[3] wiping annotated_types
+# cleanup[3] wiping pydantic._internal._model_construction
+# cleanup[3] wiping pydantic._internal._known_annotated_metadata
+# cleanup[3] wiping pydantic._internal._discriminated_union
+# cleanup[3] wiping pydantic._internal._schema_generation_shared
+# cleanup[3] wiping pydantic._internal._core_metadata
+# cleanup[3] wiping _zoneinfo
+# cleanup[3] wiping zoneinfo._common
+# cleanup[3] wiping _uuid
+# cleanup[3] wiping pydantic._internal._mock_val_ser
+# cleanup[3] wiping pydantic._internal._fields
+# cleanup[3] wiping pydantic._internal._generics
+# cleanup[3] wiping pydantic._internal._forward_ref
+# cleanup[3] wiping pydantic._internal._decorators
+# cleanup[3] wiping pydantic._internal._utils
+# cleanup[3] wiping pydantic._internal._core_utils
+# cleanup[3] wiping pydantic._internal._config
+# cleanup[3] wiping pydantic._internal._internal_dataclass
+# cleanup[3] wiping pydantic._internal._repr
+# cleanup[3] wiping pydantic._internal._typing_extra
+# cleanup[3] wiping pydantic._internal._namespace_utils
+# cleanup[3] wiping typing_inspection.typing_objects
+# cleanup[3] wiping pydantic_core
+# cleanup[3] wiping pydantic_core.core_schema
+# cleanup[3] wiping _decimal
+# cleanup[3] wiping pydantic_core._pydantic_core
+# cleanup[3] wiping typing_extensions
+# cleanup[3] wiping numpy.ma
+# destroy numpy.ma.extras
+# cleanup[3] wiping numpy.ma.core
+# cleanup[3] wiping matplotlib.ft2font
+# cleanup[3] wiping importlib.resources
+# destroy importlib.resources._common
+# destroy importlib.resources._functional
+# destroy importlib.resources.abc
+# cleanup[3] wiping html
+# destroy html.entities
+# cleanup[3] wiping matplotlib._image
+# cleanup[3] wiping matplotlib._path
+# cleanup[3] wiping binascii
+# cleanup[3] wiping matplotlib._c_internal_utils
+# cleanup[3] wiping numpy
+# destroy numpy._expired_attrs_2_0
+# destroy numpy._utils
+# destroy numpy._globals
+# destroy numpy._distributor_init
+# destroy numpy._pytesttester
+# destroy numpy._core
+# destroy numpy._typing
+# destroy numpy._typing._nbit_base
+# destroy numpy._typing._nested_sequence
+# destroy numpy._typing._shape
+# destroy numpy._typing._array_like
+# destroy numpy._typing._char_codes
+# destroy numpy._typing._dtype_like
+# destroy numpy._typing._nbit
+# destroy numpy._typing._scalars
+# destroy numpy._typing._ufunc
+# destroy numpy._array_api_info
+# destroy numpy.version
+# destroy numpy.exceptions
+# destroy numpy.dtypes
+# destroy numpy.__config__
+# destroy numpy.linalg
+# destroy numpy.linalg._linalg
+# destroy numpy.lib
+# destroy numpy.ma
+# cleanup[3] wiping numpy.lib.stride_tricks
+# cleanup[3] wiping numpy.lib.scimath
+# cleanup[3] wiping numpy.lib._scimath_impl
+# cleanup[3] wiping numpy.lib.npyio
+# cleanup[3] wiping numpy.lib.mixins
+# cleanup[3] wiping numpy.lib.introspect
+# cleanup[3] wiping numpy.lib._version
+# cleanup[3] wiping numpy.lib._shape_base_impl
+# cleanup[3] wiping numpy.lib._polynomial_impl
+# cleanup[3] wiping numpy.lib._type_check_impl
+# cleanup[3] wiping numpy.lib._ufunclike_impl
+# cleanup[3] wiping numpy.lib._npyio_impl
+# cleanup[3] wiping numpy.lib._iotools
+# cleanup[3] wiping numpy.lib._datasource
+# cleanup[3] wiping numpy.lib.format
+# cleanup[3] wiping numpy.lib._format_impl
+# cleanup[3] wiping numpy.lib._utils_impl
+# destroy platform
+# cleanup[3] wiping numpy.lib._nanfunctions_impl
+# cleanup[3] wiping numpy.lib._arrayterator_impl
+# cleanup[3] wiping numpy.lib._arraysetops_impl
+# cleanup[3] wiping numpy.lib._arraypad_impl
+# cleanup[3] wiping numpy.lib._index_tricks_impl
+# destroy numpy.matrixlib
+# destroy numpy.matrixlib.defmatrix
+# cleanup[3] wiping numpy.lib._function_base_impl
+# cleanup[3] wiping numpy.lib._histograms_impl
+# cleanup[3] wiping numpy.linalg._umath_linalg
+# cleanup[3] wiping numpy.lib.array_utils
+# cleanup[3] wiping numpy.lib._array_utils_impl
+# cleanup[3] wiping numpy.lib._twodim_base_impl
+# cleanup[3] wiping numpy.lib._stride_tricks_impl
+# cleanup[3] wiping numpy._core._internal
+# destroy ctypes
+# cleanup[3] wiping ctypes._endian
+# cleanup[3] wiping _ctypes
+# cleanup[3] wiping sysconfig
+# cleanup[3] wiping numpy._core._dtype_ctypes
+# cleanup[3] wiping numpy._core._add_newdocs_scalars
+# cleanup[3] wiping numpy._core._add_newdocs
+# cleanup[3] wiping numpy._core.records
+# cleanup[3] wiping numpy._core.getlimits
+# cleanup[3] wiping numpy._core.function_base
+# cleanup[3] wiping numpy._core.einsumfunc
+# cleanup[3] wiping numpy._core.numeric
+# cleanup[3] wiping numpy._core.arrayprint
+# cleanup[3] wiping numpy._core._asarray
+# cleanup[3] wiping numpy._core._ufunc_config
+# cleanup[3] wiping numpy._core.shape_base
+# cleanup[3] wiping numpy._core.fromnumeric
+# cleanup[3] wiping numpy._core._methods
+# destroy pickle
+# cleanup[3] wiping _pickle
+# cleanup[3] wiping _compat_pickle
+# cleanup[3] wiping numpy._core.numerictypes
+# cleanup[3] wiping numpy._core._type_aliases
+# cleanup[3] wiping numpy._core._string_helpers
+# cleanup[3] wiping numpy._core._dtype
+# cleanup[3] wiping numbers
+# cleanup[3] wiping numpy._core.umath
+# cleanup[3] wiping numpy._core.multiarray
+# cleanup[3] wiping numpy._core.overrides
+# cleanup[3] wiping numpy._utils._inspect
+# cleanup[3] wiping numpy._core._multiarray_umath
+# cleanup[3] wiping numpy._core._exceptions
+# cleanup[3] wiping datetime
+# cleanup[3] wiping numpy._utils._convertions
+# cleanup[3] wiping struct
+# cleanup[3] wiping _struct
+# cleanup[3] wiping typing
+# cleanup[3] wiping _typing
+# cleanup[3] wiping tempfile
+# destroy shutil
+# cleanup[3] wiping _random
+# cleanup[3] wiping _bisect
+# cleanup[3] wiping math
+# cleanup[3] wiping compression.zstd._zstdfile
+# cleanup[3] wiping _zstd
+# cleanup[3] wiping _lzma
+# cleanup[3] wiping _bz2
+# cleanup[3] wiping compression._common._streams
+# cleanup[3] wiping zlib
+# cleanup[3] wiping pprint
+# cleanup[3] wiping pathlib
+# destroy pathlib._os
+# cleanup[3] wiping fcntl
+# cleanup[3] wiping grp
+# destroy grp
+# cleanup[3] wiping pwd
+# destroy pwd
+# cleanup[3] wiping fnmatch
+# cleanup[3] wiping ntpath
+# cleanup[3] wiping threading
+# cleanup[3] wiping string
+# cleanup[3] wiping _string
+# destroy _string
+# cleanup[3] wiping traceback
+# destroy _colorize
+# destroy codeop
+# cleanup[3] wiping dataclasses
+# destroy annotationlib
+# cleanup[3] wiping copy
+# cleanup[3] wiping __future__
+# cleanup[3] wiping textwrap
+# cleanup[3] wiping inspect
+# destroy dis
+# destroy linecache
+# destroy tokenize
+# destroy token
+# cleanup[3] wiping weakref
+# cleanup[3] wiping _tokenize
+# cleanup[3] wiping re
+# destroy re._constants
+# destroy re._casefix
+# destroy re._compiler
+# destroy copyreg
+# cleanup[3] wiping re._parser
+# cleanup[3] wiping _sre
+# cleanup[3] wiping _opcode
+# cleanup[3] wiping io
+# cleanup[3] wiping enum
+# cleanup[3] wiping ast
+# cleanup[3] wiping contextlib
+# cleanup[3] wiping functools
+# cleanup[3] wiping _functools
+# cleanup[3] wiping collections
+# destroy _collections_abc
+# cleanup[3] wiping _collections
+# cleanup[3] wiping operator
+# cleanup[3] wiping _operator
+# cleanup[3] wiping keyword
+# cleanup[3] wiping itertools
+# cleanup[3] wiping atexit
+# cleanup[3] wiping warnings
+# cleanup[3] wiping _contextvars
+# cleanup[3] wiping importlib.machinery
+# cleanup[3] wiping importlib.util
+# cleanup[3] wiping importlib._abc
+# cleanup[3] wiping importlib
+# destroy importlib._abc
+# destroy importlib.util
+# destroy importlib.machinery
+# destroy importlib.resources
+# destroy importlib.abc
+# destroy importlib.metadata
+# cleanup[3] wiping importlib._bootstrap_external
+# cleanup[3] wiping importlib._bootstrap
+# destroy _frozen_importlib_external
+# cleanup[3] wiping types
+# cleanup[3] wiping encodings.utf_8_sig
+# cleanup[3] wiping os
+# cleanup[3] wiping os.path
+# destroy genericpath
+# cleanup[3] wiping posixpath
+# cleanup[3] wiping errno
+# cleanup[3] wiping stat
+# cleanup[3] wiping _stat
+# cleanup[3] wiping abc
+# cleanup[3] wiping _abc
+# cleanup[3] wiping encodings.utf_8
+# cleanup[3] wiping encodings.aliases
+# cleanup[3] wiping codecs
+# cleanup[3] wiping _codecs
+# cleanup[3] wiping time
+# cleanup[3] wiping posix
+# cleanup[3] wiping marshal
+# destroy marshal
+# cleanup[3] wiping _io
+# cleanup[3] wiping _weakref
+# cleanup[3] wiping _warnings
+# cleanup[3] wiping _thread
+# cleanup[3] wiping _imp
+# destroy _imp
+# cleanup[3] wiping _frozen_importlib
+# cleanup[3] wiping sys
+# cleanup[3] wiping builtins
+# destroy sys.monitoring
+# destroy sys._jit
+# destroy ntpath
+# destroy ctypes._endian
+# destroy _compat_pickle
+# destroy _stat
+# destroy fcntl
+# destroy _typing
+# destroy numpy._core._exceptions
+# destroy numpy._core.multiarray
+# destroy numpy._core.umath
+# destroy numpy._core._dtype
+# destroy numpy._core._string_helpers
+# destroy numpy._core._type_aliases
+# destroy numpy._core.numerictypes
+# destroy numpy._core._methods
+# destroy numpy._core.fromnumeric
+# destroy numpy._core.shape_base
+# destroy numpy._core._ufunc_config
+# destroy numpy._core._asarray
+# destroy numpy._core.arrayprint
+# destroy numpy._core.einsumfunc
+# destroy numpy._core.function_base
+# destroy numpy._core.getlimits
+# destroy numpy._core.records
+# destroy numpy._core._add_newdocs
+# destroy numpy._core._add_newdocs_scalars
+# destroy numpy._core._dtype_ctypes
+# destroy numpy._core._internal
+# destroy numpy.lib._stride_tricks_impl
+# destroy numpy.lib._twodim_base_impl
+# destroy numpy.lib._array_utils_impl
+# destroy numpy.lib.array_utils
+# destroy numpy.lib._histograms_impl
+# destroy numpy.lib._function_base_impl
+# destroy numpy.lib._index_tricks_impl
+# destroy numpy.lib._arraypad_impl
+# destroy numpy.lib._arraysetops_impl
+# destroy numpy.lib._arrayterator_impl
+# destroy numpy.lib._nanfunctions_impl
+# destroy numpy.lib._utils_impl
+# destroy numpy.lib._format_impl
+# destroy numpy.lib.format
+# destroy numpy.lib._datasource
+# destroy numpy.lib._iotools
+# destroy numpy.lib._npyio_impl
+# destroy numpy.lib._ufunclike_impl
+# destroy numpy.lib._type_check_impl
+# destroy numpy.lib._polynomial_impl
+# destroy numpy.lib._shape_base_impl
+# destroy numpy.lib._version
+# destroy numpy.lib.introspect
+# destroy numpy.lib.mixins
+# destroy numpy.lib.npyio
+# destroy numpy.lib._scimath_impl
+# destroy numpy.lib.scimath
+# destroy numpy.lib.stride_tricks
+# destroy numpy._core.numeric
+# destroy _contextvars
+# destroy _thread
+# destroy keyword
+# destroy _opcode
+# destroy re._parser
+# destroy _struct
+# destroy _ctypes
+# destroy _pickle
+# destroy __future__
+# destroy numpy
+# destroy numpy.ma.core
+# destroy _tokenize
+# destroy pydantic._internal._core_metadata
+# destroy pydantic._internal._core_utils
+# destroy pydantic._internal._schema_generation_shared
+# destroy datetime
+# destroy pydantic._internal._discriminated_union
+# destroy pydantic._internal._known_annotated_metadata
+# destroy pydantic_core
+# destroy pydantic._internal._config
+# destroy pydantic._internal._forward_ref
+# destroy pydantic._internal._mock_val_ser
+# destroy pydantic._internal._model_construction
+# destroy pydantic._internal._namespace_utils
+# destroy annotated_types
+# destroy pydantic.types
+# destroy pydantic._internal._fields
+# destroy pydantic._internal._generics
+# destroy pydantic._internal._typing_extra
+# destroy pydantic._internal._utils
+# destroy _warnings
+# destroy pydantic._internal._decorators
+# destroy pydantic._internal._decorators_v1
+# destroy abc
+# destroy tempfile
+# destroy importlib
+# destroy json.scanner
+# destroy json.decoder
+# destroy json.encoder
+# destroy _json
+# destroy _zoneinfo
+# destroy zoneinfo._common
+# destroy pydantic._internal._internal_dataclass
+# destroy pprint
+# destroy ast
+# destroy inspect
+# destroy textwrap
+# destroy fnmatch
+# destroy errno
+# destroy zlib
+# destroy _io
+# destroy compression._common._streams
+# destroy compression.zstd._zstdfile
+# destroy contextlib
+# destroy pathlib
+# destroy stat
+# destroy zipfile
+# destroy zipfile._path.glob
+# destroy struct
+# destroy binascii
+# destroy typing_extensions
+# destroy pydantic_core.core_schema
+# destroy typing_inspection.typing_objects
+# destroy _bz2
+# destroy _lzma
+# destroy _zstd
+# destroy dataclasses
+# destroy pydantic._internal._repr
+# destroy numbers
+# destroy sysconfig
+# destroy html
+# destroy typing
+# destroy string
+# destroy copy
+# destroy types
+# clear sys.meta_path
+# clear sys.modules
+# destroy _frozen_importlib
+# destroy matplotlib._c_internal_utils
+# destroy matplotlib._path
+# destroy matplotlib._image
+# destroy matplotlib.ft2font
+# destroy io
+# destroy re
+# destroy traceback
+# destroy weakref
+# destroy collections
+# destroy threading
+# destroy _weakref
+# destroy atexit
+# destroy _bisect
+# destroy codecs
+# destroy encodings.aliases
+# destroy encodings.utf_8
+# destroy encodings.utf_8_sig
+# destroy _random
+# destroy _codecs
+# destroy itertools
+# clear sys.audit hooks

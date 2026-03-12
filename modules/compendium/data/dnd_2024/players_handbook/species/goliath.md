@@ -2,6 +2,13 @@
 name: Goliath
 type: species
 id: species:goliath
+features:
+- name: Giant Ancestry
+  description: You are descended from Giants. Choose one supernatural boon from your ancestry.
+- name: Large Form
+  description: Starting at character level 5, you can change your size to Large as a Bonus Action.
+- name: Powerful Build
+  description: You have Advantage on any ability check to end the Grappled condition and count as one size larger for carrying capacity.
 ---
 
 Towering over most folk, goliaths are distant descendants of giants. Each goliath bears the favors of the first giants - favors that manifest in various supernatural boons, including the ability to quickly grow and temporarily approach the height of goliaths’ gigantic kin.

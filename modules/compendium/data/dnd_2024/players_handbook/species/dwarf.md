@@ -16,28 +16,21 @@ features:
     in contact with the same stone surface.
 - name: Tool Proficiency
   description: Gain proficiency with one set of artisan's tools of your choice.
-subtypes:
-- name: Hill Dwarf
-  ability_bonus:
-    ability: WIS
-    amount: 1
-  grants:
-    bonuses:
-      max_hp_per_level: 1
-  features:
-  - name: Dwarven Toughness
-    description: Your hit point maximum increases by 1, and it increases by 1 again
-      whenever you gain a level.
-- name: Mountain Dwarf
-  ability_bonus:
-    ability: STR
-    amount: 1
-  grants:
-    unquantifiable_modifiers:
-    - 'Armor Training: you have proficiency with light and medium armor.'
-  features:
-  - name: Armor Training
-    description: You have proficiency with light and medium armor.
+- name: Dwarven Lineage
+  description: You are part of a lineage that grants you supernatural abilities. Choose
+    one of the following lineages - Hill Dwarf or Mountain Dwarf.
+  options:
+  - label: Hill Dwarf
+    value: Hill Dwarf
+    grants:
+      hp_per_level: 1
+      unquantifiable_modifiers:
+      - "Dwarven Toughness: Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."
+  - label: Mountain Dwarf
+    value: Mountain Dwarf
+    grants:
+      unquantifiable_modifiers:
+      - "Armor Training: You have proficiency with Light and Medium armor."
 id: species:dwarf
 ---
 

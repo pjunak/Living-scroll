@@ -16,44 +16,27 @@ features:
     semiconscious for 4 hours to gain the benefits of a long rest.
 - name: Keen Senses
   description: You have proficiency in the Perception skill.
-subtypes:
-- name: High Elf
-  ability_bonus:
-    ability: INT
-    amount: 1
-  features:
-  - name: Cantrip
-    description: You know one cantrip of your choice from the Arcane spell list (Intelligence
-      is your spellcasting ability for it).
-  - name: Weapon Training
-    description: You have proficiency with the longsword, shortsword, longbow, and
-      shortbow.
-- name: Wood Elf
-  speed: 35
-  ability_bonus:
-    ability: WIS
-    amount: 1
-  features:
-  - name: Fleet of Foot
-    description: Your walking speed increases to 35 feet.
-  - name: Mask of the Wild
-    description: You can attempt to hide even when you are only lightly obscured by
-      foliage, heavy rain, falling snow, mist, or other natural phenomena.
-- name: Drow
-  ability_bonus:
-    ability: CHA
-    amount: 1
-  features:
-  - name: Sunlight Sensitivity
-    description: You have disadvantage on attack rolls and on Perception checks that
-      rely on sight when you, the target, or whatever you are trying to perceive is
-      in direct sunlight.
-  - name: Drow Magic
-    description: You know the dancing lights cantrip. At 3rd level, you can cast faerie
-      fire once per long rest, and at 5th level, you can cast darkness once per long
-      rest, using Charisma as your spellcasting ability.
-  - name: Drow Weapon Training
-    description: You have proficiency with rapiers, shortswords, and hand crossbows.
+- name: Elven Lineage
+  description: You are part of a lineage that grants you supernatural abilities. Choose
+    one of the following lineages - High Elf, Wood Elf, or Drow.
+  options:
+  - label: High Elf
+    value: High Elf
+    grants:
+      unquantifiable_modifiers:
+      - "High Elf lineage: You know one Wizard cantrip of your choice."
+  - label: Wood Elf
+    value: Wood Elf
+    grants:
+      unquantifiable_modifiers:
+      - "Wood Elf lineage: Wood Elf Magic"
+      bonuses:
+        speed: 5
+  - label: Drow
+    value: Drow
+    grants:
+      unquantifiable_modifiers:
+      - "Drow lineage: Drow Magic"
 id: species:elf
 ---
 

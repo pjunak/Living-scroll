@@ -307,20 +307,31 @@ class CharacterSheetHubWindow(FramelessWindow):
         
         # window = CharacterSheetWindow(record, self._app_context, parent=None) # Parent None to be independent window? Or self?
         
-        # Use new Dashboard
+        # Use FramelessWindow to maintain application style
+        from modules.core.ui.widgets import FramelessWindow
         from modules.character_sheet.ui.dashboard import CharacterDashboard
-        window = CharacterDashboard(record, self._app_context, parent=None)
+        
+        window = FramelessWindow(parent=None)
+        
+        dashboard = CharacterDashboard(record, self._app_context, parent=window)
+        
+        # Depending on if FramelessWindow is a QMainWindow or raw QWidget
+        if hasattr(window, 'setCentralWidget'):
+            window.setCentralWidget(dashboard)
+        else:
+            w_layout = QVBoxLayout(window)
+            w_layout.setContentsMargins(0, 0, 0, 0)
+            w_layout.addWidget(dashboard)
+            
         window.setWindowTitle(f"{record.display_name} - Dashboard")
         window.resize(1280, 800)
         
-        # If parent is self, it closes when hub closes. User probably wants separate windows.
-        # But we need to keep a reference so it doesn't get garbage collected.
         window.setAttribute(Qt.WidgetAttribute.WA_DeleteOnClose)
         self._register_child_window(window)
         
         # Hide Hub while sheet is open
-        window.destroyed.connect(self.show)
         self.hide()
+        window.destroyed.connect(self.show)
         
         window.show()
 

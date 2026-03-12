@@ -14,11 +14,19 @@ equipment:
 - 50 feet of silk rope
 - token from a shipmate
 - pouch with 10 gp
-starting_feat: Alert
+starting_feat: Tavern Brawler
 notes: Some captains allow Sailors to swap Alert for Skilled to reflect specialized
   training.
 id: background:sailor
+ability_bonus_options:
+  choose: 3
+  abilities:
+  - STR
+  - DEX
+  - WIS
+...
 ---
+
 
 You lived as a seafarer, wind at your back and decks swaying beneath your feet. You've perched on barstools in more ports of call than you can remember, faced mighty storms, and swapped stories with folk who live beneath the waves.
 

@@ -83,6 +83,8 @@ progression:
   features:
   - Archdruid
 id: class:druid
+multiclass_requirements:
+  WIS: 13
 ---
 
 Druids belong to ancient orders that call on the forces of nature. Harnessing the magic of animals, plants, and the four elements, Druids heal, transform into animals, and wield elemental destruction.
