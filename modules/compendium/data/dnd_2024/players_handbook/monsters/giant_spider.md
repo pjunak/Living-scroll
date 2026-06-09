@@ -1,5 +1,4 @@
----
-name: Giant Spider
+---name: Giant Spider
 size: Large
 type: Large Beast
 alignment: Unaligned
@@ -22,21 +21,35 @@ traits:
     \ to 10 feet with or without a running start."
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Piercing damage
-    plus 5 (2d4) Poison damage. If the target is a Medium or smaller creature, it
-    has the Grappled condition (escape DC 12).'
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 2
+  - type: poison
+    base:
+      dice: 2
+      die: 4
+      bonus: 0
+  type: utility
 - name: Swallow
-  description: "The toad swallows a Medium or smaller target it is grappling. While\
-    \ swallowed, the target isn\u2019t Grappled but has the Blinded and Restrained\
-    \ conditions, and it has Total Cover against attacks and other effects outside\
-    \ the toad. In addition, the target takes 10 (3d6) Acid damage at the end of each\
-    \ of the toad\u2019s turns. The toad can have only one target swallowed at a time,\
-    \ and it can\u2019t use Bite while it has a swallowed target. If the toad dies,\
-    \ a swallowed creature is no longer Restrained and can escape from the corpse\
-    \ using 5 feet of movement, exiting with the Prone condition."
----
+  damage:
+  - type: acid
+    base:
+      dice: 3
+      die: 6
+      bonus: 0
+  type: utility
 
+---
 # Giant Spider
 
 *Large Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Piercing damage plus 5 (2d4) Poison damage. If the target is a Medium or smaller creature, it has the Grappled condition (escape DC 12).
+
+**Swallow.** The toad swallows a Medium or smaller target it is grappling. While swallowed, the target isn’t Grappled but has the Blinded and Restrained conditions, and it has Total Cover against attacks and other effects outside the toad. In addition, the target takes 10 (3d6) Acid damage at the end of each of the toad’s turns. The toad can have only one target swallowed at a time, and it can’t use Bite while it has a swallowed target. If the toad dies, a swallowed creature is no longer Restrained and can escape from the corpse using 5 feet of movement, exiting with the Prone condition.
 

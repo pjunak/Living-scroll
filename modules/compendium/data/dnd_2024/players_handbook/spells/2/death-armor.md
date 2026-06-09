@@ -1,5 +1,4 @@
----
-name: Death Armor
+---name: Death Armor
 type: spell
 level: 2
 school: Necromancy
@@ -18,6 +17,17 @@ classes:
 - Wizard
 id: spell:death-armor
 material_price: ''
+actions:
+- type: save
+  ability: dea
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: necrotic
+    base:
+      dice: 2
+      die: 4
+      bonus: 0
 ---
 # Death Armor
 *2nd-Level Necromancy (Sorcerer, Wizard)*

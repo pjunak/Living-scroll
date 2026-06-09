@@ -1,5 +1,4 @@
----
-name: Hail of Thorns
+---name: Hail of Thorns
 type: spell
 level: 1
 school: Conjuration
@@ -16,6 +15,21 @@ classes:
 - Ranger
 id: spell:hail-of-thorns
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 10
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 10
+      mode: spell_level
 ---
 # Hail of Thorns
 *1st-Level Conjuration (Ranger)*

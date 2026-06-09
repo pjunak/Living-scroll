@@ -1,5 +1,4 @@
----
-name: Poison Spray
+---name: Poison Spray
 type: spell
 level: 0
 school: Necromancy
@@ -20,6 +19,18 @@ classes:
 - Wizard
 id: spell:poison-spray
 material_price: ''
+actions:
+- type: attack
+  damage:
+  - type: poison
+    base:
+      dice: 1
+      die: 12
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 12
+      mode: character_level
 ---
 # Poison Spray
 *Necromancy Cantrip (Artificer, Druid, Sorcerer, Warlock, Wizard)*

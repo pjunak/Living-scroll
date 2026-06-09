@@ -1,5 +1,4 @@
----
-name: Shining Smite
+---name: Shining Smite
 type: spell
 level: 2
 school: Transmutation
@@ -16,6 +15,18 @@ classes:
 - Paladin
 id: spell:shining-smite
 material_price: ''
+actions:
+- type: utility
+  damage:
+  - type: radiant
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: spell_level
 ---
 # Shining Smite
 *2nd-Level Transmutation (Paladin)*

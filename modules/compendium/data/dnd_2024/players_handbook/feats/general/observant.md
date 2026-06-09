@@ -1,12 +1,14 @@
----
-name: Observant
+---name: Observant
 type: feat
 category: general
-prerequisite: "Level 4+"
+prerequisite: Level 4+
 id: feat:observant
-attribute_increase: ['INT', 'WIS']
+attribute_increase:
+- INT
+- WIS
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 4+, Intelligence or Wisdom 13+*

@@ -1,5 +1,4 @@
----
-name: Spike Growth
+---name: Spike Growth
 type: spell
 level: 2
 school: Transmutation
@@ -18,6 +17,14 @@ classes:
 - Ranger
 id: spell:spike-growth
 material_price: ''
+actions:
+- type: utility
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 4
+      bonus: 0
 ---
 # Spike Growth
 *2nd-Level Transmutation (Druid, Ranger)*

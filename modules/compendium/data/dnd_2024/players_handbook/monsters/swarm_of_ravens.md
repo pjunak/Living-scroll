@@ -1,5 +1,4 @@
----
-name: Swarm of Ravens
+---name: Swarm of Ravens
 size: Medium
 type: Medium Swarm of Tiny Beasts
 alignment: Unaligned
@@ -26,12 +25,30 @@ traits:
     \ swarm can\u2019t regain Hit Points or gain Temporary Hit Points."
 actions:
 - name: Bites
-  description: "Melee Attack Roll: +6, reach 5 ft. Hit: 8 (1d8 + 4) Piercing damage\u2014\
-    or 6 (1d4 + 4) Piercing damage if the swarm is Bloodied\u2014plus 10 (3d6) Poison\
-    \ damage."
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 8
+      bonus: 4
+  - type: piercing
+    base:
+      dice: 1
+      die: 4
+      bonus: 4
+  - type: poison
+    base:
+      dice: 3
+      die: 6
+      bonus: 0
+  type: utility
 
+---
 # Swarm of Ravens
 
 *Medium Swarm of Tiny Beasts, Unaligned*
+
+### Actions
+
+**Bites.** Melee Attack Roll: +6, reach 5 ft. Hit: 8 (1d8 + 4) Piercing damage—or 6 (1d4 + 4) Piercing damage if the swarm is Bloodied—plus 10 (3d6) Poison damage.
 

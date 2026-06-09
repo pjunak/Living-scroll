@@ -1,5 +1,4 @@
----
-name: Quasit
+---name: Quasit
 size: Medium
 type: Medium Fiend
 alignment: Lawful Evil
@@ -33,14 +32,30 @@ actions:
 - name: Multiattack
   description: The rakshasa makes three Cursed Touch attacks.
 - name: Cursed Touch
-  description: 'Melee Attack Roll: +10, reach 5 ft. Hit: 12 (2d6 + 5) Slashing damage
-    plus 19 (3d12) Necrotic damage. If the target is a creature, it is cursed. While
-    cursed, the target gains no benefit from finishing a Short or Long Rest.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 6
+      bonus: 5
+  - type: necrotic
+    base:
+      dice: 3
+      die: 12
+      bonus: 0
+  type: utility
 - name: "Baleful Command (Recharge 5\u20136)"
-  description: "Wisdom Saving Throw: DC 18, each enemy in a 30-foot Emanation originating\
-    \ from the rakshasa. Failure: 28 (8d6) Psychic damage, and the target has the\
-    \ Frightened and Incapacitated conditions until the start of the rakshasa\u2019\
-    s next turn."
+  type: save
+  ability: wis
+  dc: 18
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 8
+      die: 6
+      bonus: 0
 - name: Spellcasting
   description: 'The rakshasa casts one of the following spells, requiring no Material
     components and using Charisma as the spellcasting ability (spell save DC 18):'
@@ -48,9 +63,15 @@ actions:
   description: Detect Magic, Detect Thoughts, Disguise Self, Mage Hand, Minor Illusion
 - name: '1/Day Each:'
   description: Fly, Invisibility, Major Image, Plane Shift
----
 
+---
 # Quasit
 
 *Medium Fiend, Lawful Evil*
+
+### Actions
+
+**Cursed Touch.** Melee Attack Roll: +10, reach 5 ft. Hit: 12 (2d6 + 5) Slashing damage plus 19 (3d12) Necrotic damage. If the target is a creature, it is cursed. While cursed, the target gains no benefit from finishing a Short or Long Rest.
+
+**Baleful Command (Recharge 5–6).** Wisdom Saving Throw: DC 18, each enemy in a 30-foot Emanation originating from the rakshasa. Failure: 28 (8d6) Psychic damage, and the target has the Frightened and Incapacitated conditions until the start of the rakshasa’s next turn.
 

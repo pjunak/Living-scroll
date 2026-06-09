@@ -1,5 +1,4 @@
----
-name: Defense
+---name: Defense
 type: feat
 category: fighting_style
 prerequisite: null
@@ -7,6 +6,7 @@ id: feat:defense
 attribute_increase: null
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Fighting Style Feature*

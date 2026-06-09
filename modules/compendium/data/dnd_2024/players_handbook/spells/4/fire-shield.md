@@ -1,5 +1,4 @@
----
-name: Fire Shield
+---name: Fire Shield
 type: spell
 level: 4
 school: Evocation
@@ -16,6 +15,14 @@ concentration: false
 classes: []
 id: spell:fire-shield
 material_price: ''
+actions:
+- type: utility
+  damage:
+  - type: fire
+    base:
+      dice: 2
+      die: 8
+      bonus: 0
 ---
 # Fire Shield
 *4th-Level Evocation*

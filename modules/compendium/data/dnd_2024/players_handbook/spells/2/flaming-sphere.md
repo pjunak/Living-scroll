@@ -1,5 +1,4 @@
----
-name: Flaming Sphere
+---name: Flaming Sphere
 type: spell
 level: 2
 school: Conjuration
@@ -19,6 +18,21 @@ classes:
 - Wizard
 id: spell:flaming-sphere
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: fire
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: spell_level
 ---
 # Flaming Sphere
 *2nd-Level Conjuration (Druid, Sorcerer, Wizard)*

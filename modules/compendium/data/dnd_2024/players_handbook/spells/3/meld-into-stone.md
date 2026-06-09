@@ -1,5 +1,4 @@
----
-name: Meld into Stone
+---name: Meld into Stone
 type: spell
 level: 3
 school: Transmutation
@@ -18,6 +17,14 @@ classes:
 - Ranger
 id: spell:meld-into-stone
 material_price: ''
+actions:
+- type: utility
+  damage:
+  - type: force
+    base:
+      dice: 6
+      die: 6
+      bonus: 0
 ---
 # Meld into Stone
 *3rd-Level Transmutation (Cleric, Druid, Ranger)*

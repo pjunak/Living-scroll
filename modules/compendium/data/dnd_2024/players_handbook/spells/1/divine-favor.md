@@ -1,5 +1,4 @@
----
-name: Divine Favor
+---name: Divine Favor
 type: spell
 level: 1
 school: Transmutation
@@ -16,6 +15,14 @@ classes:
 - Paladin
 id: spell:divine-favor
 material_price: ''
+actions:
+- type: utility
+  damage:
+  - type: radiant
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
 ---
 # Divine Favor
 *1st-Level Transmutation (Paladin)*

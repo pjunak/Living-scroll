@@ -1,5 +1,4 @@
----
-name: Mind Sliver
+---name: Mind Sliver
 type: spell
 level: 0
 school: Enchantment
@@ -17,6 +16,21 @@ classes:
 - Wizard
 id: spell:mind-sliver
 material_price: ''
+actions:
+- type: save
+  ability: int
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: character_level
 ---
 # Mind Sliver
 *Enchantment Cantrip (Sorcerer, Warlock, Wizard)*

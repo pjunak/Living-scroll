@@ -1,12 +1,13 @@
----
-name: Actor
+---name: Actor
 type: feat
 category: general
-prerequisite: "Level 4+, Charisma 13+"
+prerequisite: Level 4+, Charisma 13+
 id: feat:actor
-attribute_increase: ["CHA"]
+attribute_increase:
+- CHA
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 4+, Charisma 13+*

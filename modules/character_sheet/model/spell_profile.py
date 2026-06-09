@@ -25,7 +25,7 @@ def build_spellcasting_profile(sheet: CharacterSheet) -> SpellcastingProfile:
     ability = sheet.spellcasting.spellcasting_ability.upper()
     ability_block = sheet.get_ability(ability)
     ability_mod = ability_block.effective_modifier()
-    proficiency_bonus = sheet.proficiency_bonus()
+    proficiency_bonus = sheet.proficiencies.proficiency_bonus
     attack_bonus = sheet.spellcasting.attack_bonus
     save_dc = sheet.spellcasting.save_dc
 

@@ -77,7 +77,7 @@ class CompendiumPickerDialog(QDialog):
 		left.addWidget(list_widget, 1)
 
 		status = QLabel()
-		status.setStyleSheet("color: #5f6b7c;")
+		status.setProperty("class", "StatusLabel")
 		self._status = status
 		left.addWidget(status)
 

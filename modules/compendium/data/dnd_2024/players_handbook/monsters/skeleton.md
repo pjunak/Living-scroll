@@ -1,5 +1,4 @@
----
-name: Skeleton
+---name: Skeleton
 size: Medium
 type: Medium Undead
 alignment: Lawful Evil
@@ -21,13 +20,30 @@ traits:
   description: Poison; Exhaustion, Poisoned
 actions:
 - name: Shortsword
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 6 (1d6 + 3) Piercing damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 3
+  type: utility
 - name: Shortbow
-  description: 'Ranged Attack Roll: +5, range 80/320 ft. Hit: 6 (1d6 + 3) Piercing
-    damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 3
+  type: utility
 
+---
 # Skeleton
 
 *Medium Undead, Lawful Evil*
+
+### Actions
+
+**Shortsword.** Melee Attack Roll: +5, reach 5 ft. Hit: 6 (1d6 + 3) Piercing damage.
+
+**Shortbow.** Ranged Attack Roll: +5, range 80/320 ft. Hit: 6 (1d6 + 3) Piercing damage.
 

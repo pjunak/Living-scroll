@@ -1,5 +1,4 @@
----
-name: Unarmed Fighting
+---name: Unarmed Fighting
 type: feat
 category: fighting_style
 prerequisite: null
@@ -7,6 +6,7 @@ id: feat:unarmed-fighting
 attribute_increase: null
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Fighting Style Feature*

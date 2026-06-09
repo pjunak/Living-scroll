@@ -1,5 +1,4 @@
----
-name: Ettin
+---name: Ettin
 size: Large
 type: Large Elemental
 alignment: Neutral
@@ -39,11 +38,20 @@ actions:
 - name: Multiattack
   description: The elemental makes two Burn attacks.
 - name: Burn
-  description: 'Melee Attack Roll: +6, reach 5 ft. Hit: 10 (2d6 + 3) Fire damage.
-    If the target is a creature or a flammable object, it starts burning.'
----
+  damage:
+  - type: fire
+    base:
+      dice: 2
+      die: 6
+      bonus: 3
+  type: utility
 
+---
 # Ettin
 
 *Large Elemental, Neutral*
+
+### Actions
+
+**Burn.** Melee Attack Roll: +6, reach 5 ft. Hit: 10 (2d6 + 3) Fire damage. If the target is a creature or a flammable object, it starts burning.
 

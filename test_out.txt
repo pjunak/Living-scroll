@@ -1,9 +1,0 @@
-Testing Pydantic instantiation...
-Testing serialization...
-Serialized name: Test Hero
-Serialized STR: 18
-Testing deserialization...
-Loaded name: Test Hero
-Loaded STR: 18
-Loaded class: Rogue
-Success!

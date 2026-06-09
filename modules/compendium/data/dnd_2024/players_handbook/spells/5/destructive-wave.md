@@ -1,5 +1,4 @@
----
-name: Destructive Wave
+---name: Destructive Wave
 type: spell
 level: 5
 school: Evocation
@@ -15,6 +14,17 @@ classes:
 - Paladin
 id: spell:destructive-wave
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: thunder
+    base:
+      dice: 5
+      die: 6
+      bonus: 0
 ---
 # Destructive Wave
 *5th-Level Evocation (Paladin)*

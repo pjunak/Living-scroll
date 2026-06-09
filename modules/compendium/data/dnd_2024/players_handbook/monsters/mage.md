@@ -1,5 +1,4 @@
----
-name: Mage
+---name: Mage
 size: Medium
 type: Medium or Small Humanoid (Wizard)
 alignment: Neutral
@@ -19,8 +18,13 @@ actions:
 - name: Multiattack
   description: The mage makes three Arcane Burst attacks.
 - name: Arcane Burst
-  description: 'Melee or Ranged Attack Roll: +6, reach 5 ft. or range 120 ft. Hit:
-    16 (3d8 + 3) Force damage.'
+  damage:
+  - type: force
+    base:
+      dice: 3
+      die: 8
+      bonus: 3
+  type: utility
 - name: Spellcasting
   description: 'The mage casts one of the following spells, using Intelligence as
     the spellcasting ability (spell save DC 14):'
@@ -35,9 +39,13 @@ actions:
 - name: Protective Magic (3/Day)
   description: "The mage casts Counterspell or Shield in response to the spell\u2019\
     s trigger, using the same spellcasting ability as Spellcasting."
----
 
+---
 # Mage
 
 *Medium or Small Humanoid (Wizard), Neutral*
+
+### Actions
+
+**Arcane Burst.** Melee or Ranged Attack Roll: +6, reach 5 ft. or range 120 ft. Hit: 16 (3d8 + 3) Force damage.
 

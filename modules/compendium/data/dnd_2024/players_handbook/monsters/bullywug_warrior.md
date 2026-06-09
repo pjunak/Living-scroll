@@ -1,5 +1,4 @@
----
-name: Bullywug Warrior
+---name: Bullywug Warrior
 size: Medium
 type: Medium Fey
 alignment: Neutral
@@ -22,13 +21,27 @@ traits:
     it speaks in Bullywug.
 actions:
 - name: Insectile Rapier
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 6 (1d8 + 2) Piercing damage
-    plus 2 (1d4) Poison damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 8
+      bonus: 2
+  - type: poison
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
+  type: utility
 - name: Leap
   description: The bullywug jumps up to 30 feet by spending 10 feet of movement.
----
 
+---
 # Bullywug Warrior
 
 *Medium Fey, Neutral*
+
+### Actions
+
+**Insectile Rapier.** Melee Attack Roll: +4, reach 5 ft. Hit: 6 (1d8 + 2) Piercing damage plus 2 (1d4) Poison damage.
 

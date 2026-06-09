@@ -1,5 +1,4 @@
----
-name: Lemure
+---name: Lemure
 size: Medium
 type: Medium Undead (Wizard)
 alignment: Neutral Evil
@@ -30,12 +29,21 @@ actions:
   description: The lich makes three attacks, using Eldritch Burst or Paralyzing Touch
     in any combination.
 - name: Eldritch Burst
-  description: 'Melee or Ranged Attack Roll: +12, reach 5 ft. or range 120 ft. Hit:
-    31 (4d12 + 5) Force damage.'
+  damage:
+  - type: force
+    base:
+      dice: 4
+      die: 12
+      bonus: 5
+  type: utility
 - name: Paralyzing Touch
-  description: "Melee Attack Roll: +12, reach 5 ft. Hit: 15 (3d6 + 5) Cold damage,\
-    \ and the target has the Paralyzed condition until the start of the lich\u2019\
-    s next turn."
+  damage:
+  - type: cold
+    base:
+      dice: 3
+      die: 6
+      bonus: 5
+  type: utility
 - name: Spellcasting
   description: 'The lich casts one of the following spells, using Intelligence as
     the spellcasting ability (spell save DC 20):'
@@ -50,20 +58,41 @@ actions:
   description: "The lich casts Counterspell or Shield in response to the spell\u2019\
     s trigger, using the same spellcasting ability as Spellcasting."
 - name: Deathly Teleport
-  description: The lich teleports up to 60 feet to an unoccupied space it can see,
-    and each creature within 10 feet of the space it left takes 11 (2d10) Necrotic
-    damage.
+  damage:
+  - type: necrotic
+    base:
+      dice: 2
+      die: 10
+      bonus: 0
+  type: utility
 - name: Disrupt Life
-  description: "Constitution Saving Throw: DC 20, each creature that isn\u2019t an\
-    \ Undead in a 20-foot Emanation originating from the lich. Failure: 31 (9d6) Necrotic\
-    \ damage. Success: Half damage. Failure or Success: The lich can\u2019t take this\
-    \ action again until the start of its next turn."
+  type: save
+  ability: con
+  dc: 20
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: necrotic
+    base:
+      dice: 9
+      die: 6
+      bonus: 0
 - name: Frightening Gaze
   description: "The lich casts Fear, using the same spellcasting ability as Spellcasting.\
     \ The lich can\u2019t take this action again until the start of its next turn."
----
 
+---
 # Lemure
 
 *Medium Undead (Wizard), Neutral Evil*
+
+### Actions
+
+**Eldritch Burst.** Melee or Ranged Attack Roll: +12, reach 5 ft. or range 120 ft. Hit: 31 (4d12 + 5) Force damage.
+
+**Paralyzing Touch.** Melee Attack Roll: +12, reach 5 ft. Hit: 15 (3d6 + 5) Cold damage, and the target has the Paralyzed condition until the start of the lich’s next turn.
+
+**Deathly Teleport.** The lich teleports up to 60 feet to an unoccupied space it can see, and each creature within 10 feet of the space it left takes 11 (2d10) Necrotic damage.
+
+**Disrupt Life.** Constitution Saving Throw: DC 20, each creature that isn’t an Undead in a 20-foot Emanation originating from the lich. Failure: 31 (9d6) Necrotic damage. Success: Half damage. Failure or Success: The lich can’t take this action again until the start of its next turn.
 

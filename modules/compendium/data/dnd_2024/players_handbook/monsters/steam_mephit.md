@@ -1,5 +1,4 @@
----
-name: Steam Mephit
+---name: Steam Mephit
 size: Small
 type: Small Elemental
 alignment: Neutral Evil
@@ -26,16 +25,39 @@ traits:
     damage. Success: Half damage.'
 actions:
 - name: Claw
-  description: 'Melee Attack Roll: +2, reach 5 ft. Hit: 2 (1d4) Slashing damage plus
-    2 (1d4) Fire damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
+  - type: fire
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
+  type: utility
 - name: Steam Breath (Recharge 6)
-  description: "Constitution Saving Throw: DC 10, each creature in a 15-foot Cone.\
-    \ Failure: 5 (2d4) Fire damage, and the target\u2019s Speed decreases by 10 feet\
-    \ until the end of the mephit\u2019s next turn. Success: Half damage only. Failure\
-    \ or Success: Being underwater doesn\u2019t grant Resistance to this Fire damage."
----
+  type: save
+  ability: con
+  dc: 10
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: fire
+    base:
+      dice: 2
+      die: 4
+      bonus: 0
 
+---
 # Steam Mephit
 
 *Small Elemental, Neutral Evil*
+
+### Actions
+
+**Claw.** Melee Attack Roll: +2, reach 5 ft. Hit: 2 (1d4) Slashing damage plus 2 (1d4) Fire damage.
+
+**Steam Breath (Recharge 6).** Constitution Saving Throw: DC 10, each creature in a 15-foot Cone. Failure: 5 (2d4) Fire damage, and the target’s Speed decreases by 10 feet until the end of the mephit’s next turn. Success: Half damage only. Failure or Success: Being underwater doesn’t grant Resistance to this Fire damage.
 

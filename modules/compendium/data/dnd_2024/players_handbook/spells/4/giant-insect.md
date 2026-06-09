@@ -1,5 +1,4 @@
----
-name: Giant Insect
+---name: Giant Insect
 type: spell
 level: 4
 school: Conjuration
@@ -16,6 +15,17 @@ classes:
 - Druid
 id: spell:giant-insect
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: poison
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
 ---
 # Giant Insect
 *4th-Level Conjuration (Druid)*

@@ -1,5 +1,4 @@
----
-name: Fire Bolt
+---name: Fire Bolt
 type: spell
 level: 0
 school: Evocation
@@ -18,6 +17,18 @@ classes:
 - Wizard
 id: spell:fire-bolt
 material_price: ''
+actions:
+- type: attack
+  damage:
+  - type: fire
+    base:
+      dice: 1
+      die: 10
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 10
+      mode: character_level
 ---
 # Fire Bolt
 *Evocation Cantrip (Artificer, Sorcerer, Wizard)*

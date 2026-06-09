@@ -1,5 +1,4 @@
----
-name: Young Bronze Dragon
+---name: Young Bronze Dragon
 size: Large
 type: Large Dragon (Metallic)
 alignment: Lawful Good
@@ -24,17 +23,42 @@ actions:
   description: The dragon makes three Rend attacks. It can replace one attack with
     a use of Repulsion Breath.
 - name: Rend
-  description: 'Melee Attack Roll: +8, reach 10 ft. Hit: 16 (2d10 + 5) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 10
+      bonus: 5
+  type: utility
 - name: "Lightning Breath (Recharge 5\u20136)"
-  description: 'Dexterity Saving Throw: DC 15, each creature in a 60-foot-long, 5-foot-wide
-    Line. Failure: 49 (9d10) Lightning damage. Success: Half damage.'
+  type: save
+  ability: dex
+  dc: 15
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: lightning
+    base:
+      dice: 9
+      die: 10
+      bonus: 0
 - name: Repulsion Breath
-  description: 'Strength Saving Throw: DC 15, each creature in a 30-foot Cone. Failure:
-    The target is pushed up to 40 feet straight away from the dragon and has the Prone
-    condition.'
----
+  type: save
+  ability: str
+  dc: 15
+  on_pass: none
+  on_fail: full
 
+---
 # Young Bronze Dragon
 
 *Large Dragon (Metallic), Lawful Good*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +8, reach 10 ft. Hit: 16 (2d10 + 5) Slashing damage.
+
+**Lightning Breath (Recharge 5–6).** Dexterity Saving Throw: DC 15, each creature in a 60-foot-long, 5-foot-wide Line. Failure: 49 (9d10) Lightning damage. Success: Half damage.
+
+**Repulsion Breath.** Strength Saving Throw: DC 15, each creature in a 30-foot Cone. Failure: The target is pushed up to 40 feet straight away from the dragon and has the Prone condition.
 

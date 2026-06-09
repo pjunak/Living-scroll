@@ -1,5 +1,4 @@
----
-name: Green Dragons
+---name: Green Dragons
 size: Medium
 type: Medium Fey
 alignment: Neutral Evil
@@ -32,8 +31,18 @@ actions:
 - name: Multiattack
   description: The hag makes two Claw attacks.
 - name: Claw
-  description: 'Melee Attack Roll: +6, reach 5 ft. Hit: 8 (1d8 + 4) Slashing damage
-    plus 3 (1d6) Poison damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 8
+      bonus: 4
+  - type: poison
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
+  type: utility
 - name: Spellcasting
   description: 'The hag casts one of the following spells, requiring no Material components
     and using Wisdom as the spellcasting ability (spell save DC 12, +4 to hit with
@@ -42,9 +51,13 @@ actions:
   description: Dancing Lights, Disguise Self (24-hour duration), Invisibility (self
     only, and the hag leaves no tracks while Invisible), Minor Illusion, Ray of Sickness
     (level 3 version)
----
 
+---
 # Green Dragons
 
 *Medium Fey, Neutral Evil*
+
+### Actions
+
+**Claw.** Melee Attack Roll: +6, reach 5 ft. Hit: 8 (1d8 + 4) Slashing damage plus 3 (1d6) Poison damage.
 

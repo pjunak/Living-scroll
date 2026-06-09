@@ -1,5 +1,4 @@
----
-name: Mephits
+---name: Mephits
 size: Medium
 type: Medium Elemental
 alignment: Neutral
@@ -19,14 +18,25 @@ traits:
   description: The merfolk can breathe air and water.
 actions:
 - name: Ocean Spear
-  description: "Melee or Ranged Attack Roll: +2, reach 5 ft. or range 20/60 ft. Hit:\
-    \ 3 (1d6) Piercing damage plus 2 (1d4) Cold damage. If the target is a creature,\
-    \ its Speed decreases by 10 feet until the end of its next turn. Hit or Miss:\
-    \ The spear magically returns to the merfolk\u2019s hand immediately after a ranged\
-    \ attack."
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
+  - type: cold
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
+  type: utility
 
+---
 # Mephits
 
 *Medium Elemental, Neutral*
+
+### Actions
+
+**Ocean Spear.** Melee or Ranged Attack Roll: +2, reach 5 ft. or range 20/60 ft. Hit: 3 (1d6) Piercing damage plus 2 (1d4) Cold damage. If the target is a creature, its Speed decreases by 10 feet until the end of its next turn. Hit or Miss: The spear magically returns to the merfolk’s hand immediately after a ranged attack.
 

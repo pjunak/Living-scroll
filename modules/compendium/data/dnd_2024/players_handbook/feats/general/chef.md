@@ -1,13 +1,16 @@
----
-name: Chef
+---name: Chef
 type: feat
 category: general
-prerequisite: "Level 4+"
+prerequisite: Level 4+
 id: feat:chef
-attribute_increase: ["CON", "WIS"]
+attribute_increase:
+- CON
+- WIS
 proficiency:
-  tools: ["Cook's Utensils"]
+  tools:
+  - Cook's Utensils
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 4+*

@@ -1,5 +1,4 @@
----
-name: Blight
+---name: Blight
 type: spell
 level: 4
 school: Necromancy
@@ -19,6 +18,21 @@ classes:
 - Wizard
 id: spell:blight
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: necrotic
+    base:
+      dice: 8
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 8
+      mode: spell_level
 ---
 # Blight
 *4th-Level Necromancy (Druid, Sorcerer, Warlock, Wizard)*

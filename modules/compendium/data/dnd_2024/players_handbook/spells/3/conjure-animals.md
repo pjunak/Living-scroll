@@ -1,5 +1,4 @@
----
-name: Conjure Animals
+---name: Conjure Animals
 type: spell
 level: 3
 school: Conjuration
@@ -17,6 +16,21 @@ classes:
 - Ranger
 id: spell:conjure-animals
 material_price: ''
+actions:
+- type: save
+  ability: str
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: slashing
+    base:
+      dice: 3
+      die: 10
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 10
+      mode: spell_level
 ---
 # Conjure Animals
 *3rd-Level Conjuration (Druid, Ranger)*

@@ -1,5 +1,4 @@
----
-name: Chimera
+---name: Chimera
 size: Large
 type: Large Aberration
 alignment: Chaotic Evil
@@ -26,17 +25,28 @@ actions:
 - name: Multiattack
   description: The chuul makes two Pincer attacks and uses Paralyzing Tentacles.
 - name: Pincer
-  description: 'Melee Attack Roll: +6, reach 10 ft. Hit: 9 (1d10 + 4) Bludgeoning
-    damage. If the target is a Large or smaller creature, it has the Grappled condition
-    (escape DC 14) from one of two pincers.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 10
+      bonus: 4
+  type: utility
 - name: Paralyzing Tentacles
-  description: 'Constitution Saving Throw: DC 13, one creature Grappled by the chuul.
-    Failure: The target has the Poisoned condition and repeats the save at the end
-    of each of its turns, ending the effect on itself on a success. After 1 minute,
-    it succeeds automatically. While Poisoned, the target has the Paralyzed condition.'
----
+  type: save
+  ability: con
+  dc: 13
+  on_pass: none
+  on_fail: full
 
+---
 # Chimera
 
 *Large Aberration, Chaotic Evil*
+
+### Actions
+
+**Pincer.** Melee Attack Roll: +6, reach 10 ft. Hit: 9 (1d10 + 4) Bludgeoning damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC 14) from one of two pincers.
+
+**Paralyzing Tentacles.** Constitution Saving Throw: DC 13, one creature Grappled by the chuul. Failure: The target has the Poisoned condition and repeats the save at the end of each of its turns, ending the effect on itself on a success. After 1 minute, it succeeds automatically. While Poisoned, the target has the Paralyzed condition.
 

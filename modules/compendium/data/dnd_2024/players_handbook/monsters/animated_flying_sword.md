@@ -1,5 +1,4 @@
----
-name: Animated Flying Sword
+---name: Animated Flying Sword
 size: Small
 type: Small Construct
 alignment: Unaligned
@@ -20,10 +19,20 @@ traits:
     Petrified, Poisoned
 actions:
 - name: Slash
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 6 (1d8 + 2) Slashing damage.'
----
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 8
+      bonus: 2
+  type: utility
 
+---
 # Animated Flying Sword
 
 *Small Construct, Unaligned*
+
+### Actions
+
+**Slash.** Melee Attack Roll: +4, reach 5 ft. Hit: 6 (1d8 + 2) Slashing damage.
 

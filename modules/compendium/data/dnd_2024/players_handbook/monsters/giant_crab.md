@@ -1,5 +1,4 @@
----
-name: Giant Crab
+---name: Giant Crab
 size: Huge
 type: Huge Beast
 alignment: Unaligned
@@ -21,16 +20,30 @@ actions:
 - name: Multiattack
   description: The crocodile makes one Bite attack and one Tail attack.
 - name: Bite
-  description: "Melee Attack Roll: +8, reach 5 ft. Hit: 21 (3d10 + 5) Piercing damage.\
-    \ If the target is a Large or smaller creature, it has the Grappled condition\
-    \ (escape DC 15). While Grappled, the target has the Restrained condition and\
-    \ can\u2019t be targeted by the crocodile\u2019s Tail."
+  damage:
+  - type: piercing
+    base:
+      dice: 3
+      die: 10
+      bonus: 5
+  type: utility
 - name: Tail
-  description: 'Melee Attack Roll: +8, reach 10 ft. Hit: 18 (3d8 + 5) Bludgeoning
-    damage. If the target is a Large or smaller creature, it has the Prone condition.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 3
+      die: 8
+      bonus: 5
+  type: utility
 
+---
 # Giant Crab
 
 *Huge Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +8, reach 5 ft. Hit: 21 (3d10 + 5) Piercing damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC 15). While Grappled, the target has the Restrained condition and can’t be targeted by the crocodile’s Tail.
+
+**Tail.** Melee Attack Roll: +8, reach 10 ft. Hit: 18 (3d8 + 5) Bludgeoning damage. If the target is a Large or smaller creature, it has the Prone condition.
 

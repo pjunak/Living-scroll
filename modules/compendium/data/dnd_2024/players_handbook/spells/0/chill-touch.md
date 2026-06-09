@@ -1,5 +1,4 @@
----
-name: Chill Touch
+---name: Chill Touch
 type: spell
 level: 0
 school: Necromancy
@@ -18,6 +17,18 @@ classes:
 - Wizard
 id: spell:chill-touch
 material_price: ''
+actions:
+- type: attack
+  damage:
+  - type: necrotic
+    base:
+      dice: 1
+      die: 10
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 10
+      mode: character_level
 ---
 # Chill Touch
 *Necromancy Cantrip (Sorcerer, Warlock, Wizard)*

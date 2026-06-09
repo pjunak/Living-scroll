@@ -1,5 +1,4 @@
----
-name: Phantasmal Killer
+---name: Phantasmal Killer
 type: spell
 level: 4
 school: Illusion
@@ -17,6 +16,21 @@ classes:
 - Wizard
 id: spell:phantasmal-killer
 material_price: ''
+actions:
+- type: save
+  ability: wis
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 4
+      die: 10
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 10
+      mode: spell_level
 ---
 # Phantasmal Killer
 *4th-Level Illusion (Bard, Wizard)*

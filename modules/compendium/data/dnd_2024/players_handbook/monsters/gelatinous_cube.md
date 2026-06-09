@@ -1,5 +1,4 @@
----
-name: Gelatinous Cube
+---name: Gelatinous Cube
 size: Medium
 type: Medium Undead
 alignment: Chaotic Evil
@@ -26,16 +25,39 @@ traits:
     \ immune to this ghast\u2019s Stench for 24 hours."
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Piercing damage
-    plus 9 (2d8) Necrotic damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 8
+      bonus: 3
+  - type: necrotic
+    base:
+      dice: 2
+      die: 8
+      bonus: 0
+  type: utility
 - name: Claw
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 10 (2d6 + 3) Slashing damage.
-    If the target is a non-Undead creature, it is subjected to the following effect.
-    Constitution Saving Throw: DC 10. Failure: The target has the Paralyzed condition
-    until the end of its next turn.'
----
+  type: save
+  ability: con
+  dc: 10
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 6
+      bonus: 3
 
+---
 # Gelatinous Cube
 
 *Medium Undead, Chaotic Evil*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Piercing damage plus 9 (2d8) Necrotic damage.
+
+**Claw.** Melee Attack Roll: +5, reach 5 ft. Hit: 10 (2d6 + 3) Slashing damage. If the target is a non-Undead creature, it is subjected to the following effect. Constitution Saving Throw: DC 10. Failure: The target has the Paralyzed condition until the end of its next turn.
 

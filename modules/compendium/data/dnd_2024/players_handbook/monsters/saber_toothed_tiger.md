@@ -1,5 +1,4 @@
----
-name: Saber-Toothed Tiger
+---name: Saber-Toothed Tiger
 size: Tiny
 type: Tiny Beast
 alignment: Unaligned
@@ -17,11 +16,20 @@ cr: 0 (XP 10; PB +2)
 traits: []
 actions:
 - name: Sting
-  description: 'Melee Attack Roll: +2, reach 5 ft. Hit: 1 Piercing damage plus 3 (1d6)
-    Poison damage.'
----
+  damage:
+  - type: poison
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
+  type: utility
 
+---
 # Saber-Toothed Tiger
 
 *Tiny Beast, Unaligned*
+
+### Actions
+
+**Sting.** Melee Attack Roll: +2, reach 5 ft. Hit: 1 Piercing damage plus 3 (1d6) Poison damage.
 

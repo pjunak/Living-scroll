@@ -1,5 +1,4 @@
----
-name: Elk
+---name: Elk
 size: Tiny
 type: Tiny Monstrosity
 alignment: Unaligned
@@ -20,11 +19,20 @@ traits:
     \ out of an enemy\u2019s reach."
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 1 Piercing damage plus 5 (2d4)
-    Poison damage.'
----
+  damage:
+  - type: poison
+    base:
+      dice: 2
+      die: 4
+      bonus: 0
+  type: utility
 
+---
 # Elk
 
 *Tiny Monstrosity, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +4, reach 5 ft. Hit: 1 Piercing damage plus 5 (2d4) Poison damage.
 

@@ -1,5 +1,4 @@
----
-name: Black Dragon Wyrmling
+---name: Black Dragon Wyrmling
 size: Medium
 type: Medium Dragon (Chromatic)
 alignment: Chaotic Evil
@@ -23,14 +22,39 @@ actions:
 - name: Multiattack
   description: The dragon makes two Rend attacks.
 - name: Rend
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Slashing damage
-    plus 2 (1d4) Acid damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 6
+      bonus: 2
+  - type: acid
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
+  type: utility
 - name: "Acid Breath (Recharge 5\u20136)"
-  description: 'Dexterity Saving Throw: DC 11, each creature in a 15-foot-long, 5-foot-wide
-    Line. Failure: 22 (5d8) Acid damage. Success: Half damage.'
----
+  type: save
+  ability: dex
+  dc: 11
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: acid
+    base:
+      dice: 5
+      die: 8
+      bonus: 0
 
+---
 # Black Dragon Wyrmling
 
 *Medium Dragon (Chromatic), Chaotic Evil*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Slashing damage plus 2 (1d4) Acid damage.
+
+**Acid Breath (Recharge 5–6).** Dexterity Saving Throw: DC 11, each creature in a 15-foot-long, 5-foot-wide Line. Failure: 22 (5d8) Acid damage. Success: Half damage.
 

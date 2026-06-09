@@ -1,5 +1,4 @@
----
-name: Axe Beak
+---name: Axe Beak
 size: Medium
 type: Medium Elemental
 alignment: Lawful Neutral
@@ -26,11 +25,25 @@ traits:
     additional 10 feet.
 actions:
 - name: Burning Hammer
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 8 (1d10 + 3) Bludgeoning damage
-    plus 3 (1d6) Fire damage.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 10
+      bonus: 3
+  - type: fire
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
+  type: utility
 
+---
 # Axe Beak
 
 *Medium Elemental, Lawful Neutral*
+
+### Actions
+
+**Burning Hammer.** Melee Attack Roll: +5, reach 5 ft. Hit: 8 (1d10 + 3) Bludgeoning damage plus 3 (1d6) Fire damage.
 

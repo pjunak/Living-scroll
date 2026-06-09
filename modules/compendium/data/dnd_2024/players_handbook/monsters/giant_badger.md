@@ -1,5 +1,4 @@
----
-name: Giant Badger
+---name: Giant Badger
 size: Large
 type: Large Beast
 alignment: Unaligned
@@ -17,10 +16,20 @@ cr: 1/4 (XP 50; PB +2)
 traits: []
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 6 (1d6 + 3) Piercing damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 3
+  type: utility
 
+---
 # Giant Badger
 
 *Large Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +5, reach 5 ft. Hit: 6 (1d6 + 3) Piercing damage.
 

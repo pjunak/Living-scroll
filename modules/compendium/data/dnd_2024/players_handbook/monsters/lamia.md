@@ -1,5 +1,4 @@
----
-name: Lamia
+---name: Lamia
 size: Medium
 type: Medium Fiend (Devil)
 alignment: Lawful Evil
@@ -25,10 +24,20 @@ traits:
     or its remains are sprinkled with Holy Water.
 actions:
 - name: Vile Slime
-  description: 'Melee Attack Roll: +2, reach 5 ft. Hit: 2 (1d4) Poison damage.'
----
+  damage:
+  - type: poison
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
+  type: utility
 
+---
 # Lamia
 
 *Medium Fiend (Devil), Lawful Evil*
+
+### Actions
+
+**Vile Slime.** Melee Attack Roll: +2, reach 5 ft. Hit: 2 (1d4) Poison damage.
 

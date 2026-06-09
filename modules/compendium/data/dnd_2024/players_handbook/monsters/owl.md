@@ -1,5 +1,4 @@
----
-name: Owl
+---name: Owl
 size: Medium
 type: Medium Beast
 alignment: Unaligned
@@ -17,12 +16,22 @@ cr: 1/4 (XP 50; PB +2)
 traits: []
 actions:
 - name: Rend
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 6 (1d6 + 3) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 6
+      bonus: 3
+  type: utility
 - name: Nimble Escape
   description: The panther takes the Disengage or Hide action.
----
 
+---
 # Owl
 
 *Medium Beast, Unaligned*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +5, reach 5 ft. Hit: 6 (1d6 + 3) Slashing damage.
 

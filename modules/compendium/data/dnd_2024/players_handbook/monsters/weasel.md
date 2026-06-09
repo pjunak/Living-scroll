@@ -1,5 +1,4 @@
----
-name: Weasel
+---name: Weasel
 size: Medium
 type: Medium Beast
 alignment: Unaligned
@@ -21,11 +20,20 @@ traits:
     \ doesn\u2019t have the Incapacitated condition."
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Piercing damage.
-    If the target is a Medium or smaller creature, it has the Prone condition.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 2
+  type: utility
 
+---
 # Weasel
 
 *Medium Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Piercing damage. If the target is a Medium or smaller creature, it has the Prone condition.
 

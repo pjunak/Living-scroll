@@ -1,5 +1,4 @@
----
-name: Inflict Wounds
+---name: Inflict Wounds
 type: spell
 level: 1
 school: Necromancy
@@ -16,6 +15,21 @@ classes:
 - Cleric
 id: spell:inflict-wounds
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: necrotic
+    base:
+      dice: 2
+      die: 10
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 10
+      mode: spell_level
 ---
 # Inflict Wounds
 *1st-Level Necromancy (Cleric)*

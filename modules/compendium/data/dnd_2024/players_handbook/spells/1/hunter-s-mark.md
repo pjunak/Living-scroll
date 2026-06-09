@@ -1,5 +1,4 @@
----
-name: Hunter's Mark
+---name: Hunter's Mark
 type: spell
 level: 1
 school: Divination
@@ -15,6 +14,14 @@ classes:
 - Ranger
 id: spell:hunter-s-mark
 material_price: ''
+actions:
+- type: utility
+  damage:
+  - type: force
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
 ---
 # Hunter's Mark
 *1st-Level Divination (Ranger)*

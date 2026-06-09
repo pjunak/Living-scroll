@@ -1,5 +1,4 @@
----
-name: Ancient Red Dragon
+---name: Ancient Red Dragon
 size: Gargantuan
 type: Gargantuan Dragon (Chromatic)
 alignment: Chaotic Evil
@@ -24,11 +23,30 @@ actions:
   description: The dragon makes three Rend attacks. It can replace one attack with
     a use of Spellcasting to cast Scorching Ray (level 3 version).
 - name: Rend
-  description: 'Melee Attack Roll: +17, reach 15 ft. Hit: 19 (2d8 + 10) Slashing damage
-    plus 10 (3d6) Fire damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 8
+      bonus: 10
+  - type: fire
+    base:
+      dice: 3
+      die: 6
+      bonus: 0
+  type: utility
 - name: "Fire Breath (Recharge 5\u20136)"
-  description: 'Dexterity Saving Throw: DC 24, each creature in a 90-foot Cone. Failure:
-    91 (26d6) Fire damage. Success: Half damage.'
+  type: save
+  ability: dex
+  dc: 24
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: fire
+    base:
+      dice: 26
+      die: 6
+      bonus: 0
 - name: Spellcasting
   description: 'The dragon casts one of the following spells, requiring no Material
     components and using Charisma as the spellcasting ability (spell save DC 23, +15
@@ -45,9 +63,15 @@ actions:
     \ The dragon can\u2019t take this action again until the start of its next turn."
 - name: Pounce
   description: The dragon moves up to half its Speed, and it makes one Rend attack.
----
 
+---
 # Ancient Red Dragon
 
 *Gargantuan Dragon (Chromatic), Chaotic Evil*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +17, reach 15 ft. Hit: 19 (2d8 + 10) Slashing damage plus 10 (3d6) Fire damage.
+
+**Fire Breath (Recharge 5–6).** Dexterity Saving Throw: DC 24, each creature in a 90-foot Cone. Failure: 91 (26d6) Fire damage. Success: Half damage.
 

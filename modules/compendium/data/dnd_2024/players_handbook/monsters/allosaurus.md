@@ -1,5 +1,4 @@
----
-name: Allosaurus
+---name: Allosaurus
 size: Huge
 type: Huge Beast (Dinosaur)
 alignment: Unaligned
@@ -19,11 +18,20 @@ actions:
 - name: Multiattack
   description: The ankylosaurus makes two Tail attacks.
 - name: Tail
-  description: 'Melee Attack Roll: +6, reach 10 ft. Hit: 9 (1d10 + 4) Bludgeoning
-    damage. If the target is a Huge or smaller creature, it has the Prone condition.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 10
+      bonus: 4
+  type: utility
 
+---
 # Allosaurus
 
 *Huge Beast (Dinosaur), Unaligned*
+
+### Actions
+
+**Tail.** Melee Attack Roll: +6, reach 10 ft. Hit: 9 (1d10 + 4) Bludgeoning damage. If the target is a Huge or smaller creature, it has the Prone condition.
 

@@ -1,5 +1,4 @@
----
-name: Mind Spike
+---name: Mind Spike
 type: spell
 level: 2
 school: Divination
@@ -17,6 +16,21 @@ classes:
 - Wizard
 id: spell:mind-spike
 material_price: ''
+actions:
+- type: save
+  ability: wis
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 3
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 8
+      mode: spell_level
 ---
 # Mind Spike
 *2nd-Level Divination (Sorcerer, Warlock, Wizard)*

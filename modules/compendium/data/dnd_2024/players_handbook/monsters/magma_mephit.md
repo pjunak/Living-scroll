@@ -1,5 +1,4 @@
----
-name: Magma Mephit
+---name: Magma Mephit
 size: Small
 type: Small Elemental
 alignment: Neutral Evil
@@ -25,14 +24,39 @@ traits:
     damage. Success: Half damage.'
 actions:
 - name: Claw
-  description: 'Melee Attack Roll: +3, reach 5 ft. Hit: 3 (1d4 + 1) Slashing damage
-    plus 3 (1d6) Fire damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 4
+      bonus: 1
+  - type: fire
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
+  type: utility
 - name: Fire Breath (Recharge 6)
-  description: 'Dexterity Saving Throw: DC 11, each creature in a 15-foot Cone. Failure:
-    7 (2d6) Fire damage. Success: Half damage.'
----
+  type: save
+  ability: dex
+  dc: 11
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: fire
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
 
+---
 # Magma Mephit
 
 *Small Elemental, Neutral Evil*
+
+### Actions
+
+**Claw.** Melee Attack Roll: +3, reach 5 ft. Hit: 3 (1d4 + 1) Slashing damage plus 3 (1d6) Fire damage.
+
+**Fire Breath (Recharge 6).** Dexterity Saving Throw: DC 11, each creature in a 15-foot Cone. Failure: 7 (2d6) Fire damage. Success: Half damage.
 

@@ -1,5 +1,4 @@
----
-name: Conjure Volley
+---name: Conjure Volley
 type: spell
 level: 5
 school: Conjuration
@@ -17,6 +16,17 @@ classes:
 - Ranger
 id: spell:conjure-volley
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: force
+    base:
+      dice: 8
+      die: 8
+      bonus: 0
 ---
 # Conjure Volley
 *5th-Level Conjuration (Ranger)*

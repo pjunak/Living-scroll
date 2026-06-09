@@ -1,5 +1,4 @@
----
-name: Giant Bat
+---name: Giant Bat
 size: Large
 type: Large Beast
 alignment: Unaligned
@@ -19,13 +18,25 @@ traits:
   description: The boar has Advantage on melee attack rolls while it is Bloodied.
 actions:
 - name: Gore
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 10 (2d6 + 3) Piercing damage.
-    If the target is a Large or smaller creature and the boar moved 20+ feet straight
-    toward it immediately before the hit, the target takes an extra 7 (2d6) Piercing
-    damage and has the Prone condition.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 6
+      bonus: 3
+  - type: piercing
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+  type: utility
 
+---
 # Giant Bat
 
 *Large Beast, Unaligned*
+
+### Actions
+
+**Gore.** Melee Attack Roll: +5, reach 5 ft. Hit: 10 (2d6 + 3) Piercing damage. If the target is a Large or smaller creature and the boar moved 20+ feet straight toward it immediately before the hit, the target takes an extra 7 (2d6) Piercing damage and has the Prone condition.
 

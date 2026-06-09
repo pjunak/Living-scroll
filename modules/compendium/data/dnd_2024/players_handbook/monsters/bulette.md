@@ -1,5 +1,4 @@
----
-name: Bulette
+---name: Bulette
 size: Large
 type: Large Monstrosity
 alignment: Unaligned
@@ -22,17 +21,33 @@ actions:
 - name: Multiattack
   description: The carrion crawler uses Paralyzing Tentacles and makes one Bite attack.
 - name: Bite
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 7 (2d4 + 2) Piercing damage
-    plus 3 (1d6) Poison damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 4
+      bonus: 2
+  - type: poison
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
+  type: utility
 - name: Paralyzing Tentacles
-  description: 'Constitution Saving Throw: DC 12, one creature the carrion crawler
-    can see within 10 feet. Failure: The target has the Poisoned condition and repeats
-    the save at the end of each of its turns, ending the effect on itself on a success.
-    After 1 minute, it succeeds automatically. While Poisoned, the target has the
-    Paralyzed condition.'
----
+  type: save
+  ability: con
+  dc: 12
+  on_pass: none
+  on_fail: full
 
+---
 # Bulette
 
 *Large Monstrosity, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +4, reach 5 ft. Hit: 7 (2d4 + 2) Piercing damage plus 3 (1d6) Poison damage.
+
+**Paralyzing Tentacles.** Constitution Saving Throw: DC 12, one creature the carrion crawler can see within 10 feet. Failure: The target has the Poisoned condition and repeats the save at the end of each of its turns, ending the effect on itself on a success. After 1 minute, it succeeds automatically. While Poisoned, the target has the Paralyzed condition.
 

@@ -1,5 +1,4 @@
----
-name: Summon Celestial
+---name: Summon Celestial
 type: spell
 level: 5
 school: Conjuration
@@ -18,6 +17,13 @@ classes:
 - Paladin
 id: spell:summon-celestial
 material_price: ''
+actions:
+- type: heal
+  healing:
+    base:
+      dice: 2
+      die: 8
+      bonus: 0
 ---
 # Summon Celestial
 *5th-Level Conjuration (Cleric, Paladin)*

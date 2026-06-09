@@ -1,5 +1,4 @@
----
-name: Polar Bear
+---name: Polar Bear
 size: Medium
 type: Medium Beast
 alignment: Unaligned
@@ -17,10 +16,20 @@ cr: 1/8 (XP 25; PB +2)
 traits: []
 actions:
 - name: Hooves
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 4 (1d4 + 2) Bludgeoning damage.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 4
+      bonus: 2
+  type: utility
 
+---
 # Polar Bear
 
 *Medium Beast, Unaligned*
+
+### Actions
+
+**Hooves.** Melee Attack Roll: +4, reach 5 ft. Hit: 4 (1d4 + 2) Bludgeoning damage.
 

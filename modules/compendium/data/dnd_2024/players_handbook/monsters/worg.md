@@ -1,5 +1,4 @@
----
-name: Worg
+---name: Worg
 size: Medium
 type: Medium or Small Undead
 alignment: Neutral Evil
@@ -29,18 +28,26 @@ traits:
     attack rolls.
 actions:
 - name: Life Drain
-  description: 'Melee Attack Roll: +6, reach 5 ft. Hit: 21 (4d8 + 3) Necrotic damage.
-    If the target is a creature, its Hit Point maximum decreases by an amount equal
-    to the damage taken.'
+  damage:
+  - type: necrotic
+    base:
+      dice: 4
+      die: 8
+      bonus: 3
+  type: utility
 - name: Create Specter
   description: "The wraith targets a Humanoid corpse within 10 feet of itself that\
     \ has been dead for no longer than 1 minute. The target\u2019s spirit rises as\
     \ a Specter in the space of its corpse or in the nearest unoccupied space. The\
     \ specter is under the wraith\u2019s control. The wraith can have no more than\
     \ seven specters under its control at a time."
----
 
+---
 # Worg
 
 *Medium or Small Undead, Neutral Evil*
+
+### Actions
+
+**Life Drain.** Melee Attack Roll: +6, reach 5 ft. Hit: 21 (4d8 + 3) Necrotic damage. If the target is a creature, its Hit Point maximum decreases by an amount equal to the damage taken.
 

@@ -1,5 +1,4 @@
----
-name: Dirge
+---name: Dirge
 type: spell
 level: 6
 school: Enchantment
@@ -16,6 +15,17 @@ classes:
 - Cleric
 id: spell:dirge
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: necrotic
+    base:
+      dice: 3
+      die: 10
+      bonus: 0
 ---
 # Dirge
 *6th-Level Enchantment (Bard, Cleric)*

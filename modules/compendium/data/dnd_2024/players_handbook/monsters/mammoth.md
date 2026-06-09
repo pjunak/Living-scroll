@@ -1,5 +1,4 @@
----
-name: Mammoth
+---name: Mammoth
 size: Medium
 type: Medium Beast
 alignment: Unaligned
@@ -17,11 +16,20 @@ cr: 1/8 (XP 25; PB +2)
 traits: []
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +3, reach 5 ft. Hit: 4 (1d6 + 1) Piercing damage.
-    If the target is a Medium or smaller creature, it has the Prone condition.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 1
+  type: utility
 
+---
 # Mammoth
 
 *Medium Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +3, reach 5 ft. Hit: 4 (1d6 + 1) Piercing damage. If the target is a Medium or smaller creature, it has the Prone condition.
 

@@ -1,12 +1,13 @@
----
-name: Resilient
+---name: Resilient
 type: feat
 category: general
-prerequisite: "Level 4+"
+prerequisite: Level 4+
 id: feat:resilient
-attribute_increase: ['any']
+attribute_increase:
+- any
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 4+*

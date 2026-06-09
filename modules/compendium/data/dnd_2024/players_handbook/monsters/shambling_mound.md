@@ -1,5 +1,4 @@
----
-name: Shambling Mound
+---name: Shambling Mound
 size: Large
 type: Large Construct
 alignment: Unaligned
@@ -39,16 +38,30 @@ actions:
 - name: Multiattack
   description: The guardian makes two Fist attacks.
 - name: Fist
-  description: 'Melee Attack Roll: +7, reach 10 ft. Hit: 11 (2d6 + 4) Bludgeoning
-    damage plus 7 (2d6) Force damage.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 6
+      bonus: 4
+  - type: force
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+  type: utility
 - name: Protection
   description: "Trigger: An attack roll hits the wearer of the guardian\u2019s amulet\
     \ while the wearer is within 5 feet of the guardian. Response: The wearer gains\
     \ a +5 bonus to AC, including against the triggering attack and possibly causing\
     \ it to miss, until the start of the guardian\u2019s next turn."
----
 
+---
 # Shambling Mound
 
 *Large Construct, Unaligned*
+
+### Actions
+
+**Fist.** Melee Attack Roll: +7, reach 10 ft. Hit: 11 (2d6 + 4) Bludgeoning damage plus 7 (2d6) Force damage.
 

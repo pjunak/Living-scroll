@@ -1,5 +1,4 @@
----
-name: Control Water
+---name: Control Water
 type: spell
 level: 4
 school: Transmutation
@@ -19,6 +18,17 @@ classes:
 - Wizard
 id: spell:control-water
 material_price: ''
+actions:
+- type: save
+  ability: str
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 8
+      bonus: 0
 ---
 # Control Water
 *4th-Level Transmutation (Cleric, Druid, Wizard)*

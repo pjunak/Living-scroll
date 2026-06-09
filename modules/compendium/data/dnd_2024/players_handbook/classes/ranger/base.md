@@ -99,6 +99,13 @@ id: class:ranger
 multiclass_requirements:
   DEX: 13
   WIS: 13
+management:
+  - id: prepared
+    label: "Prepared Spells"
+    type: spell_preparation
+    source: class_spell_list
+    max_formula: "WIS + level"
+    changeable_on: long_rest
 ---
 
 Far from the bustle of cities and towns, past the hedges that shelter the most distant farms from the terrors of the wild, amid the dense-packed trees of trackless forests and across wide and empty plains, rangers keep their unending watch.

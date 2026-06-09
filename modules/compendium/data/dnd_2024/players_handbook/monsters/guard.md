@@ -1,5 +1,4 @@
----
-name: Guard
+---name: Guard
 size: Medium
 type: Medium or Small Humanoid
 alignment: Neutral
@@ -17,11 +16,20 @@ cr: 1/8 (XP 25; PB +2)
 traits: []
 actions:
 - name: Spear
-  description: 'Melee or Ranged Attack Roll: +3, reach 5 ft. or range 20/60 ft. Hit:
-    4 (1d6 + 1) Piercing damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 1
+  type: utility
 
+---
 # Guard
 
 *Medium or Small Humanoid, Neutral*
+
+### Actions
+
+**Spear.** Melee or Ranged Attack Roll: +3, reach 5 ft. or range 20/60 ft. Hit: 4 (1d6 + 1) Piercing damage.
 

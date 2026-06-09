@@ -98,6 +98,13 @@ id: class:paladin
 multiclass_requirements:
   STR: 13
   CHA: 13
+management:
+  - id: prepared
+    label: "Prepared Spells"
+    type: spell_preparation
+    source: class_spell_list
+    max_formula: "CHA + level"
+    changeable_on: long_rest
 ---
 
 Paladins are united by their oaths to stand against the forces of evil. Whether sworn before a god's altar and the witness of a priest, in a sacred glade before nature spirits and fey beings, or in a moment of desperation and grief with the dead as the only witness, a paladin's oath is a powerful bond.

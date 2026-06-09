@@ -1,5 +1,4 @@
----
-name: Thunderwave
+---name: Thunderwave
 type: spell
 level: 1
 school: Evocation
@@ -19,6 +18,21 @@ classes:
 - Wizard
 id: spell:thunderwave
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: thunder
+    base:
+      dice: 2
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 8
+      mode: spell_level
 ---
 # Thunderwave
 *1st-Level Evocation (Bard, Druid, Sorcerer, Wizard)*

@@ -1,5 +1,4 @@
----
-name: Weird
+---name: Weird
 type: spell
 level: 9
 school: Illusion
@@ -17,6 +16,17 @@ classes:
 - Wizard
 id: spell:weird
 material_price: ''
+actions:
+- type: save
+  ability: wis
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 10
+      die: 10
+      bonus: 0
 ---
 # Weird
 *9th-Level Illusion (Warlock, Wizard)*

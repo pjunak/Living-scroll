@@ -1,5 +1,4 @@
----
-name: Eldritch Blast
+---name: Eldritch Blast
 type: spell
 level: 0
 school: Evocation
@@ -16,6 +15,14 @@ classes:
 - Warlock
 id: spell:eldritch-blast
 material_price: ''
+actions:
+- type: attack
+  damage:
+  - type: force
+    base:
+      dice: 1
+      die: 10
+      bonus: 0
 ---
 # Eldritch Blast
 *Evocation Cantrip (Warlock)*

@@ -1,5 +1,4 @@
----
-name: Cone Of Cold
+---name: Cone Of Cold
 type: spell
 level: 5
 school: Evocation
@@ -19,6 +18,21 @@ classes:
 - Wizard
 id: spell:cone-of-cold
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: cold
+    base:
+      dice: 8
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 8
+      mode: spell_level
 ---
 # Cone Of Cold
 *5th-Level Evocation (Druid, Sorcerer, Wizard)*

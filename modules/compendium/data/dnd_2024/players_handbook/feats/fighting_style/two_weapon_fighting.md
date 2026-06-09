@@ -1,8 +1,8 @@
----
-name: Two Weapon Fighting
+---name: Two Weapon Fighting
 type: feat
 prerequisite: null
 id: feat:two-weapon-fighting
+repeatable: false
 ---
 
 *Prerequisite: Fighting Style Feature*

@@ -1,5 +1,4 @@
----
-name: Cloudkill
+---name: Cloudkill
 type: spell
 level: 5
 school: Conjuration
@@ -17,6 +16,21 @@ classes:
 - Wizard
 id: spell:cloudkill
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: poison
+    base:
+      dice: 5
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 8
+      mode: spell_level
 ---
 # Cloudkill
 *5th-Level Conjuration (Sorcerer, Wizard)*

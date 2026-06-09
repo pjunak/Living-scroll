@@ -332,7 +332,7 @@ class LauncherWindow(FramelessWindow):
 
     def _open_compendium(self) -> None:
         logging.info("Opening Compendium")
-        from modules.rules_explorer_explorer.ui.window import CompendiumWindow  # Lazy import
+        from modules.rules_explorer.ui.window import CompendiumWindow  # Lazy import
         window = CompendiumWindow(self)
         self._register_window(window)
         window.show()

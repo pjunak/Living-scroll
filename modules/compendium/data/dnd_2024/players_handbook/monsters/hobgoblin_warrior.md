@@ -1,5 +1,4 @@
----
-name: Hobgoblin Warrior
+---name: Hobgoblin Warrior
 size: Medium
 type: Medium Fey (Goblinoid)
 alignment: Lawful Evil
@@ -21,13 +20,35 @@ traits:
     \ and the ally doesn\u2019t have the Incapacitated condition."
 actions:
 - name: Longsword
-  description: 'Melee Attack Roll: +3, reach 5 ft. Hit: 12 (2d10 + 1) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 10
+      bonus: 1
+  type: utility
 - name: Longbow
-  description: 'Ranged Attack Roll: +3, range 150/600 ft. Hit: 5 (1d8 + 1) Piercing
-    damage plus 7 (3d4) Poison damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 8
+      bonus: 1
+  - type: poison
+    base:
+      dice: 3
+      die: 4
+      bonus: 0
+  type: utility
 
+---
 # Hobgoblin Warrior
 
 *Medium Fey (Goblinoid), Lawful Evil*
+
+### Actions
+
+**Longsword.** Melee Attack Roll: +3, reach 5 ft. Hit: 12 (2d10 + 1) Slashing damage.
+
+**Longbow.** Ranged Attack Roll: +3, range 150/600 ft. Hit: 5 (1d8 + 1) Piercing damage plus 7 (3d4) Poison damage.
 

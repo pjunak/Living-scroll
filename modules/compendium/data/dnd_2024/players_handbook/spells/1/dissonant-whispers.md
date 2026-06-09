@@ -1,5 +1,4 @@
----
-name: Dissonant Whispers
+---name: Dissonant Whispers
 type: spell
 level: 1
 school: Enchantment
@@ -15,6 +14,21 @@ classes:
 - Bard
 id: spell:dissonant-whispers
 material_price: ''
+actions:
+- type: save
+  ability: wis
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 3
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: spell_level
 ---
 # Dissonant Whispers
 *1st-Level Enchantment (Bard)*

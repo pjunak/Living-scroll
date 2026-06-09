@@ -1,5 +1,4 @@
----
-name: Hezrou
+---name: Hezrou
 size: Huge
 type: Huge Giant
 alignment: Chaotic Evil
@@ -19,14 +18,30 @@ actions:
 - name: Multiattack
   description: The giant makes two attacks, using Tree Club or Trash Lob in any combination.
 - name: Tree Club
-  description: 'Melee Attack Roll: +8, reach 10 ft. Hit: 18 (3d8 + 5) Bludgeoning
-    damage. If the target is a Large or smaller creature, it has the Prone condition.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 3
+      die: 8
+      bonus: 5
+  type: utility
 - name: Trash Lob
-  description: 'Ranged Attack Roll: +8, range 60/240 ft. Hit: 16 (2d10 + 5) Bludgeoning
-    damage, and the target has the Poisoned condition until the end of its next turn.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 10
+      bonus: 5
+  type: utility
 
+---
 # Hezrou
 
 *Huge Giant, Chaotic Evil*
+
+### Actions
+
+**Tree Club.** Melee Attack Roll: +8, reach 10 ft. Hit: 18 (3d8 + 5) Bludgeoning damage. If the target is a Large or smaller creature, it has the Prone condition.
+
+**Trash Lob.** Ranged Attack Roll: +8, range 60/240 ft. Hit: 16 (2d10 + 5) Bludgeoning damage, and the target has the Poisoned condition until the end of its next turn.
 

@@ -1,5 +1,4 @@
----
-name: Adult Green Dragon
+---name: Adult Green Dragon
 size: Huge
 type: Huge Dragon (Chromatic)
 alignment: Lawful Evil
@@ -26,11 +25,30 @@ actions:
   description: The dragon makes three Rend attacks. It can replace one attack with
     a use of Spellcasting to cast Mind Spike (level 3 version).
 - name: Rend
-  description: 'Melee Attack Roll: +11, reach 10 ft. Hit: 15 (2d8 + 6) Slashing damage
-    plus 7 (2d6) Poison damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 8
+      bonus: 6
+  - type: poison
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+  type: utility
 - name: "Poison Breath (Recharge 5\u20136)"
-  description: 'Constitution Saving Throw: DC 18, each creature in a 60-foot Cone.
-    Failure: 56 (16d6) Poison damage. Success: Half damage.'
+  type: save
+  ability: con
+  dc: 18
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: poison
+    base:
+      dice: 16
+      die: 6
+      bonus: 0
 - name: Spellcasting
   description: 'The dragon casts one of the following spells, requiring no Material
     components and using Charisma as the spellcasting ability (spell save DC 17):'
@@ -41,16 +59,30 @@ actions:
 - name: Mind Invasion
   description: The dragon uses Spellcasting to cast Mind Spike (level 3 version).
 - name: Noxious Miasma
-  description: "Constitution Saving Throw: DC 17, each creature in a 20-foot-radius\
-    \ Sphere centered on a point the dragon can see within 90 feet. Failure: 7 (2d6)\
-    \ Poison damage, and the target takes a \u22122 penalty to AC until the end of\
-    \ its next turn. Failure or Success: The dragon can\u2019t take this action again\
-    \ until the start of its next turn."
+  type: save
+  ability: con
+  dc: 17
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: poison
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
 - name: Pounce
   description: The dragon moves up to half its Speed, and it makes one Rend attack.
----
 
+---
 # Adult Green Dragon
 
 *Huge Dragon (Chromatic), Lawful Evil*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +11, reach 10 ft. Hit: 15 (2d8 + 6) Slashing damage plus 7 (2d6) Poison damage.
+
+**Poison Breath (Recharge 5–6).** Constitution Saving Throw: DC 18, each creature in a 60-foot Cone. Failure: 56 (16d6) Poison damage. Success: Half damage.
+
+**Noxious Miasma.** Constitution Saving Throw: DC 17, each creature in a 20-foot-radius Sphere centered on a point the dragon can see within 90 feet. Failure: 7 (2d6) Poison damage, and the target takes a −2 penalty to AC until the end of its next turn. Failure or Success: The dragon can’t take this action again until the start of its next turn.
 

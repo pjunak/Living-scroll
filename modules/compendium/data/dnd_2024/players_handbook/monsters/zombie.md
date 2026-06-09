@@ -1,5 +1,4 @@
----
-name: Zombie
+---name: Zombie
 size: Medium
 type: Medium Undead
 alignment: Neutral Evil
@@ -23,10 +22,20 @@ traits:
     a Critical Hit. On a successful save, the zombie drops to 1 Hit Point instead.
 actions:
 - name: Slam
-  description: 'Melee Attack Roll: +3, reach 5 ft. Hit: 5 (1d8 + 1) Bludgeoning damage.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 8
+      bonus: 1
+  type: utility
 
+---
 # Zombie
 
 *Medium Undead, Neutral Evil*
+
+### Actions
+
+**Slam.** Melee Attack Roll: +3, reach 5 ft. Hit: 5 (1d8 + 1) Bludgeoning damage.
 

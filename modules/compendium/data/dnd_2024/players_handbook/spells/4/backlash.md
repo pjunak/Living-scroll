@@ -1,5 +1,4 @@
----
-name: Backlash
+---name: Backlash
 type: spell
 level: 4
 school: Abjuration
@@ -18,6 +17,17 @@ classes:
 - Wizard
 id: spell:backlash
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: force
+    base:
+      dice: 4
+      die: 6
+      bonus: 0
 ---
 # Backlash
 *4th-Level Abjuration (Bard, Sorcerer, Warlock, Wizard)*

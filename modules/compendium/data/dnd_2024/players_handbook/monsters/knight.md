@@ -1,5 +1,4 @@
----
-name: Knight
+---name: Knight
 size: Small
 type: Small Dragon
 alignment: Neutral
@@ -24,11 +23,20 @@ traits:
     attack rolls.
 actions:
 - name: Dagger
-  description: 'Melee or Ranged Attack Roll: +4, reach 5 ft. or range 20/60 ft. Hit:
-    4 (1d4 + 2) Piercing damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 4
+      bonus: 2
+  type: utility
 
+---
 # Knight
 
 *Small Dragon, Neutral*
+
+### Actions
+
+**Dagger.** Melee or Ranged Attack Roll: +4, reach 5 ft. or range 20/60 ft. Hit: 4 (1d4 + 2) Piercing damage.
 

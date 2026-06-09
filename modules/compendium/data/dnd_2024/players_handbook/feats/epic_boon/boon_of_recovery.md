@@ -1,12 +1,13 @@
----
-name: Boon of Recovery
+---name: Boon of Recovery
 type: feat
 category: epic_boon
-prerequisite: "Level 19+"
+prerequisite: Level 19+
 id: feat:boon-of-recovery
-attribute_increase: ['CON']
+attribute_increase:
+- CON
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 19+*

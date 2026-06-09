@@ -1,5 +1,4 @@
----
-name: Ancient Brass Dragon
+---name: Ancient Brass Dragon
 size: Gargantuan
 type: Gargantuan Dragon (Metallic)
 alignment: Chaotic Good
@@ -24,17 +23,36 @@ actions:
   description: The dragon makes three Rend attacks. It can replace one attack with
     a use of (A) Sleep Breath or (B) Spellcasting to cast Scorching Ray (level 3 version).
 - name: Rend
-  description: 'Melee Attack Roll: +14, reach 15 ft. Hit: 19 (2d10 + 8) Slashing damage
-    plus 7 (2d6) Fire damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 10
+      bonus: 8
+  - type: fire
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+  type: utility
 - name: "Fire Breath (Recharge 5\u20136)"
-  description: 'Dexterity Saving Throw: DC 21, each creature in a 90-foot-long, 5-foot-wide
-    Line. Failure: 58 (13d8) Fire damage. Success: Half damage.'
+  type: save
+  ability: dex
+  dc: 21
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: fire
+    base:
+      dice: 13
+      die: 8
+      bonus: 0
 - name: Sleep Breath
-  description: 'Constitution Saving Throw: DC 21, each creature in a 90-foot Cone.
-    Failure: The target has the Incapacitated condition until the end of its next
-    turn, at which point it repeats the save. Second Failure: The target has the Unconscious
-    condition for 10 minutes. This effect ends for the target if it takes damage or
-    a creature within 5 feet of it takes an action to wake it.'
+  type: save
+  ability: con
+  dc: 21
+  on_pass: none
+  on_fail: full
 - name: Spellcasting
   description: 'The dragon casts one of the following spells, requiring no Material
     components and using Charisma as the spellcasting ability (spell save DC 20):'
@@ -50,13 +68,30 @@ actions:
 - name: Pounce
   description: The dragon moves up to half its Speed, and it makes one Rend attack.
 - name: Scorching Sands
-  description: "Dexterity Saving Throw: DC 20, one creature the dragon can see within\
-    \ 120 feet. Failure: 36 (8d8) Fire damage, and the target\u2019s Speed is halved\
-    \ until the end of its next turn. Failure or Success: The dragon can\u2019t take\
-    \ this action again until the start of its next turn."
----
+  type: save
+  ability: dex
+  dc: 20
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: fire
+    base:
+      dice: 8
+      die: 8
+      bonus: 0
 
+---
 # Ancient Brass Dragon
 
 *Gargantuan Dragon (Metallic), Chaotic Good*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +14, reach 15 ft. Hit: 19 (2d10 + 8) Slashing damage plus 7 (2d6) Fire damage.
+
+**Fire Breath (Recharge 5–6).** Dexterity Saving Throw: DC 21, each creature in a 90-foot-long, 5-foot-wide Line. Failure: 58 (13d8) Fire damage. Success: Half damage.
+
+**Sleep Breath.** Constitution Saving Throw: DC 21, each creature in a 90-foot Cone. Failure: The target has the Incapacitated condition until the end of its next turn, at which point it repeats the save. Second Failure: The target has the Unconscious condition for 10 minutes. This effect ends for the target if it takes damage or a creature within 5 feet of it takes an action to wake it.
+
+**Scorching Sands.** Dexterity Saving Throw: DC 20, one creature the dragon can see within 120 feet. Failure: 36 (8d8) Fire damage, and the target’s Speed is halved until the end of its next turn. Failure or Success: The dragon can’t take this action again until the start of its next turn.
 

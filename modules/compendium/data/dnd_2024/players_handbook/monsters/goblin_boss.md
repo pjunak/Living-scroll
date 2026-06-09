@@ -1,5 +1,4 @@
----
-name: Goblin Boss
+---name: Goblin Boss
 size: Small
 type: Small Fey (Goblinoid)
 alignment: Chaotic Neutral
@@ -19,11 +18,31 @@ actions:
 - name: Multiattack
   description: The goblin makes two attacks, using Scimitar or Shortbow in any combination.
 - name: Scimitar
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Slashing damage,
-    plus 2 (1d4) Slashing damage if the attack roll had Advantage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 6
+      bonus: 2
+  - type: slashing
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
+  type: utility
 - name: Shortbow
-  description: 'Ranged Attack Roll: +4, range 80/320 ft. Hit: 5 (1d6 + 2) Piercing
-    damage, plus 2 (1d4) Piercing damage if the attack roll had Advantage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 2
+  - type: piercing
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
+  type: utility
 - name: Nimble Escape
   description: The goblin takes the Disengage or Hide action.
 - name: Redirect Attack
@@ -31,9 +50,15 @@ actions:
     it. Response: The goblin chooses a Small or Medium ally within 5 feet of itself.
     The goblin and that ally swap places, and the ally becomes the target of the attack
     instead.'
----
 
+---
 # Goblin Boss
 
 *Small Fey (Goblinoid), Chaotic Neutral*
+
+### Actions
+
+**Scimitar.** Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Slashing damage, plus 2 (1d4) Slashing damage if the attack roll had Advantage.
+
+**Shortbow.** Ranged Attack Roll: +4, range 80/320 ft. Hit: 5 (1d6 + 2) Piercing damage, plus 2 (1d4) Piercing damage if the attack roll had Advantage.
 

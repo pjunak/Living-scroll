@@ -1,5 +1,4 @@
----
-name: Vampire Familiar
+---name: Vampire Familiar
 size: Medium
 type: Medium or Small Humanoid
 alignment: Neutral Evil
@@ -27,16 +26,27 @@ actions:
 - name: Multiattack
   description: The familiar makes two Umbral Dagger attacks.
 - name: Umbral Dagger
-  description: 'Melee or Ranged Attack Roll: +5, reach 5 ft. or range 20/60 ft. Hit:
-    5 (1d4 + 3) Piercing damage plus 7 (3d4) Necrotic damage. If the target is reduced
-    to 0 Hit Points by this attack, the target becomes Stable but has the Poisoned
-    condition for 1 hour. While it has the Poisoned condition, the target has the
-    Paralyzed condition.'
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 4
+      bonus: 3
+  - type: necrotic
+    base:
+      dice: 3
+      die: 4
+      bonus: 0
+  type: utility
 - name: Deathless Agility
   description: The familiar takes the Dash or Disengage action.
----
 
+---
 # Vampire Familiar
 
 *Medium or Small Humanoid, Neutral Evil*
+
+### Actions
+
+**Umbral Dagger.** Melee or Ranged Attack Roll: +5, reach 5 ft. or range 20/60 ft. Hit: 5 (1d4 + 3) Piercing damage plus 7 (3d4) Necrotic damage. If the target is reduced to 0 Hit Points by this attack, the target becomes Stable but has the Poisoned condition for 1 hour. While it has the Poisoned condition, the target has the Paralyzed condition.
 

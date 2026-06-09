@@ -1,5 +1,4 @@
----
-name: Young Black Dragon
+---name: Young Black Dragon
 size: Large
 type: Large Dragon (Chromatic)
 alignment: Chaotic Evil
@@ -23,14 +22,39 @@ actions:
 - name: Multiattack
   description: The dragon makes three Rend attacks.
 - name: Rend
-  description: 'Melee Attack Roll: +7, reach 10 ft. Hit: 9 (2d4 + 4) Slashing damage
-    plus 3 (1d6) Acid damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 4
+      bonus: 4
+  - type: acid
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
+  type: utility
 - name: "Acid Breath (Recharge 5\u20136)"
-  description: 'Dexterity Saving Throw: DC 14, each creature in a 30-foot-long, 5-foot-wide
-    Line. Failure: 49 (14d6) Acid damage. Success: Half damage.'
----
+  type: save
+  ability: dex
+  dc: 14
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: acid
+    base:
+      dice: 14
+      die: 6
+      bonus: 0
 
+---
 # Young Black Dragon
 
 *Large Dragon (Chromatic), Chaotic Evil*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +7, reach 10 ft. Hit: 9 (2d4 + 4) Slashing damage plus 3 (1d6) Acid damage.
+
+**Acid Breath (Recharge 5–6).** Dexterity Saving Throw: DC 14, each creature in a 30-foot-long, 5-foot-wide Line. Failure: 49 (14d6) Acid damage. Success: Half damage.
 

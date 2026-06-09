@@ -1,5 +1,4 @@
----
-name: Animated Armor
+---name: Animated Armor
 size: Medium
 type: Medium Construct
 alignment: Unaligned
@@ -22,10 +21,20 @@ actions:
 - name: Multiattack
   description: The armor makes two Slam attacks.
 - name: Slam
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Bludgeoning damage.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 6
+      bonus: 2
+  type: utility
 
+---
 # Animated Armor
 
 *Medium Construct, Unaligned*
+
+### Actions
+
+**Slam.** Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Bludgeoning damage.
 

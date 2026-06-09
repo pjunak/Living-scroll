@@ -1,5 +1,4 @@
----
-name: Ancient Black Dragon
+---name: Ancient Black Dragon
 size: Gargantuan
 type: Gargantuan Dragon (Chromatic)
 alignment: Chaotic Evil
@@ -26,11 +25,30 @@ actions:
   description: "The dragon makes three Rend attacks. It can replace one attack with\
     \ a use of Spellcasting to cast Melf\u2019s Acid Arrow (level 4 version)."
 - name: Rend
-  description: 'Melee Attack Roll: +15, reach 15 ft. Hit: 17 (2d8 + 8) Slashing damage
-    plus 9 (2d8) Acid damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 8
+      bonus: 8
+  - type: acid
+    base:
+      dice: 2
+      die: 8
+      bonus: 0
+  type: utility
 - name: "Acid Breath (Recharge 5\u20136)"
-  description: 'Dexterity Saving Throw: DC 22, each creature in a 90-foot-long, 10-foot-wide
-    Line. Failure: 67 (15d8) Acid damage. Success: Half damage.'
+  type: save
+  ability: dex
+  dc: 22
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: acid
+    base:
+      dice: 15
+      die: 8
+      bonus: 0
 - name: Spellcasting
   description: 'The dragon casts one of the following spells, requiring no Material
     components and using Charisma as the spellcasting ability (spell save DC 21, +13
@@ -40,19 +58,33 @@ actions:
 - name: '1/Day Each:'
   description: Create Undead, Speak with Dead, Vitriolic Sphere (level 5 version)
 - name: Cloud of Insects
-  description: "Dexterity Saving Throw: DC 21, one creature the dragon can see within\
-    \ 120 feet. Failure: 33 (6d10) Poison damage, and the target has Disadvantage\
-    \ on saving throws to maintain Concentration until the end of its next turn. Failure\
-    \ or Success: The dragon can\u2019t take this action again until the start of\
-    \ its next turn."
+  type: save
+  ability: dex
+  dc: 21
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: poison
+    base:
+      dice: 6
+      die: 10
+      bonus: 0
 - name: Frightful Presence
   description: "The dragon uses Spellcasting to cast Fear. The dragon can\u2019t take\
     \ this action again until the start of its next turn."
 - name: Pounce
   description: The dragon moves up to half its Speed, and it makes one Rend attack.
----
 
+---
 # Ancient Black Dragon
 
 *Gargantuan Dragon (Chromatic), Chaotic Evil*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +15, reach 15 ft. Hit: 17 (2d8 + 8) Slashing damage plus 9 (2d8) Acid damage.
+
+**Acid Breath (Recharge 5–6).** Dexterity Saving Throw: DC 22, each creature in a 90-foot-long, 10-foot-wide Line. Failure: 67 (15d8) Acid damage. Success: Half damage.
+
+**Cloud of Insects.** Dexterity Saving Throw: DC 21, one creature the dragon can see within 120 feet. Failure: 33 (6d10) Poison damage, and the target has Disadvantage on saving throws to maintain Concentration until the end of its next turn. Failure or Success: The dragon can’t take this action again until the start of its next turn.
 

@@ -1,5 +1,4 @@
----
-name: Death Dog
+---name: Death Dog
 size: Medium
 type: Medium Celestial (Angel)
 alignment: Lawful Good
@@ -30,8 +29,18 @@ actions:
 - name: Multiattack
   description: The deva makes two Holy Mace attacks.
 - name: Holy Mace
-  description: 'Melee Attack Roll: +8, reach 5 ft. Hit: 7 (1d6 + 4) Bludgeoning damage
-    plus 18 (4d8) Radiant damage.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 6
+      bonus: 4
+  - type: radiant
+    base:
+      dice: 4
+      die: 8
+      bonus: 0
+  type: utility
 - name: Spellcasting
   description: 'The deva casts one of the following spells, requiring no Material
     components and using Charisma as the spellcasting ability (spell save DC 17):'
@@ -44,9 +53,13 @@ actions:
 - name: Divine Aid (2/Day)
   description: The deva casts Cure Wounds, Lesser Restoration, or Remove Curse, using
     the same spellcasting ability as Spellcasting.
----
 
+---
 # Death Dog
 
 *Medium Celestial (Angel), Lawful Good*
+
+### Actions
+
+**Holy Mace.** Melee Attack Roll: +8, reach 5 ft. Hit: 7 (1d6 + 4) Bludgeoning damage plus 18 (4d8) Radiant damage.
 

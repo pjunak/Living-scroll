@@ -1,5 +1,4 @@
----
-name: Grick
+---name: Grick
 size: Large
 type: Large Monstrosity
 alignment: Unaligned
@@ -19,12 +18,20 @@ actions:
 - name: Multiattack
   description: The griffon makes two Rend attacks.
 - name: Rend
-  description: "Melee Attack Roll: +6, reach 5 ft. Hit: 8 (1d8 + 4) Piercing damage.\
-    \ If the target is a Medium or smaller creature, it has the Grappled condition\
-    \ (escape DC 14) from both of the griffon\u2019s front claws."
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 8
+      bonus: 4
+  type: utility
 
+---
 # Grick
 
 *Large Monstrosity, Unaligned*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +6, reach 5 ft. Hit: 8 (1d8 + 4) Piercing damage. If the target is a Medium or smaller creature, it has the Grappled condition (escape DC 14) from both of the griffon’s front claws.
 

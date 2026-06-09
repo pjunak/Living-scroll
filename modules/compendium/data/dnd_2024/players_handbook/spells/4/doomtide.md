@@ -1,5 +1,4 @@
----
-name: Doomtide
+---name: Doomtide
 type: spell
 level: 4
 school: Conjuration
@@ -19,6 +18,17 @@ classes:
 - Warlock
 id: spell:doomtide
 material_price: ''
+actions:
+- type: save
+  ability: wis
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 5
+      die: 6
+      bonus: 0
 ---
 # Doomtide
 *4th-Level Conjuration (Bard, Cleric, Warlock)*

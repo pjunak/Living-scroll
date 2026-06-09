@@ -1,5 +1,4 @@
----
-name: Summon Aberration
+---name: Summon Aberration
 type: spell
 level: 4
 school: Conjuration
@@ -18,6 +17,17 @@ classes:
 - Wizard
 id: spell:summon-aberration
 material_price: ''
+actions:
+- type: save
+  ability: wis
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
 ---
 # Summon Aberration
 *4th-Level Conjuration (Warlock, Wizard)*

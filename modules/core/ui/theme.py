@@ -12,24 +12,32 @@ COLORS = {
     "bg_main": "#1e1e1e",
     "bg_secondary": "#252526",
     "bg_tertiary": "#2d2d30",
-    "bg_input": "#2b2b2b",  # Matches Bestiary/Grimoire input background
-    
+    "bg_input": "#2b2b2b",
+    "bg_base": "#121212",       # Deep base (dashboard/hero areas)
+    "bg_card": "#1e1e20",       # Card surfaces
+    "bg_hero": "qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #2b1029, stop:1 #121212)",
+
     # Text
     "text_primary": "#cccccc",
     "text_secondary": "#999999",
     "text_bright": "#ffffff",
-    
+    "text_dim": "#a0a0a0",       # Subdued labels
+    "text_muted": "#5f6b7c",     # Very subtle (status text, captions)
+
     # Accents
-    "accent_primary": "#9b59b6", # Purple (User preferred)
+    "accent_primary": "#9b59b6",
     "accent_primary_hover": "#8e44ad",
     "accent_hover": "#4e4e4e",
+    "accent_dim": "rgba(155, 89, 182, 0.3)",
     "accent_red": "#e74c3c",
     "accent_green": "#27ae60",
-    
+    "success": "#2ecc71",         # Brighter green (HP, positive actions)
+    "danger": "#e74c3c",          # Alias for accent_red
+
     # Borders
     "border_dim": "#3e3e42",
     "border_input": "#5d5d5d",
-    "border_checkbox": "#888888", # Lighter border for visibility
+    "border_checkbox": "#888888",
     "border_focus": "#9b59b6",
 }
 
@@ -524,6 +532,136 @@ QLabel[class="BuildPortrait"] {{
 }}
 """
 
+_REUSABLE_WIDGET_STYLES = f"""
+/* ── Stat Box ───────────────────────────────────────────── */
+QFrame[class="StatBox"] {{
+    background-color: {COLORS['bg_card']};
+    border: 1px solid {COLORS['border_dim']};
+    border-radius: 8px;
+    padding: 8px;
+}}
+QLabel[class="StatBoxValue"] {{
+    font-weight: 900;
+    color: {COLORS['text_bright']};
+}}
+QLabel[class="StatBoxLabel"] {{
+    font-weight: 700;
+    color: {COLORS['text_dim']};
+    text-transform: uppercase;
+}}
+
+/* Size variants via dynamic property "size" */
+QFrame[class="StatBox"][size="small"] {{ min-width: 48px; max-width: 72px; }}
+QFrame[class="StatBox"][size="medium"] {{ min-width: 72px; max-width: 110px; }}
+QFrame[class="StatBox"][size="large"] {{ min-width: 110px; max-width: 160px; }}
+
+QFrame[class="StatBox"][size="small"] QLabel[class="StatBoxValue"] {{ font-size: 18px; }}
+QFrame[class="StatBox"][size="medium"] QLabel[class="StatBoxValue"] {{ font-size: 28px; }}
+QFrame[class="StatBox"][size="large"] QLabel[class="StatBoxValue"] {{ font-size: 36px; }}
+
+QFrame[class="StatBox"][size="small"] QLabel[class="StatBoxLabel"] {{ font-size: 8px; }}
+QFrame[class="StatBox"][size="medium"] QLabel[class="StatBoxLabel"] {{ font-size: 10px; }}
+QFrame[class="StatBox"][size="large"] QLabel[class="StatBoxLabel"] {{ font-size: 12px; }}
+
+/* ── Adjustment Control (+/−) ──────────────────────────── */
+QPushButton[class="AdjustMinus"] {{
+    background-color: transparent;
+    color: {COLORS['danger']};
+    border: 2px solid {COLORS['danger']};
+    border-radius: 13px;
+    font-weight: 900;
+    font-size: 16px;
+    min-width: 26px;
+    max-width: 26px;
+    min-height: 26px;
+    max-height: 26px;
+    padding: 0px;
+}}
+QPushButton[class="AdjustMinus"]:hover {{
+    background-color: rgba(231, 76, 60, 0.2);
+}}
+QPushButton[class="AdjustMinus"]:pressed {{
+    background-color: {COLORS['danger']};
+    color: {COLORS['text_bright']};
+}}
+
+QPushButton[class="AdjustPlus"] {{
+    background-color: transparent;
+    color: {COLORS['success']};
+    border: 2px solid {COLORS['success']};
+    border-radius: 13px;
+    font-weight: 900;
+    font-size: 16px;
+    min-width: 26px;
+    max-width: 26px;
+    min-height: 26px;
+    max-height: 26px;
+    padding: 0px;
+}}
+QPushButton[class="AdjustPlus"]:hover {{
+    background-color: rgba(46, 204, 113, 0.2);
+}}
+QPushButton[class="AdjustPlus"]:pressed {{
+    background-color: {COLORS['success']};
+    color: {COLORS['text_bright']};
+}}
+
+QLabel[class="AdjustValue"] {{
+    font-size: 24px;
+    font-weight: 900;
+    color: {COLORS['success']};
+    min-width: 50px;
+    qproperty-alignment: AlignCenter;
+}}
+
+/* ── Circular Button (icon action) ─────────────────────── */
+QPushButton[class="CircularButton"] {{
+    background-color: transparent;
+    border: 2px solid {COLORS['border_dim']};
+    border-radius: 15px;
+    min-width: 30px;
+    max-width: 30px;
+    min-height: 30px;
+    max-height: 30px;
+    padding: 0px;
+    color: {COLORS['text_primary']};
+}}
+QPushButton[class="CircularButton"]:hover {{
+    border-color: {COLORS['accent_primary']};
+    background-color: {COLORS['accent_dim']};
+}}
+
+/* ── Filter Toggle ─────────────────────────────────────── */
+QPushButton[class="FilterToggle"] {{
+    background-color: transparent;
+    border: 1px solid {COLORS['border_dim']};
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-weight: bold;
+    color: {COLORS['text_primary']};
+}}
+QPushButton[class="FilterToggle"]:checked {{
+    color: {COLORS['text_bright']};
+}}
+QPushButton[class="FilterToggle"]:hover {{
+    border-color: {COLORS['accent_primary']};
+}}
+
+/* ── Section Card ──────────────────────────────────────── */
+QFrame[class="SectionCard"] {{
+    background-color: {COLORS['bg_secondary']};
+    border: 1px solid {COLORS['border_dim']};
+    border-radius: 8px;
+    padding: 12px;
+}}
+QLabel[class="SectionCardTitle"] {{
+    font-weight: 700;
+    font-size: 14px;
+    color: {COLORS['accent_primary']};
+    margin-bottom: 6px;
+}}
+"""
+
 # Combine all blocks
 DARK_THEME_STYLESHEET = "\n".join([
     _CORE_STYLES,
@@ -532,7 +670,8 @@ DARK_THEME_STYLESHEET = "\n".join([
     _SCROLL_LIST_STYLES,
     _SCROLLBAR_STYLES,
     _TAB_STYLES,
-    _CUSTOM_WIDGET_STYLES
+    _CUSTOM_WIDGET_STYLES,
+    _REUSABLE_WIDGET_STYLES,
 ])
 
 __all__ = ["DARK_THEME_STYLESHEET", "COLORS"]

@@ -1,5 +1,4 @@
----
-name: Awakened Plants
+---name: Awakened Plants
 size: Large
 type: Large Monstrosity
 alignment: Unaligned
@@ -17,10 +16,20 @@ cr: 1/4 (XP 50; PB +2)
 traits: []
 actions:
 - name: Beak
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 6 (1d8 + 2) Slashing damage.'
----
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 8
+      bonus: 2
+  type: utility
 
+---
 # Awakened Plants
 
 *Large Monstrosity, Unaligned*
+
+### Actions
+
+**Beak.** Melee Attack Roll: +4, reach 5 ft. Hit: 6 (1d8 + 2) Slashing damage.
 

@@ -1,5 +1,4 @@
----
-name: Shocking Grasp
+---name: Shocking Grasp
 type: spell
 level: 0
 school: Evocation
@@ -18,6 +17,18 @@ classes:
 - Wizard
 id: spell:shocking-grasp
 material_price: ''
+actions:
+- type: attack
+  damage:
+  - type: lightning
+    base:
+      dice: 1
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 8
+      mode: character_level
 ---
 # Shocking Grasp
 *Evocation Cantrip (Artificer, Sorcerer, Wizard)*

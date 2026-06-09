@@ -1,5 +1,4 @@
----
-name: Freezing Sphere
+---name: Freezing Sphere
 type: spell
 level: 6
 school: Evocation
@@ -18,6 +17,17 @@ classes:
 - Wizard
 id: spell:freezing-sphere
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: cold
+    base:
+      dice: 10
+      die: 6
+      bonus: 0
 ---
 # Freezing Sphere
 *6th-Level Evocation (Sorcerer, Wizard)*

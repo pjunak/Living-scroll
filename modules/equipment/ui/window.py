@@ -72,8 +72,7 @@ class EquipmentWindow(FramelessWindow):
 
         # --- Title Bar ---
         title_label = QLabel("Equipment")
-        # Removed HeaderLabel class to avoid style conflicts
-        title_label.setStyleSheet("font-size: 18px; font-weight: bold; color: #e0e0e0; border: none;")
+        title_label.setProperty("class", "HeaderLabel")
         self.set_title_bar_center_widget(title_label)
 
         # --- Main Layout ---
@@ -129,7 +128,11 @@ class EquipmentWindow(FramelessWindow):
             btn.setCheckable(True)
             btn.setFixedWidth(30)
             color = rarity_colors.get(rarity, "#7f8c8d")
-            btn.setStyleSheet(f"QPushButton {{ color: {color}; font-weight: bold; }} QPushButton:checked {{ background-color: {color}; color: white; }}")
+            btn.setProperty("class", "FilterToggle")
+            btn.setStyleSheet(
+                f"QPushButton {{ color: {color}; border-color: {color}; }}"
+                f"QPushButton:checked {{ background-color: {color}; color: white; }}"
+            )
             btn.toggled.connect(self._apply_filters)
             self._rarity_buttons.addButton(btn, i)
             filter_layout.addWidget(btn)
@@ -198,7 +201,7 @@ class EquipmentWindow(FramelessWindow):
              scroll.setWidgetResizable(True)
              scroll.setWidget(self._cart_list)
              scroll.setFrameShape(QFrame.Shape.NoFrame)
-             scroll.setStyleSheet("background: rgba(0,0,0,0.2); border-radius: 4px;")
+             scroll.setProperty("class", "SectionCard")
              
              cart_layout.addWidget(scroll)
              right_layout.addWidget(cart_group, 1) # Expand cart area
@@ -313,46 +316,30 @@ class EquipmentWindow(FramelessWindow):
         row_widget = QWidget()
         row_layout = QHBoxLayout(row_widget)
         row_layout.setContentsMargins(4, 4, 4, 4)
-        row_widget.setStyleSheet("background: #2d2d30; border-radius: 4px;")
+        row_widget.setProperty("class", "SectionCard")
         
         name = QLabel(item.get('name', 'Unknown'))
-        name.setStyleSheet("font-weight: bold;")
+        name.setProperty("class", "BoldLabel")
         
         # Custom Quantity Widget: [ - ] [ Value ] [ + ]
         qty_widget = QWidget()
         qty_layout = QHBoxLayout(qty_widget)
         qty_layout.setContentsMargins(0, 0, 0, 0)
         qty_layout.setSpacing(2)
-        
-        btn_style = """
-            QPushButton {
-                background-color: #3e3e42;
-                border: 1px solid #555;
-                border-radius: 3px;
-                color: white;
-                font-weight: bold;
-                padding: 0px;
-            }
-            QPushButton:hover {
-                background-color: #555;
-                border-color: #777;
-            }
-        """
 
         minus_btn = QPushButton("−")
         minus_btn.setFixedSize(20, 20)
-        minus_btn.setStyleSheet(btn_style)
+        minus_btn.setProperty("class", "CircularButton")
         
         plus_btn = QPushButton("+")
         plus_btn.setFixedSize(20, 20)
-        plus_btn.setStyleSheet(btn_style)
+        plus_btn.setProperty("class", "CircularButton")
 
         
         # Manual Quantity Input
         qty_input = QLineEdit("1")
         qty_input.setAlignment(Qt.AlignmentFlag.AlignCenter)
         qty_input.setFixedSize(40, 24)
-        qty_input.setStyleSheet("background: #2d2d30; color: white; border: 1px solid #555; border-radius: 3px;")
         
         # Integer validation? For now simple text change handler
         entry['ui_input'] = qty_input
@@ -384,7 +371,7 @@ class EquipmentWindow(FramelessWindow):
         remove_btn = QPushButton("✕")
         remove_btn.setFixedSize(32, 24) # Wider
         remove_btn.setCursor(Qt.CursorShape.PointingHandCursor)
-        remove_btn.setStyleSheet("color: #e74c3c; border: 1px solid #e74c3c; border-radius: 4px; font-weight: bold; font-size: 14px;") # More distinct
+        remove_btn.setProperty("class", "DestructiveButton")
         remove_btn.clicked.connect(lambda: self._remove_from_cart(entry, row_widget))
         
         row_layout.addWidget(name, 1)

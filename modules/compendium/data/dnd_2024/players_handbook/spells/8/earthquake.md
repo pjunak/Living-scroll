@@ -1,5 +1,4 @@
----
-name: Earthquake
+---name: Earthquake
 type: spell
 level: 8
 school: Transmutation
@@ -19,6 +18,17 @@ classes:
 - Sorcerer
 id: spell:earthquake
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 12
+      die: 6
+      bonus: 0
 ---
 # Earthquake
 *8th-Level Transmutation (Cleric, Druid, Sorcerer)*

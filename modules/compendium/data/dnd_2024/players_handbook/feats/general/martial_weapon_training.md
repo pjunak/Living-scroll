@@ -1,13 +1,16 @@
----
-name: Martial Weapon Training
+---name: Martial Weapon Training
 type: feat
 category: general
-prerequisite: "Level 4+"
+prerequisite: Level 4+
 id: feat:martial-weapon-training
-attribute_increase: ['STR', 'DEX']
+attribute_increase:
+- STR
+- DEX
 proficiency:
-  weapons: ['Martial']
+  weapons:
+  - Martial
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 4+*

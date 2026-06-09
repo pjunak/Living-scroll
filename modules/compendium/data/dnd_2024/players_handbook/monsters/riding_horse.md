@@ -1,5 +1,4 @@
----
-name: Riding Horse
+---name: Riding Horse
 size: Large
 type: Large Beast
 alignment: Unaligned
@@ -21,12 +20,22 @@ actions:
 - name: Multiattack
   description: The tiger makes two Rend attacks.
 - name: Rend
-  description: 'Melee Attack Roll: +6, reach 5 ft. Hit: 11 (2d6 + 4) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 6
+      bonus: 4
+  type: utility
 - name: Nimble Escape
   description: The tiger takes the Disengage or Hide action.
----
 
+---
 # Riding Horse
 
 *Large Beast, Unaligned*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +6, reach 5 ft. Hit: 11 (2d6 + 4) Slashing damage.
 

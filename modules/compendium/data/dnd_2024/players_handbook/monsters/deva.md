@@ -1,5 +1,4 @@
----
-name: Deva
+---name: Deva
 size: Large
 type: Large Elemental (Genie)
 alignment: Neutral
@@ -36,11 +35,26 @@ actions:
   description: The djinni makes three attacks, using Storm Blade or Storm Bolt in
     any combination.
 - name: Storm Blade
-  description: 'Melee Attack Roll: +9, reach 5 feet. Hit: 12 (2d6 + 5) Slashing damage
-    plus 7 (2d6) Lightning damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 6
+      bonus: 5
+  - type: lightning
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+  type: utility
 - name: Storm Bolt
-  description: 'Ranged Attack Roll: +9, range 120 feet. Hit: 13 (3d8) Thunder damage.
-    If the target is a Large or smaller creature, it has the Prone condition.'
+  damage:
+  - type: thunder
+    base:
+      dice: 3
+      die: 8
+      bonus: 0
+  type: utility
 - name: Create Whirlwind
   description: "The djinni conjures a whirlwind at a point it can see within 120 feet.\
     \ The whirlwind fills a 20-foot-radius, 60-foot-high Cylinder centered on that\
@@ -57,9 +71,15 @@ actions:
     Wind Walk
 - name: '1/Day Each:'
   description: Creation, Gaseous Form, Invisibility, Major Image, Plane Shift
----
 
+---
 # Deva
 
 *Large Elemental (Genie), Neutral*
+
+### Actions
+
+**Storm Blade.** Melee Attack Roll: +9, reach 5 feet. Hit: 12 (2d6 + 5) Slashing damage plus 7 (2d6) Lightning damage.
+
+**Storm Bolt.** Ranged Attack Roll: +9, range 120 feet. Hit: 13 (3d8) Thunder damage. If the target is a Large or smaller creature, it has the Prone condition.
 

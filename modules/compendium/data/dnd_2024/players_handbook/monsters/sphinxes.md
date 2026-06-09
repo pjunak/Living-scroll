@@ -1,5 +1,4 @@
----
-name: Sphinxes
+---name: Sphinxes
 size: Large
 type: Large Fiend
 alignment: Chaotic Evil
@@ -24,10 +23,26 @@ actions:
 - name: Multiattack
   description: The naga makes three attacks, using Bite or Necrotic Ray in any combination.
 - name: Bite
-  description: 'Melee Attack Roll: +7, reach 10 ft. Hit: 7 (1d6 + 4) Piercing damage
-    plus 14 (4d6) Poison damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 4
+  - type: poison
+    base:
+      dice: 4
+      die: 6
+      bonus: 0
+  type: utility
 - name: Necrotic Ray
-  description: 'Ranged Attack Roll: +6, range 60 ft. Hit: 21 (6d6) Necrotic damage.'
+  damage:
+  - type: necrotic
+    base:
+      dice: 6
+      die: 6
+      bonus: 0
+  type: utility
 - name: Spellcasting
   description: 'The naga casts one of the following spells, requiring no Somatic or
     Material components and using Intelligence as the spellcasting ability (spell
@@ -37,9 +52,15 @@ actions:
 - name: '2/Day Each:'
   description: Detect Thoughts, Dimension Door, Hold Person (level 3 version), Lightning
     Bolt (level 4 version)
----
 
+---
 # Sphinxes
 
 *Large Fiend, Chaotic Evil*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +7, reach 10 ft. Hit: 7 (1d6 + 4) Piercing damage plus 14 (4d6) Poison damage.
+
+**Necrotic Ray.** Ranged Attack Roll: +6, range 60 ft. Hit: 21 (6d6) Necrotic damage.
 

@@ -1,12 +1,13 @@
----
-name: Durable
+---name: Durable
 type: feat
 category: general
-prerequisite: "Level 4+"
+prerequisite: Level 4+
 id: feat:durable
-attribute_increase: ['CON']
+attribute_increase:
+- CON
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 4+*

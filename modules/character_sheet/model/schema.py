@@ -78,6 +78,17 @@ class CharacterData:
     # Roleplay / Notes
     notes: Dict[str, str] = field(default_factory=dict)
 
+    # HP Mode: "average" (point-buy/standard) or "rolled" (manual)
+    hp_mode: str = "average"
+    # Per-level rolled HP values (only used in "rolled" mode)
+    # key = cumulative character level, value = die roll result
+    hp_rolls: Dict[int, int] = field(default_factory=dict)
+
+    # Dynamic management state (spellbook contents, prepared spells, invocations…)
+    # Key = "{class_name}:{management_id}" e.g. "wizard:spellbook"
+    # Value = list of selected item IDs
+    management_state: Dict[str, List[str]] = field(default_factory=dict)
+
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> CharacterData:
         identity = IdentityData.from_dict(data.get("identity", {}))
@@ -97,6 +108,9 @@ class CharacterData:
             classes=classes,
             background_choices=data.get("background_choices", {}),
             equipment=data.get("equipment", []),
-            notes=data.get("notes", {})
+            notes=data.get("notes", {}),
+            hp_mode=data.get("hp_mode", "average"),
+            hp_rolls={int(k): v for k, v in data.get("hp_rolls", {}).items()},
+            management_state=data.get("management_state", {})
         )
 

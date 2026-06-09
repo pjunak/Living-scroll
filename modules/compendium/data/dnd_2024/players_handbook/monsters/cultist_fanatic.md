@@ -1,5 +1,4 @@
----
-name: Cultist Fanatic
+---name: Cultist Fanatic
 size: Medium
 type: Medium or Small Humanoid
 alignment: Neutral
@@ -17,8 +16,18 @@ cr: 2 (XP 450; PB +2)
 traits: []
 actions:
 - name: Pact Blade
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 6 (1d8 + 2) Slashing damage
-    plus 7 (2d6) Necrotic damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 8
+      bonus: 2
+  - type: necrotic
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+  type: utility
 - name: Spellcasting
   description: 'The cultist casts one of the following spells, using Wisdom as the
     spellcasting ability (spell save DC 12, +4 to hit with spell attacks):'
@@ -31,9 +40,13 @@ actions:
 - name: Spiritual Weapon (2/Day)
   description: The cultist casts the Spiritual Weapon spell, using the same spellcasting
     ability as Spellcasting.
----
 
+---
 # Cultist Fanatic
 
 *Medium or Small Humanoid, Neutral*
+
+### Actions
+
+**Pact Blade.** Melee Attack Roll: +4, reach 5 ft. Hit: 6 (1d8 + 2) Slashing damage plus 7 (2d6) Necrotic damage.
 

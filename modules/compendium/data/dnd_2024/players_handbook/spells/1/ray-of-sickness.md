@@ -1,5 +1,4 @@
----
-name: Ray of Sickness
+---name: Ray of Sickness
 type: spell
 level: 1
 school: Necromancy
@@ -17,6 +16,18 @@ classes:
 - Wizard
 id: spell:ray-of-sickness
 material_price: ''
+actions:
+- type: attack
+  damage:
+  - type: poison
+    base:
+      dice: 2
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 8
+      mode: spell_level
 ---
 # Ray of Sickness
 *1st-Level Necromancy (Sorcerer, Wizard)*

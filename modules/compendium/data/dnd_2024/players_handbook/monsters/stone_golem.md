@@ -1,5 +1,4 @@
----
-name: Stone Golem
+---name: Stone Golem
 size: Huge
 type: Huge Giant
 alignment: Chaotic Good
@@ -26,16 +25,38 @@ actions:
   description: The giant makes two attacks, using Storm Sword or Thunderbolt in any
     combination.
 - name: Storm Sword
-  description: 'Melee Attack Roll: +14, reach 10 ft. Hit: 23 (4d6 + 9) Slashing damage
-    plus 13 (3d8) Lightning damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 4
+      die: 6
+      bonus: 9
+  - type: lightning
+    base:
+      dice: 3
+      die: 8
+      bonus: 0
+  type: utility
 - name: Thunderbolt
-  description: "Ranged Attack Roll: +14, range 500 ft. Hit: 22 (2d12 + 9) Lightning\
-    \ damage, and the target has the Blinded and Deafened conditions until the start\
-    \ of the giant\u2019s next turn."
+  damage:
+  - type: lightning
+    base:
+      dice: 2
+      die: 12
+      bonus: 9
+  type: utility
 - name: "Lightning Storm (Recharge 5\u20136)"
-  description: 'Dexterity Saving Throw: DC 18, each creature in a 10-foot-radius,
-    40-foot-high Cylinder originating from a point the giant can see within 500 feet.
-    Failure: 55 (10d10) Lightning damage. Success: Half damage.'
+  type: save
+  ability: dex
+  dc: 18
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: lightning
+    base:
+      dice: 10
+      die: 10
+      bonus: 0
 - name: Spellcasting
   description: 'The giant casts one of the following spells, requiring no Material
     components and using Wisdom as the spellcasting ability (spell save DC 18):'
@@ -43,9 +64,17 @@ actions:
   description: Detect Magic, Light
 - name: '1/Day:'
   description: Control Weather
----
 
+---
 # Stone Golem
 
 *Huge Giant, Chaotic Good*
+
+### Actions
+
+**Storm Sword.** Melee Attack Roll: +14, reach 10 ft. Hit: 23 (4d6 + 9) Slashing damage plus 13 (3d8) Lightning damage.
+
+**Thunderbolt.** Ranged Attack Roll: +14, range 500 ft. Hit: 22 (2d12 + 9) Lightning damage, and the target has the Blinded and Deafened conditions until the start of the giant’s next turn.
+
+**Lightning Storm (Recharge 5–6).** Dexterity Saving Throw: DC 18, each creature in a 10-foot-radius, 40-foot-high Cylinder originating from a point the giant can see within 500 feet. Failure: 55 (10d10) Lightning damage. Success: Half damage.
 

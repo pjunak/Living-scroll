@@ -1,5 +1,4 @@
----
-name: Swarm of Rats
+---name: Swarm of Rats
 size: Medium
 type: Medium Swarm of Tiny Beasts
 alignment: Unaligned
@@ -26,16 +25,33 @@ traits:
     \ swarm can\u2019t regain Hit Points or gain Temporary Hit Points."
 actions:
 - name: Beaks
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Piercing damage,
-    or 2 (1d4) Piercing damage if the swarm is Bloodied.'
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 2
+  - type: piercing
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
+  type: utility
 - name: Cacophony (Recharge 6)
-  description: "Wisdom Saving Throw: DC 10, one creature in the swarm\u2019s space.\
-    \ Failure: The target has the Deafened condition until the start of the swarm\u2019\
-    s next turn. While Deafened, the target also has Disadvantage on ability checks\
-    \ and attack rolls."
----
+  type: save
+  ability: wis
+  dc: 10
+  on_pass: none
+  on_fail: full
 
+---
 # Swarm of Rats
 
 *Medium Swarm of Tiny Beasts, Unaligned*
+
+### Actions
+
+**Beaks.** Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Piercing damage, or 2 (1d4) Piercing damage if the swarm is Bloodied.
+
+**Cacophony (Recharge 6).** Wisdom Saving Throw: DC 10, one creature in the swarm’s space. Failure: The target has the Deafened condition until the start of the swarm’s next turn. While Deafened, the target also has Disadvantage on ability checks and attack rolls.
 

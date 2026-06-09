@@ -1,5 +1,4 @@
----
-name: Flame Strike
+---name: Flame Strike
 type: spell
 level: 5
 school: Evocation
@@ -17,6 +16,17 @@ classes:
 - Cleric
 id: spell:flame-strike
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: fire
+    base:
+      dice: 5
+      die: 6
+      bonus: 0
 ---
 # Flame Strike
 *5th-Level Evocation (Cleric)*

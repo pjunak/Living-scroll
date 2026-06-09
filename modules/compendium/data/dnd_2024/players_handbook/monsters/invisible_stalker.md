@@ -1,5 +1,4 @@
----
-name: Invisible Stalker
+---name: Invisible Stalker
 size: Large
 type: Large Construct
 alignment: Unaligned
@@ -31,16 +30,49 @@ actions:
   description: The golem makes two attacks, using Bladed Arm or Fiery Bolt in any
     combination.
 - name: Bladed Arm
-  description: 'Melee Attack Roll: +12, reach 10 ft. Hit: 20 (3d8 + 7) Slashing damage
-    plus 10 (3d6) Fire damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 3
+      die: 8
+      bonus: 7
+  - type: fire
+    base:
+      dice: 3
+      die: 6
+      bonus: 0
+  type: utility
 - name: Fiery Bolt
-  description: 'Ranged Attack Roll: +10, range 120 ft. Hit: 36 (8d8) Fire damage.'
+  damage:
+  - type: fire
+    base:
+      dice: 8
+      die: 8
+      bonus: 0
+  type: utility
 - name: Poison Breath (Recharge 6)
-  description: 'Constitution Saving Throw: DC 18, each creature in a 60-foot Cone.
-    Failure: 55 (10d10) Poison damage. Success: Half damage.'
----
+  type: save
+  ability: con
+  dc: 18
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: poison
+    base:
+      dice: 10
+      die: 10
+      bonus: 0
 
+---
 # Invisible Stalker
 
 *Large Construct, Unaligned*
+
+### Actions
+
+**Bladed Arm.** Melee Attack Roll: +12, reach 10 ft. Hit: 20 (3d8 + 7) Slashing damage plus 10 (3d6) Fire damage.
+
+**Fiery Bolt.** Ranged Attack Roll: +10, range 120 ft. Hit: 36 (8d8) Fire damage.
+
+**Poison Breath (Recharge 6).** Constitution Saving Throw: DC 18, each creature in a 60-foot Cone. Failure: 55 (10d10) Poison damage. Success: Half damage.
 

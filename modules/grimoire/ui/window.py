@@ -123,33 +123,16 @@ class SpellWindow(FramelessWindow):
         # So multiple school selection makes sense.
         
         for school, color in school_colors.items():
-            # Use 3 letter abbreviation
             btn = QPushButton(school[:3]) 
             btn.setCheckable(True)
             btn.setToolTip(school)
-            # Style: Color background when checked, colored border when unchecked?
-            # Or always colored but brighter when checked?
-            # Let's do a simple style sheet injection per button.
-            
-            # Base style
-            btn.setStyleSheet(f"""
-                QPushButton {{
-                    background-color: transparent;
-                    border: 2px solid {color};
-                    color: {color};
-                    border-radius: 4px;
-                    padding: 4px 8px;
-                    font-weight: bold;
-                }}
-                QPushButton:checked {{
-                    background-color: {color};
-                    color: white;
-                }}
-                QPushButton:hover {{
-                    background-color: {color}40; /* 25% opacity */
-                }}
-            """)
-            
+            btn.setProperty("class", "FilterToggle")
+            # Per-school color override (border + text when unchecked, bg when checked)
+            btn.setStyleSheet(
+                f"QPushButton {{ border-color: {color}; color: {color}; }}"
+                f"QPushButton:checked {{ background-color: {color}; color: white; }}"
+                f"QPushButton:hover {{ background-color: {color}40; }}"
+            )
             btn.toggled.connect(self._apply_filters)
             self._school_group.addButton(btn)
             filter_layout.addWidget(btn)

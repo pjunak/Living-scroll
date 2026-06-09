@@ -1,5 +1,4 @@
----
-name: Draft Horse
+---name: Draft Horse
 size: Small
 type: Small Beast
 alignment: Unaligned
@@ -17,10 +16,20 @@ cr: 0 (XP 10; PB +2)
 traits: []
 actions:
 - name: Talons
-  description: 'Melee Attack Roll: +4, reach 5 feet. Hit: 4 (1d4 + 2) Slashing damage.'
----
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 4
+      bonus: 2
+  type: utility
 
+---
 # Draft Horse
 
 *Small Beast, Unaligned*
+
+### Actions
+
+**Talons.** Melee Attack Roll: +4, reach 5 feet. Hit: 4 (1d4 + 2) Slashing damage.
 

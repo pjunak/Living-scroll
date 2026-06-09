@@ -1,5 +1,4 @@
----
-name: Giant Owl
+---name: Giant Owl
 size: Small
 type: Small Beast
 alignment: Unaligned
@@ -21,10 +20,20 @@ traits:
     t have the Incapacitated condition."
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +5, reach 5 feet. Hit: 5 (1d4 + 3) Piercing damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 4
+      bonus: 3
+  type: utility
 
+---
 # Giant Owl
 
 *Small Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +5, reach 5 feet. Hit: 5 (1d4 + 3) Piercing damage.
 

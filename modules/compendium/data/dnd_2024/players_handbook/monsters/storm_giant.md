@@ -1,5 +1,4 @@
----
-name: Storm Giant
+---name: Storm Giant
 size: Medium
 type: Medium Fiend
 alignment: Neutral Evil
@@ -25,24 +24,43 @@ actions:
   description: The succubus makes one Fiendish Touch attack and uses Charm or Draining
     Kiss.
 - name: Fiendish Touch
-  description: 'Melee Attack Roll: +7, reach 5 ft. Hit: 16 (2d10 + 5) Psychic damage.'
+  damage:
+  - type: psychic
+    base:
+      dice: 2
+      die: 10
+      bonus: 5
+  type: utility
 - name: Charm
   description: The succubus casts Dominate Person (level 8 version), requiring no
     spell components and using Charisma as the spellcasting ability (spell save DC
     15).
 - name: Draining Kiss
-  description: "Constitution Saving Throw: DC 15, one creature Charmed by the succubus\
-    \ within 5 feet. Failure: 13 (3d8) Psychic damage. Success: Half damage. Failure\
-    \ or Success: The target\u2019s Hit Point maximum decreases by an amount equal\
-    \ to the damage taken."
+  type: save
+  ability: con
+  dc: 15
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 3
+      die: 8
+      bonus: 0
 - name: Shape-Shift
   description: "The succubus shape-shifts into a Medium or Small Humanoid, or it returns\
     \ to its true form. Its game statistics are the same in each form, except its\
     \ Fly Speed is available only in its true form. Any equipment it is wearing or\
     \ carrying isn\u2019t transformed."
----
 
+---
 # Storm Giant
 
 *Medium Fiend, Neutral Evil*
+
+### Actions
+
+**Fiendish Touch.** Melee Attack Roll: +7, reach 5 ft. Hit: 16 (2d10 + 5) Psychic damage.
+
+**Draining Kiss.** Constitution Saving Throw: DC 15, one creature Charmed by the succubus within 5 feet. Failure: 13 (3d8) Psychic damage. Success: Half damage. Failure or Success: The target’s Hit Point maximum decreases by an amount equal to the damage taken.
 

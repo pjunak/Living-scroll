@@ -1,5 +1,4 @@
----
-name: Find Steed
+---name: Find Steed
 type: spell
 level: 2
 school: Conjuration
@@ -16,6 +15,16 @@ classes:
 - Paladin
 id: spell:find-steed
 material_price: ''
+actions:
+- type: heal
+  ability: wis
+  on_pass: none
+  on_fail: full
+  healing:
+    base:
+      dice: 2
+      die: 8
+      bonus: 0
 ---
 # Find Steed
 *2nd-Level Conjuration (Paladin)*

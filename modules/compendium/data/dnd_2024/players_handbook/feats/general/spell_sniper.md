@@ -1,12 +1,15 @@
----
-name: Spell Sniper
+---name: Spell Sniper
 type: feat
 category: general
-prerequisite: "Level 4+, Spellcasting or Pact Magic Feature"
+prerequisite: Level 4+, Spellcasting or Pact Magic Feature
 id: feat:spell-sniper
-attribute_increase: ['INT', 'WIS', 'CHA']
+attribute_increase:
+- INT
+- WIS
+- CHA
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 4+, Spellcasting or Pact Magic Feature*

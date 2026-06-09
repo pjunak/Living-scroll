@@ -1,5 +1,4 @@
----
-name: Thunderous Smite
+---name: Thunderous Smite
 type: spell
 level: 1
 school: Evocation
@@ -16,6 +15,21 @@ classes:
 - Paladin
 id: spell:thunderous-smite
 material_price: ''
+actions:
+- type: save
+  ability: str
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: thunder
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: spell_level
 ---
 # Thunderous Smite
 *1st-Level Evocation (Paladin)*

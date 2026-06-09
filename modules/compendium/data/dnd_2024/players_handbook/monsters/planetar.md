@@ -1,5 +1,4 @@
----
-name: Planetar
+---name: Planetar
 size: Medium
 type: Medium or Small Humanoid (Cleric)
 alignment: Neutral
@@ -17,10 +16,26 @@ cr: 1/4 (XP 50; PB +2)
 traits: []
 actions:
 - name: Mace
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Bludgeoning damage
-    plus 2 (1d4) Radiant damage.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 6
+      bonus: 2
+  - type: radiant
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
+  type: utility
 - name: Radiant Flame
-  description: 'Ranged Attack Roll: +4, range 60 ft. Hit: 7 (2d6) Radiant damage.'
+  damage:
+  - type: radiant
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+  type: utility
 - name: Spellcasting
   description: 'The priest casts one of the following spells, using Wisdom as the
     spellcasting ability:'
@@ -29,9 +44,15 @@ actions:
 - name: Divine Aid (1/Day)
   description: The priest casts Bless, Healing Word, or Sanctuary, using the same
     spellcasting ability as Spellcasting.
----
 
+---
 # Planetar
 
 *Medium or Small Humanoid (Cleric), Neutral*
+
+### Actions
+
+**Mace.** Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Bludgeoning damage plus 2 (1d4) Radiant damage.
+
+**Radiant Flame.** Ranged Attack Roll: +4, range 60 ft. Hit: 7 (2d6) Radiant damage.
 

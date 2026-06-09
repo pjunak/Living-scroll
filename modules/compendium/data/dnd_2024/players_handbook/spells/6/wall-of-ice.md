@@ -1,5 +1,4 @@
----
-name: Wall of Ice
+---name: Wall of Ice
 type: spell
 level: 6
 school: Evocation
@@ -17,6 +16,21 @@ classes:
 - Wizard
 id: spell:wall-of-ice
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: cold
+    base:
+      dice: 10
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 2
+      die: 6
+      mode: spell_level
 ---
 # Wall of Ice
 *6th-Level Evocation (Wizard)*

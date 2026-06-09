@@ -1,5 +1,4 @@
----
-name: Hellish Rebuke
+---name: Hellish Rebuke
 type: spell
 level: 1
 school: Evocation
@@ -17,6 +16,21 @@ classes:
 - Warlock
 id: spell:hellish-rebuke
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: fire
+    base:
+      dice: 2
+      die: 10
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 10
+      mode: spell_level
 ---
 # Hellish Rebuke
 *1st-Level Evocation (Warlock)*

@@ -1,5 +1,4 @@
----
-name: Crusader's Mantle
+---name: Crusader's Mantle
 type: spell
 level: 3
 school: Evocation
@@ -15,6 +14,14 @@ classes:
 - Paladin
 id: spell:crusader-s-mantle
 material_price: ''
+actions:
+- type: utility
+  damage:
+  - type: radiant
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
 ---
 # Crusader's Mantle
 *3rd-Level Evocation (Paladin)*

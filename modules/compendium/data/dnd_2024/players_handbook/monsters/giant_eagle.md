@@ -1,5 +1,4 @@
----
-name: Giant Eagle
+---name: Giant Eagle
 size: Huge
 type: Huge Celestial
 alignment: Neutral Good
@@ -19,13 +18,30 @@ traits:
   description: Necrotic, Radiant
 actions:
 - name: Ram
-  description: 'Melee Attack Roll: +6, reach 10 ft. Hit: 11 (2d6 + 4) Bludgeoning
-    damage plus 5 (2d4) Radiant damage. If the target is a Huge or smaller creature
-    and the elk moved 20+ feet straight toward it immediately before the hit, the
-    target takes an extra 5 (2d4) Bludgeoning damage and has the Prone condition.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 6
+      bonus: 4
+  - type: radiant
+    base:
+      dice: 2
+      die: 4
+      bonus: 0
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 4
+      bonus: 0
+  type: utility
 
+---
 # Giant Eagle
 
 *Huge Celestial, Neutral Good*
+
+### Actions
+
+**Ram.** Melee Attack Roll: +6, reach 10 ft. Hit: 11 (2d6 + 4) Bludgeoning damage plus 5 (2d4) Radiant damage. If the target is a Huge or smaller creature and the elk moved 20+ feet straight toward it immediately before the hit, the target takes an extra 5 (2d4) Bludgeoning damage and has the Prone condition.
 

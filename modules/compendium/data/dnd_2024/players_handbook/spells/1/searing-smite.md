@@ -1,5 +1,4 @@
----
-name: Searing Smite
+---name: Searing Smite
 type: spell
 level: 1
 school: Evocation
@@ -16,6 +15,21 @@ classes:
 - Paladin
 id: spell:searing-smite
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: fire
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: spell_level
 ---
 # Searing Smite
 *1st-Level Evocation (Paladin)*

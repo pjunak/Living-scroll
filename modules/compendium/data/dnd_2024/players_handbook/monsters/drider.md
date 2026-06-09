@@ -1,5 +1,4 @@
----
-name: Drider
+---name: Drider
 size: Medium
 type: Medium or Small Humanoid
 alignment: Neutral
@@ -20,10 +19,26 @@ actions:
   description: The druid makes two attacks, using Vine Staff or Verdant Wisp in any
     combination.
 - name: Vine Staff
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Bludgeoning damage
-    plus 2 (1d4) Poison damage.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 8
+      bonus: 3
+  - type: poison
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
+  type: utility
 - name: Verdant Wisp
-  description: 'Ranged Attack Roll: +5, range 90 ft. Hit: 10 (3d6) Radiant damage.'
+  damage:
+  - type: radiant
+    base:
+      dice: 3
+      die: 6
+      bonus: 0
+  type: utility
 - name: Spellcasting
   description: 'The druid casts one of the following spells, using Wisdom as the spellcasting
     ability (spell save DC 13):'
@@ -33,9 +48,15 @@ actions:
   description: Entangle, Thunderwave
 - name: '1/Day Each:'
   description: Animal Messenger, Longstrider, Moonbeam
----
 
+---
 # Drider
 
 *Medium or Small Humanoid, Neutral*
+
+### Actions
+
+**Vine Staff.** Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Bludgeoning damage plus 2 (1d4) Poison damage.
+
+**Verdant Wisp.** Ranged Attack Roll: +5, range 90 ft. Hit: 10 (3d6) Radiant damage.
 

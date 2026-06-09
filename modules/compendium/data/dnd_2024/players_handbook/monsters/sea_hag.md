@@ -1,5 +1,4 @@
----
-name: Sea Hag
+---name: Sea Hag
 size: Medium
 type: Medium Undead
 alignment: Chaotic Evil
@@ -29,15 +28,22 @@ traits:
   description: While in sunlight, the shadow has Disadvantage on D20 Tests.
 actions:
 - name: Draining Swipe
-  description: "Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Necrotic damage,\
-    \ and the target\u2019s Strength score decreases by 1d4. The target dies if this\
-    \ reduces that score to 0. If a Humanoid is slain by this attack, a Shadow rises\
-    \ from the corpse 1d4 hours later."
+  damage:
+  - type: necrotic
+    base:
+      dice: 1
+      die: 6
+      bonus: 2
+  type: utility
 - name: Shadow Stealth
   description: While in Dim Light or Darkness, the shadow takes the Hide action.
----
 
+---
 # Sea Hag
 
 *Medium Undead, Chaotic Evil*
+
+### Actions
+
+**Draining Swipe.** Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Necrotic damage, and the target’s Strength score decreases by 1d4. The target dies if this reduces that score to 0. If a Humanoid is slain by this attack, a Shadow rises from the corpse 1d4 hours later.
 

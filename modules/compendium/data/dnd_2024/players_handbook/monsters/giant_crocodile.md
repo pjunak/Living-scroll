@@ -1,5 +1,4 @@
----
-name: Giant Crocodile
+---name: Giant Crocodile
 size: Large
 type: Large Celestial
 alignment: Neutral Good
@@ -21,11 +20,25 @@ actions:
 - name: Multiattack
   description: The eagle makes two Rend attacks.
 - name: Rend
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Slashing damage
-    plus 3 (1d6) Radiant damage.'
----
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 4
+      bonus: 3
+  - type: radiant
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
+  type: utility
 
+---
 # Giant Crocodile
 
 *Large Celestial, Neutral Good*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Slashing damage plus 3 (1d6) Radiant damage.
 

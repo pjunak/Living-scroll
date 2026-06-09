@@ -1,5 +1,4 @@
----
-name: Bigby's Hand
+---name: Bigby's Hand
 type: spell
 level: 5
 school: Evocation
@@ -19,6 +18,21 @@ classes:
 - Wizard
 id: spell:bigby-s-hand
 material_price: ''
+actions:
+- type: save
+  ability: str
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: force
+    base:
+      dice: 5
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 2
+      die: 8
+      mode: spell_level
 ---
 # Bigby's Hand
 *5th-Level Evocation (Artificer, Sorcerer, Wizard)*

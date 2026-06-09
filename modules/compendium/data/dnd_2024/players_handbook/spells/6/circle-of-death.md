@@ -1,5 +1,4 @@
----
-name: Circle Of Death
+---name: Circle Of Death
 type: spell
 level: 6
 school: Necromancy
@@ -19,6 +18,21 @@ classes:
 - Wizard
 id: spell:circle-of-death
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: necrotic
+    base:
+      dice: 8
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 2
+      die: 8
+      mode: spell_level
 ---
 # Circle Of Death
 *6th-Level Necromancy (Sorcerer, Warlock, Wizard)*

@@ -1,5 +1,4 @@
----
-name: Healer
+---name: Healer
 type: feat
 category: origin
 prerequisite: null
@@ -7,6 +6,7 @@ id: feat:healer
 attribute_increase: null
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 You gain the following benefits.

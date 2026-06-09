@@ -1,5 +1,4 @@
----
-name: Grasping Vine
+---name: Grasping Vine
 type: spell
 level: 4
 school: Conjuration
@@ -17,6 +16,14 @@ classes:
 - Ranger
 id: spell:grasping-vine
 material_price: ''
+actions:
+- type: attack
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 4
+      die: 8
+      bonus: 0
 ---
 # Grasping Vine
 *4th-Level Conjuration (Druid, Ranger)*

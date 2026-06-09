@@ -1,5 +1,4 @@
----
-name: Storm of Vengeance
+---name: Storm of Vengeance
 type: spell
 level: 9
 school: Conjuration
@@ -16,6 +15,17 @@ classes:
 - Druid
 id: spell:storm-of-vengeance
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: thunder
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
 ---
 # Storm of Vengeance
 *9th-Level Conjuration (Druid)*

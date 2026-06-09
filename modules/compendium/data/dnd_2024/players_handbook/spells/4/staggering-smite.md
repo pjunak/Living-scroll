@@ -1,5 +1,4 @@
----
-name: Staggering Smite
+---name: Staggering Smite
 type: spell
 level: 4
 school: Enchantment
@@ -16,6 +15,21 @@ classes:
 - Paladin
 id: spell:staggering-smite
 material_price: ''
+actions:
+- type: save
+  ability: wis
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 4
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: spell_level
 ---
 # Staggering Smite
 *4th-Level Enchantment (Paladin)*

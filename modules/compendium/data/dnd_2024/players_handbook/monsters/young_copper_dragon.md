@@ -1,5 +1,4 @@
----
-name: Young Copper Dragon
+---name: Young Copper Dragon
 size: Large
 type: Large Dragon (Metallic)
 alignment: Chaotic Good
@@ -22,18 +21,42 @@ actions:
   description: The dragon makes three Rend attacks. It can replace one attack with
     a use of Slowing Breath.
 - name: Rend
-  description: 'Melee Attack Roll: +7, reach 10 ft. Hit: 15 (2d10 + 4) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 10
+      bonus: 4
+  type: utility
 - name: "Acid Breath (Recharge 5\u20136)"
-  description: 'Dexterity Saving Throw: DC 14, each creature in a 40-foot-long, 5-foot-wide
-    Line. Failure: 40 (9d8) Acid damage. Success: Half damage.'
+  type: save
+  ability: dex
+  dc: 14
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: acid
+    base:
+      dice: 9
+      die: 8
+      bonus: 0
 - name: Slowing Breath
-  description: "Constitution Saving Throw: DC 14, each creature in a 30-foot Cone.\
-    \ Failure: The target can\u2019t take Reactions; its Speed is halved; and it can\
-    \ take either an action or a Bonus Action on its turn, not both. This effect lasts\
-    \ until the end of its next turn."
----
+  type: save
+  ability: con
+  dc: 14
+  on_pass: none
+  on_fail: full
 
+---
 # Young Copper Dragon
 
 *Large Dragon (Metallic), Chaotic Good*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +7, reach 10 ft. Hit: 15 (2d10 + 4) Slashing damage.
+
+**Acid Breath (Recharge 5–6).** Dexterity Saving Throw: DC 14, each creature in a 40-foot-long, 5-foot-wide Line. Failure: 40 (9d8) Acid damage. Success: Half damage.
+
+**Slowing Breath.** Constitution Saving Throw: DC 14, each creature in a 30-foot Cone. Failure: The target can’t take Reactions; its Speed is halved; and it can take either an action or a Bonus Action on its turn, not both. This effect lasts until the end of its next turn.
 

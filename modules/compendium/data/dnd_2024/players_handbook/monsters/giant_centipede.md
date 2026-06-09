@@ -1,5 +1,4 @@
----
-name: Giant Centipede
+---name: Giant Centipede
 size: Huge
 type: Huge Beast
 alignment: Unaligned
@@ -19,14 +18,34 @@ actions:
 - name: Multiattack
   description: The snake makes one Bite attack and uses Constrict.
 - name: Bite
-  description: 'Melee Attack Roll: +6, reach 10 ft. Hit: 11 (2d6 + 4) Piercing damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 6
+      bonus: 4
+  type: utility
 - name: Constrict
-  description: 'Strength Saving Throw: DC 14, one Large or smaller creature the snake
-    can see within 10 feet. Failure: 13 (2d8 + 4) Bludgeoning damage, and the target
-    has the Grappled condition (escape DC 14).'
----
+  type: save
+  ability: str
+  dc: 14
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 8
+      bonus: 4
 
+---
 # Giant Centipede
 
 *Huge Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +6, reach 10 ft. Hit: 11 (2d6 + 4) Piercing damage.
+
+**Constrict.** Strength Saving Throw: DC 14, one Large or smaller creature the snake can see within 10 feet. Failure: 13 (2d8 + 4) Bludgeoning damage, and the target has the Grappled condition (escape DC 14).
 

@@ -1,5 +1,4 @@
----
-name: Conjure Woodland Beings
+---name: Conjure Woodland Beings
 type: spell
 level: 4
 school: Conjuration
@@ -17,6 +16,21 @@ classes:
 - Ranger
 id: spell:conjure-woodland-beings
 material_price: ''
+actions:
+- type: save
+  ability: wis
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: force
+    base:
+      dice: 5
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 8
+      mode: spell_level
 ---
 # Conjure Woodland Beings
 *4th-Level Conjuration (Druid, Ranger)*

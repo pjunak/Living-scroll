@@ -1,5 +1,4 @@
----
-name: Pony
+---name: Pony
 size: Medium
 type: Medium Beast (Dinosaur)
 alignment: Unaligned
@@ -20,10 +19,20 @@ traits:
     \ flies out of an enemy\u2019s reach."
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 6 (1d8 + 2) Piercing damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 8
+      bonus: 2
+  type: utility
 
+---
 # Pony
 
 *Medium Beast (Dinosaur), Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +4, reach 5 ft. Hit: 6 (1d8 + 2) Piercing damage.
 

@@ -14,6 +14,9 @@ try:
 	from .saves_skills_summary_group import SavesSkillsSummaryGroup
 	from .spell_slot_adjustments_group import SpellSlotAdjustmentsGroup
 	from .spell_access_table import SpellAccessTable, build_spell_source_key
+	from .stat_box import StatBox
+	from .adjustment_control import AdjustmentControl
+	from .section_card import SectionCard
 except ModuleNotFoundError:
 	# Optional dependency (PySide6) may be absent in minimal environments.
 	AbilityScoresGroup = None  # type: ignore[assignment]
@@ -29,6 +32,9 @@ except ModuleNotFoundError:
 	SavesSkillsSummaryGroup = None  # type: ignore[assignment]
 	SpellSlotAdjustmentsGroup = None  # type: ignore[assignment]
 	SpellAccessTable = None  # type: ignore[assignment]
+	StatBox = None  # type: ignore[assignment]
+	AdjustmentControl = None  # type: ignore[assignment]
+	SectionCard = None  # type: ignore[assignment]
 	def build_spell_source_key(*args, **kwargs):  # type: ignore[no-untyped-def]
 		raise ModuleNotFoundError("Optional dependency 'PySide6' is required for GUI widgets")
 
@@ -47,5 +53,8 @@ __all__ = [
 	"SpellSlotAdjustmentsGroup",
 	"SpellAccessTable",
 	"build_spell_source_key",
+	"StatBox",
+	"AdjustmentControl",
+	"SectionCard",
 ]
 from .frameless_window import FramelessWindow

@@ -1,5 +1,4 @@
----
-name: Web
+---name: Web
 type: spell
 level: 2
 school: Conjuration
@@ -19,6 +18,17 @@ classes:
 - Wizard
 id: spell:web
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: fire
+    base:
+      dice: 2
+      die: 4
+      bonus: 0
 ---
 # Web
 *2nd-Level Conjuration (Artificer, Sorcerer, Wizard)*

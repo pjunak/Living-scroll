@@ -1,5 +1,4 @@
----
-name: Vampire Spawn
+---name: Vampire Spawn
 size: Medium
 type: Medium or Small Undead
 alignment: Neutral Evil
@@ -38,20 +37,41 @@ actions:
 - name: Multiattack
   description: The vampire makes two Claw attacks and uses Bite.
 - name: Claw
-  description: 'Melee Attack Roll: +6, reach 5 ft. Hit: 8 (2d4 + 3) Slashing damage.
-    If the target is a Medium or smaller creature, it has the Grappled condition (escape
-    DC 13) from one of two claws.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 4
+      bonus: 3
+  type: utility
 - name: Bite
-  description: "Constitution Saving Throw: DC 14, one creature within 5 feet that\
-    \ is willing or that has the Grappled, Incapacitated, or Restrained condition.\
-    \ Failure: 5 (1d4 + 3) Piercing damage plus 10 (3d6) Necrotic damage. The target\u2019\
-    s Hit Point maximum decreases by an amount equal to the Necrotic damage taken,\
-    \ and the vampire regains Hit Points equal to that amount."
+  type: save
+  ability: con
+  dc: 14
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 4
+      bonus: 3
+  - type: necrotic
+    base:
+      dice: 3
+      die: 6
+      bonus: 0
 - name: Deathless Agility
   description: The vampire takes the Dash or Disengage action.
----
 
+---
 # Vampire Spawn
 
 *Medium or Small Undead, Neutral Evil*
+
+### Actions
+
+**Claw.** Melee Attack Roll: +6, reach 5 ft. Hit: 8 (2d4 + 3) Slashing damage. If the target is a Medium or smaller creature, it has the Grappled condition (escape DC 13) from one of two claws.
+
+**Bite.** Constitution Saving Throw: DC 14, one creature within 5 feet that is willing or that has the Grappled, Incapacitated, or Restrained condition. Failure: 5 (1d4 + 3) Piercing damage plus 10 (3d6) Necrotic damage. The target’s Hit Point maximum decreases by an amount equal to the Necrotic damage taken, and the vampire regains Hit Points equal to that amount.
 

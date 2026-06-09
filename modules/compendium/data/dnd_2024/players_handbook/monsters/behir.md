@@ -1,5 +1,4 @@
----
-name: Behir
+---name: Behir
 size: Medium
 type: Medium or Small Humanoid
 alignment: Neutral
@@ -20,10 +19,20 @@ traits:
     throws.
 actions:
 - name: Greataxe
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 9 (1d12 + 3) Slashing damage.'
----
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 12
+      bonus: 3
+  type: utility
 
+---
 # Behir
 
 *Medium or Small Humanoid, Neutral*
+
+### Actions
+
+**Greataxe.** Melee Attack Roll: +5, reach 5 ft. Hit: 9 (1d12 + 3) Slashing damage.
 

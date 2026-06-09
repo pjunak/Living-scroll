@@ -1,5 +1,4 @@
----
-name: Melf's Acid Arrow
+---name: Melf's Acid Arrow
 type: spell
 level: 2
 school: Evocation
@@ -17,6 +16,18 @@ classes:
 - Wizard
 id: spell:melf-s-acid-arrow
 material_price: ''
+actions:
+- type: attack
+  damage:
+  - type: acid
+    base:
+      dice: 4
+      die: 4
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 4
+      mode: spell_level
 ---
 # Melf's Acid Arrow
 *2nd-Level Evocation (Wizard)*

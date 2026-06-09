@@ -1,5 +1,4 @@
----
-name: Iron Golem
+---name: Iron Golem
 size: Medium
 type: Medium or Small Humanoid
 alignment: Neutral
@@ -22,18 +21,44 @@ actions:
   description: The knight makes two attacks, using Greatsword or Heavy Crossbow in
     any combination.
 - name: Greatsword
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 10 (2d6 + 3) Slashing damage
-    plus 4 (1d8) Radiant damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 6
+      bonus: 3
+  - type: radiant
+    base:
+      dice: 1
+      die: 8
+      bonus: 0
+  type: utility
 - name: Heavy Crossbow
-  description: 'Ranged Attack Roll: +2, range 100/400 ft. Hit: 11 (2d10) Piercing
-    damage plus 4 (1d8) Radiant damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 10
+      bonus: 0
+  - type: radiant
+    base:
+      dice: 1
+      die: 8
+      bonus: 0
+  type: utility
 - name: Parry
   description: 'Trigger: The knight is hit by a melee attack roll while holding a
     weapon. Response: The knight adds 2 to its AC against that attack, possibly causing
     it to miss.'
----
 
+---
 # Iron Golem
 
 *Medium or Small Humanoid, Neutral*
+
+### Actions
+
+**Greatsword.** Melee Attack Roll: +5, reach 5 ft. Hit: 10 (2d6 + 3) Slashing damage plus 4 (1d8) Radiant damage.
+
+**Heavy Crossbow.** Ranged Attack Roll: +2, range 100/400 ft. Hit: 11 (2d10) Piercing damage plus 4 (1d8) Radiant damage.
 

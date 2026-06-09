@@ -1,5 +1,4 @@
----
-name: Dire Wolf
+---name: Dire Wolf
 size: Large
 type: Large Beast
 alignment: Unaligned
@@ -17,10 +16,20 @@ cr: 1/4 (XP 50; PB +2)
 traits: []
 actions:
 - name: Hooves
-  description: 'Melee Attack Roll: +6, reach 5 ft. Hit: 6 (1d4 + 4) Bludgeoning damage.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 4
+      bonus: 4
+  type: utility
 
+---
 # Dire Wolf
 
 *Large Beast, Unaligned*
+
+### Actions
+
+**Hooves.** Melee Attack Roll: +6, reach 5 ft. Hit: 6 (1d4 + 4) Bludgeoning damage.
 

@@ -1,5 +1,4 @@
----
-name: Yolande's Regal Presence
+---name: Yolande's Regal Presence
 type: spell
 level: 5
 school: Enchantment
@@ -18,6 +17,17 @@ classes:
 - Wizard
 id: spell:yolande-s-regal-presence
 material_price: ''
+actions:
+- type: save
+  ability: wis
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 4
+      die: 6
+      bonus: 0
 ---
 # Yolande's Regal Presence
 *5th-Level Enchantment (Bard, Wizard)*

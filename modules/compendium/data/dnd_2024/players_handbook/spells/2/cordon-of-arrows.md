@@ -1,5 +1,4 @@
----
-name: Cordon Of Arrows
+---name: Cordon Of Arrows
 type: spell
 level: 2
 school: Transmutation
@@ -17,6 +16,17 @@ classes:
 - Ranger
 id: spell:cordon-of-arrows
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 4
+      bonus: 0
 ---
 # Cordon Of Arrows
 *2nd-Level Transmutation (Ranger)*

@@ -1,5 +1,4 @@
----
-name: Hell Hound
+---name: Hell Hound
 size: Large
 type: Large Fiend (Demon)
 alignment: Chaotic Evil
@@ -34,13 +33,27 @@ actions:
 - name: Multiattack
   description: The hezrou makes three Rend attacks.
 - name: Rend
-  description: 'Melee Attack Roll: +7, reach 5 ft. Hit: 6 (1d4 + 4) Slashing damage
-    plus 9 (2d8) Poison damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 4
+      bonus: 4
+  - type: poison
+    base:
+      dice: 2
+      die: 8
+      bonus: 0
+  type: utility
 - name: Leap
   description: The hezrou jumps up to 30 feet by spending 10 feet of movement.
----
 
+---
 # Hell Hound
 
 *Large Fiend (Demon), Chaotic Evil*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +7, reach 5 ft. Hit: 6 (1d4 + 4) Slashing damage plus 9 (2d8) Poison damage.
 

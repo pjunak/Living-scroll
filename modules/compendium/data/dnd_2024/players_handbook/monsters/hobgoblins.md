@@ -1,5 +1,4 @@
----
-name: Hobgoblins
+---name: Hobgoblins
 size: Tiny
 type: Tiny Construct
 alignment: Neutral
@@ -22,15 +21,18 @@ traits:
     the two of them can communicate telepathically with each other.
 actions:
 - name: Bite
-  description: "Melee Attack Roll: +4, reach 5 ft. Hit: 1 Piercing damage, and the\
-    \ target is subjected to the following effect. Constitution Saving Throw: DC 12.\
-    \ Failure: The target has the Poisoned condition until the end of the homunculus\u2019\
-    s next turn. Failure by 5 or More: The target has the Poisoned condition for 1\
-    \ minute. While Poisoned, the target has the Unconscious condition, which ends\
-    \ early if the target takes any damage."
----
+  type: save
+  ability: con
+  dc: 12
+  on_pass: none
+  on_fail: full
 
+---
 # Hobgoblins
 
 *Tiny Construct, Neutral*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +4, reach 5 ft. Hit: 1 Piercing damage, and the target is subjected to the following effect. Constitution Saving Throw: DC 12. Failure: The target has the Poisoned condition until the end of the homunculus’s next turn. Failure by 5 or More: The target has the Poisoned condition for 1 minute. While Poisoned, the target has the Unconscious condition, which ends early if the target takes any damage.
 

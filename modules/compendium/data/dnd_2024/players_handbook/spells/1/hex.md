@@ -1,5 +1,4 @@
----
-name: Hex
+---name: Hex
 type: spell
 level: 1
 school: Enchantment
@@ -17,6 +16,14 @@ classes:
 - Warlock
 id: spell:hex
 material_price: ''
+actions:
+- type: utility
+  damage:
+  - type: necrotic
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
 ---
 # Hex
 *1st-Level Enchantment (Warlock)*

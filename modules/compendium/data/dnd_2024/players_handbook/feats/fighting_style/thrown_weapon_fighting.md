@@ -1,5 +1,4 @@
----
-name: Thrown Weapon Fighting
+---name: Thrown Weapon Fighting
 type: feat
 category: fighting_style
 prerequisite: null
@@ -7,6 +6,7 @@ id: feat:thrown-weapon-fighting
 attribute_increase: null
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Fighting Style Feature*

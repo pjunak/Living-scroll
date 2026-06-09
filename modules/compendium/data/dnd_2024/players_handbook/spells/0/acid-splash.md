@@ -1,5 +1,4 @@
----
-name: Acid Splash
+---name: Acid Splash
 type: spell
 level: 0
 school: Evocation
@@ -18,6 +17,21 @@ classes:
 - Wizard
 id: spell:acid-splash
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: acid
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: character_level
 ---
 # Acid Splash
 *Evocation Cantrip (Artificer, Sorcerer, Wizard)*

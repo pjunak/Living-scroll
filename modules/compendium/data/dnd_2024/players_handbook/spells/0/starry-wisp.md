@@ -1,5 +1,4 @@
----
-name: Starry Wisp
+---name: Starry Wisp
 type: spell
 level: 0
 school: Evocation
@@ -17,6 +16,18 @@ classes:
 - Druid
 id: spell:starry-wisp
 material_price: ''
+actions:
+- type: attack
+  damage:
+  - type: radiant
+    base:
+      dice: 1
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 8
+      mode: character_level
 ---
 # Starry Wisp
 *Evocation Cantrip (Bard, Druid)*

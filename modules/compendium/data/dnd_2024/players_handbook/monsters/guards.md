@@ -1,5 +1,4 @@
----
-name: Guards
+---name: Guards
 size: Medium
 type: Medium Dragon
 alignment: Neutral
@@ -25,17 +24,30 @@ actions:
 - name: Multiattack
   description: The half-dragon makes two Claw attacks.
 - name: Claw
-  description: 'Melee Attack Roll: +7, reach 10 ft. Hit: 6 (1d4 + 4) Slashing damage
-    plus 7 (2d6) damage of the type chosen for the Draconic Origin trait.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 4
+      bonus: 4
+  type: utility
 - name: "Dragon\u2019s Breath (Recharge 5\u20136)"
-  description: 'Dexterity Saving Throw: DC 14, each creature in a 30-foot Cone. Failure:
-    28 (8d6) damage of the type chosen for the Draconic Origin trait. Success: Half
-    damage.'
+  type: save
+  ability: dex
+  dc: 14
+  on_pass: half
+  on_fail: full
 - name: Leap
   description: The half-dragon jumps up to 30 feet by spending 10 feet of movement.
----
 
+---
 # Guards
 
 *Medium Dragon, Neutral*
+
+### Actions
+
+**Claw.** Melee Attack Roll: +7, reach 10 ft. Hit: 6 (1d4 + 4) Slashing damage plus 7 (2d6) damage of the type chosen for the Draconic Origin trait.
+
+**Dragon’s Breath (Recharge 5–6).** Dexterity Saving Throw: DC 14, each creature in a 30-foot Cone. Failure: 28 (8d6) damage of the type chosen for the Draconic Origin trait. Success: Half damage.
 

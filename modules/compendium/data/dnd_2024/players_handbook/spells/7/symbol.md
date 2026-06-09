@@ -1,5 +1,4 @@
----
-name: Symbol
+---name: Symbol
 type: spell
 level: 7
 school: Abjuration
@@ -20,6 +19,17 @@ classes:
 - Wizard
 id: spell:symbol
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: necrotic
+    base:
+      dice: 10
+      die: 10
+      bonus: 0
 ---
 # Symbol
 *7th-Level Abjuration (Bard, Cleric, Druid, Wizard)*

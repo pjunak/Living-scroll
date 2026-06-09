@@ -1,5 +1,4 @@
----
-name: Spellfire Storm
+---name: Spellfire Storm
 type: spell
 level: 4
 school: Evocation
@@ -17,6 +16,21 @@ classes:
 - Wizard
 id: spell:spellfire-storm
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: radiant
+    base:
+      dice: 4
+      die: 10
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 10
+      mode: spell_level
 ---
 # Spellfire Storm
 *4th-Level Evocation (Sorcerer, Wizard)*

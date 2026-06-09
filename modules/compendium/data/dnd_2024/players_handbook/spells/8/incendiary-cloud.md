@@ -1,5 +1,4 @@
----
-name: Incendiary Cloud
+---name: Incendiary Cloud
 type: spell
 level: 8
 school: Conjuration
@@ -18,6 +17,17 @@ classes:
 - Wizard
 id: spell:incendiary-cloud
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: fire
+    base:
+      dice: 10
+      die: 8
+      bonus: 0
 ---
 # Incendiary Cloud
 *8th-Level Conjuration (Druid, Sorcerer, Wizard)*

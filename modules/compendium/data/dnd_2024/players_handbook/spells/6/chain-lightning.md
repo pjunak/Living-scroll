@@ -1,5 +1,4 @@
----
-name: Chain Lightning
+---name: Chain Lightning
 type: spell
 level: 6
 school: Evocation
@@ -18,6 +17,17 @@ classes:
 - Wizard
 id: spell:chain-lightning
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: lightning
+    base:
+      dice: 10
+      die: 8
+      bonus: 0
 ---
 # Chain Lightning
 *6th-Level Evocation (Sorcerer, Wizard)*

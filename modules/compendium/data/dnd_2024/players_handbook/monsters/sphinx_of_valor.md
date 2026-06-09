@@ -1,5 +1,4 @@
----
-name: Sphinx of Valor
+---name: Sphinx of Valor
 size: Large
 type: Large Celestial
 alignment: Lawful Neutral
@@ -29,23 +28,41 @@ actions:
 - name: Multiattack
   description: The sphinx makes two Claw attacks and uses Roar.
 - name: Claw
-  description: 'Melee Attack Roll: +12, reach 5 ft. Hit: 20 (4d6 + 6) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 4
+      die: 6
+      bonus: 6
+  type: utility
 - name: Roar (3/Day)
   description: 'The sphinx emits a magical roar. Whenever it roars, the roar has a
     different effect, as detailed below (the sequence resets when it takes a Long
     Rest):'
 - name: First Roar
-  description: 'Wisdom Saving Throw: DC 20, each enemy in a 500-foot Emanation originating
-    from the sphinx. Failure: The target has the Frightened condition for 1 minute.'
+  type: save
+  ability: wis
+  dc: 20
+  on_pass: none
+  on_fail: full
 - name: Second Roar
-  description: 'Wisdom Saving Throw: DC 20, each enemy in a 500-foot Emanation originating
-    from the sphinx. Failure: The target has the Paralyzed condition, and it repeats
-    the save at the end of each of its turns, ending the effect on itself on a success.
-    After 1 minute, it succeeds automatically.'
+  type: save
+  ability: wis
+  dc: 20
+  on_pass: none
+  on_fail: full
 - name: Third Roar
-  description: 'Constitution Saving Throw: DC 20, each enemy in a 500-foot Emanation
-    originating from the sphinx. Failure: 44 (8d10) Thunder damage, and the target
-    has the Prone condition. Success: Half damage only.'
+  type: save
+  ability: con
+  dc: 20
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: thunder
+    base:
+      dice: 8
+      die: 10
+      bonus: 0
 - name: Spellcasting
   description: 'The sphinx casts one of the following spells, requiring no Material
     components and using Wisdom as the spellcasting ability (spell save DC 20):'
@@ -58,13 +75,26 @@ actions:
   description: The sphinx can teleport up to 30 feet to an unoccupied space it can
     see, and it makes one Claw attack.
 - name: Weight of Years
-  description: "Constitution Saving Throw: DC 16, one creature the sphinx can see\
-    \ within 120 feet. Failure: The target gains 1 Exhaustion level. While the target\
-    \ has any Exhaustion levels, it appears 3d10 years older. Failure or Success:\
-    \ The sphinx can\u2019t take this action again until the start of its next turn."
----
+  type: save
+  ability: con
+  dc: 16
+  on_pass: none
+  on_fail: full
 
+---
 # Sphinx of Valor
 
 *Large Celestial, Lawful Neutral*
+
+### Actions
+
+**Claw.** Melee Attack Roll: +12, reach 5 ft. Hit: 20 (4d6 + 6) Slashing damage.
+
+**First Roar.** Wisdom Saving Throw: DC 20, each enemy in a 500-foot Emanation originating from the sphinx. Failure: The target has the Frightened condition for 1 minute.
+
+**Second Roar.** Wisdom Saving Throw: DC 20, each enemy in a 500-foot Emanation originating from the sphinx. Failure: The target has the Paralyzed condition, and it repeats the save at the end of each of its turns, ending the effect on itself on a success. After 1 minute, it succeeds automatically.
+
+**Third Roar.** Constitution Saving Throw: DC 20, each enemy in a 500-foot Emanation originating from the sphinx. Failure: 44 (8d10) Thunder damage, and the target has the Prone condition. Success: Half damage only.
+
+**Weight of Years.** Constitution Saving Throw: DC 16, one creature the sphinx can see within 120 feet. Failure: The target gains 1 Exhaustion level. While the target has any Exhaustion levels, it appears 3d10 years older. Failure or Success: The sphinx can’t take this action again until the start of its next turn.
 

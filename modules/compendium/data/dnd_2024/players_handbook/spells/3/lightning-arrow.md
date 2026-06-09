@@ -1,5 +1,4 @@
----
-name: Lightning Arrow
+---name: Lightning Arrow
 type: spell
 level: 3
 school: Transmutation
@@ -17,6 +16,21 @@ classes:
 - Ranger
 id: spell:lightning-arrow
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: lightning
+    base:
+      dice: 4
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 8
+      mode: spell_level
 ---
 # Lightning Arrow
 *3rd-Level Transmutation (Ranger)*

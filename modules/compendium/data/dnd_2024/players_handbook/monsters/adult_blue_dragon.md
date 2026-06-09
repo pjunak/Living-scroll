@@ -1,5 +1,4 @@
----
-name: Adult Blue Dragon
+---name: Adult Blue Dragon
 size: Huge
 type: Huge Dragon (Chromatic)
 alignment: Lawful Evil
@@ -24,11 +23,30 @@ actions:
   description: The dragon makes three Rend attacks. It can replace one attack with
     a use of Spellcasting to cast Shatter.
 - name: Rend
-  description: 'Melee Attack Roll: +12, reach 10 ft. Hit: 16 (2d8 + 7) Slashing damage
-    plus 5 (1d10) Lightning damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 8
+      bonus: 7
+  - type: lightning
+    base:
+      dice: 1
+      die: 10
+      bonus: 0
+  type: utility
 - name: "Lightning Breath (Recharge 5\u20136)"
-  description: 'Dexterity Saving Throw: DC 19, each creature in a 90-foot-long, 5-foot-wide
-    Line. Failure: 60 (11d10) Lightning damage. Success: Half damage.'
+  type: save
+  ability: dex
+  dc: 19
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: lightning
+    base:
+      dice: 11
+      die: 10
+      bonus: 0
 - name: Spellcasting
   description: 'The dragon casts one of the following spells, requiring no Material
     components and using Charisma as the spellcasting ability (spell save DC 18):'
@@ -45,9 +63,15 @@ actions:
     t take this action again until the start of its next turn."
 - name: Tail Swipe
   description: The dragon makes one Rend attack.
----
 
+---
 # Adult Blue Dragon
 
 *Huge Dragon (Chromatic), Lawful Evil*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +12, reach 10 ft. Hit: 16 (2d8 + 7) Slashing damage plus 5 (1d10) Lightning damage.
+
+**Lightning Breath (Recharge 5–6).** Dexterity Saving Throw: DC 19, each creature in a 90-foot-long, 5-foot-wide Line. Failure: 60 (11d10) Lightning damage. Success: Half damage.
 

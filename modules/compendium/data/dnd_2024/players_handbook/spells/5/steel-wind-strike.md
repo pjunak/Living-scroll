@@ -1,5 +1,4 @@
----
-name: Steel Wind Strike
+---name: Steel Wind Strike
 type: spell
 level: 5
 school: Conjuration
@@ -17,6 +16,14 @@ classes:
 - Wizard
 id: spell:steel-wind-strike
 material_price: ''
+actions:
+- type: attack
+  damage:
+  - type: force
+    base:
+      dice: 6
+      die: 10
+      bonus: 0
 ---
 # Steel Wind Strike
 *5th-Level Conjuration (Ranger, Wizard)*

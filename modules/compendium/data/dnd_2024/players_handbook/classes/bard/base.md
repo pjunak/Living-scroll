@@ -83,6 +83,13 @@ progression:
 id: class:bard
 multiclass_requirements:
   CHA: 13
+management:
+  - id: prepared
+    label: "Prepared Spells"
+    type: spell_preparation
+    source: class_spell_list
+    max_formula: "CHA + level"
+    changeable_on: long_rest
 ---
 
 Whether chanting on a battlefield or romancing a noble, a bard weaves magic through words and music to inspire allies, demoralize foes, manipulate minds, create illusions, and heal wounds. Bards are masters of influence and insight, capable of turning the tide of battle with a song or speech.

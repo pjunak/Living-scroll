@@ -1,5 +1,4 @@
----
-name: Stone Giant
+---name: Stone Giant
 size: Large
 type: Large Construct
 alignment: Unaligned
@@ -27,16 +26,38 @@ actions:
 - name: Multiattack
   description: The golem makes two attacks, using Slam or Force Bolt in any combination.
 - name: Slam
-  description: 'Melee Attack Roll: +10, reach 5 ft. Hit: 15 (2d8 + 6) Bludgeoning
-    damage plus 9 (2d8) Force damage.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 8
+      bonus: 6
+  - type: force
+    base:
+      dice: 2
+      die: 8
+      bonus: 0
+  type: utility
 - name: Force Bolt
-  description: 'Ranged Attack Roll: +9, range 120 ft. Hit: 22 (4d10) Force damage.'
+  damage:
+  - type: force
+    base:
+      dice: 4
+      die: 10
+      bonus: 0
+  type: utility
 - name: "Slow (Recharge 5\u20136)"
   description: The golem casts the Slow spell, requiring no spell components and using
     Constitution as the spellcasting ability (spell save DC 17).
----
 
+---
 # Stone Giant
 
 *Large Construct, Unaligned*
+
+### Actions
+
+**Slam.** Melee Attack Roll: +10, reach 5 ft. Hit: 15 (2d8 + 6) Bludgeoning damage plus 9 (2d8) Force damage.
+
+**Force Bolt.** Ranged Attack Roll: +9, range 120 ft. Hit: 22 (4d10) Force damage.
 

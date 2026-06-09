@@ -479,19 +479,6 @@ class _CharacterTile(QFrame):
     request_export = Signal(str)
     request_delete = Signal(str)
 
-    def __init__(self, record: CharacterRecord, *, selected: bool = False, parent: QWidget | None = None) -> None:
-        super().__init__(parent)
-        self._record_id = record.identifier
-        self.setObjectName("CharacterTile")
-        self.setCursor(Qt.CursorShape.PointingHandCursor)
-        self.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
-        self.setMinimumHeight(180)
-        
-        # Determine accent color based on class or level
-        # For now, simplistic hashing or default
-        self.setProperty("class", "CharacterTile")
-        self.setProperty("isSelected", bool(selected))
-        
     def _load_portrait(self, path_str: str) -> None:
         if not hasattr(self, "_portrait_label"): return
         if not path_str:
@@ -556,6 +543,7 @@ class _CharacterTile(QFrame):
 
         # Info Column
         info_col = QWidget()
+        info_col.setStyleSheet("background-color: transparent;")
         v_layout = QVBoxLayout(info_col)
         v_layout.setContentsMargins(0,0,0,0)
         v_layout.setSpacing(4)

@@ -1,5 +1,4 @@
----
-name: Ogre Zombie
+---name: Ogre Zombie
 size: Large
 type: Large Undead
 alignment: Neutral Evil
@@ -23,10 +22,20 @@ traits:
     a Critical Hit. On a successful save, the zombie drops to 1 Hit Point instead.
 actions:
 - name: Slam
-  description: 'Melee Attack Roll: +6, reach 5 ft. Hit: 13 (2d8 + 4) Bludgeoning damage.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 8
+      bonus: 4
+  type: utility
 
+---
 # Ogre Zombie
 
 *Large Undead, Neutral Evil*
+
+### Actions
+
+**Slam.** Melee Attack Roll: +6, reach 5 ft. Hit: 13 (2d8 + 4) Bludgeoning damage.
 

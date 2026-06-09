@@ -1,5 +1,4 @@
----
-name: Conjure Barrage
+---name: Conjure Barrage
 type: spell
 level: 3
 school: Conjuration
@@ -17,6 +16,21 @@ classes:
 - Ranger
 id: spell:conjure-barrage
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: force
+    base:
+      dice: 5
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 8
+      mode: spell_level
 ---
 # Conjure Barrage
 *3rd-Level Conjuration (Ranger)*

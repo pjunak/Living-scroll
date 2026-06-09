@@ -25,12 +25,12 @@ from PySide6.QtWidgets import (
     QWidget,
     QSizePolicy,
 )
-from spell_graphs import plotting
+from modules.spell_grapher.services import plotting
 from modules.character_sheet.model import (
     CharacterSheet,
     build_spellcasting_profile,
 )
-from spell_graphs.spells import (
+from modules.spell_grapher.data.spells import (
     build_filter_labels,
     equipment_damage_bonus,
     partition_spells,
@@ -51,30 +51,8 @@ class MainWindow(FramelessWindow):
 
     @staticmethod
     def _spell_record_from_compendium(payload: dict) -> dict:
-        """Convert a filesystem compendium spell record into the runtime shape used by the UI."""
-
-        record = dict(payload or {})
-
-        effects: List[dict] = []
-
-        runtime: dict = {
-            "id": record.get("id"),
-            "name": record.get("name"),
-            "level": record.get("level", 0),
-            "school": record.get("school"),
-            "casting_time": record.get("casting_time"),
-            "range": record.get("range"),
-            "duration": record.get("duration"),
-            "components": record.get("components", []),
-            "effects": effects,
-            "modifiers": [],
-        }
-
-        scaling_levels = legacy.get("scaling_levels")
-        if isinstance(scaling_levels, list):
-            runtime["scaling_levels"] = list(scaling_levels)
-
-        return runtime
+        from modules.spell_grapher.services.spell_parser import parse_spell_record_from_compendium
+        return parse_spell_record_from_compendium(payload)
 
     def __init__(self, app_context: ApplicationContext | None = None):
         super().__init__()
@@ -222,9 +200,10 @@ class MainWindow(FramelessWindow):
 
     def _build_toolbar(self) -> None:
         """Constructs the main toolbar with Character and Options menus."""
-        toolbar = QToolBar("Main")
-        toolbar.setMovable(False)
-        self.addToolBar(toolbar)
+        title_controls = QWidget()
+        title_layout = QHBoxLayout(title_controls)
+        title_layout.setContentsMargins(0, 5, 0, 0)
+        title_layout.setSpacing(10)
 
         # Options menu (currently holds quick actions, future-safe for more entries)
         options_menu = QMenu("Options", self)
@@ -281,9 +260,9 @@ class MainWindow(FramelessWindow):
         options_button.setMenu(options_menu)
         options_button.setPopupMode(QToolButton.ToolButtonPopupMode.InstantPopup)
         options_button.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonTextOnly)
-        toolbar.addWidget(options_button)
+        title_layout.addWidget(options_button)
 
-        self.main_toolbar = toolbar
+        self.set_title_bar_center_widget(title_controls)
 
     def _apply_table_edit_state(self, checked: bool | None = None) -> None:
         if not hasattr(self, "available_spells_table") or not hasattr(self, "selected_spells_table"):

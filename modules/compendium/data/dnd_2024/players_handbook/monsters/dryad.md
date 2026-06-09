@@ -1,5 +1,4 @@
----
-name: Dryad
+---name: Dryad
 size: Large
 type: Large Elemental
 alignment: Neutral
@@ -28,14 +27,30 @@ actions:
 - name: Multiattack
   description: The elemental makes two attacks, using Slam or Rock Launch in any combination.
 - name: Slam
-  description: 'Melee Attack Roll: +8, reach 10 ft. Hit: 14 (2d8 + 5) Bludgeoning
-    damage.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 8
+      bonus: 5
+  type: utility
 - name: Rock Launch
-  description: 'Ranged Attack Roll: +8, range 60 ft. Hit: 8 (1d6 + 5) Bludgeoning
-    damage. If the target is a Large or smaller creature, it has the Prone condition.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 6
+      bonus: 5
+  type: utility
 
+---
 # Dryad
 
 *Large Elemental, Neutral*
+
+### Actions
+
+**Slam.** Melee Attack Roll: +8, reach 10 ft. Hit: 14 (2d8 + 5) Bludgeoning damage.
+
+**Rock Launch.** Ranged Attack Roll: +8, range 60 ft. Hit: 8 (1d6 + 5) Bludgeoning damage. If the target is a Large or smaller creature, it has the Prone condition.
 

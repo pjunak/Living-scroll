@@ -37,18 +37,18 @@ from modules.core.application_context import ApplicationContext
 from modules.core.ui.resources import get_app_icon
 from modules.core.ui.theme import COLORS
 
-# --- Local Styling Constants (The "Dashboard Theme") ---
+# --- Local Styling Constants (aliased from global theme) ---
 DASH_COLORS = {
-    "bg_base": "#121212",
-    "bg_card": "#1e1e20",
-    "bg_hero": "qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #2b1029, stop:1 #121212)", # Subtle purple fade
-    "accent": "#9b59b6",
-    "accent_dim": "rgba(155, 89, 182, 0.3)",
-    "text_main": "#e0e0e0",
-    "text_dim": "#a0a0a0",
-    "border": "#333333",
-    "success": "#2ecc71",
-    "danger": "#e74c3c",
+    "bg_base": COLORS["bg_base"],
+    "bg_card": COLORS["bg_card"],
+    "bg_hero": COLORS["bg_hero"],
+    "accent": COLORS["accent_primary"],
+    "accent_dim": COLORS["accent_dim"],
+    "text_main": COLORS["text_primary"],
+    "text_dim": COLORS["text_dim"],
+    "border": COLORS["border_dim"],
+    "success": COLORS["success"],
+    "danger": COLORS["danger"],
 }
 
 
@@ -287,6 +287,23 @@ class CharacterDashboard(QWidget):
     def _drawer_closed(self):
         self._refresh_ui()
 
+    def _on_character_updated(self, record, engine):
+        """Called automatically by the CharacterStore when the character is modified."""
+        self._record = record
+        self._sheet = record.sheet
+        self._engine = engine
+        self._refresh_ui()
+
+    def _increase_hp(self):
+        hp_breakdown = self._engine.get_hp_breakdown()
+        max_hp = hp_breakdown['total']
+        self._sheet.combat.current_hp = min(max_hp, self._sheet.combat.current_hp + 1)
+        self._store.dispatch_update(self._sheet, self._record.modifiers)
+
+    def _decrease_hp(self):
+        self._sheet.combat.current_hp = max(0, self._sheet.combat.current_hp - 1)
+        self._store.dispatch_update(self._sheet, self._record.modifiers)
+
 
         # (Sidebar removed to merge into left_panel)
 
@@ -294,7 +311,7 @@ class CharacterDashboard(QWidget):
     def _build_header_section(self) -> QWidget:
         container = QFrame()
         container.setObjectName("HeaderContainer")
-        container.setStyleSheet(f"QFrame#HeaderContainer {{ background: {DASH_COLORS['bg_hero']}; border-radius: 12px; border: 1px solid {DASH_COLORS['border']}; }}")
+        container.setStyleSheet(f"QFrame#HeaderContainer {{ background: {DASH_COLORS['bg_hero']}; border-bottom: 1px solid {DASH_COLORS['border']}; }}")
         container.setFixedHeight(140)
         
         layout = QHBoxLayout(container)
@@ -365,11 +382,51 @@ class CharacterDashboard(QWidget):
         vitals_layout = QVBoxLayout()
         top_row = QHBoxLayout()
         top_row.addStretch()
+        
+        # HP Adjustment (Moved to top row for prominence)
+        hp_breakdown = self._engine.get_hp_breakdown()
+        hp_str = f"{self._sheet.combat.current_hp} / {hp_breakdown['total']}"
+        hp_val = QLabel(hp_str)
+        hp_val.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        hp_val.setMinimumWidth(80) # Prevent shifting when numbers cross 10 or 100
+        hp_val.setProperty("class", "AdjustValue")
+        hp_val.setToolTip(hp_breakdown['tooltip'])
+        
+        hp_layout = QHBoxLayout()
+        hp_layout.setContentsMargins(0, 0, 0, 0)
+        hp_layout.setSpacing(8)
+        
+        btn_minus = QPushButton("–")
+        btn_minus.setFixedSize(26, 26)
+        btn_minus.setCursor(Qt.CursorShape.PointingHandCursor)
+        btn_minus.setProperty("class", "AdjustMinus")
+        btn_minus.clicked.connect(self._decrease_hp)
+        
+        btn_plus = QPushButton("+")
+        btn_plus.setFixedSize(26, 26)
+        btn_plus.setCursor(Qt.CursorShape.PointingHandCursor)
+        btn_plus.setProperty("class", "AdjustPlus")
+        btn_plus.clicked.connect(self._increase_hp)
+
+        hp_lbl = QLabel("HP")
+        hp_lbl.setProperty("class", "StatBoxLabel")
+        
+        hp_layout.addWidget(hp_lbl)
+        hp_layout.addSpacing(4)
+        hp_layout.addWidget(btn_minus)
+        hp_layout.addWidget(hp_val)
+        hp_layout.addWidget(btn_plus)
+        
+        hp_widget = QWidget()
+        hp_widget.setLayout(hp_layout)
+
+        top_row.addWidget(hp_widget)
+        top_row.addSpacing(20)
         top_row.addWidget(edit_btn)
         
         vitals_layout.addLayout(top_row)
 
-        # Vitals (AC, HP, Init)
+        # Vitals (AC, Init, Prof, Speed)
         # Using a grid for tight packing
         vitals_grid = QGridLayout()
         vitals_grid.setHorizontalSpacing(30)
@@ -379,67 +436,53 @@ class CharacterDashboard(QWidget):
         ac_breakdown = self._engine.get_ac_breakdown()
         ac_val = QLabel(str(ac_breakdown['total']))
         ac_val.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        ac_val.setStyleSheet("font-size: 28px; font-weight: bold; color: white;")
+        ac_val.setProperty("class", "StatBoxValue")
         ac_val.setToolTip(ac_breakdown['tooltip'])
         ac_lbl = QLabel("AC")
         ac_lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        ac_lbl.setStyleSheet(f"font-size: 10px; font-weight: bold; color: {DASH_COLORS['text_dim']};")
+        ac_lbl.setProperty("class", "StatBoxLabel")
         
         vitals_grid.addWidget(ac_val, 0, 0)
         vitals_grid.addWidget(ac_lbl, 1, 0)
 
-        # HP (Simple text for now, bar later)
-        hp_breakdown = self._engine.get_hp_breakdown()
-        hp_str = f"{self._sheet.combat.current_hp} / {hp_breakdown['total']}"
-        hp_val = QLabel(hp_str)
-        hp_val.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        hp_val.setStyleSheet(f"font-size: 28px; font-weight: bold; color: {DASH_COLORS['success']};")
-        hp_val.setToolTip(hp_breakdown['tooltip'])
-        hp_lbl = QLabel("HIT POINTS")
-        hp_lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        hp_lbl.setStyleSheet(f"font-size: 10px; font-weight: bold; color: {DASH_COLORS['text_dim']};")
-
-        vitals_grid.addWidget(hp_val, 0, 1)
-        vitals_grid.addWidget(hp_lbl, 1, 1)
-        
         # Initiative
         init_breakdown = self._engine.get_initiative_breakdown()
         init_val = QLabel(f"{init_breakdown['total']:+d}")
         init_val.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        init_val.setStyleSheet("font-size: 28px; font-weight: bold; color: white;")
+        init_val.setProperty("class", "StatBoxValue")
         init_val.setToolTip(init_breakdown['tooltip'])
         init_lbl = QLabel("INITIATIVE")
         init_lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        init_lbl.setStyleSheet(f"font-size: 10px; font-weight: bold; color: {DASH_COLORS['text_dim']};")
+        init_lbl.setProperty("class", "StatBoxLabel")
         
-        vitals_grid.addWidget(init_val, 0, 2)
-        vitals_grid.addWidget(init_lbl, 1, 2)
+        vitals_grid.addWidget(init_val, 0, 1)
+        vitals_grid.addWidget(init_lbl, 1, 1)
 
         # Proficiency
         prof_breakdown = self._engine.get_proficiency_breakdown()
         prof_val = QLabel(f"{prof_breakdown['total']:+d}")
         prof_val.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        prof_val.setStyleSheet("font-size: 28px; font-weight: bold; color: white;")
+        prof_val.setProperty("class", "StatBoxValue")
         prof_val.setToolTip(prof_breakdown['tooltip'])
         prof_lbl = QLabel("PROF.")
         prof_lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        prof_lbl.setStyleSheet(f"font-size: 10px; font-weight: bold; color: {DASH_COLORS['text_dim']};")
+        prof_lbl.setProperty("class", "StatBoxLabel")
         
-        vitals_grid.addWidget(prof_val, 0, 3)
-        vitals_grid.addWidget(prof_lbl, 1, 3)
+        vitals_grid.addWidget(prof_val, 0, 2)
+        vitals_grid.addWidget(prof_lbl, 1, 2)
 
         # Speed
         speed_breakdown = self._engine.get_speed_breakdown()
         speed_val = QLabel(str(speed_breakdown['total']))
         speed_val.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        speed_val.setStyleSheet("font-size: 28px; font-weight: bold; color: white;")
+        speed_val.setProperty("class", "StatBoxValue")
         speed_val.setToolTip(speed_breakdown['tooltip'])
         speed_lbl = QLabel("SPEED")
         speed_lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        speed_lbl.setStyleSheet(f"font-size: 10px; font-weight: bold; color: {DASH_COLORS['text_dim']};")
+        speed_lbl.setProperty("class", "StatBoxLabel")
         
-        vitals_grid.addWidget(speed_val, 0, 4)
-        vitals_grid.addWidget(speed_lbl, 1, 4)
+        vitals_grid.addWidget(speed_val, 0, 3)
+        vitals_grid.addWidget(speed_lbl, 1, 3)
 
         # Spell Stats (Conditional)
         cast_ability = self._get_primary_spellcasting_ability()
@@ -457,24 +500,25 @@ class CharacterDashboard(QWidget):
                 # DC
                 dc_val = QLabel(str(dc))
                 dc_val.setAlignment(Qt.AlignmentFlag.AlignCenter)
-                dc_val.setStyleSheet(f"font-size: 28px; font-weight: bold; color: {DASH_COLORS['accent']};")
+                dc_val.setProperty("class", "StatBoxValue")
+                dc_val.setStyleSheet(f"color: {DASH_COLORS['accent']};")
                 dc_lbl = QLabel(f"SAVE DC ({cast_ability})")
                 dc_lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
-                dc_lbl.setStyleSheet(f"font-size: 10px; font-weight: bold; color: {DASH_COLORS['text_dim']};")
+                dc_lbl.setProperty("class", "StatBoxLabel")
                 
-                vitals_grid.addWidget(dc_val, 0, 5)
-                vitals_grid.addWidget(dc_lbl, 1, 5)
+                vitals_grid.addWidget(dc_val, 0, 4)
+                vitals_grid.addWidget(dc_lbl, 1, 4)
 
                 # Attack
                 atk_val = QLabel(f"{atk:+d}")
                 atk_val.setAlignment(Qt.AlignmentFlag.AlignCenter)
-                atk_val.setStyleSheet("font-size: 28px; font-weight: bold; color: white;")
+                atk_val.setProperty("class", "StatBoxValue")
                 atk_lbl = QLabel("SPELL ATK")
                 atk_lbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
-                atk_lbl.setStyleSheet(f"font-size: 10px; font-weight: bold; color: {DASH_COLORS['text_dim']};")
+                atk_lbl.setProperty("class", "StatBoxLabel")
                 
-                vitals_grid.addWidget(atk_val, 0, 6)
-                vitals_grid.addWidget(atk_lbl, 1, 6)
+                vitals_grid.addWidget(atk_val, 0, 5)
+                vitals_grid.addWidget(atk_lbl, 1, 5)
                 
             except KeyError:
                 pass # Should not happen with valid map
@@ -805,14 +849,15 @@ class CharacterDashboard(QWidget):
         if not snapshot:
              snapshot = ModifierStateSnapshot([], self._record.modifiers)
 
-        dialog = CharacterBuilderDialog(self._sheet, snapshot, self)
+        dialog = CharacterBuilderDialog(self._record, snapshot, self)
         if dialog.exec() != QDialog.DialogCode.Accepted:
             return
             
         # Save changes via Store
-        new_sheet, new_modifiers = dialog.get_result()
+        new_sheet, new_modifiers, new_data = dialog.get_result()
         self._modifier_snapshot = ModifierStateSnapshot(snapshot.definitions, new_modifiers)
-        self._store.dispatch_update(new_sheet, new_modifiers)
+        
+        self._store.dispatch_update(new_sheet, new_modifiers, data=new_data)
 
     def _build_nav_bar(self) -> QWidget:
         # Replaces _build_dock

@@ -1,5 +1,4 @@
----
-name: Jackal
+---name: Jackal
 size: Huge
 type: Huge Beast
 alignment: Unaligned
@@ -19,10 +18,20 @@ traits:
   description: The whale can hold its breath for 30 minutes.
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +6, reach 5 ft. Hit: 21 (5d6 + 4) Piercing damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 5
+      die: 6
+      bonus: 4
+  type: utility
 
+---
 # Jackal
 
 *Huge Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +6, reach 5 ft. Hit: 21 (5d6 + 4) Piercing damage.
 

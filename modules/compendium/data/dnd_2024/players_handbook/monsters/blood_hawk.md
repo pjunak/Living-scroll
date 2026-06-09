@@ -1,5 +1,4 @@
----
-name: Blood Hawk
+---name: Blood Hawk
 size: Medium
 type: Medium Beast
 alignment: Unaligned
@@ -19,13 +18,25 @@ traits:
   description: While Bloodied, the boar has Advantage on attack rolls.
 actions:
 - name: Gore
-  description: 'Melee Attack Roll: +3, reach 5 ft. Hit: 4 (1d6 + 1) Piercing damage.
-    If the target is a Medium or smaller creature and the boar moved 20+ feet straight
-    toward it immediately before the hit, the target takes an extra 3 (1d6) Piercing
-    damage and has the Prone condition.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 1
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
+  type: utility
 
+---
 # Blood Hawk
 
 *Medium Beast, Unaligned*
+
+### Actions
+
+**Gore.** Melee Attack Roll: +3, reach 5 ft. Hit: 4 (1d6 + 1) Piercing damage. If the target is a Medium or smaller creature and the boar moved 20+ feet straight toward it immediately before the hit, the target takes an extra 3 (1d6) Piercing damage and has the Prone condition.
 

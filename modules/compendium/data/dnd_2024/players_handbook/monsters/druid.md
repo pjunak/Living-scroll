@@ -1,5 +1,4 @@
----
-name: Druid
+---name: Druid
 size: Medium
 type: Medium Fey
 alignment: Neutral
@@ -26,9 +25,21 @@ actions:
   description: The dryad makes one Vine Lash or Thorn Burst attack, and it can use
     Spellcasting to cast Charm Monster.
 - name: Vine Lash
-  description: 'Melee Attack Roll: +6, reach 10 ft. Hit: 8 (1d8 + 4) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 8
+      bonus: 4
+  type: utility
 - name: Thorn Burst
-  description: 'Ranged Attack Roll: +6, range 60 ft. Hit: 7 (1d6 + 4) Piercing damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 4
+  type: utility
 - name: Spellcasting
   description: 'The dryad casts one of the following spells, requiring no Material
     components and using Charisma as the spellcasting ability (spell save DC 14):'
@@ -41,9 +52,15 @@ actions:
   description: If within 5 feet of a Large or bigger tree, the dryad teleports to
     an unoccupied space within 5 feet of a second Large or bigger tree that is within
     60 feet of the previous tree.
----
 
+---
 # Druid
 
 *Medium Fey, Neutral*
+
+### Actions
+
+**Vine Lash.** Melee Attack Roll: +6, reach 10 ft. Hit: 8 (1d8 + 4) Slashing damage.
+
+**Thorn Burst.** Ranged Attack Roll: +6, range 60 ft. Hit: 7 (1d6 + 4) Piercing damage.
 

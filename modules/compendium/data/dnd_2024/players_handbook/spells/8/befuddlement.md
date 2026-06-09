@@ -1,5 +1,4 @@
----
-name: Befuddlement
+---name: Befuddlement
 type: spell
 level: 8
 school: Enchantment
@@ -20,6 +19,17 @@ classes:
 - Wizard
 id: spell:befuddlement
 material_price: ''
+actions:
+- type: save
+  ability: int
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 10
+      die: 12
+      bonus: 0
 ---
 # Befuddlement
 *8th-Level Enchantment (Bard, Druid, Warlock, Wizard)*

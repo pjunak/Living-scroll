@@ -1,5 +1,4 @@
----
-name: Giant Ape
+---name: Giant Ape
 size: Medium
 type: Medium Beast
 alignment: Unaligned
@@ -19,10 +18,20 @@ traits:
   description: Poison
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +3, reach 5 ft. Hit: 6 (2d4 + 1) Piercing damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 4
+      bonus: 1
+  type: utility
 
+---
 # Giant Ape
 
 *Medium Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +3, reach 5 ft. Hit: 6 (2d4 + 1) Piercing damage.
 

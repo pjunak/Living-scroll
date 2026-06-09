@@ -1,5 +1,4 @@
----
-name: Vampire
+---name: Vampire
 size: Medium
 type: Medium or Small Undead
 alignment: Lawful Evil
@@ -44,17 +43,35 @@ actions:
 - name: Multiattack (Vampire Form Only)
   description: The vampire makes two Grave Strike attacks and uses Bite.
 - name: Grave Strike (Vampire Form Only)
-  description: 'Melee Attack Roll: +9, reach 5 ft. Hit: 8 (1d8 + 4) Bludgeoning damage
-    plus 7 (2d6) Necrotic damage. If the target is a Large or smaller creature, it
-    has the Grappled condition (escape DC 14) from one of two hands.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 8
+      bonus: 4
+  - type: necrotic
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+  type: utility
 - name: Bite (Bat or Vampire Form Only)
-  description: "Constitution Saving Throw: DC 17, one creature within 5 feet that\
-    \ is willing or that has the Grappled, Incapacitated, or Restrained condition.\
-    \ Failure: 6 (1d4 + 4) Piercing damage plus 13 (3d8) Necrotic damage. The target\u2019\
-    s Hit Point maximum decreases by an amount equal to the Necrotic damage taken,\
-    \ and the vampire regains Hit Points equal to that amount. A Humanoid reduced\
-    \ to 0 Hit Points by this damage and then buried rises the following sunset as\
-    \ a Vampire Spawn under the vampire\u2019s control."
+  type: save
+  ability: con
+  dc: 17
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 4
+      bonus: 4
+  - type: necrotic
+    base:
+      dice: 3
+      die: 8
+      bonus: 0
 - name: "Charm (Recharge 5\u20136)"
   description: "The vampire casts Charm Person, requiring no spell components and\
     \ using Charisma as the spellcasting ability (spell save DC 17), and the duration\
@@ -73,9 +90,15 @@ actions:
 - name: Deathless Strike
   description: The vampire moves up to half its Speed, and it makes one Grave Strike
     attack.
----
 
+---
 # Vampire
 
 *Medium or Small Undead, Lawful Evil*
+
+### Actions
+
+**Grave Strike (Vampire Form Only).** Melee Attack Roll: +9, reach 5 ft. Hit: 8 (1d8 + 4) Bludgeoning damage plus 7 (2d6) Necrotic damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC 14) from one of two hands.
+
+**Bite (Bat or Vampire Form Only).** Constitution Saving Throw: DC 17, one creature within 5 feet that is willing or that has the Grappled, Incapacitated, or Restrained condition. Failure: 6 (1d4 + 4) Piercing damage plus 13 (3d8) Necrotic damage. The target’s Hit Point maximum decreases by an amount equal to the Necrotic damage taken, and the vampire regains Hit Points equal to that amount. A Humanoid reduced to 0 Hit Points by this damage and then buried rises the following sunset as a Vampire Spawn under the vampire’s control.
 

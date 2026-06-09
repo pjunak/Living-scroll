@@ -1,5 +1,4 @@
----
-name: Wardaway
+---name: Wardaway
 type: spell
 level: 1
 school: Abjuration
@@ -20,6 +19,21 @@ classes:
 - Wizard
 id: spell:wardaway
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: force
+    base:
+      dice: 2
+      die: 4
+      bonus: 0
+    scaling:
+      dice_per_slot: 2
+      die: 4
+      mode: spell_level
 ---
 # Wardaway
 *1st-Level Abjuration (Bard, Cleric, Paladin, Wizard)*

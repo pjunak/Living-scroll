@@ -1,5 +1,4 @@
----
-name: Chuul
+---name: Chuul
 size: Large
 type: Large Construct
 alignment: Unaligned
@@ -39,14 +38,27 @@ actions:
   description: The golem makes two Slam attacks, or it makes three Slam attacks if
     it used Hasten this turn.
 - name: Slam
-  description: "Melee Attack Roll: +9, reach 5 ft. Hit: 10 (1d10 + 5) Bludgeoning\
-    \ damage plus 6 (1d12) Acid damage, and the target\u2019s Hit Point maximum decreases\
-    \ by an amount equal to the Acid damage taken."
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 10
+      bonus: 5
+  - type: acid
+    base:
+      dice: 1
+      die: 12
+      bonus: 0
+  type: utility
 - name: "Hasten (Recharge 5\u20136)"
   description: The golem takes the Dash and Disengage actions.
----
 
+---
 # Chuul
 
 *Large Construct, Unaligned*
+
+### Actions
+
+**Slam.** Melee Attack Roll: +9, reach 5 ft. Hit: 10 (1d10 + 5) Bludgeoning damage plus 6 (1d12) Acid damage, and the target’s Hit Point maximum decreases by an amount equal to the Acid damage taken.
 

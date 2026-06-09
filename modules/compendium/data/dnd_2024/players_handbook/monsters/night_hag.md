@@ -1,5 +1,4 @@
----
-name: Night Hag
+---name: Night Hag
 size: Large
 type: Large Fiend
 alignment: Neutral Evil
@@ -25,14 +24,28 @@ traits:
     for an additional 10 feet.
 actions:
 - name: Hooves
-  description: 'Melee Attack Roll: +6, reach 5 ft. Hit: 13 (2d8 + 4) Bludgeoning damage
-    plus 10 (3d6) Fire damage.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 8
+      bonus: 4
+  - type: fire
+    base:
+      dice: 3
+      die: 6
+      bonus: 0
+  type: utility
 - name: Ethereal Stride
   description: The nightmare and up to three willing creatures within 5 feet of it
     teleport to the Ethereal Plane from the Material Plane or vice versa.
----
 
+---
 # Night Hag
 
 *Large Fiend, Neutral Evil*
+
+### Actions
+
+**Hooves.** Melee Attack Roll: +6, reach 5 ft. Hit: 13 (2d8 + 4) Bludgeoning damage plus 10 (3d6) Fire damage.
 

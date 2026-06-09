@@ -1,5 +1,4 @@
----
-name: Cure Wounds
+---name: Cure Wounds
 type: spell
 level: 1
 school: Abjuration
@@ -21,6 +20,13 @@ classes:
 - Ranger
 id: spell:cure-wounds
 material_price: ''
+actions:
+- type: heal
+  healing:
+    base:
+      dice: 2
+      die: 8
+      bonus: spellcasting_modifier
 ---
 # Cure Wounds
 *1st-Level Abjuration (Artificer, Bard, Cleric, Druid, Paladin, Ranger)*

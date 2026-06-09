@@ -1,5 +1,4 @@
----
-name: Laeral's Silver Lance
+---name: Laeral's Silver Lance
 type: spell
 level: 3
 school: Evocation
@@ -19,6 +18,21 @@ classes:
 - Wizard
 id: spell:laeral-s-silver-lance
 material_price: ''
+actions:
+- type: save
+  ability: str
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: force
+    base:
+      dice: 3
+      die: 10
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 10
+      mode: spell_level
 ---
 # Laeral's Silver Lance
 *3rd-Level Evocation (Cleric, Sorcerer, Wizard)*

@@ -1,5 +1,4 @@
----
-name: Hunger of Hadar
+---name: Hunger of Hadar
 type: spell
 level: 3
 school: Conjuration
@@ -17,6 +16,21 @@ classes:
 - Warlock
 id: spell:hunger-of-hadar
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: cold
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: spell_level
 ---
 # Hunger of Hadar
 *3rd-Level Conjuration (Warlock)*

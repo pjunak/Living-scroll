@@ -1,5 +1,4 @@
----
-name: Giant Lizard
+---name: Giant Lizard
 size: Large
 type: Large Beast
 alignment: Unaligned
@@ -20,18 +19,25 @@ traits:
     1 hour outside water.
 actions:
 - name: Tentacles
-  description: 'Melee Attack Roll: +5, reach 10 ft. Hit: 10 (2d6 + 3) Bludgeoning
-    damage. If the target is a Medium or smaller creature, it has the Grappled condition
-    (escape DC 13) from all eight tentacles. While Grappled, the target has the Restrained
-    condition.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 6
+      bonus: 3
+  type: utility
 - name: Ink Cloud (1/Day)
   description: 'Trigger: The octopus takes damage while underwater. Response: The
     octopus releases ink that fills a 10-foot Cube centered on itself, and the octopus
     moves up to its Swim Speed. The Cube is Heavily Obscured for 1 minute or until
     a strong current or similar effect disperses the ink.'
----
 
+---
 # Giant Lizard
 
 *Large Beast, Unaligned*
+
+### Actions
+
+**Tentacles.** Melee Attack Roll: +5, reach 10 ft. Hit: 10 (2d6 + 3) Bludgeoning damage. If the target is a Medium or smaller creature, it has the Grappled condition (escape DC 13) from all eight tentacles. While Grappled, the target has the Restrained condition.
 

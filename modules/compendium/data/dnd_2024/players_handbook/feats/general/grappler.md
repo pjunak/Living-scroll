@@ -1,12 +1,14 @@
----
-name: Grappler
+---name: Grappler
 type: feat
 category: general
-prerequisite: "Level 4+, Strength or Dexterity 13+"
+prerequisite: Level 4+, Strength or Dexterity 13+
 id: feat:grappler
-attribute_increase: ['STR', 'DEX']
+attribute_increase:
+- STR
+- DEX
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 4+, Strength or Dexterity 13+*

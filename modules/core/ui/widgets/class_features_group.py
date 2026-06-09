@@ -104,7 +104,7 @@ class ClassFeaturesGroup(QGroupBox):
 
         description = QLabel(feature.description)
         description.setWordWrap(True)
-        description.setStyleSheet("color: #c7c7c7;")
+        description.setProperty("class", "DimLabel")
         description.setVisible(is_expanded)
         inner_layout.addWidget(description)
 
@@ -162,7 +162,7 @@ class ClassFeaturesGroup(QGroupBox):
         if group.description:
             desc = QLabel(group.description)
             desc.setWordWrap(True)
-            desc.setStyleSheet("color: #909090;")
+            desc.setProperty("class", "DimLabel")
             layout.addWidget(desc)
 
         combo = QComboBox()

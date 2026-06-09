@@ -89,7 +89,7 @@ class SpellSourceDialog(QDialog):
 
         self.source_hint_label = QLabel()
         self.source_hint_label.setWordWrap(True)
-        self.source_hint_label.setStyleSheet("color: #777; font-size: 11px;")
+        self.source_hint_label.setProperty("class", "DimLabel")
         form.addRow(self.source_hint_label)
 
         self.source_spells_edit = QPlainTextEdit()

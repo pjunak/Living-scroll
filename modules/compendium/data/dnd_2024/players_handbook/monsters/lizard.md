@@ -1,5 +1,4 @@
----
-name: Lizard
+---name: Lizard
 size: Huge
 type: Huge Beast
 alignment: Unaligned
@@ -19,16 +18,34 @@ actions:
 - name: Multiattack
   description: The mammoth makes two Gore attacks.
 - name: Gore
-  description: 'Melee Attack Roll: +10, reach 10 ft. Hit: 18 (2d10 + 7) Piercing damage.
-    If the target is a Huge or smaller creature and the mammoth moved 20+ feet straight
-    toward it immediately before the hit, the target has the Prone condition.'
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 10
+      bonus: 7
+  type: utility
 - name: Trample
-  description: 'Dexterity Saving Throw: DC 18, one creature within 5 feet that has
-    the Prone condition. Failure: 29 (4d10 + 7) Bludgeoning damage. Success: Half
-    damage.'
----
+  type: save
+  ability: dex
+  dc: 18
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 4
+      die: 10
+      bonus: 7
 
+---
 # Lizard
 
 *Huge Beast, Unaligned*
+
+### Actions
+
+**Gore.** Melee Attack Roll: +10, reach 10 ft. Hit: 18 (2d10 + 7) Piercing damage. If the target is a Huge or smaller creature and the mammoth moved 20+ feet straight toward it immediately before the hit, the target has the Prone condition.
+
+**Trample.** Dexterity Saving Throw: DC 18, one creature within 5 feet that has the Prone condition. Failure: 29 (4d10 + 7) Bludgeoning damage. Success: Half damage.
 

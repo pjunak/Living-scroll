@@ -1,5 +1,4 @@
----
-name: Barbed Devil
+---name: Barbed Devil
 size: Medium
 type: Medium Monstrosity
 alignment: Unaligned
@@ -17,18 +16,33 @@ cr: 3 (XP 700; PB +2)
 traits: []
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 10 (2d6 + 3) Piercing damage
-    plus 7 (2d6) Poison damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 6
+      bonus: 3
+  - type: poison
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+  type: utility
 - name: "Petrifying Gaze (Recharge 4\u20136)"
-  description: 'Constitution Saving Throw: DC 12, each creature in a 30-foot Cone.
-    If the basilisk sees its reflection in the Cone, the basilisk must make this save.
-    First Failure: The target has the Restrained condition and repeats the save at
-    the end of its next turn if it is still Restrained, ending the effect on itself
-    on a success. Second Failure: The target has the Petrified condition instead of
-    the Restrained condition.'
----
+  type: save
+  ability: con
+  dc: 12
+  on_pass: none
+  on_fail: full
 
+---
 # Barbed Devil
 
 *Medium Monstrosity, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +5, reach 5 ft. Hit: 10 (2d6 + 3) Piercing damage plus 7 (2d6) Poison damage.
+
+**Petrifying Gaze (Recharge 4–6).** Constitution Saving Throw: DC 12, each creature in a 30-foot Cone. If the basilisk sees its reflection in the Cone, the basilisk must make this save. First Failure: The target has the Restrained condition and repeats the save at the end of its next turn if it is still Restrained, ending the effect on itself on a success. Second Failure: The target has the Petrified condition instead of the Restrained condition.
 

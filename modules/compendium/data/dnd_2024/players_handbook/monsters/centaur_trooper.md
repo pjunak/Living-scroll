@@ -1,5 +1,4 @@
----
-name: Centaur Trooper
+---name: Centaur Trooper
 size: Medium
 type: Medium Fiend (Devil)
 alignment: Lawful Evil
@@ -30,26 +29,42 @@ actions:
 - name: Multiattack
   description: The devil makes two Chain attacks and uses Conjure Infernal Chain.
 - name: Chain
-  description: 'Melee Attack Roll: +7, reach 10 ft. Hit: 11 (2d6 + 4) Slashing damage.
-    If the target is a Large or smaller creature, it has the Grappled condition (escape
-    DC 14) from one of two chains, and it has the Restrained condition until the grapple
-    ends.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 6
+      bonus: 4
+  type: utility
 - name: Conjure Infernal Chain
-  description: "The devil conjures a fiery chain to bind a creature. Dexterity Saving\
-    \ Throw: DC 15, one creature the devil can see within 60 feet. Failure: 9 (2d4\
-    \ + 4) Fire damage, and the target has the Restrained condition until the end\
-    \ of the devil\u2019s next turn, at which point the chain disappears. If the target\
-    \ is Large or smaller, the devil moves the target up to 30 feet straight toward\
-    \ itself. Success: The chain disappears."
+  type: save
+  ability: dex
+  dc: 15
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: fire
+    base:
+      dice: 2
+      die: 4
+      bonus: 4
 - name: Unnerving Gaze
-  description: "Trigger: A creature the devil can see starts its turn within 30 feet\
-    \ of the devil and can see the devil. Response\u2014Wisdom Saving Throw: DC 15,\
-    \ the triggering creature. Failure: The target has the Frightened condition until\
-    \ the end of its turn. Success: The target is immune to this devil\u2019s Unnerving\
-    \ Gaze for 24 hours."
----
+  type: save
+  ability: wis
+  dc: 15
+  on_pass: none
+  on_fail: full
 
+---
 # Centaur Trooper
 
 *Medium Fiend (Devil), Lawful Evil*
+
+### Actions
+
+**Chain.** Melee Attack Roll: +7, reach 10 ft. Hit: 11 (2d6 + 4) Slashing damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC 14) from one of two chains, and it has the Restrained condition until the grapple ends.
+
+**Conjure Infernal Chain.** The devil conjures a fiery chain to bind a creature. Dexterity Saving Throw: DC 15, one creature the devil can see within 60 feet. Failure: 9 (2d4 + 4) Fire damage, and the target has the Restrained condition until the end of the devil’s next turn, at which point the chain disappears. If the target is Large or smaller, the devil moves the target up to 30 feet straight toward itself. Success: The chain disappears.
+
+**Unnerving Gaze.** Trigger: A creature the devil can see starts its turn within 30 feet of the devil and can see the devil. Response—Wisdom Saving Throw: DC 15, the triggering creature. Failure: The target has the Frightened condition until the end of its turn. Success: The target is immune to this devil’s Unnerving Gaze for 24 hours.
 

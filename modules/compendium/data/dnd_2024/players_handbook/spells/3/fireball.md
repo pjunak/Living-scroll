@@ -1,5 +1,4 @@
----
-name: Fireball
+---name: Fireball
 type: spell
 level: 3
 school: Evocation
@@ -22,9 +21,15 @@ actions:
   on_pass: half
   on_fail: full
   damage:
-  - formula: 8d6
-    type: fire
-    scaling: 1d6
+  - type: fire
+    base:
+      dice: 8
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: spell_level
 material_price: ''
 ---
 # Fireball

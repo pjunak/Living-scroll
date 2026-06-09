@@ -1,5 +1,4 @@
----
-name: Ape
+---name: Ape
 size: Huge
 type: Huge Beast (Dinosaur)
 alignment: Unaligned
@@ -21,10 +20,20 @@ actions:
 - name: Multiattack
   description: The archelon makes two Bite attacks.
 - name: Bite
-  description: 'Melee Attack Roll: +6, reach 5 ft. Hit: 14 (3d6 + 4) Piercing damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 3
+      die: 6
+      bonus: 4
+  type: utility
 
+---
 # Ape
 
 *Huge Beast (Dinosaur), Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +6, reach 5 ft. Hit: 14 (3d6 + 4) Piercing damage.
 

@@ -1,13 +1,14 @@
----
-name: Skilled
+---name: Skilled
 type: feat
 category: origin
 prerequisite: null
 id: feat:skilled
 attribute_increase: null
 proficiency:
-  skills: ['any (3)']
+  skills:
+  - any (3)
 expertise: null
+repeatable: true
 ---
 
 You gain proficiency in any combination of three skills or tools of your choice.

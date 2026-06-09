@@ -1,5 +1,4 @@
----
-name: Blade Barrier
+---name: Blade Barrier
 type: spell
 level: 6
 school: Evocation
@@ -16,6 +15,17 @@ classes:
 - Cleric
 id: spell:blade-barrier
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: force
+    base:
+      dice: 6
+      die: 10
+      bonus: 0
 ---
 # Blade Barrier
 *6th-Level Evocation (Cleric)*

@@ -1,5 +1,4 @@
----
-name: Adult Black Dragon
+---name: Adult Black Dragon
 size: Huge
 type: Huge Dragon (Chromatic)
 alignment: Chaotic Evil
@@ -26,11 +25,30 @@ actions:
   description: "The dragon makes three Rend attacks. It can replace one attack with\
     \ a use of Spellcasting to cast Melf\u2019s Acid Arrow (level 3 version)."
 - name: Rend
-  description: 'Melee Attack Roll: +11, reach 10 ft. Hit: 13 (2d6 + 6) Slashing damage
-    plus 4 (1d8) Acid damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 6
+      bonus: 6
+  - type: acid
+    base:
+      dice: 1
+      die: 8
+      bonus: 0
+  type: utility
 - name: "Acid Breath (Recharge 5\u20136)"
-  description: 'Dexterity Saving Throw: DC 18, each creature in a 60-foot-long, 5-foot-wide
-    Line. Failure: 54 (12d8) Acid damage. Success: Half damage.'
+  type: save
+  ability: dex
+  dc: 18
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: acid
+    base:
+      dice: 12
+      die: 8
+      bonus: 0
 - name: Spellcasting
   description: 'The dragon casts one of the following spells, requiring no Material
     components and using Charisma as the spellcasting ability (spell save DC 17, +9
@@ -40,19 +58,33 @@ actions:
 - name: '1/Day Each:'
   description: Speak with Dead, Vitriolic Sphere
 - name: Cloud of Insects
-  description: "Dexterity Saving Throw: DC 17, one creature the dragon can see within\
-    \ 120 feet. Failure: 22 (4d10) Poison damage, and the target has Disadvantage\
-    \ on saving throws to maintain Concentration until the end of its next turn. Failure\
-    \ or Success: The dragon can\u2019t take this action again until the start of\
-    \ its next turn."
+  type: save
+  ability: dex
+  dc: 17
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: poison
+    base:
+      dice: 4
+      die: 10
+      bonus: 0
 - name: Frightful Presence
   description: "The dragon uses Spellcasting to cast Fear. The dragon can\u2019t take\
     \ this action again until the start of its next turn."
 - name: Pounce
   description: The dragon moves up to half its Speed, and it makes one Rend attack.
----
 
+---
 # Adult Black Dragon
 
 *Huge Dragon (Chromatic), Chaotic Evil*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +11, reach 10 ft. Hit: 13 (2d6 + 6) Slashing damage plus 4 (1d8) Acid damage.
+
+**Acid Breath (Recharge 5–6).** Dexterity Saving Throw: DC 18, each creature in a 60-foot-long, 5-foot-wide Line. Failure: 54 (12d8) Acid damage. Success: Half damage.
+
+**Cloud of Insects.** Dexterity Saving Throw: DC 17, one creature the dragon can see within 120 feet. Failure: 22 (4d10) Poison damage, and the target has Disadvantage on saving throws to maintain Concentration until the end of its next turn. Failure or Success: The dragon can’t take this action again until the start of its next turn.
 

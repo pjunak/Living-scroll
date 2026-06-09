@@ -1,8 +1,35 @@
 ---
 name: Arcane Trickster
 type: subclass
-class: null
+class: Rogue
 id: subclass:rogue:arcane-trickster
+spellcasting:
+  progression: third
+  ability: INT
+  prepared: false
+  has_spellbook: false
+  spell_list_override: Wizard
+  known_spells_table:
+    '3': 3
+    '4': 4
+    '7': 5
+    '8': 6
+    '10': 7
+    '11': 8
+    '13': 9
+    '14': 10
+    '16': 11
+    '19': 12
+    '20': 13
+management:
+  - id: prepared
+    label: "Arcane Trickster Spells"
+    type: spell_known
+    source: class_spell_list
+    spell_list_override: Wizard
+    max_table: known_spells_table
+    swap_count: 1
+    changeable_on: level_up
 ---
 
 *Enhance Stealth with Arcane Spells*

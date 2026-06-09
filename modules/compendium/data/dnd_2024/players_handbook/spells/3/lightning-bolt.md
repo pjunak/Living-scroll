@@ -1,5 +1,4 @@
----
-name: Lightning Bolt
+---name: Lightning Bolt
 type: spell
 level: 3
 school: Evocation
@@ -18,6 +17,21 @@ classes:
 - Wizard
 id: spell:lightning-bolt
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: lightning
+    base:
+      dice: 8
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: spell_level
 ---
 # Lightning Bolt
 *3rd-Level Evocation (Sorcerer, Wizard)*

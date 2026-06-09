@@ -1,5 +1,4 @@
----
-name: Vulture
+---name: Vulture
 size: Large
 type: Large Beast
 alignment: Unaligned
@@ -17,13 +16,25 @@ cr: 1/2 (XP 100; PB +2)
 traits: []
 actions:
 - name: Hooves
-  description: 'Melee Attack Roll: +6, reach 5 ft. Hit: 9 (2d4 + 4) Bludgeoning damage.
-    If the target is a Large or smaller creature and the horse moved 20+ feet straight
-    toward it immediately before the hit, the target takes an extra 5 (2d4) Bludgeoning
-    damage and has the Prone condition.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 4
+      bonus: 4
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 4
+      bonus: 0
+  type: utility
 
+---
 # Vulture
 
 *Large Beast, Unaligned*
+
+### Actions
+
+**Hooves.** Melee Attack Roll: +6, reach 5 ft. Hit: 9 (2d4 + 4) Bludgeoning damage. If the target is a Large or smaller creature and the horse moved 20+ feet straight toward it immediately before the hit, the target takes an extra 5 (2d4) Bludgeoning damage and has the Prone condition.
 

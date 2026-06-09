@@ -1,5 +1,4 @@
----
-name: Fire Storm
+---name: Fire Storm
 type: spell
 level: 7
 school: Evocation
@@ -18,6 +17,17 @@ classes:
 - Sorcerer
 id: spell:fire-storm
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: fire
+    base:
+      dice: 7
+      die: 10
+      bonus: 0
 ---
 # Fire Storm
 *7th-Level Evocation (Cleric, Druid, Sorcerer)*

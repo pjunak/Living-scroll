@@ -1,5 +1,4 @@
----
-name: Hippopotamus
+---name: Hippopotamus
 size: Large
 type: Large Beast
 alignment: Unaligned
@@ -19,11 +18,20 @@ traits:
   description: The shark can breathe only underwater.
 actions:
 - name: Bite
-  description: "Melee Attack Roll: +6 (with Advantage if the target doesn\u2019t have\
-    \ all its Hit Points), reach 5 ft. Hit: 14 (3d6 + 4) Piercing damage."
----
+  damage:
+  - type: piercing
+    base:
+      dice: 3
+      die: 6
+      bonus: 4
+  type: utility
 
+---
 # Hippopotamus
 
 *Large Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +6 (with Advantage if the target doesn’t have all its Hit Points), reach 5 ft. Hit: 14 (3d6 + 4) Piercing damage.
 

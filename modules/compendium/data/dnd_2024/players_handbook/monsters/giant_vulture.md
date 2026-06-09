@@ -1,5 +1,4 @@
----
-name: Giant Vulture
+---name: Giant Vulture
 size: Medium
 type: Medium Beast
 alignment: Unaligned
@@ -20,11 +19,25 @@ traits:
     \ out of an enemy\u2019s reach."
 actions:
 - name: Sting
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Piercing damage
-    plus 5 (2d4) Poison damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 2
+  - type: poison
+    base:
+      dice: 2
+      die: 4
+      bonus: 0
+  type: utility
 
+---
 # Giant Vulture
 
 *Medium Beast, Unaligned*
+
+### Actions
+
+**Sting.** Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Piercing damage plus 5 (2d4) Poison damage.
 

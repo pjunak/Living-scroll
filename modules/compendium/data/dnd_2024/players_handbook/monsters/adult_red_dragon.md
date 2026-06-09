@@ -1,5 +1,4 @@
----
-name: Adult Red Dragon
+---name: Adult Red Dragon
 size: Huge
 type: Huge Dragon (Chromatic)
 alignment: Chaotic Evil
@@ -24,11 +23,30 @@ actions:
   description: The dragon makes three Rend attacks. It can replace one attack with
     a use of Spellcasting to cast Scorching Ray.
 - name: Rend
-  description: 'Melee Attack Roll: +14, reach 10 ft. Hit: 13 (1d10 + 8) Slashing damage
-    plus 5 (2d4) Fire damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 10
+      bonus: 8
+  - type: fire
+    base:
+      dice: 2
+      die: 4
+      bonus: 0
+  type: utility
 - name: "Fire Breath (Recharge 5\u20136)"
-  description: 'Dexterity Saving Throw: DC 21, each creature in a 60-foot Cone. Failure:
-    59 (17d6) Fire damage. Success: Half damage.'
+  type: save
+  ability: dex
+  dc: 21
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: fire
+    base:
+      dice: 17
+      die: 6
+      bonus: 0
 - name: Spellcasting
   description: 'The dragon casts one of the following spells, requiring no Material
     components and using Charisma as the spellcasting ability (spell save DC 20, +12
@@ -45,9 +63,15 @@ actions:
     t take this action again until the start of its next turn."
 - name: Pounce
   description: The dragon moves up to half its Speed, and it makes one Rend attack.
----
 
+---
 # Adult Red Dragon
 
 *Huge Dragon (Chromatic), Chaotic Evil*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +14, reach 10 ft. Hit: 13 (1d10 + 8) Slashing damage plus 5 (2d4) Fire damage.
+
+**Fire Breath (Recharge 5–6).** Dexterity Saving Throw: DC 21, each creature in a 60-foot Cone. Failure: 59 (17d6) Fire damage. Success: Half damage.
 

@@ -1,5 +1,4 @@
----
-name: Burning Hands
+---name: Burning Hands
 type: spell
 level: 1
 school: Evocation
@@ -17,6 +16,21 @@ classes:
 - Wizard
 id: spell:burning-hands
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: fire
+    base:
+      dice: 3
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: spell_level
 ---
 # Burning Hands
 *1st-Level Evocation (Sorcerer, Wizard)*

@@ -1,5 +1,4 @@
----
-name: Roc
+---name: Roc
 size: Large
 type: Large Aberration
 alignment: Neutral Evil
@@ -23,7 +22,13 @@ actions:
   description: The roper makes two Tentacle attacks, uses Reel, and makes two Bite
     attacks.
 - name: Bite
-  description: 'Melee Attack Roll: +7, reach 5 ft. Hit: 17 (3d8 + 4) Piercing damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 3
+      die: 8
+      bonus: 4
+  type: utility
 - name: Tentacle
   description: 'Melee Attack Roll: +7, reach 60 ft. Hit: The target has the Grappled
     condition (escape DC 14) from one of six tentacles, and the target has the Poisoned
@@ -31,9 +36,13 @@ actions:
 - name: Reel
   description: The roper pulls each creature Grappled by it up to 30 feet straight
     toward it.
----
 
+---
 # Roc
 
 *Large Aberration, Neutral Evil*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +7, reach 5 ft. Hit: 17 (3d8 + 4) Piercing damage.
 

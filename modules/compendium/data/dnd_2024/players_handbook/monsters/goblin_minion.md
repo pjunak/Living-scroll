@@ -1,5 +1,4 @@
----
-name: Goblin Minion
+---name: Goblin Minion
 size: Small
 type: Small Fey (Goblinoid)
 alignment: Chaotic Neutral
@@ -17,13 +16,22 @@ cr: 1/8 (XP 25; PB +2)
 traits: []
 actions:
 - name: Dagger
-  description: 'Melee or Ranged Attack Roll: +4, reach 5 ft. or range 20/60 ft. Hit:
-    4 (1d4 + 2) Piercing damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 4
+      bonus: 2
+  type: utility
 - name: Nimble Escape
   description: The goblin takes the Disengage or Hide action.
----
 
+---
 # Goblin Minion
 
 *Small Fey (Goblinoid), Chaotic Neutral*
+
+### Actions
+
+**Dagger.** Melee or Ranged Attack Roll: +4, reach 5 ft. or range 20/60 ft. Hit: 4 (1d4 + 2) Piercing damage.
 

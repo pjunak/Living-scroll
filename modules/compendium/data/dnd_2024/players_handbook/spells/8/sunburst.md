@@ -1,5 +1,4 @@
----
-name: Sunburst
+---name: Sunburst
 type: spell
 level: 8
 school: Evocation
@@ -20,6 +19,17 @@ classes:
 - Wizard
 id: spell:sunburst
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: radiant
+    base:
+      dice: 12
+      die: 6
+      bonus: 0
 ---
 # Sunburst
 *8th-Level Evocation (Cleric, Druid, Sorcerer, Wizard)*

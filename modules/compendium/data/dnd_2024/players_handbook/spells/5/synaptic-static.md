@@ -1,5 +1,4 @@
----
-name: Synaptic Static
+---name: Synaptic Static
 type: spell
 level: 5
 school: Enchantment
@@ -19,6 +18,17 @@ classes:
 - Wizard
 id: spell:synaptic-static
 material_price: ''
+actions:
+- type: save
+  ability: int
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 8
+      die: 6
+      bonus: 0
 ---
 # Synaptic Static
 *5th-Level Enchantment (Bard, Sorcerer, Warlock, Wizard)*

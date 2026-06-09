@@ -1,5 +1,4 @@
----
-name: Ettercap
+---name: Ettercap
 size: Large
 type: Large Giant
 alignment: Chaotic Evil
@@ -21,15 +20,30 @@ actions:
 - name: Multiattack
   description: The ettin makes one Battleaxe attack and one Morningstar attack.
 - name: Battleaxe
-  description: 'Melee Attack Roll: +7, reach 5 ft. Hit: 14 (2d8 + 5) Slashing damage.
-    If the target is a Large or smaller creature, it has the Prone condition.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 8
+      bonus: 5
+  type: utility
 - name: Morningstar
-  description: 'Melee Attack Roll: +7, reach 5 ft. Hit: 14 (2d8 + 5) Piercing damage,
-    and the target has Disadvantage on the next attack roll it makes before the end
-    of its next turn.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 8
+      bonus: 5
+  type: utility
 
+---
 # Ettercap
 
 *Large Giant, Chaotic Evil*
+
+### Actions
+
+**Battleaxe.** Melee Attack Roll: +7, reach 5 ft. Hit: 14 (2d8 + 5) Slashing damage. If the target is a Large or smaller creature, it has the Prone condition.
+
+**Morningstar.** Melee Attack Roll: +7, reach 5 ft. Hit: 14 (2d8 + 5) Piercing damage, and the target has Disadvantage on the next attack roll it makes before the end of its next turn.
 

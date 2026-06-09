@@ -1,5 +1,4 @@
----
-name: Aboleth
+---name: Aboleth
 size: Large
 type: Large Elemental
 alignment: Neutral
@@ -28,15 +27,34 @@ actions:
 - name: Multiattack
   description: The elemental makes two Thunderous Slam attacks.
 - name: Thunderous Slam
-  description: 'Melee Attack Roll: +8, reach 10 ft. Hit: 14 (2d8 + 5) Thunder damage.'
+  damage:
+  - type: thunder
+    base:
+      dice: 2
+      die: 8
+      bonus: 5
+  type: utility
 - name: "Whirlwind (Recharge 4\u20136)"
-  description: "Strength Saving Throw: DC 13, one Medium or smaller creature in the\
-    \ elemental\u2019s space. Failure: 24 (4d10 + 2) Thunder damage, and the target\
-    \ is pushed up to 20 feet straight away from the elemental and has the Prone condition.\
-    \ Success: Half damage only."
----
+  type: save
+  ability: str
+  dc: 13
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: thunder
+    base:
+      dice: 4
+      die: 10
+      bonus: 2
 
+---
 # Aboleth
 
 *Large Elemental, Neutral*
+
+### Actions
+
+**Thunderous Slam.** Melee Attack Roll: +8, reach 10 ft. Hit: 14 (2d8 + 5) Thunder damage.
+
+**Whirlwind (Recharge 4–6).** Strength Saving Throw: DC 13, one Medium or smaller creature in the elemental’s space. Failure: 24 (4d10 + 2) Thunder damage, and the target is pushed up to 20 feet straight away from the elemental and has the Prone condition. Success: Half damage only.
 

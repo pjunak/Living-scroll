@@ -1,5 +1,4 @@
----
-name: Thorn Whip
+---name: Thorn Whip
 type: spell
 level: 0
 school: Transmutation
@@ -18,6 +17,18 @@ classes:
 - Druid
 id: spell:thorn-whip
 material_price: ''
+actions:
+- type: attack
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: character_level
 ---
 # Thorn Whip
 *Transmutation Cantrip (Artificer, Druid)*

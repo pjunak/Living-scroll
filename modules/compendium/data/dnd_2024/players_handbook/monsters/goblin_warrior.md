@@ -1,5 +1,4 @@
----
-name: Goblin Warrior
+---name: Goblin Warrior
 size: Small
 type: Small Fey (Goblinoid)
 alignment: Chaotic Neutral
@@ -17,16 +16,42 @@ cr: 1/4 (XP 50; PB +2)
 traits: []
 actions:
 - name: Scimitar
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Slashing damage,
-    plus 2 (1d4) Slashing damage if the attack roll had Advantage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 6
+      bonus: 2
+  - type: slashing
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
+  type: utility
 - name: Shortbow
-  description: 'Ranged Attack Roll: +4, range 80/320 ft. Hit: 5 (1d6 + 2) Piercing
-    damage, plus 2 (1d4) Piercing damage if the attack roll had Advantage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 2
+  - type: piercing
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
+  type: utility
 - name: Nimble Escape
   description: The goblin takes the Disengage or Hide action.
----
 
+---
 # Goblin Warrior
 
 *Small Fey (Goblinoid), Chaotic Neutral*
+
+### Actions
+
+**Scimitar.** Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Slashing damage, plus 2 (1d4) Slashing damage if the attack roll had Advantage.
+
+**Shortbow.** Ranged Attack Roll: +4, range 80/320 ft. Hit: 5 (1d6 + 2) Piercing damage, plus 2 (1d4) Piercing damage if the attack roll had Advantage.
 

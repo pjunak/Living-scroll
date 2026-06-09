@@ -1,5 +1,4 @@
----
-name: Dust Mephit
+---name: Dust Mephit
 size: Small
 type: Small Elemental
 alignment: Neutral Evil
@@ -25,17 +24,31 @@ traits:
     damage. Success: Half damage.'
 actions:
 - name: Claw
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 4 (1d4 + 2) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 4
+      bonus: 2
+  type: utility
 - name: Blinding Breath (Recharge 6)
-  description: "Dexterity Saving Throw: DC 10, each creature in a 15-foot Cone. Failure:\
-    \ The target has the Blinded condition until the end of the mephit\u2019s next\
-    \ turn."
+  type: save
+  ability: dex
+  dc: 10
+  on_pass: none
+  on_fail: full
 - name: Sleep (1/Day)
   description: The mephit casts the Sleep spell, requiring no spell components and
     using Charisma as the spellcasting ability (spell save DC 10).
----
 
+---
 # Dust Mephit
 
 *Small Elemental, Neutral Evil*
+
+### Actions
+
+**Claw.** Melee Attack Roll: +4, reach 5 ft. Hit: 4 (1d4 + 2) Slashing damage.
+
+**Blinding Breath (Recharge 6).** Dexterity Saving Throw: DC 10, each creature in a 15-foot Cone. Failure: The target has the Blinded condition until the end of the mephit’s next turn.
 

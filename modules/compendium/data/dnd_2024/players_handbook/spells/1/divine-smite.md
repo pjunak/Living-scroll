@@ -1,5 +1,4 @@
----
-name: Divine Smite
+---name: Divine Smite
 type: spell
 level: 1
 school: Evocation
@@ -16,6 +15,18 @@ classes:
 - Paladin
 id: spell:divine-smite
 material_price: ''
+actions:
+- type: utility
+  damage:
+  - type: radiant
+    base:
+      dice: 2
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 8
+      mode: spell_level
 ---
 # Divine Smite
 *1st-Level Evocation (Paladin)*

@@ -1,5 +1,4 @@
----
-name: Evard's Black Tentacles
+---name: Evard's Black Tentacles
 type: spell
 level: 4
 school: Conjuration
@@ -17,6 +16,17 @@ classes:
 - Wizard
 id: spell:evard-s-black-tentacles
 material_price: ''
+actions:
+- type: save
+  ability: str
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 3
+      die: 6
+      bonus: 0
 ---
 # Evard's Black Tentacles
 *4th-Level Conjuration (Wizard)*

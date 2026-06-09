@@ -1,5 +1,4 @@
----
-name: Sphinx of Lore
+---name: Sphinx of Lore
 size: Large
 type: Large Celestial
 alignment: Lawful Neutral
@@ -29,11 +28,25 @@ actions:
 - name: Multiattack
   description: The sphinx makes three Claw attacks.
 - name: Claw
-  description: 'Melee Attack Roll: +8, reach 5 ft. Hit: 14 (3d6 + 4) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 3
+      die: 6
+      bonus: 4
+  type: utility
 - name: "Mind-Rending Roar (Recharge 5\u20136)"
-  description: "Wisdom Saving Throw: DC 16, each enemy in a 300-foot Emanation originating\
-    \ from the sphinx. Failure: 35 (10d6) Psychic damage, and the target has the Incapacitated\
-    \ condition until the start of the sphinx\u2019s next turn."
+  type: save
+  ability: wis
+  dc: 16
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 10
+      die: 6
+      bonus: 0
 - name: Spellcasting
   description: 'The sphinx casts one of the following spells, requiring no Material
     components and using Intelligence as the spellcasting ability (spell save DC 16):'
@@ -46,13 +59,22 @@ actions:
   description: The sphinx can teleport up to 30 feet to an unoccupied space it can
     see, and it makes one Claw attack.
 - name: Weight of Years
-  description: "Constitution Saving Throw: DC 16, one creature the sphinx can see\
-    \ within 120 feet. Failure: The target gains 1 Exhaustion level. While the target\
-    \ has any Exhaustion levels, it appears 3d10 years older. Failure or Success:\
-    \ The sphinx can\u2019t take this action again until the start of its next turn."
----
+  type: save
+  ability: con
+  dc: 16
+  on_pass: none
+  on_fail: full
 
+---
 # Sphinx of Lore
 
 *Large Celestial, Lawful Neutral*
+
+### Actions
+
+**Claw.** Melee Attack Roll: +8, reach 5 ft. Hit: 14 (3d6 + 4) Slashing damage.
+
+**Mind-Rending Roar (Recharge 5–6).** Wisdom Saving Throw: DC 16, each enemy in a 300-foot Emanation originating from the sphinx. Failure: 35 (10d6) Psychic damage, and the target has the Incapacitated condition until the start of the sphinx’s next turn.
+
+**Weight of Years.** Constitution Saving Throw: DC 16, one creature the sphinx can see within 120 feet. Failure: The target gains 1 Exhaustion level. While the target has any Exhaustion levels, it appears 3d10 years older. Failure or Success: The sphinx can’t take this action again until the start of its next turn.
 

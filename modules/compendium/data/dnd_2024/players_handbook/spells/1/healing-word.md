@@ -1,5 +1,4 @@
----
-name: Healing Word
+---name: Healing Word
 type: spell
 level: 1
 school: Abjuration
@@ -17,6 +16,13 @@ classes:
 - Druid
 id: spell:healing-word
 material_price: ''
+actions:
+- type: heal
+  healing:
+    base:
+      dice: 2
+      die: 4
+      bonus: spellcasting_modifier
 ---
 # Healing Word
 *1st-Level Abjuration (Bard, Cleric, Druid)*

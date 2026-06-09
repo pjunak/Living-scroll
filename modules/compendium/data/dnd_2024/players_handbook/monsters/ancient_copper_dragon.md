@@ -1,5 +1,4 @@
----
-name: Ancient Copper Dragon
+---name: Ancient Copper Dragon
 size: Gargantuan
 type: Gargantuan Dragon (Metallic)
 alignment: Chaotic Good
@@ -24,16 +23,36 @@ actions:
   description: The dragon makes three Rend attacks. It can replace one attack with
     a use of (A) Slowing Breath or (B) Spellcasting to cast Mind Spike (level 5 version).
 - name: Rend
-  description: 'Melee Attack Roll: +15, reach 15 ft. Hit: 19 (2d10 + 8) Slashing damage
-    plus 9 (2d8) Acid damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 10
+      bonus: 8
+  - type: acid
+    base:
+      dice: 2
+      die: 8
+      bonus: 0
+  type: utility
 - name: "Acid Breath (Recharge 5\u20136)"
-  description: 'Dexterity Saving Throw: DC 22, each creature in an 90-foot-long, 10-foot-wide
-    Line. Failure: 63 (14d8) Acid damage. Success: Half damage.'
+  type: save
+  ability: dex
+  dc: 22
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: acid
+    base:
+      dice: 14
+      die: 8
+      bonus: 0
 - name: Slowing Breath
-  description: "Constitution Saving Throw: DC 22, each creature in a 90-foot Cone.\
-    \ Failure: The target can\u2019t take Reactions; its Speed is halved; and it can\
-    \ take either an action or a Bonus Action on its turn, not both. This effect lasts\
-    \ until the end of its next turn."
+  type: save
+  ability: con
+  dc: 22
+  on_pass: none
+  on_fail: full
 - name: Spellcasting
   description: 'The dragon casts one of the following spells, requiring no Material
     components and using Charisma as the spellcasting ability (spell save DC 21):'
@@ -44,19 +63,35 @@ actions:
 - name: '1/Day Each:'
   description: Greater Restoration, Major Image, Project Image
 - name: Giggling Magic
-  description: "Charisma Saving Throw: DC 21, one creature the dragon can see within\
-    \ 120 feet. Failure: 31 (9d6) Psychic damage. Until the end of its next turn,\
-    \ the target rolls 1d8 whenever it makes an ability check or attack roll and subtracts\
-    \ the number rolled from the D20 Test. Failure or Success: The dragon can\u2019\
-    t take this action again until the start of its next turn."
+  type: save
+  ability: cha
+  dc: 21
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 9
+      die: 6
+      bonus: 0
 - name: Mind Jolt
   description: "The dragon uses Spellcasting to cast Mind Spike (level 5 version).\
     \ The dragon can\u2019t take this action again until the start of its next turn."
 - name: Pounce
   description: The dragon moves up to half its Speed, and it makes one Rend attack.
----
 
+---
 # Ancient Copper Dragon
 
 *Gargantuan Dragon (Metallic), Chaotic Good*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +15, reach 15 ft. Hit: 19 (2d10 + 8) Slashing damage plus 9 (2d8) Acid damage.
+
+**Acid Breath (Recharge 5–6).** Dexterity Saving Throw: DC 22, each creature in an 90-foot-long, 10-foot-wide Line. Failure: 63 (14d8) Acid damage. Success: Half damage.
+
+**Slowing Breath.** Constitution Saving Throw: DC 22, each creature in a 90-foot Cone. Failure: The target can’t take Reactions; its Speed is halved; and it can take either an action or a Bonus Action on its turn, not both. This effect lasts until the end of its next turn.
+
+**Giggling Magic.** Charisma Saving Throw: DC 21, one creature the dragon can see within 120 feet. Failure: 31 (9d6) Psychic damage. Until the end of its next turn, the target rolls 1d8 whenever it makes an ability check or attack roll and subtracts the number rolled from the D20 Test. Failure or Success: The dragon can’t take this action again until the start of its next turn.
 

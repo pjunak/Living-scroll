@@ -1,5 +1,4 @@
----
-name: Word of Radiance
+---name: Word of Radiance
 type: spell
 level: 0
 school: Evocation
@@ -16,6 +15,21 @@ classes:
 - Cleric
 id: spell:word-of-radiance
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: radiant
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: character_level
 ---
 # Word of Radiance
 *Evocation Cantrip (Cleric)*

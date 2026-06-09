@@ -1,5 +1,4 @@
----
-name: Bat
+---name: Bat
 size: Medium
 type: Medium Beast
 alignment: Unaligned
@@ -19,10 +18,20 @@ actions:
 - name: Multiattack
   description: The bear makes two Rend attacks.
 - name: Rend
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Slashing damage.'
----
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 6
+      bonus: 2
+  type: utility
 
+---
 # Bat
 
 *Medium Beast, Unaligned*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Slashing damage.
 

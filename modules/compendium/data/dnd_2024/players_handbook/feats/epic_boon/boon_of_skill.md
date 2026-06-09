@@ -1,13 +1,15 @@
----
-name: Boon of Skill
+---name: Boon of Skill
 type: feat
 category: epic_boon
-prerequisite: "Level 19+"
+prerequisite: Level 19+
 id: feat:boon-of-skill
-attribute_increase: ['any']
+attribute_increase:
+- any
 proficiency: null
 expertise:
-  skills: ['any']
+  skills:
+  - any
+repeatable: false
 ---
 
 *Prerequisite: Level 19+*

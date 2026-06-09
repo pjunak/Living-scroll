@@ -1,5 +1,4 @@
----
-name: Nothic
+---name: Nothic
 size: Large
 type: Large Ooze
 alignment: Unaligned
@@ -28,16 +27,26 @@ traits:
     needing to make an ability check.
 actions:
 - name: Pseudopod
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 12 (3d6 + 2) Acid damage.'
+  damage:
+  - type: acid
+    base:
+      dice: 3
+      die: 6
+      bonus: 2
+  type: utility
 - name: Split
   description: "Trigger: While the jelly is Large or Medium and has 10+ Hit Points,\
     \ it becomes Bloodied or is subjected to Lightning or Slashing damage. Response:\
     \ The jelly splits into two new Ochre Jellies. Each new jelly is one size smaller\
     \ than the original jelly and acts on its Initiative. The original jelly\u2019\
     s Hit Points are divided evenly between the new jellies (round down)."
----
 
+---
 # Nothic
 
 *Large Ooze, Unaligned*
+
+### Actions
+
+**Pseudopod.** Melee Attack Roll: +4, reach 5 ft. Hit: 12 (3d6 + 2) Acid damage.
 

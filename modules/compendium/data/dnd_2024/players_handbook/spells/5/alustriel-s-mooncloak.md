@@ -1,5 +1,4 @@
----
-name: Alustriel's Mooncloak
+---name: Alustriel's Mooncloak
 type: spell
 level: 5
 school: Abjuration
@@ -20,6 +19,16 @@ classes:
 - Wizard
 id: spell:alustriel-s-mooncloak
 material_price: ''
+actions:
+- type: heal
+  ability: a
+  on_pass: none
+  on_fail: full
+  healing:
+    base:
+      dice: 4
+      die: 10
+      bonus: spellcasting_modifier
 ---
 # Alustriel's Mooncloak
 *5th-Level Abjuration (Bard, Druid, Ranger, Wizard)*

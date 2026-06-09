@@ -1,5 +1,4 @@
----
-name: Boar
+---name: Boar
 size: Large
 type: Large Beast
 alignment: Unaligned
@@ -19,13 +18,30 @@ actions:
 - name: Multiattack
   description: The bear makes one Bite attack and one Claw attack.
 - name: Bite
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Piercing damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 8
+      bonus: 3
+  type: utility
 - name: Claw
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Slashing damage.
-    If the target is a Large or smaller creature, it has the Prone condition.'
----
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 4
+      bonus: 3
+  type: utility
 
+---
 # Boar
 
 *Large Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Piercing damage.
+
+**Claw.** Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Slashing damage. If the target is a Large or smaller creature, it has the Prone condition.
 

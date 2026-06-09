@@ -1,5 +1,4 @@
----
-name: Summon Undead
+---name: Summon Undead
 type: spell
 level: 3
 school: Necromancy
@@ -18,6 +17,17 @@ classes:
 - Wizard
 id: spell:summon-undead
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: force
+    base:
+      dice: 1
+      die: 10
+      bonus: 0
 ---
 # Summon Undead
 *3rd-Level Necromancy (Warlock, Wizard)*

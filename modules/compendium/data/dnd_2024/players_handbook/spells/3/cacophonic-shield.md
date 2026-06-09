@@ -1,5 +1,4 @@
----
-name: Cacophonic Shield
+---name: Cacophonic Shield
 type: spell
 level: 3
 school: Evocation
@@ -18,6 +17,21 @@ classes:
 - Wizard
 id: spell:cacophonic-shield
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: thunder
+    base:
+      dice: 3
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: spell_level
 ---
 # Cacophonic Shield
 *3rd-Level Evocation (Bard, Sorcerer, Wizard)*

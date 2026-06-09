@@ -1,5 +1,4 @@
----
-name: Cockatrice
+---name: Cockatrice
 size: Medium
 type: Medium or Small Humanoid
 alignment: Neutral
@@ -20,10 +19,20 @@ traits:
     \ and has Advantage whenever it makes an ability check using that skill."
 actions:
 - name: Club
-  description: 'Melee Attack Roll: +2, reach 5 ft. Hit: 2 (1d4) Bludgeoning damage.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
+  type: utility
 
+---
 # Cockatrice
 
 *Medium or Small Humanoid, Neutral*
+
+### Actions
+
+**Club.** Melee Attack Roll: +2, reach 5 ft. Hit: 2 (1d4) Bludgeoning damage.
 

@@ -1,5 +1,4 @@
----
-name: Phantasmal Force
+---name: Phantasmal Force
 type: spell
 level: 2
 school: Illusion
@@ -19,6 +18,17 @@ classes:
 - Wizard
 id: spell:phantasmal-force
 material_price: ''
+actions:
+- type: save
+  ability: int
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 2
+      die: 8
+      bonus: 0
 ---
 # Phantasmal Force
 *2nd-Level Illusion (Bard, Sorcerer, Wizard)*

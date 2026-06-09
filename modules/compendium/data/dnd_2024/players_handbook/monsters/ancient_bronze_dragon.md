@@ -1,5 +1,4 @@
----
-name: Ancient Bronze Dragon
+---name: Ancient Bronze Dragon
 size: Gargantuan
 type: Gargantuan Dragon (Metallic)
 alignment: Lawful Good
@@ -27,15 +26,36 @@ actions:
     a use of (A) Repulsion Breath or (B) Spellcasting to cast Guiding Bolt (level
     2 version).
 - name: Rend
-  description: 'Melee Attack Roll: +16, reach 15 ft. Hit: 18 (2d8 + 9) Slashing damage
-    plus 9 (2d8) Lightning damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 8
+      bonus: 9
+  - type: lightning
+    base:
+      dice: 2
+      die: 8
+      bonus: 0
+  type: utility
 - name: "Lightning Breath (Recharge 5\u20136)"
-  description: 'Dexterity Saving Throw: DC 23, each creature in a 120-foot-long, 10-foot-wide
-    Line. Failure: 82 (15d10) Lightning damage. Success: Half damage.'
+  type: save
+  ability: dex
+  dc: 23
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: lightning
+    base:
+      dice: 15
+      die: 10
+      bonus: 0
 - name: Repulsion Breath
-  description: 'Strength Saving Throw: DC 23, each creature in a 30-foot Cone. Failure:
-    The target is pushed up to 60 feet straight away from the dragon and has the Prone
-    condition.'
+  type: save
+  ability: str
+  dc: 23
+  on_pass: none
+  on_fail: full
 - name: Spellcasting
   description: 'The dragon casts one of the following spells, requiring no Material
     components and using Charisma as the spellcasting ability (spell save DC 22, +14
@@ -51,13 +71,30 @@ actions:
 - name: Pounce
   description: The dragon moves up to half its Speed, and it makes one Rend attack.
 - name: Thunderclap
-  description: 'Constitution Saving Throw: DC 22, each creature in a 20-foot-radius
-    Sphere centered on a point the dragon can see within 120 feet. Failure: 13 (3d8)
-    Thunder damage, and the target has the Deafened condition until the end of its
-    next turn.'
----
+  type: save
+  ability: con
+  dc: 22
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: thunder
+    base:
+      dice: 3
+      die: 8
+      bonus: 0
 
+---
 # Ancient Bronze Dragon
 
 *Gargantuan Dragon (Metallic), Lawful Good*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +16, reach 15 ft. Hit: 18 (2d8 + 9) Slashing damage plus 9 (2d8) Lightning damage.
+
+**Lightning Breath (Recharge 5–6).** Dexterity Saving Throw: DC 23, each creature in a 120-foot-long, 10-foot-wide Line. Failure: 82 (15d10) Lightning damage. Success: Half damage.
+
+**Repulsion Breath.** Strength Saving Throw: DC 23, each creature in a 30-foot Cone. Failure: The target is pushed up to 60 feet straight away from the dragon and has the Prone condition.
+
+**Thunderclap.** Constitution Saving Throw: DC 22, each creature in a 20-foot-radius Sphere centered on a point the dragon can see within 120 feet. Failure: 13 (3d8) Thunder damage, and the target has the Deafened condition until the end of its next turn.
 

@@ -1,5 +1,4 @@
----
-name: Bugbear Stalker
+---name: Bugbear Stalker
 size: Medium
 type: Medium Fey (Goblinoid)
 alignment: Chaotic Evil
@@ -22,18 +21,38 @@ actions:
 - name: Multiattack
   description: The bugbear makes two Javelin or Morningstar attacks.
 - name: Javelin
-  description: 'Melee or Ranged Attack Roll: +5, reach 10 ft. or range 30/120 ft.
-    Hit: 13 (3d6 + 3) Piercing damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 3
+      die: 6
+      bonus: 3
+  type: utility
 - name: Morningstar
-  description: 'Melee Attack Roll: +5 (with Advantage if the target is Grappled by
-    the bugbear), reach 10 ft. Hit: 12 (2d8 + 3) Piercing damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 8
+      bonus: 3
+  type: utility
 - name: Quick Grapple
-  description: 'Dexterity Saving Throw: DC 13, one Medium or smaller creature the
-    bugbear can see within 10 feet. Failure: The target has the Grappled condition
-    (escape DC 13).'
----
+  type: save
+  ability: dex
+  dc: 13
+  on_pass: none
+  on_fail: full
 
+---
 # Bugbear Stalker
 
 *Medium Fey (Goblinoid), Chaotic Evil*
+
+### Actions
+
+**Javelin.** Melee or Ranged Attack Roll: +5, reach 10 ft. or range 30/120 ft. Hit: 13 (3d6 + 3) Piercing damage.
+
+**Morningstar.** Melee Attack Roll: +5 (with Advantage if the target is Grappled by the bugbear), reach 10 ft. Hit: 12 (2d8 + 3) Piercing damage.
+
+**Quick Grapple.** Dexterity Saving Throw: DC 13, one Medium or smaller creature the bugbear can see within 10 feet. Failure: The target has the Grappled condition (escape DC 13).
 

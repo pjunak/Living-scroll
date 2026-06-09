@@ -1,5 +1,4 @@
----
-name: Vitriolic Sphere
+---name: Vitriolic Sphere
 type: spell
 level: 4
 school: Evocation
@@ -18,6 +17,21 @@ classes:
 - Wizard
 id: spell:vitriolic-sphere
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: acid
+    base:
+      dice: 10
+      die: 4
+      bonus: 0
+    scaling:
+      dice_per_slot: 2
+      die: 4
+      mode: spell_level
 ---
 # Vitriolic Sphere
 *4th-Level Evocation (Sorcerer, Wizard)*

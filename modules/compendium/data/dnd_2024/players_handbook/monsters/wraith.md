@@ -1,5 +1,4 @@
----
-name: Wraith
+---name: Wraith
 size: Large
 type: Large Dragon
 alignment: Unaligned
@@ -19,14 +18,35 @@ actions:
 - name: Multiattack
   description: The wyvern makes one Bite attack and one Sting attack.
 - name: Bite
-  description: 'Melee Attack Roll: +7, reach 5 ft. Hit: 13 (2d8 + 4) Piercing damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 8
+      bonus: 4
+  type: utility
 - name: Sting
-  description: "Melee Attack Roll: +7, reach 10 ft. Hit: 11 (2d6 + 4) Piercing damage\
-    \ plus 24 (7d6) Poison damage, and the target has the Poisoned condition until\
-    \ the start of the wyvern\u2019s next turn."
----
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 6
+      bonus: 4
+  - type: poison
+    base:
+      dice: 7
+      die: 6
+      bonus: 0
+  type: utility
 
+---
 # Wraith
 
 *Large Dragon, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +7, reach 5 ft. Hit: 13 (2d8 + 4) Piercing damage.
+
+**Sting.** Melee Attack Roll: +7, reach 10 ft. Hit: 11 (2d6 + 4) Piercing damage plus 24 (7d6) Poison damage, and the target has the Poisoned condition until the start of the wyvern’s next turn.
 

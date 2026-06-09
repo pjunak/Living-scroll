@@ -1,5 +1,4 @@
----
-name: Vampiric Touch
+---name: Vampiric Touch
 type: spell
 level: 3
 school: Necromancy
@@ -18,6 +17,18 @@ classes:
 - Wizard
 id: spell:vampiric-touch
 material_price: ''
+actions:
+- type: attack
+  damage:
+  - type: necrotic
+    base:
+      dice: 3
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: spell_level
 ---
 # Vampiric Touch
 *3rd-Level Necromancy (Sorcerer, Warlock, Wizard)*

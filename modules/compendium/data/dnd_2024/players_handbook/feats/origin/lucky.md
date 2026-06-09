@@ -1,5 +1,4 @@
----
-name: Lucky
+---name: Lucky
 type: feat
 category: origin
 prerequisite: null
@@ -7,6 +6,7 @@ id: feat:lucky
 attribute_increase: null
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 You gain the following benefits.

@@ -1,5 +1,4 @@
----
-name: Satyr
+---name: Satyr
 size: Medium
 type: Medium or Small Humanoid
 alignment: Neutral
@@ -19,13 +18,30 @@ actions:
 - name: Multiattack
   description: The scout makes two attacks, using Shortsword and Longbow in any combination.
 - name: Shortsword
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Piercing damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 2
+  type: utility
 - name: Longbow
-  description: 'Ranged Attack Roll: +4, range 150/600 ft. Hit: 6 (1d8 + 2) Piercing
-    damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 8
+      bonus: 2
+  type: utility
 
+---
 # Satyr
 
 *Medium or Small Humanoid, Neutral*
+
+### Actions
+
+**Shortsword.** Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Piercing damage.
+
+**Longbow.** Ranged Attack Roll: +4, range 150/600 ft. Hit: 6 (1d8 + 2) Piercing damage.
 

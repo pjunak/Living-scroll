@@ -39,14 +39,14 @@ class FeatureTimelineGroup(QWidget):
         self.clear()
         if not snapshot:
             label = QLabel("No features to display yet.")
-            label.setStyleSheet("color: #5f6b7c;")
+            label.setProperty("class", "StatusLabel")
             self._layout.addWidget(label)
             return
 
         class_entries = [entry for entry in classes if (entry.name or "").strip() and int(entry.level or 0) > 0]
         if not class_entries:
             label = QLabel("Add a class to see its feature timeline.")
-            label.setStyleSheet("color: #5f6b7c;")
+            label.setProperty("class", "StatusLabel")
             self._layout.addWidget(label)
             return
 
@@ -110,7 +110,7 @@ class FeatureTimelineGroup(QWidget):
 
             if not any_rows:
                 empty = QLabel("No unlocked features recorded for this class yet.")
-                empty.setStyleSheet("color: #5f6b7c;")
+                empty.setProperty("class", "StatusLabel")
                 empty.setWordWrap(True)
                 body_layout.addWidget(empty)
 

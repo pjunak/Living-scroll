@@ -1,5 +1,4 @@
----
-name: Heat Metal
+---name: Heat Metal
 type: spell
 level: 2
 school: Transmutation
@@ -19,6 +18,21 @@ classes:
 - Druid
 id: spell:heat-metal
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: fire
+    base:
+      dice: 2
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 8
+      mode: spell_level
 ---
 # Heat Metal
 *2nd-Level Transmutation (Artificer, Bard, Druid)*

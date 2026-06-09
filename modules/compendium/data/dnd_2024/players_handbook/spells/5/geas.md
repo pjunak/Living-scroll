@@ -1,5 +1,4 @@
----
-name: Geas
+---name: Geas
 type: spell
 level: 5
 school: Enchantment
@@ -19,6 +18,17 @@ classes:
 - Wizard
 id: spell:geas
 material_price: ''
+actions:
+- type: save
+  ability: wis
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 5
+      die: 10
+      bonus: 0
 ---
 # Geas
 *5th-Level Enchantment (Bard, Cleric, Druid, Paladin, Wizard)*

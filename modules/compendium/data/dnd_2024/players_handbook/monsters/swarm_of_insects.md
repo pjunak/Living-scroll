@@ -1,5 +1,4 @@
----
-name: Swarm of Insects
+---name: Swarm of Insects
 size: Medium
 type: Medium Swarm of Tiny Beasts
 alignment: Unaligned
@@ -28,12 +27,25 @@ traits:
   description: The swarm can breathe only underwater.
 actions:
 - name: Bites
-  description: "Melee Attack Roll: +5 (with Advantage if the target doesn\u2019t have\
-    \ all its Hit Points), reach 5 ft. Hit: 8 (2d4 + 3) Piercing damage, or 5 (1d4\
-    \ + 3) Piercing damage if the swarm is Bloodied."
----
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 4
+      bonus: 3
+  - type: piercing
+    base:
+      dice: 1
+      die: 4
+      bonus: 3
+  type: utility
 
+---
 # Swarm of Insects
 
 *Medium Swarm of Tiny Beasts, Unaligned*
+
+### Actions
+
+**Bites.** Melee Attack Roll: +5 (with Advantage if the target doesn’t have all its Hit Points), reach 5 ft. Hit: 8 (2d4 + 3) Piercing damage, or 5 (1d4 + 3) Piercing damage if the swarm is Bloodied.
 

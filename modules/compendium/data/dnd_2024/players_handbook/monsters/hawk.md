@@ -1,5 +1,4 @@
----
-name: Hawk
+---name: Hawk
 size: Large
 type: Large Beast
 alignment: Unaligned
@@ -21,10 +20,20 @@ actions:
 - name: Multiattack
   description: The hippopotamus makes two Bite attacks.
 - name: Bite
-  description: 'Melee Attack Roll: +7, reach 5 ft. Hit: 16 (2d10 + 5) Piercing damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 10
+      bonus: 5
+  type: utility
 
+---
 # Hawk
 
 *Large Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +7, reach 5 ft. Hit: 16 (2d10 + 5) Piercing damage.
 

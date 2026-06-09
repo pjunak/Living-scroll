@@ -1,5 +1,4 @@
----
-name: Witch Bolt
+---name: Witch Bolt
 type: spell
 level: 1
 school: Evocation
@@ -19,6 +18,18 @@ classes:
 - Wizard
 id: spell:witch-bolt
 material_price: ''
+actions:
+- type: attack
+  damage:
+  - type: lightning
+    base:
+      dice: 2
+      die: 12
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 12
+      mode: spell_level
 ---
 # Witch Bolt
 *1st-Level Evocation (Sorcerer, Warlock, Wizard)*

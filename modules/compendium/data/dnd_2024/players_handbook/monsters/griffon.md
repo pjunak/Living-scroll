@@ -1,5 +1,4 @@
----
-name: Griffon
+---name: Griffon
 size: Medium
 type: Medium Aberration
 alignment: Neutral Evil
@@ -17,11 +16,25 @@ cr: 1/4 (XP 50; PB +2)
 traits: []
 actions:
 - name: Bone Cudgel
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 6 (1d6 + 3) Bludgeoning damage
-    plus 2 (1d4) Psychic damage.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 6
+      bonus: 3
+  - type: psychic
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
+  type: utility
 
+---
 # Griffon
 
 *Medium Aberration, Neutral Evil*
+
+### Actions
+
+**Bone Cudgel.** Melee Attack Roll: +5, reach 5 ft. Hit: 6 (1d6 + 3) Bludgeoning damage plus 2 (1d4) Psychic damage.
 

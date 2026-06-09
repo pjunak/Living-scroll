@@ -1,5 +1,4 @@
----
-name: Giant Hyena
+---name: Giant Hyena
 size: Large
 type: Large Beast
 alignment: Unaligned
@@ -20,10 +19,20 @@ traits:
     without needing to make an ability check.
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 6 (1d8 + 2) Piercing damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 8
+      bonus: 2
+  type: utility
 
+---
 # Giant Hyena
 
 *Large Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +4, reach 5 ft. Hit: 6 (1d8 + 2) Piercing damage.
 

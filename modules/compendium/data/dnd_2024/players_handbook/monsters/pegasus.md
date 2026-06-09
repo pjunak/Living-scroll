@@ -1,5 +1,4 @@
----
-name: Pegasus
+---name: Pegasus
 size: Large
 type: Large Monstrosity
 alignment: Unaligned
@@ -28,16 +27,28 @@ actions:
 - name: Multiattack
   description: The spider makes two Bite attacks.
 - name: Bite
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 8 (1d10 + 3) Piercing damage
-    plus 9 (2d8) Poison damage. If this damage reduces the target to 0 Hit Points,
-    the target becomes Stable, and it has the Poisoned condition for 1 hour. While
-    Poisoned, the target also has the Paralyzed condition.'
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 10
+      bonus: 3
+  - type: poison
+    base:
+      dice: 2
+      die: 8
+      bonus: 0
+  type: utility
 - name: Ethereal Jaunt
   description: The spider teleports from the Material Plane to the Ethereal Plane
     or vice versa.
----
 
+---
 # Pegasus
 
 *Large Monstrosity, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +5, reach 5 ft. Hit: 8 (1d10 + 3) Piercing damage plus 9 (2d8) Poison damage. If this damage reduces the target to 0 Hit Points, the target becomes Stable, and it has the Poisoned condition for 1 hour. While Poisoned, the target also has the Paralyzed condition.
 

@@ -1,5 +1,4 @@
----
-name: Bestow Curse
+---name: Bestow Curse
 type: spell
 level: 3
 school: Necromancy
@@ -18,6 +17,17 @@ classes:
 - Wizard
 id: spell:bestow-curse
 material_price: ''
+actions:
+- type: save
+  ability: wis
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: necrotic
+    base:
+      dice: 1
+      die: 8
+      bonus: 0
 ---
 # Bestow Curse
 *3rd-Level Necromancy (Bard, Cleric, Wizard)*

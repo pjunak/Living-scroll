@@ -1,5 +1,4 @@
----
-name: Hill Giant
+---name: Hill Giant
 size: Large
 type: Large Monstrosity
 alignment: Unaligned
@@ -22,10 +21,20 @@ actions:
 - name: Multiattack
   description: The hippogriff makes two Rend attacks.
 - name: Rend
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Slashing damage.'
----
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 8
+      bonus: 3
+  type: utility
 
+---
 # Hill Giant
 
 *Large Monstrosity, Unaligned*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Slashing damage.
 

@@ -1,5 +1,4 @@
----
-name: Shatter
+---name: Shatter
 type: spell
 level: 2
 school: Evocation
@@ -19,6 +18,21 @@ classes:
 - Wizard
 id: spell:shatter
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: thunder
+    base:
+      dice: 3
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 8
+      mode: spell_level
 ---
 # Shatter
 *2nd-Level Evocation (Bard, Sorcerer, Wizard)*

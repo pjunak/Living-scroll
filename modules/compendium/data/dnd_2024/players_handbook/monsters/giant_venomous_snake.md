@@ -1,5 +1,4 @@
----
-name: Giant Venomous Snake
+---name: Giant Venomous Snake
 size: Large
 type: Large Monstrosity
 alignment: Neutral Evil
@@ -23,11 +22,20 @@ traits:
     \ the ally doesn\u2019t have the Incapacitated condition."
 actions:
 - name: Gouge
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 9 (2d6 + 2) Piercing damage,
-    and the target has the Poisoned condition until the end of its next turn.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 6
+      bonus: 2
+  type: utility
 
+---
 # Giant Venomous Snake
 
 *Large Monstrosity, Neutral Evil*
+
+### Actions
+
+**Gouge.** Melee Attack Roll: +4, reach 5 ft. Hit: 9 (2d6 + 2) Piercing damage, and the target has the Poisoned condition until the end of its next turn.
 

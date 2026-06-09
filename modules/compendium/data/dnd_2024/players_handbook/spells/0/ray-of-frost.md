@@ -1,5 +1,4 @@
----
-name: Ray of Frost
+---name: Ray of Frost
 type: spell
 level: 0
 school: Evocation
@@ -18,6 +17,18 @@ classes:
 - Wizard
 id: spell:ray-of-frost
 material_price: ''
+actions:
+- type: attack
+  damage:
+  - type: cold
+    base:
+      dice: 1
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 8
+      mode: character_level
 ---
 # Ray of Frost
 *Evocation Cantrip (Artificer, Sorcerer, Wizard)*

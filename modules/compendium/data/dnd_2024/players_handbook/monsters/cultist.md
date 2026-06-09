@@ -1,5 +1,4 @@
----
-name: Cultist
+---name: Cultist
 size: Medium
 type: Medium or Small Humanoid
 alignment: Neutral
@@ -17,11 +16,20 @@ cr: 1/8 (XP 25; PB +2)
 traits: []
 actions:
 - name: Ritual Sickle
-  description: 'Melee Attack Roll: +3, reach 5 ft. Hit: 3 (1d4 + 1) Slashing damage
-    plus 1 Necrotic damage.'
----
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 4
+      bonus: 1
+  type: utility
 
+---
 # Cultist
 
 *Medium or Small Humanoid, Neutral*
+
+### Actions
+
+**Ritual Sickle.** Melee Attack Roll: +3, reach 5 ft. Hit: 3 (1d4 + 1) Slashing damage plus 1 Necrotic damage.
 

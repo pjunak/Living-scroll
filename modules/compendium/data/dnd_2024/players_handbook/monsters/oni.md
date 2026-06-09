@@ -1,5 +1,4 @@
----
-name: Oni
+---name: Oni
 size: Large
 type: Large Aberration
 alignment: Neutral
@@ -19,23 +18,48 @@ actions:
 - name: Multiattack
   description: The otyugh makes one Bite attack and two Tentacle attacks.
 - name: Bite
-  description: "Melee Attack Roll: +6, reach 5 ft. Hit: 12 (2d8 + 3) Piercing damage,\
-    \ and the target has the Poisoned condition. Whenever the Poisoned target finishes\
-    \ a Long Rest, it is subjected to the following effect. Constitution Saving Throw:\
-    \ DC 15. Failure: The target\u2019s Hit Point maximum decreases by 5 (1d10) and\
-    \ doesn\u2019t return to normal until the Poisoned condition ends on the target.\
-    \ Success: The Poisoned condition ends."
+  type: save
+  ability: con
+  dc: 15
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 8
+      bonus: 3
 - name: Tentacle
-  description: 'Melee Attack Roll: +6, reach 10 ft. Hit: 12 (2d8 + 3) Piercing damage.
-    If the target is a Medium or smaller creature, it has the Grappled condition (escape
-    DC 13) from one of two tentacles.'
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 8
+      bonus: 3
+  type: utility
 - name: Tentacle Slam
-  description: "Constitution Saving Throw: DC 14, each creature Grappled by the otyugh.\
-    \ Failure: 16 (3d8 + 3) Bludgeoning damage, and the target has the Stunned condition\
-    \ until the start of the otyugh\u2019s next turn. Success: Half damage only."
----
+  type: save
+  ability: con
+  dc: 14
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 3
+      die: 8
+      bonus: 3
 
+---
 # Oni
 
 *Large Aberration, Neutral*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +6, reach 5 ft. Hit: 12 (2d8 + 3) Piercing damage, and the target has the Poisoned condition. Whenever the Poisoned target finishes a Long Rest, it is subjected to the following effect. Constitution Saving Throw: DC 15. Failure: The target’s Hit Point maximum decreases by 5 (1d10) and doesn’t return to normal until the Poisoned condition ends on the target. Success: The Poisoned condition ends.
+
+**Tentacle.** Melee Attack Roll: +6, reach 10 ft. Hit: 12 (2d8 + 3) Piercing damage. If the target is a Medium or smaller creature, it has the Grappled condition (escape DC 13) from one of two tentacles.
+
+**Tentacle Slam.** Constitution Saving Throw: DC 14, each creature Grappled by the otyugh. Failure: 16 (3d8 + 3) Bludgeoning damage, and the target has the Stunned condition until the start of the otyugh’s next turn. Success: Half damage only.
 

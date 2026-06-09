@@ -1,5 +1,4 @@
----
-name: Troll
+---name: Troll
 size: Small
 type: Small Giant
 alignment: Chaotic Evil
@@ -26,10 +25,20 @@ traits:
     \ a Troll. Otherwise, the limb withers away."
 actions:
 - name: Rend
-  description: 'Melee Attack Roll: +6, reach 5 ft. Hit: 9 (2d4 + 4) Slashing damage.'
----
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 4
+      bonus: 4
+  type: utility
 
+---
 # Troll
 
 *Small Giant, Chaotic Evil*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +6, reach 5 ft. Hit: 9 (2d4 + 4) Slashing damage.
 

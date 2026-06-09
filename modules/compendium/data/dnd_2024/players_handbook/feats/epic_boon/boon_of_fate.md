@@ -1,12 +1,15 @@
----
-name: Boon of Fate
+---name: Boon of Fate
 type: feat
 category: epic_boon
-prerequisite: "Level 19+"
+prerequisite: Level 19+
 id: feat:boon-of-fate
-attribute_increase: ['INT', 'WIS', 'CHA']
+attribute_increase:
+- INT
+- WIS
+- CHA
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 19+*

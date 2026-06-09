@@ -1,5 +1,4 @@
----
-name: Ghoul
+---name: Ghoul
 size: Medium
 type: Medium Aberration
 alignment: Chaotic Neutral
@@ -35,17 +34,34 @@ traits:
     \ within its reach or does nothing if it can\u2019t make such an attack."
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +2, reach 5 ft. Hit: 7 (2d6) Piercing damage. If
-    the target is a Medium or smaller creature, it has the Prone condition. The target
-    dies if it is reduced to 0 Hit Points by this attack. Its body is then absorbed
-    into the mouther, leaving only equipment behind.'
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+  type: utility
 - name: "Blinding Spittle (Recharge 5\u20136)"
-  description: "Dexterity Saving Throw: DC 10, each creature in a 10-foot-radius Sphere\
-    \ centered on a point within 30 feet. Failure: 7 (2d6) Radiant damage, and the\
-    \ target has the Blinded condition until the end of the mouther\u2019s next turn."
----
+  type: save
+  ability: dex
+  dc: 10
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: radiant
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
 
+---
 # Ghoul
 
 *Medium Aberration, Chaotic Neutral*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +2, reach 5 ft. Hit: 7 (2d6) Piercing damage. If the target is a Medium or smaller creature, it has the Prone condition. The target dies if it is reduced to 0 Hit Points by this attack. Its body is then absorbed into the mouther, leaving only equipment behind.
+
+**Blinding Spittle (Recharge 5–6).** Dexterity Saving Throw: DC 10, each creature in a 10-foot-radius Sphere centered on a point within 30 feet. Failure: 7 (2d6) Radiant damage, and the target has the Blinded condition until the end of the mouther’s next turn.
 

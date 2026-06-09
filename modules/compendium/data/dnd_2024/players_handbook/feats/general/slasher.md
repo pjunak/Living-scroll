@@ -1,12 +1,14 @@
----
-name: Slasher
+---name: Slasher
 type: feat
 category: general
-prerequisite: "Level 4+"
+prerequisite: Level 4+
 id: feat:slasher
-attribute_increase: ['STR', 'DEX']
+attribute_increase:
+- STR
+- DEX
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 4+*

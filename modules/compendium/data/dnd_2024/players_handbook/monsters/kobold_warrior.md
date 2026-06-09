@@ -1,5 +1,4 @@
----
-name: Kobold Warrior
+---name: Kobold Warrior
 size: Gargantuan
 type: Gargantuan Monstrosity (Titan)
 alignment: Chaotic Evil
@@ -28,36 +27,77 @@ actions:
   description: The kraken makes two Tentacle attacks and uses Fling, Lightning Strike,
     or Swallow.
 - name: Tentacle
-  description: 'Melee Attack Roll: +17, reach 30 ft. Hit: 24 (4d6 + 10) Bludgeoning
-    damage. The target has the Grappled condition (escape DC 20) from one of ten tentacles,
-    and it has the Restrained condition until the grapple ends.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 4
+      die: 6
+      bonus: 10
+  type: utility
 - name: Fling
-  description: "The kraken throws a Large or smaller creature Grappled by it to a\
-    \ space it can see within 60 feet of itself that isn\u2019t in the air. Dexterity\
-    \ Saving Throw: DC 25, the creature thrown and each creature in the destination\
-    \ space. Failure: 18 (4d8) Bludgeoning damage, and the target has the Prone condition.\
-    \ Success: Half damage only."
+  type: save
+  ability: dex
+  dc: 25
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 4
+      die: 8
+      bonus: 0
 - name: Lightning Strike
-  description: 'Dexterity Saving Throw: DC 23, one creature the kraken can see within
-    120 feet. Failure: 33 (6d10) Lightning damage. Success: Half damage.'
+  type: save
+  ability: dex
+  dc: 23
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: lightning
+    base:
+      dice: 6
+      die: 10
+      bonus: 0
 - name: Swallow
-  description: 'Dexterity Saving Throw: DC 25, one creature Grappled by the kraken
-    (it can have up to four creatures swallowed at a time). Failure: 23 (3d8 + 10)
-    Piercing damage. If the target is Large or smaller, it is swallowed and no longer
-    Grappled. A swallowed creature has the Restrained condition, has Total Cover against
-    attacks and other effects outside the kraken, and takes 24 (7d6) Acid damage at
-    the start of each of its turns.'
+  type: save
+  ability: dex
+  dc: 25
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: piercing
+    base:
+      dice: 3
+      die: 8
+      bonus: 10
+  - type: acid
+    base:
+      dice: 7
+      die: 6
+      bonus: 0
 - name: Storm Bolt
   description: The kraken uses Lightning Strike.
 - name: Toxic Ink
-  description: "Constitution Saving Throw: DC 23, each creature in a 15-foot Emanation\
-    \ originating from the kraken while it is underwater. Failure: The target has\
-    \ the Blinded and Poisoned conditions until the end of the kraken\u2019s next\
-    \ turn. The kraken then moves up to its Speed. Failure or Success: The kraken\
-    \ can\u2019t take this action again until the start of its next turn."
----
+  type: save
+  ability: con
+  dc: 23
+  on_pass: none
+  on_fail: full
 
+---
 # Kobold Warrior
 
 *Gargantuan Monstrosity (Titan), Chaotic Evil*
+
+### Actions
+
+**Tentacle.** Melee Attack Roll: +17, reach 30 ft. Hit: 24 (4d6 + 10) Bludgeoning damage. The target has the Grappled condition (escape DC 20) from one of ten tentacles, and it has the Restrained condition until the grapple ends.
+
+**Fling.** The kraken throws a Large or smaller creature Grappled by it to a space it can see within 60 feet of itself that isn’t in the air. Dexterity Saving Throw: DC 25, the creature thrown and each creature in the destination space. Failure: 18 (4d8) Bludgeoning damage, and the target has the Prone condition. Success: Half damage only.
+
+**Lightning Strike.** Dexterity Saving Throw: DC 23, one creature the kraken can see within 120 feet. Failure: 33 (6d10) Lightning damage. Success: Half damage.
+
+**Swallow.** Dexterity Saving Throw: DC 25, one creature Grappled by the kraken (it can have up to four creatures swallowed at a time). Failure: 23 (3d8 + 10) Piercing damage. If the target is Large or smaller, it is swallowed and no longer Grappled. A swallowed creature has the Restrained condition, has Total Cover against attacks and other effects outside the kraken, and takes 24 (7d6) Acid damage at the start of each of its turns.
+
+**Toxic Ink.** Constitution Saving Throw: DC 23, each creature in a 15-foot Emanation originating from the kraken while it is underwater. Failure: The target has the Blinded and Poisoned conditions until the end of the kraken’s next turn. The kraken then moves up to its Speed. Failure or Success: The kraken can’t take this action again until the start of its next turn.
 

@@ -1,5 +1,4 @@
----
-name: Enlarge/Reduce
+---name: Enlarge/Reduce
 type: spell
 level: 2
 school: Transmutation
@@ -21,6 +20,17 @@ classes:
 - Wizard
 id: spell:enlarge-reduce
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: less
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
 ---
 # Enlarge/Reduce
 *2nd-Level Transmutation (Artificer, Bard, Druid, Sorcerer, Wizard)*

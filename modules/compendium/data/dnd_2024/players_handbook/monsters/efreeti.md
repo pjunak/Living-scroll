@@ -1,5 +1,4 @@
----
-name: Efreeti
+---name: Efreeti
 size: Medium
 type: Medium Fiend (Devil)
 alignment: Lawful Evil
@@ -38,20 +37,43 @@ actions:
   description: The erinyes makes three Withering Sword attacks and can use Entangling
     Rope.
 - name: Withering Sword
-  description: 'Melee Attack Roll: +8, reach 5 ft. Hit: 13 (2d8 + 4) Slashing damage
-    plus 11 (2d10) Necrotic damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 8
+      bonus: 4
+  - type: necrotic
+    base:
+      dice: 2
+      die: 10
+      bonus: 0
+  type: utility
 - name: Entangling Rope (Requires Magic Rope)
-  description: 'Strength Saving Throw: DC 16, one creature the erinyes can see within
-    120 feet. Failure: 14 (4d6) Force damage, and the target has the Restrained condition
-    until the rope is destroyed, the erinyes uses a Bonus Action to release the target,
-    or the erinyes uses Entangling Rope again.'
+  type: save
+  ability: str
+  dc: 16
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: force
+    base:
+      dice: 4
+      die: 6
+      bonus: 0
 - name: Parry
   description: 'Trigger: The erinyes is hit by a melee attack roll while holding a
     weapon. Response: The erinyes adds 4 to its AC against that attack, possibly causing
     it to miss.'
----
 
+---
 # Efreeti
 
 *Medium Fiend (Devil), Lawful Evil*
+
+### Actions
+
+**Withering Sword.** Melee Attack Roll: +8, reach 5 ft. Hit: 13 (2d8 + 4) Slashing damage plus 11 (2d10) Necrotic damage.
+
+**Entangling Rope (Requires Magic Rope).** Strength Saving Throw: DC 16, one creature the erinyes can see within 120 feet. Failure: 14 (4d6) Force damage, and the target has the Restrained condition until the rope is destroyed, the erinyes uses a Bonus Action to release the target, or the erinyes uses Entangling Rope again.
 

@@ -1,5 +1,4 @@
----
-name: Plesiosaurus
+---name: Plesiosaurus
 size: Large
 type: Large Beast
 alignment: Unaligned
@@ -21,10 +20,20 @@ actions:
 - name: Multiattack
   description: The bear makes two Rend attacks.
 - name: Rend
-  description: 'Melee Attack Roll: +7, reach 5 ft. Hit: 9 (1d8 + 5) Slashing damage.'
----
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 8
+      bonus: 5
+  type: utility
 
+---
 # Plesiosaurus
 
 *Large Beast, Unaligned*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +7, reach 5 ft. Hit: 9 (1d8 + 5) Slashing damage.
 

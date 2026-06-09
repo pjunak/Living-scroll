@@ -1,5 +1,4 @@
----
-name: Ancient White Dragon
+---name: Ancient White Dragon
 size: Gargantuan
 type: Gargantuan Dragon (Chromatic)
 alignment: Chaotic Evil
@@ -27,26 +26,59 @@ actions:
 - name: Multiattack
   description: The dragon makes three Rend attacks.
 - name: Rend
-  description: 'Melee Attack Roll: +14, reach 15 ft. Hit: 17 (2d8 + 8) Slashing damage
-    plus 7 (2d6) Cold damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 8
+      bonus: 8
+  - type: cold
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+  type: utility
 - name: "Cold Breath (Recharge 5\u20136)"
-  description: 'Constitution Saving Throw: DC 22, each creature in a 90-foot Cone.
-    Failure: 63 (14d8) Cold damage. Success: Half damage.'
+  type: save
+  ability: con
+  dc: 22
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: cold
+    base:
+      dice: 14
+      die: 8
+      bonus: 0
 - name: Freezing Burst
-  description: "Constitution Saving Throw: DC 20, each creature in a 30-foot-radius\
-    \ Sphere centered on a point the dragon can see within 120 feet. Failure: 14 (4d6)\
-    \ Cold damage, and the target\u2019s Speed is 0 until the end of the target\u2019\
-    s next turn. Failure or Success: The dragon can\u2019t take this action again\
-    \ until the start of its next turn."
+  type: save
+  ability: con
+  dc: 20
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: cold
+    base:
+      dice: 4
+      die: 6
+      bonus: 0
 - name: Frightful Presence
   description: "The dragon casts Fear, requiring no Material components and using\
     \ Charisma as the spellcasting ability (spell save DC 18). The dragon can\u2019\
     t take this action again until the start of its next turn."
 - name: Pounce
   description: The dragon moves up to half its Speed, and it makes one Rend attack.
----
 
+---
 # Ancient White Dragon
 
 *Gargantuan Dragon (Chromatic), Chaotic Evil*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +14, reach 15 ft. Hit: 17 (2d8 + 8) Slashing damage plus 7 (2d6) Cold damage.
+
+**Cold Breath (Recharge 5–6).** Constitution Saving Throw: DC 22, each creature in a 90-foot Cone. Failure: 63 (14d8) Cold damage. Success: Half damage.
+
+**Freezing Burst.** Constitution Saving Throw: DC 20, each creature in a 30-foot-radius Sphere centered on a point the dragon can see within 120 feet. Failure: 14 (4d6) Cold damage, and the target’s Speed is 0 until the end of the target’s next turn. Failure or Success: The dragon can’t take this action again until the start of its next turn.
 

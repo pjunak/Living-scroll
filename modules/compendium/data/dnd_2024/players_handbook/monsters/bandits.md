@@ -1,5 +1,4 @@
----
-name: Bandits
+---name: Bandits
 size: Medium
 type: Medium Fiend (Devil)
 alignment: Lawful Evil
@@ -34,18 +33,40 @@ actions:
   description: The devil makes one Claws attack and one Tail attack, or it makes two
     Hurl Flame attacks.
 - name: Claws
-  description: 'Melee Attack Roll: +6, reach 5 ft. Hit: 10 (2d6 + 3) Piercing damage.
-    If the target is a Large or smaller creature, it has the Grappled condition (escape
-    DC 13) from both claws.'
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 6
+      bonus: 3
+  type: utility
 - name: Tail
-  description: 'Melee Attack Roll: +6, reach 10 ft. Hit: 14 (2d10 + 3) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 10
+      bonus: 3
+  type: utility
 - name: Hurl Flame
-  description: "Ranged Attack Roll: +5, range 150 ft. Hit: 17 (5d6) Fire damage. If\
-    \ the target is a flammable object that isn\u2019t being worn or carried, it starts\
-    \ burning."
----
+  damage:
+  - type: fire
+    base:
+      dice: 5
+      die: 6
+      bonus: 0
+  type: utility
 
+---
 # Bandits
 
 *Medium Fiend (Devil), Lawful Evil*
+
+### Actions
+
+**Claws.** Melee Attack Roll: +6, reach 5 ft. Hit: 10 (2d6 + 3) Piercing damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC 13) from both claws.
+
+**Tail.** Melee Attack Roll: +6, reach 10 ft. Hit: 14 (2d10 + 3) Slashing damage.
+
+**Hurl Flame.** Ranged Attack Roll: +5, range 150 ft. Hit: 17 (5d6) Fire damage. If the target is a flammable object that isn’t being worn or carried, it starts burning.
 

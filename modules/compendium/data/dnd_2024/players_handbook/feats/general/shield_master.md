@@ -1,12 +1,14 @@
----
-name: Shield Master
+---name: Shield Master
 type: feat
 category: general
-prerequisite: "Level 4+, Shield Training"
+prerequisite: Level 4+, Shield Training
 id: feat:shield-master
-attribute_increase: ['STR', 'DEX']
+attribute_increase:
+- STR
+- DEX
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 4+, Shield Training*

@@ -1,5 +1,4 @@
----
-name: Ice Storm
+---name: Ice Storm
 type: spell
 level: 4
 school: Evocation
@@ -19,6 +18,21 @@ classes:
 - Wizard
 id: spell:ice-storm
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 10
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 10
+      mode: spell_level
 ---
 # Ice Storm
 *4th-Level Evocation (Druid, Sorcerer, Wizard)*

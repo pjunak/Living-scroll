@@ -1,5 +1,4 @@
----
-name: "Will-o\u2019-Wisp"
+---name: "Will-o\u2019-Wisp"
 size: Large
 type: Large Monstrosity
 alignment: Neutral Evil
@@ -23,14 +22,34 @@ traits:
     \ ally doesn\u2019t have the Incapacitated condition."
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +6, reach 5 ft. Hit: 11 (2d6 + 4) Piercing damage.
-    If the target is a Large or smaller creature, it has the Prone condition.'
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 6
+      bonus: 4
+  type: utility
 - name: "Cold Breath (Recharge 5\u20136)"
-  description: 'Constitution Saving Throw: DC 12, each creature in a 15-foot Cone.
-    Failure: 18 (4d8) Cold damage. Success: Half damage.'
----
+  type: save
+  ability: con
+  dc: 12
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: cold
+    base:
+      dice: 4
+      die: 8
+      bonus: 0
 
+---
 # Will-o’-Wisp
 
 *Large Monstrosity, Neutral Evil*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +6, reach 5 ft. Hit: 11 (2d6 + 4) Piercing damage. If the target is a Large or smaller creature, it has the Prone condition.
+
+**Cold Breath (Recharge 5–6).** Constitution Saving Throw: DC 12, each creature in a 15-foot Cone. Failure: 18 (4d8) Cold damage. Success: Half damage.
 

@@ -1,5 +1,4 @@
----
-name: Homunculus
+---name: Homunculus
 size: Large
 type: Large Fiend (Devil)
 alignment: Lawful Evil
@@ -31,23 +30,49 @@ actions:
   description: The devil makes three attacks, using Searing Fork or Hurl Flame in
     any combination. It can replace one attack with a use of Infernal Tail.
 - name: Searing Fork
-  description: 'Melee Attack Roll: +10, reach 10 ft. Hit: 15 (2d8 + 6) Piercing damage
-    plus 9 (2d8) Fire damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 8
+      bonus: 6
+  - type: fire
+    base:
+      dice: 2
+      die: 8
+      bonus: 0
+  type: utility
 - name: Hurl Flame
-  description: "Ranged Attack Roll: +8, range 150 ft. Hit: 26 (5d8 + 4) Fire damage.\
-    \ If the target is a flammable object that isn\u2019t being worn or carried, it\
-    \ starts burning."
+  damage:
+  - type: fire
+    base:
+      dice: 5
+      die: 8
+      bonus: 4
+  type: utility
 - name: Infernal Tail
-  description: "Dexterity Saving Throw: DC 17, one creature the devil can see within\
-    \ 10 feet. Failure: 10 (1d8 + 6) Necrotic damage, and the target receives an infernal\
-    \ wound if it doesn\u2019t have one. While wounded, the target loses 10 (3d6)\
-    \ Hit Points at the start of each of its turns. The wound closes after 1 minute,\
-    \ after a spell restores Hit Points to the target, or after the target or a creature\
-    \ within 5 feet of it takes an action to stanch the wound, doing so by succeeding\
-    \ on a DC 17 Wisdom (Medicine) check."
----
+  type: save
+  ability: dex
+  dc: 17
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: necrotic
+    base:
+      dice: 1
+      die: 8
+      bonus: 6
 
+---
 # Homunculus
 
 *Large Fiend (Devil), Lawful Evil*
+
+### Actions
+
+**Searing Fork.** Melee Attack Roll: +10, reach 10 ft. Hit: 15 (2d8 + 6) Piercing damage plus 9 (2d8) Fire damage.
+
+**Hurl Flame.** Ranged Attack Roll: +8, range 150 ft. Hit: 26 (5d8 + 4) Fire damage. If the target is a flammable object that isn’t being worn or carried, it starts burning.
+
+**Infernal Tail.** Dexterity Saving Throw: DC 17, one creature the devil can see within 10 feet. Failure: 10 (1d8 + 6) Necrotic damage, and the target receives an infernal wound if it doesn’t have one. While wounded, the target loses 10 (3d6) Hit Points at the start of each of its turns. The wound closes after 1 minute, after a spell restores Hit Points to the target, or after the target or a creature within 5 feet of it takes an action to stanch the wound, doing so by succeeding on a DC 17 Wisdom (Medicine) check.
 

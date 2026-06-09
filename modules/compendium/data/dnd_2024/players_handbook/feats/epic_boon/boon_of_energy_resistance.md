@@ -1,12 +1,14 @@
----
-name: Boon of Energy Resistance
+---name: Boon of Energy Resistance
 type: feat
 category: epic_boon
-prerequisite: "Level 19+"
+prerequisite: Level 19+
 id: feat:boon-of-energy-resistance
-attribute_increase: ['DEX', 'CON']
+attribute_increase:
+- DEX
+- CON
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 19+*

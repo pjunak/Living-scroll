@@ -1,5 +1,4 @@
----
-name: Raven
+---name: Raven
 size: Medium
 type: Medium Beast
 alignment: Unaligned
@@ -23,10 +22,20 @@ traits:
   description: The shark can breathe only underwater.
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 7 (2d4 + 2) Piercing damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 4
+      bonus: 2
+  type: utility
 
+---
 # Raven
 
 *Medium Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +4, reach 5 ft. Hit: 7 (2d4 + 2) Piercing damage.
 

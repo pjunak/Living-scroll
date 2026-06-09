@@ -1,5 +1,4 @@
----
-name: Toughs
+---name: Toughs
 size: Huge
 type: Huge Plant
 alignment: Chaotic Good
@@ -25,11 +24,21 @@ actions:
 - name: Multiattack
   description: The treant makes two Slam attacks.
 - name: Slam
-  description: 'Melee Attack Roll: +10, reach 5 ft. Hit: 16 (3d6 + 6) Bludgeoning
-    damage.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 3
+      die: 6
+      bonus: 6
+  type: utility
 - name: Hail of Bark
-  description: 'Ranged Attack Roll: +10, range 180 ft. Hit: 28 (4d10 + 6) Piercing
-    damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 4
+      die: 10
+      bonus: 6
+  type: utility
 - name: Animate Trees (1/Day)
   description: "The treant magically animates up to two trees it can see within 60\
     \ feet of itself. Each tree uses the Treant stat block, except it has Intelligence\
@@ -38,9 +47,15 @@ actions:
     \ and it obeys the treant. A tree remains animate for 1 day or until it dies,\
     \ the treant dies, or it is more than 120 feet from the treant. The tree then\
     \ takes root if possible."
----
 
+---
 # Toughs
 
 *Huge Plant, Chaotic Good*
+
+### Actions
+
+**Slam.** Melee Attack Roll: +10, reach 5 ft. Hit: 16 (3d6 + 6) Bludgeoning damage.
+
+**Hail of Bark.** Ranged Attack Roll: +10, range 180 ft. Hit: 28 (4d10 + 6) Piercing damage.
 

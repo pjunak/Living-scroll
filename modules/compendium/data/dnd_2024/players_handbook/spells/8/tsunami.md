@@ -1,5 +1,4 @@
----
-name: Tsunami
+---name: Tsunami
 type: spell
 level: 8
 school: Conjuration
@@ -16,6 +15,17 @@ classes:
 - Druid
 id: spell:tsunami
 material_price: ''
+actions:
+- type: save
+  ability: str
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 6
+      die: 10
+      bonus: 0
 ---
 # Tsunami
 *8th-Level Conjuration (Druid)*

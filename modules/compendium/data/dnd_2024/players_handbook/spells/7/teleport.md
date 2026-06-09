@@ -1,5 +1,4 @@
----
-name: Teleport
+---name: Teleport
 type: spell
 level: 7
 school: Conjuration
@@ -17,6 +16,14 @@ classes:
 - Wizard
 id: spell:teleport
 material_price: ''
+actions:
+- type: utility
+  damage:
+  - type: force
+    base:
+      dice: 3
+      die: 10
+      bonus: 0
 ---
 # Teleport
 *7th-Level Conjuration (Bard, Sorcerer, Wizard)*

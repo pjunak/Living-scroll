@@ -1,5 +1,4 @@
----
-name: Animated Objects
+---name: Animated Objects
 size: Large
 type: Large Monstrosity
 alignment: Unaligned
@@ -20,16 +19,39 @@ traits:
     leaves a 10-foot-diameter tunnel in its wake.
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +5 (with Advantage if the target is Grappled by
-    the ankheg), reach 5 ft. Hit: 10 (2d6 + 3) Slashing damage plus 3 (1d6) Acid damage.
-    If the target is a Large or smaller creature, it has the Grappled condition (escape
-    DC 13).'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 6
+      bonus: 3
+  - type: acid
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
+  type: utility
 - name: Acid Spray (Recharge 6)
-  description: 'Dexterity Saving Throw: DC 12, each creature in a 30-foot-long, 5-foot-wide
-    Line. Failure: 14 (4d6) Acid damage. Success: Half damage.'
----
+  type: save
+  ability: dex
+  dc: 12
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: acid
+    base:
+      dice: 4
+      die: 6
+      bonus: 0
 
+---
 # Animated Objects
 
 *Large Monstrosity, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +5 (with Advantage if the target is Grappled by the ankheg), reach 5 ft. Hit: 10 (2d6 + 3) Slashing damage plus 3 (1d6) Acid damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC 13).
+
+**Acid Spray (Recharge 6).** Dexterity Saving Throw: DC 12, each creature in a 30-foot-long, 5-foot-wide Line. Failure: 14 (4d6) Acid damage. Success: Half damage.
 

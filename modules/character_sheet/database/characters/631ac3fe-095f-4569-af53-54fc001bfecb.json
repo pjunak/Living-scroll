@@ -1,5 +1,5 @@
 {
-  "id": "f31f6b11-f73b-46dd-983c-fbcdcf5847eb",
+  "id": "631ac3fe-095f-4569-af53-54fc001bfecb",
   "modifiers": {
     "Boon: Blessing of the Archmage": false,
     "Feat: Elemental Adept": false,
@@ -16,11 +16,11 @@
   },
   "data": {
     "version": "1.0",
-    "id": "df2a059f-bcf3-46ab-a531-15967a8e8f26",
+    "id": "de3aad35-798b-4bd5-bca0-08461deefaf6",
     "identity": {
-      "name": "Testard",
-      "ancestry": "Tiefling",
-      "ancestry_subtype": "Variant Human",
+      "name": "Testing character",
+      "ancestry": "Human",
+      "ancestry_subtype": "",
       "background": "Charlatan",
       "alignment": "",
       "player_name": "",
@@ -29,23 +29,26 @@
       "level_cap": 20
     },
     "base_stats": {
-      "STR": 8,
+      "STR": 10,
       "DEX": 15,
       "CON": 14,
-      "INT": 12,
-      "WIS": 8,
-      "CHA": 14
+      "INT": 13,
+      "WIS": 10,
+      "CHA": 10
     },
     "classes": [
       {
-        "class_name": "Rogue",
-        "level": 1,
-        "subclass": null,
+        "class_name": "Wizard",
+        "level": 3,
+        "subclass": "Illusionist",
         "feature_choices": {}
       }
     ],
     "background_choices": {},
     "equipment": [],
-    "notes": {}
+    "notes": {},
+    "hp_mode": "average",
+    "hp_rolls": {},
+    "management_state": {}
   }
 }

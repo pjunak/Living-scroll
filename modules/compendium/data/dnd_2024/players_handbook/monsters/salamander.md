@@ -1,5 +1,4 @@
----
-name: Salamander
+---name: Salamander
 size: Medium
 type: Medium Fey
 alignment: Chaotic Neutral
@@ -20,15 +19,34 @@ traits:
     effects.
 actions:
 - name: Hooves
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Bludgeoning damage.
-    If the target is a Medium or smaller creature, the satyr pushes the target up
-    to 10 feet straight away from itself.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 4
+      bonus: 3
+  type: utility
 - name: Mockery
-  description: 'Wisdom Saving Throw: DC 12, one creature the satyr can see within
-    90 feet. Failure: 5 (1d6 + 2) Psychic damage.'
----
+  type: save
+  ability: wis
+  dc: 12
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 1
+      die: 6
+      bonus: 2
 
+---
 # Salamander
 
 *Medium Fey, Chaotic Neutral*
+
+### Actions
+
+**Hooves.** Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Bludgeoning damage. If the target is a Medium or smaller creature, the satyr pushes the target up to 10 feet straight away from itself.
+
+**Mockery.** Wisdom Saving Throw: DC 12, one creature the satyr can see within 90 feet. Failure: 5 (1d6 + 2) Psychic damage.
 

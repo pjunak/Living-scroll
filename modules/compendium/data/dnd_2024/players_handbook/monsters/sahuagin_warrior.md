@@ -1,5 +1,4 @@
----
-name: Sahuagin Warrior
+---name: Sahuagin Warrior
 size: Large
 type: Large Elemental
 alignment: Neutral Evil
@@ -28,17 +27,44 @@ actions:
   description: The salamander makes two Flame Spear attacks. It can replace one attack
     with a use of Constrict.
 - name: Flame Spear
-  description: "Melee or Ranged Attack Roll: +7, reach 5 ft. or range 20/60 ft. Hit:\
-    \ 13 (2d8 + 4) Piercing damage plus 7 (2d6) Fire damage. Hit or Miss: The spear\
-    \ magically returns to the salamander\u2019s hand immediately after a ranged attack."
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 8
+      bonus: 4
+  - type: fire
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+  type: utility
 - name: Constrict
-  description: 'Strength Saving Throw: DC 15, one Large or smaller creature the salamander
-    can see within 10 feet. Failure: 11 (2d6 + 4) Bludgeoning damage plus 7 (2d6)
-    Fire damage. The target has the Grappled condition (escape DC 14), and it has
-    the Restrained condition until the grapple ends.'
----
+  type: save
+  ability: str
+  dc: 15
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 6
+      bonus: 4
+  - type: fire
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
 
+---
 # Sahuagin Warrior
 
 *Large Elemental, Neutral Evil*
+
+### Actions
+
+**Flame Spear.** Melee or Ranged Attack Roll: +7, reach 5 ft. or range 20/60 ft. Hit: 13 (2d8 + 4) Piercing damage plus 7 (2d6) Fire damage. Hit or Miss: The spear magically returns to the salamander’s hand immediately after a ranged attack.
+
+**Constrict.** Strength Saving Throw: DC 15, one Large or smaller creature the salamander can see within 10 feet. Failure: 11 (2d6 + 4) Bludgeoning damage plus 7 (2d6) Fire damage. The target has the Grappled condition (escape DC 14), and it has the Restrained condition until the grapple ends.
 

@@ -1,12 +1,13 @@
----
-name: Crossbow Expert
+---name: Crossbow Expert
 type: feat
 category: general
-prerequisite: "Level 4+, Dexterity 13+"
+prerequisite: Level 4+, Dexterity 13+
 id: feat:crossbow-expert
-attribute_increase: ["DEX"]
+attribute_increase:
+- DEX
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 4+, Dexterity 13+*

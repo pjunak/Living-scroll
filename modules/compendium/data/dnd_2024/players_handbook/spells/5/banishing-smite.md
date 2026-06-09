@@ -1,5 +1,4 @@
----
-name: Banishing Smite
+---name: Banishing Smite
 type: spell
 level: 5
 school: Conjuration
@@ -16,6 +15,17 @@ classes:
 - Paladin
 id: spell:banishing-smite
 material_price: ''
+actions:
+- type: save
+  ability: cha
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: force
+    base:
+      dice: 5
+      die: 10
+      bonus: 0
 ---
 # Banishing Smite
 *5th-Level Conjuration (Paladin)*

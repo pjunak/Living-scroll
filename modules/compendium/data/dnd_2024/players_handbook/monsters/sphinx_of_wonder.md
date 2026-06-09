@@ -1,5 +1,4 @@
----
-name: Sphinx of Wonder
+---name: Sphinx of Wonder
 size: Tiny
 type: Tiny Celestial
 alignment: Lawful Good
@@ -22,14 +21,28 @@ traits:
     magical effects.
 actions:
 - name: Rend
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Slashing damage
-    plus 7 (2d6) Radiant damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 4
+      bonus: 3
+  - type: radiant
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+  type: utility
 - name: Burst of Ingenuity (2/Day)
   description: 'Trigger: The sphinx or another creature within 30 feet makes an ability
     check or a saving throw. Response: The sphinx adds 2 to the roll.'
----
 
+---
 # Sphinx of Wonder
 
 *Tiny Celestial, Lawful Good*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Slashing damage plus 7 (2d6) Radiant damage.
 

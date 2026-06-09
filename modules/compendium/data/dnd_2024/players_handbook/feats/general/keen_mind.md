@@ -1,12 +1,13 @@
----
-name: Keen Mind
+---name: Keen Mind
 type: feat
 category: general
-prerequisite: "Level 4+"
+prerequisite: Level 4+
 id: feat:keen-mind
-attribute_increase: ['INT']
+attribute_increase:
+- INT
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 4+, Intelligence 13+*

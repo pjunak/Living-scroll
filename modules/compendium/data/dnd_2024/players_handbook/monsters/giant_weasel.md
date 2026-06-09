@@ -1,5 +1,4 @@
----
-name: Giant Weasel
+---name: Giant Weasel
 size: Medium
 type: Medium Beast
 alignment: Unaligned
@@ -20,11 +19,25 @@ traits:
     without needing to make an ability check.
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Piercing damage
-    plus 5 (2d4) Poison damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 4
+      bonus: 3
+  - type: poison
+    base:
+      dice: 2
+      die: 4
+      bonus: 0
+  type: utility
 
+---
 # Giant Weasel
 
 *Medium Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Piercing damage plus 5 (2d4) Poison damage.
 

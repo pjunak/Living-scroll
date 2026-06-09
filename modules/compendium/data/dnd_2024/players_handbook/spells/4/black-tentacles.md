@@ -1,5 +1,4 @@
----
-name: Black Tentacles
+---name: Black Tentacles
 type: spell
 level: 4
 school: Conjuration
@@ -17,6 +16,14 @@ classes:
 - Wizard
 id: spell:black-tentacles
 material_price: ''
+actions:
+- type: utility
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 3
+      die: 6
+      bonus: 0
 ---
 # Black Tentacles
 *4th-Level Conjuration (Wizard)*

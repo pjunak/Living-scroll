@@ -1,5 +1,4 @@
----
-name: Magmin
+---name: Magmin
 size: Large
 type: Large Monstrosity
 alignment: Lawful Evil
@@ -20,13 +19,30 @@ actions:
   description: The manticore makes three attacks, using Rend or Tail Spike in any
     combination.
 - name: Rend
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 8
+      bonus: 3
+  type: utility
 - name: Tail Spike
-  description: 'Ranged Attack Roll: +5, range 100/200 ft. Hit: 7 (1d8 + 3) Piercing
-    damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 8
+      bonus: 3
+  type: utility
 
+---
 # Magmin
 
 *Large Monstrosity, Lawful Evil*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Slashing damage.
+
+**Tail Spike.** Ranged Attack Roll: +5, range 100/200 ft. Hit: 7 (1d8 + 3) Piercing damage.
 

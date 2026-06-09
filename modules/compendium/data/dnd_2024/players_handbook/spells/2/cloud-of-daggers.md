@@ -1,5 +1,4 @@
----
-name: Cloud Of Daggers
+---name: Cloud Of Daggers
 type: spell
 level: 2
 school: Conjuration
@@ -20,6 +19,18 @@ classes:
 - Wizard
 id: spell:cloud-of-daggers
 material_price: ''
+actions:
+- type: utility
+  damage:
+  - type: slashing
+    base:
+      dice: 4
+      die: 4
+      bonus: 0
+    scaling:
+      dice_per_slot: 2
+      die: 4
+      mode: spell_level
 ---
 # Cloud Of Daggers
 *2nd-Level Conjuration (Bard, Sorcerer, Warlock, Wizard)*

@@ -1,5 +1,4 @@
----
-name: Tough
+---name: Tough
 size: Medium
 type: Medium or Small Humanoid
 alignment: Neutral
@@ -21,13 +20,30 @@ traits:
     \ ally doesn\u2019t have the Incapacitated condition."
 actions:
 - name: Mace
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Bludgeoning damage.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 6
+      bonus: 2
+  type: utility
 - name: Heavy Crossbow
-  description: 'Ranged Attack Roll: +3, range 100/400 ft. Hit: 6 (1d10 + 1) Piercing
-    damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 10
+      bonus: 1
+  type: utility
 
+---
 # Tough
 
 *Medium or Small Humanoid, Neutral*
+
+### Actions
+
+**Mace.** Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Bludgeoning damage.
+
+**Heavy Crossbow.** Ranged Attack Roll: +3, range 100/400 ft. Hit: 6 (1d10 + 1) Piercing damage.
 

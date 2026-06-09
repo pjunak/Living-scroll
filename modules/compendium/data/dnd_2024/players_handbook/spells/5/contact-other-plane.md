@@ -1,5 +1,4 @@
----
-name: Contact Other Plane
+---name: Contact Other Plane
 type: spell
 level: 5
 school: Divination
@@ -16,6 +15,17 @@ classes:
 - Wizard
 id: spell:contact-other-plane
 material_price: ''
+actions:
+- type: save
+  ability: int
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 6
+      die: 6
+      bonus: 0
 ---
 # Contact Other Plane
 *5th-Level Divination (Warlock, Wizard)*

@@ -1,5 +1,4 @@
----
-name: Venomous Snake
+---name: Venomous Snake
 size: Medium
 type: Medium Beast
 alignment: Unaligned
@@ -21,10 +20,20 @@ traits:
     \ the ally doesn\u2019t have the Incapacitated condition."
 actions:
 - name: Beak
-  description: 'Melee Attack Roll: +2, reach 5 ft. Hit: 2 (1d4) Piercing damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
+  type: utility
 
+---
 # Venomous Snake
 
 *Medium Beast, Unaligned*
+
+### Actions
+
+**Beak.** Melee Attack Roll: +2, reach 5 ft. Hit: 2 (1d4) Piercing damage.
 

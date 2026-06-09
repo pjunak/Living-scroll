@@ -1,5 +1,4 @@
----
-name: Giant Octopus
+---name: Giant Octopus
 size: Large
 type: Large Celestial
 alignment: Neutral
@@ -22,7 +21,13 @@ traits:
     \ of an enemy\u2019s reach."
 actions:
 - name: Talons
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 7 (1d10 + 2) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 10
+      bonus: 2
+  type: utility
 - name: Spellcasting
   description: 'The owl casts one of the following spells, requiring no spell components
     and using Wisdom as the spellcasting ability:'
@@ -30,9 +35,13 @@ actions:
   description: Detect Evil and Good, Detect Magic
 - name: '1/Day:'
   description: Clairvoyance
----
 
+---
 # Giant Octopus
 
 *Large Celestial, Neutral*
+
+### Actions
+
+**Talons.** Melee Attack Roll: +4, reach 5 ft. Hit: 7 (1d10 + 2) Slashing damage.
 

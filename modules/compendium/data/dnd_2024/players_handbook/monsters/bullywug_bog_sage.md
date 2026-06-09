@@ -1,5 +1,4 @@
----
-name: Bullywug Bog Sage
+---name: Bullywug Bog Sage
 size: Medium
 type: Medium Fey
 alignment: Neutral
@@ -25,8 +24,18 @@ actions:
   description: The bullywug makes two Bog Staff attacks. It can replace any attack
     with a use of Spellcasting to cast Ray of Sickness.
 - name: Bog Staff
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Bludgeoning damage
-    plus 10 (3d6) Poison damage.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 8
+      bonus: 3
+  - type: poison
+    base:
+      dice: 3
+      die: 6
+      bonus: 0
+  type: utility
 - name: Spellcasting
   description: 'The bullywug casts one of the following spells, using Wisdom as the
     spellcasting ability (spell save DC 13, +5 to hit with spell attacks):'
@@ -36,9 +45,13 @@ actions:
   description: Speak with Plants, Vitriolic Sphere
 - name: Leap
   description: The bullywug jumps up to 30 feet by spending 10 feet of movement.
----
 
+---
 # Bullywug Bog Sage
 
 *Medium Fey, Neutral*
+
+### Actions
+
+**Bog Staff.** Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Bludgeoning damage plus 10 (3d6) Poison damage.
 

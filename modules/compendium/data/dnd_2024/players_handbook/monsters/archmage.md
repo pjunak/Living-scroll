@@ -1,5 +1,4 @@
----
-name: Archmage
+---name: Archmage
 size: Medium
 type: Medium or Small Humanoid (Wizard)
 alignment: Neutral
@@ -24,8 +23,13 @@ actions:
 - name: Multiattack
   description: The archmage makes four Arcane Burst attacks.
 - name: Arcane Burst
-  description: 'Melee or Ranged Attack Roll: +9, reach 5 ft. or range 150 ft. Hit:
-    27 (4d10 + 5) Force damage.'
+  damage:
+  - type: force
+    base:
+      dice: 4
+      die: 10
+      bonus: 5
+  type: utility
 - name: Spellcasting
   description: 'The archmage casts one of the following spells, using Intelligence
     as the spellcasting ability (spell save DC 17):'
@@ -42,9 +46,13 @@ actions:
 - name: Protective Magic (3/Day)
   description: "The archmage casts Counterspell or Shield in response to the spell\u2019\
     s trigger, using the same spellcasting ability as Spellcasting."
----
 
+---
 # Archmage
 
 *Medium or Small Humanoid (Wizard), Neutral*
+
+### Actions
+
+**Arcane Burst.** Melee or Ranged Attack Roll: +9, reach 5 ft. or range 150 ft. Hit: 27 (4d10 + 5) Force damage.
 

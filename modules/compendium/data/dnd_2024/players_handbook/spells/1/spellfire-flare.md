@@ -1,5 +1,4 @@
----
-name: Spellfire Flare
+---name: Spellfire Flare
 type: spell
 level: 1
 school: Evocation
@@ -17,6 +16,14 @@ classes:
 - Wizard
 id: spell:spellfire-flare
 material_price: ''
+actions:
+- type: attack
+  damage:
+  - type: radiant
+    base:
+      dice: 2
+      die: 10
+      bonus: 0
 ---
 # Spellfire Flare
 *1st-Level Evocation (Sorcerer, Wizard)*

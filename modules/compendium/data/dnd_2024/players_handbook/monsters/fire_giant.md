@@ -1,5 +1,4 @@
----
-name: Fire Giant
+---name: Fire Giant
 size: Medium
 type: Medium Construct
 alignment: Neutral
@@ -39,11 +38,25 @@ actions:
 - name: Multiattack
   description: The golem makes two Slam attacks.
 - name: Slam
-  description: 'Melee Attack Roll: +7, reach 5 ft. Hit: 13 (2d8 + 4) Bludgeoning damage
-    plus 4 (1d8) Lightning damage.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 8
+      bonus: 4
+  - type: lightning
+    base:
+      dice: 1
+      die: 8
+      bonus: 0
+  type: utility
 
+---
 # Fire Giant
 
 *Medium Construct, Neutral*
+
+### Actions
+
+**Slam.** Melee Attack Roll: +7, reach 5 ft. Hit: 13 (2d8 + 4) Bludgeoning damage plus 4 (1d8) Lightning damage.
 

@@ -1,5 +1,4 @@
----
-name: Call Lightning
+---name: Call Lightning
 type: spell
 level: 3
 school: Conjuration
@@ -16,6 +15,21 @@ classes:
 - Druid
 id: spell:call-lightning
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: lightning
+    base:
+      dice: 3
+      die: 10
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 10
+      mode: spell_level
 ---
 # Call Lightning
 *3rd-Level Conjuration (Druid)*

@@ -1,12 +1,14 @@
----
-name: Inspiring Leader
+---name: Inspiring Leader
 type: feat
 category: general
-prerequisite: "Level 4+, Wisdom or Charisma 13+"
+prerequisite: Level 4+, Wisdom or Charisma 13+
 id: feat:inspiring-leader
-attribute_increase: ['WIS', 'CHA']
+attribute_increase:
+- WIS
+- CHA
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 4+, Wisdom or Charisma 13+*

@@ -1,5 +1,4 @@
----
-name: Giant Toad
+---name: Giant Toad
 size: Medium
 type: Medium Beast
 alignment: Unaligned
@@ -17,11 +16,25 @@ cr: 1/4 (XP 50; PB +2)
 traits: []
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +6, reach 10 ft. Hit: 6 (1d4 + 4) Piercing damage
-    plus 4 (1d8) Poison damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 4
+      bonus: 4
+  - type: poison
+    base:
+      dice: 1
+      die: 8
+      bonus: 0
+  type: utility
 
+---
 # Giant Toad
 
 *Medium Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +6, reach 10 ft. Hit: 6 (1d4 + 4) Piercing damage plus 4 (1d8) Poison damage.
 

@@ -1,12 +1,13 @@
----
-name: Boon of Speed
+---name: Boon of Speed
 type: feat
 category: epic_boon
-prerequisite: "Level 19+"
+prerequisite: Level 19+
 id: feat:boon-of-speed
-attribute_increase: ['DEX']
+attribute_increase:
+- DEX
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 19+*

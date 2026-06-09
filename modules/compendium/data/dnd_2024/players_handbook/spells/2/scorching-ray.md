@@ -1,5 +1,4 @@
----
-name: Scorching Ray
+---name: Scorching Ray
 type: spell
 level: 2
 school: Evocation
@@ -17,6 +16,14 @@ classes:
 - Wizard
 id: spell:scorching-ray
 material_price: ''
+actions:
+- type: attack
+  damage:
+  - type: fire
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
 ---
 # Scorching Ray
 *2nd-Level Evocation (Sorcerer, Wizard)*

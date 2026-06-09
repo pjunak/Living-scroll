@@ -1,5 +1,4 @@
----
-name: Kraken
+---name: Kraken
 size: Large
 type: Large Fiend
 alignment: Chaotic Evil
@@ -20,12 +19,30 @@ actions:
   description: The lamia makes two Claw attacks. It can replace one attack with a
     use of Corrupting Touch.
 - name: Claw
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Slashing damage
-    plus 7 (2d6) Psychic damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 8
+      bonus: 3
+  - type: psychic
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+  type: utility
 - name: Corrupting Touch
-  description: 'Wisdom Saving Throw: DC 13, one creature the lamia can see within
-    5 feet. Failure: 13 (3d8) Psychic damage, and the target is cursed for 1 hour.
-    Until the curse ends, the target has the Charmed and Poisoned conditions.'
+  type: save
+  ability: wis
+  dc: 13
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 3
+      die: 8
+      bonus: 0
 - name: Spellcasting
   description: 'The lamia casts one of the following spells, requiring no Material
     components and using Charisma as the spellcasting ability (spell save DC 13):'
@@ -35,9 +52,15 @@ actions:
   description: Geas, Major Image, Scrying
 - name: Leap
   description: The lamia jumps up to 30 feet by spending 10 feet of movement.
----
 
+---
 # Kraken
 
 *Large Fiend, Chaotic Evil*
+
+### Actions
+
+**Claw.** Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Slashing damage plus 7 (2d6) Psychic damage.
+
+**Corrupting Touch.** Wisdom Saving Throw: DC 13, one creature the lamia can see within 5 feet. Failure: 13 (3d8) Psychic damage, and the target is cursed for 1 hour. Until the curse ends, the target has the Charmed and Poisoned conditions.
 

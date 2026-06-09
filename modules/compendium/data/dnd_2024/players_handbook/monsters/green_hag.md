@@ -1,5 +1,4 @@
----
-name: Green Hag
+---name: Green Hag
 size: Medium
 type: Medium Aberration
 alignment: Unaligned
@@ -19,14 +18,30 @@ actions:
 - name: Multiattack
   description: The grick makes one Beak attack and one Tentacles attack.
 - name: Beak
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 9 (2d6 + 2) Piercing damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 6
+      bonus: 2
+  type: utility
 - name: Tentacles
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 7 (1d10 + 2) Slashing damage.
-    If the target is a Medium or smaller creature, it has the Grappled condition (escape
-    DC 12) from all four tentacles.'
----
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 10
+      bonus: 2
+  type: utility
 
+---
 # Green Hag
 
 *Medium Aberration, Unaligned*
+
+### Actions
+
+**Beak.** Melee Attack Roll: +4, reach 5 ft. Hit: 9 (2d6 + 2) Piercing damage.
+
+**Tentacles.** Melee Attack Roll: +4, reach 5 ft. Hit: 7 (1d10 + 2) Slashing damage. If the target is a Medium or smaller creature, it has the Grappled condition (escape DC 12) from all four tentacles.
 

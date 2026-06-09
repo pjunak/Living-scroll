@@ -1,5 +1,4 @@
----
-name: Swarm of Piranhas
+---name: Swarm of Piranhas
 size: Medium
 type: Medium Swarm of Tiny Beasts
 alignment: Unaligned
@@ -26,11 +25,25 @@ traits:
     \ swarm can\u2019t regain Hit Points or gain Temporary Hit Points."
 actions:
 - name: Bites
-  description: 'Melee Attack Roll: +2, reach 5 ft. Hit: 5 (2d4) Piercing damage, or
-    2 (1d4) Piercing damage if the swarm is Bloodied.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 4
+      bonus: 0
+  - type: piercing
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
+  type: utility
 
+---
 # Swarm of Piranhas
 
 *Medium Swarm of Tiny Beasts, Unaligned*
+
+### Actions
+
+**Bites.** Melee Attack Roll: +2, reach 5 ft. Hit: 5 (2d4) Piercing damage, or 2 (1d4) Piercing damage if the swarm is Bloodied.
 

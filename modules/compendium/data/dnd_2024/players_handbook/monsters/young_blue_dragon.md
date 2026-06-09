@@ -1,5 +1,4 @@
----
-name: Young Blue Dragon
+---name: Young Blue Dragon
 size: Large
 type: Large Dragon (Chromatic)
 alignment: Lawful Evil
@@ -21,14 +20,39 @@ actions:
 - name: Multiattack
   description: The dragon makes three Rend attacks.
 - name: Rend
-  description: 'Melee Attack Roll: +9, reach 10 ft. Hit: 12 (2d6 + 5) Slashing damage
-    plus 5 (1d10) Lightning damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 6
+      bonus: 5
+  - type: lightning
+    base:
+      dice: 1
+      die: 10
+      bonus: 0
+  type: utility
 - name: "Lightning Breath (Recharge 5\u20136)"
-  description: 'Dexterity Saving Throw: DC 16, each creature in a 60-foot-long, 5-foot-wide
-    Line. Failure: 55 (10d10) Lightning damage. Success: Half damage.'
----
+  type: save
+  ability: dex
+  dc: 16
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: lightning
+    base:
+      dice: 10
+      die: 10
+      bonus: 0
 
+---
 # Young Blue Dragon
 
 *Large Dragon (Chromatic), Lawful Evil*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +9, reach 10 ft. Hit: 12 (2d6 + 5) Slashing damage plus 5 (1d10) Lightning damage.
+
+**Lightning Breath (Recharge 5–6).** Dexterity Saving Throw: DC 16, each creature in a 60-foot-long, 5-foot-wide Line. Failure: 55 (10d10) Lightning damage. Success: Half damage.
 

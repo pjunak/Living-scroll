@@ -1,5 +1,4 @@
----
-name: Nalfeshnee
+---name: Nalfeshnee
 size: Medium
 type: Medium Fiend
 alignment: Neutral Evil
@@ -36,7 +35,13 @@ actions:
 - name: Multiattack
   description: The hag makes two Claw attacks.
 - name: Claw
-  description: 'Melee Attack Roll: +7, reach 5 ft. Hit: 13 (2d8 + 4) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 8
+      bonus: 4
+  type: utility
 - name: Nightmare Haunting (1/Day; Requires Soul Bag)
   description: "While on the Ethereal Plane, the hag casts Dream, using the same spellcasting\
     \ ability as Spellcasting. Only the hag can serve as the spell\u2019s messenger,\
@@ -54,9 +59,13 @@ actions:
   description: "The hag shape-shifts into a Small or Medium Humanoid, or it returns\
     \ to its true form. Other than its size, its game statistics are the same in each\
     \ form. Any equipment it is wearing or carrying isn\u2019t transformed."
----
 
+---
 # Nalfeshnee
 
 *Medium Fiend, Neutral Evil*
+
+### Actions
+
+**Claw.** Melee Attack Roll: +7, reach 5 ft. Hit: 13 (2d8 + 4) Slashing damage.
 

@@ -1,5 +1,4 @@
----
-name: Ankheg
+---name: Ankheg
 size: Medium
 type: Medium or Small Humanoid
 alignment: Neutral
@@ -27,17 +26,42 @@ actions:
   description: The assassin makes three attacks, using Shortsword or Light Crossbow
     in any combination.
 - name: Shortsword
-  description: "Melee Attack Roll: +7, reach 5 ft. Hit: 7 (1d6 + 4) Piercing damage\
-    \ plus 17 (5d6) Poison damage, and the target has the Poisoned condition until\
-    \ the start of the assassin\u2019s next turn."
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 4
+  - type: poison
+    base:
+      dice: 5
+      die: 6
+      bonus: 0
+  type: utility
 - name: Light Crossbow
-  description: 'Ranged Attack Roll: +7, range 80/320 ft. Hit: 8 (1d8 + 4) Piercing
-    damage plus 21 (6d6) Poison damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 8
+      bonus: 4
+  - type: poison
+    base:
+      dice: 6
+      die: 6
+      bonus: 0
+  type: utility
 - name: Cunning Action
   description: The assassin takes the Dash, Disengage, or Hide action.
----
 
+---
 # Ankheg
 
 *Medium or Small Humanoid, Neutral*
+
+### Actions
+
+**Shortsword.** Melee Attack Roll: +7, reach 5 ft. Hit: 7 (1d6 + 4) Piercing damage plus 17 (5d6) Poison damage, and the target has the Poisoned condition until the start of the assassin’s next turn.
+
+**Light Crossbow.** Ranged Attack Roll: +7, range 80/320 ft. Hit: 8 (1d8 + 4) Piercing damage plus 21 (6d6) Poison damage.
 

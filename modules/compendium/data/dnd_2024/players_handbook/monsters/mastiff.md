@@ -1,5 +1,4 @@
----
-name: Mastiff
+---name: Mastiff
 size: Medium
 type: Medium Beast
 alignment: Unaligned
@@ -20,10 +19,20 @@ traits:
     carrying capacity.
 actions:
 - name: Hooves
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 4 (1d4 + 2) Bludgeoning damage.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 4
+      bonus: 2
+  type: utility
 
+---
 # Mastiff
 
 *Medium Beast, Unaligned*
+
+### Actions
+
+**Hooves.** Melee Attack Roll: +4, reach 5 ft. Hit: 4 (1d4 + 2) Bludgeoning damage.
 

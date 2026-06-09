@@ -1,5 +1,4 @@
----
-name: Piranha
+---name: Piranha
 size: Large
 type: Large Beast (Dinosaur)
 alignment: Unaligned
@@ -19,10 +18,20 @@ traits:
   description: The plesiosaurus can hold its breath for 1 hour.
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +6, reach 10 ft. Hit: 11 (2d6 + 4) Piercing damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 6
+      bonus: 4
+  type: utility
 
+---
 # Piranha
 
 *Large Beast (Dinosaur), Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +6, reach 10 ft. Hit: 11 (2d6 + 4) Piercing damage.
 

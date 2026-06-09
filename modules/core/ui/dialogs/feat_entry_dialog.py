@@ -34,7 +34,7 @@ class FeatEntryDialog(QDialog):
 
         helper = QLabel("Name is required; source/notes help you remember prerequisites and benefits.")
         helper.setWordWrap(True)
-        helper.setStyleSheet("color: #5f6b7c; font-size: 12px;")
+        helper.setProperty("class", "DimLabel")
         layout.addRow(helper)
 
         buttons = QDialogButtonBox(QDialogButtonBox.StandardButton.Cancel | QDialogButtonBox.StandardButton.Ok)

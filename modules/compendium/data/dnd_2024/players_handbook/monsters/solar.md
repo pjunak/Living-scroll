@@ -1,5 +1,4 @@
----
-name: Solar
+---name: Solar
 size: Medium
 type: Medium Undead
 alignment: Chaotic Evil
@@ -29,12 +28,20 @@ traits:
     attack rolls.
 actions:
 - name: Life Drain
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 7 (2d6) Necrotic damage. If
-    the target is a creature, its Hit Point maximum decreases by an amount equal to
-    the damage taken.'
----
+  damage:
+  - type: necrotic
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+  type: utility
 
+---
 # Solar
 
 *Medium Undead, Chaotic Evil*
+
+### Actions
+
+**Life Drain.** Melee Attack Roll: +4, reach 5 ft. Hit: 7 (2d6) Necrotic damage. If the target is a creature, its Hit Point maximum decreases by an amount equal to the damage taken.
 

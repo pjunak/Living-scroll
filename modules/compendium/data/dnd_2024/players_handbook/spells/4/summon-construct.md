@@ -1,5 +1,4 @@
----
-name: Summon Construct
+---name: Summon Construct
 type: spell
 level: 4
 school: Conjuration
@@ -18,6 +17,17 @@ classes:
 - Wizard
 id: spell:summon-construct
 material_price: ''
+actions:
+- type: save
+  ability: wis
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: fire
+    base:
+      dice: 1
+      die: 10
+      bonus: 0
 ---
 # Summon Construct
 *4th-Level Conjuration (Artificer, Wizard)*

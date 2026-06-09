@@ -85,6 +85,13 @@ progression:
 id: class:druid
 multiclass_requirements:
   WIS: 13
+management:
+  - id: prepared
+    label: "Prepared Spells"
+    type: spell_preparation
+    source: class_spell_list
+    max_formula: "WIS + level"
+    changeable_on: long_rest
 ---
 
 Druids belong to ancient orders that call on the forces of nature. Harnessing the magic of animals, plants, and the four elements, Druids heal, transform into animals, and wield elemental destruction.

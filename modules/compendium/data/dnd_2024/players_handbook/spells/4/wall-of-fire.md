@@ -1,5 +1,4 @@
----
-name: Wall of Fire
+---name: Wall of Fire
 type: spell
 level: 4
 school: Evocation
@@ -19,6 +18,21 @@ classes:
 - Wizard
 id: spell:wall-of-fire
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: fire
+    base:
+      dice: 5
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 8
+      mode: spell_level
 ---
 # Wall of Fire
 *4th-Level Evocation (Druid, Sorcerer, Wizard)*

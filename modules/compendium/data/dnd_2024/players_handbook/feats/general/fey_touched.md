@@ -1,12 +1,15 @@
----
-name: Fey Touched
+---name: Fey Touched
 type: feat
 category: general
-prerequisite: "Level 4+"
+prerequisite: Level 4+
 id: feat:fey-touched
-attribute_increase: ['INT', 'WIS', 'CHA']
+attribute_increase:
+- INT
+- WIS
+- CHA
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 4+*

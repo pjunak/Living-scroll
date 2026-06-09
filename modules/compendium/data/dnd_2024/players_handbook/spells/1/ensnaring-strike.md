@@ -1,5 +1,4 @@
----
-name: Ensnaring Strike
+---name: Ensnaring Strike
 type: spell
 level: 1
 school: Conjuration
@@ -16,6 +15,21 @@ classes:
 - Ranger
 id: spell:ensnaring-strike
 material_price: ''
+actions:
+- type: save
+  ability: str
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: spell_level
 ---
 # Ensnaring Strike
 *1st-Level Conjuration (Ranger)*

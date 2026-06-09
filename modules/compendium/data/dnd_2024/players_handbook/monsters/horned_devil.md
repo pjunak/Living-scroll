@@ -1,5 +1,4 @@
----
-name: Horned Devil
+---name: Horned Devil
 size: Huge
 type: Huge Monstrosity
 alignment: Unaligned
@@ -33,10 +32,20 @@ actions:
 - name: Multiattack
   description: The hydra makes as many Bite attacks as it has heads.
 - name: Bite
-  description: 'Melee Attack Roll: +8, reach 10 ft. Hit: 10 (1d10 + 5) Piercing damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 10
+      bonus: 5
+  type: utility
 
+---
 # Horned Devil
 
 *Huge Monstrosity, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +8, reach 10 ft. Hit: 10 (1d10 + 5) Piercing damage.
 

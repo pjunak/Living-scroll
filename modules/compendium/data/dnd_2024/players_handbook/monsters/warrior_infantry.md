@@ -1,5 +1,4 @@
----
-name: Warrior Infantry
+---name: Warrior Infantry
 size: Medium
 type: Medium or Small Humanoid
 alignment: Neutral
@@ -21,11 +20,20 @@ traits:
     \ the ally doesn\u2019t have the Incapacitated condition."
 actions:
 - name: Spear
-  description: 'Melee or Ranged Attack Roll: +3, reach 5 ft. or range 20/60 ft. Hit:
-    4 (1d6 + 1) Piercing damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 1
+  type: utility
 
+---
 # Warrior Infantry
 
 *Medium or Small Humanoid, Neutral*
+
+### Actions
+
+**Spear.** Melee or Ranged Attack Roll: +3, reach 5 ft. or range 20/60 ft. Hit: 4 (1d6 + 1) Piercing damage.
 

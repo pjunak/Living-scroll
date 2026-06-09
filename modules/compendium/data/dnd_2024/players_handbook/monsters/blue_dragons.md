@@ -1,5 +1,4 @@
----
-name: Blue Dragons
+---name: Blue Dragons
 size: Large
 type: Large Fiend (Devil)
 alignment: Lawful Evil
@@ -30,15 +29,35 @@ actions:
 - name: Multiattack
   description: The devil makes two Claw attacks and one Infernal Sting attack.
 - name: Claw
-  description: 'Melee Attack Roll: +8, reach 10 ft. Hit: 13 (2d8 + 4) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 8
+      bonus: 4
+  type: utility
 - name: Infernal Sting
-  description: "Melee Attack Roll: +8, reach 10 ft. Hit: 15 (2d10 + 4) Piercing damage\
-    \ plus 18 (4d8) Poison damage, and the target has the Poisoned condition until\
-    \ the start of the devil\u2019s next turn. While Poisoned, the target can\u2019\
-    t regain Hit Points."
----
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 10
+      bonus: 4
+  - type: poison
+    base:
+      dice: 4
+      die: 8
+      bonus: 0
+  type: utility
 
+---
 # Blue Dragons
 
 *Large Fiend (Devil), Lawful Evil*
+
+### Actions
+
+**Claw.** Melee Attack Roll: +8, reach 10 ft. Hit: 13 (2d8 + 4) Slashing damage.
+
+**Infernal Sting.** Melee Attack Roll: +8, reach 10 ft. Hit: 15 (2d10 + 4) Piercing damage plus 18 (4d8) Poison damage, and the target has the Poisoned condition until the start of the devil’s next turn. While Poisoned, the target can’t regain Hit Points.
 

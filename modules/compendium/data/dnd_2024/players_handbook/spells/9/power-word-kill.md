@@ -1,5 +1,4 @@
----
-name: Power Word Kill
+---name: Power Word Kill
 type: spell
 level: 9
 school: Enchantment
@@ -18,6 +17,14 @@ classes:
 - Wizard
 id: spell:power-word-kill
 material_price: ''
+actions:
+- type: utility
+  damage:
+  - type: psychic
+    base:
+      dice: 12
+      die: 12
+      bonus: 0
 ---
 # Power Word Kill
 *9th-Level Enchantment (Bard, Sorcerer, Warlock, Wizard)*

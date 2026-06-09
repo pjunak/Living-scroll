@@ -1,5 +1,4 @@
----
-name: Sprite
+---name: Sprite
 size: Medium
 type: Medium or Small Humanoid
 alignment: Neutral
@@ -17,16 +16,42 @@ cr: 1 (XP 200; PB +2)
 traits: []
 actions:
 - name: Shortsword
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Piercing damage
-    plus 7 (2d6) Poison damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 2
+  - type: poison
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+  type: utility
 - name: Hand Crossbow
-  description: 'Ranged Attack Roll: +4, range 30/120 ft. Hit: 5 (1d6 + 2) Piercing
-    damage plus 7 (2d6) Poison damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 2
+  - type: poison
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+  type: utility
 - name: Cunning Action
   description: The spy takes the Dash, Disengage, or Hide action.
----
 
+---
 # Sprite
 
 *Medium or Small Humanoid, Neutral*
+
+### Actions
+
+**Shortsword.** Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Piercing damage plus 7 (2d6) Poison damage.
+
+**Hand Crossbow.** Ranged Attack Roll: +4, range 30/120 ft. Hit: 5 (1d6 + 2) Piercing damage plus 7 (2d6) Poison damage.
 

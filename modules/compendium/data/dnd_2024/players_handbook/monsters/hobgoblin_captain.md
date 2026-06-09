@@ -1,5 +1,4 @@
----
-name: Hobgoblin Captain
+---name: Hobgoblin Captain
 size: Medium
 type: Medium Fey (Goblinoid)
 alignment: Lawful Evil
@@ -24,14 +23,40 @@ actions:
   description: The hobgoblin makes two attacks, using Greatsword or Longbow in any
     combination.
 - name: Greatsword
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 9 (2d6 + 2) Slashing damage
-    plus 3 (1d6) Poison damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 6
+      bonus: 2
+  - type: poison
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
+  type: utility
 - name: Longbow
-  description: 'Ranged Attack Roll: +4, range 150/600 ft. Hit: 6 (1d8 + 2) Piercing
-    damage plus 5 (2d4) Poison damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 8
+      bonus: 2
+  - type: poison
+    base:
+      dice: 2
+      die: 4
+      bonus: 0
+  type: utility
 
+---
 # Hobgoblin Captain
 
 *Medium Fey (Goblinoid), Lawful Evil*
+
+### Actions
+
+**Greatsword.** Melee Attack Roll: +4, reach 5 ft. Hit: 9 (2d6 + 2) Slashing damage plus 3 (1d6) Poison damage.
+
+**Longbow.** Ranged Attack Roll: +4, range 150/600 ft. Hit: 6 (1d8 + 2) Piercing damage plus 5 (2d4) Poison damage.
 

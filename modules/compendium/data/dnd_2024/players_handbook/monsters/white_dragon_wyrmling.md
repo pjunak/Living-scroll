@@ -1,5 +1,4 @@
----
-name: White Dragon Wyrmling
+---name: White Dragon Wyrmling
 size: Medium
 type: Medium Dragon (Chromatic)
 alignment: Chaotic Evil
@@ -25,14 +24,39 @@ actions:
 - name: Multiattack
   description: The dragon makes two Rend attacks.
 - name: Rend
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 6 (1d8 + 2) Slashing damage
-    plus 2 (1d4) Cold damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 8
+      bonus: 2
+  - type: cold
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
+  type: utility
 - name: "Cold Breath (Recharge 5\u20136)"
-  description: 'Constitution Saving Throw: DC 12, each creature in a 15-foot Cone.
-    Failure: 22 (5d8) Cold damage. Success: Half damage.'
----
+  type: save
+  ability: con
+  dc: 12
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: cold
+    base:
+      dice: 5
+      die: 8
+      bonus: 0
 
+---
 # White Dragon Wyrmling
 
 *Medium Dragon (Chromatic), Chaotic Evil*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +4, reach 5 ft. Hit: 6 (1d8 + 2) Slashing damage plus 2 (1d4) Cold damage.
+
+**Cold Breath (Recharge 5–6).** Constitution Saving Throw: DC 12, each creature in a 15-foot Cone. Failure: 22 (5d8) Cold damage. Success: Half damage.
 

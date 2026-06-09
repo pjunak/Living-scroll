@@ -1,5 +1,4 @@
----
-name: Regenerate
+---name: Regenerate
 type: spell
 level: 7
 school: Transmutation
@@ -19,6 +18,13 @@ classes:
 - Druid
 id: spell:regenerate
 material_price: ''
+actions:
+- type: heal
+  healing:
+    base:
+      dice: 4
+      die: 8
+      bonus: 0
 ---
 # Regenerate
 *7th-Level Transmutation (Bard, Cleric, Druid)*

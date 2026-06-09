@@ -1,5 +1,4 @@
----
-name: Wrathful Smite
+---name: Wrathful Smite
 type: spell
 level: 1
 school: Necromancy
@@ -16,6 +15,21 @@ classes:
 - Paladin
 id: spell:wrathful-smite
 material_price: ''
+actions:
+- type: save
+  ability: wis
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: necrotic
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: spell_level
 ---
 # Wrathful Smite
 *1st-Level Necromancy (Paladin)*

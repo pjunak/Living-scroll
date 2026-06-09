@@ -1,5 +1,4 @@
----
-name: Sylune's Viper
+---name: Sylune's Viper
 type: spell
 level: 3
 school: Conjuration
@@ -18,6 +17,18 @@ classes:
 - Wizard
 id: spell:sylune-s-viper
 material_price: ''
+actions:
+- type: attack
+  damage:
+  - type: force
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: spell_level
 ---
 # Sylune's Viper
 *3rd-Level Conjuration (Druid, Wizard)*

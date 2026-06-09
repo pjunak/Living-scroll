@@ -1,5 +1,4 @@
----
-name: Conjure Celestial
+---name: Conjure Celestial
 type: spell
 level: 7
 school: Conjuration
@@ -16,6 +15,17 @@ classes:
 - Cleric
 id: spell:conjure-celestial
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: radiant
+    base:
+      dice: 6
+      die: 12
+      bonus: 0
 ---
 # Conjure Celestial
 *7th-Level Conjuration (Cleric)*

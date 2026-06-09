@@ -1,5 +1,4 @@
----
-name: Skeletons
+---name: Skeletons
 size: Tiny
 type: Tiny Aberration
 alignment: Chaotic Neutral
@@ -22,10 +21,20 @@ traits:
     effects.
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Piercing damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 2
+  type: utility
 
+---
 # Skeletons
 
 *Tiny Aberration, Chaotic Neutral*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +4, reach 5 ft. Hit: 5 (1d6 + 2) Piercing damage.
 

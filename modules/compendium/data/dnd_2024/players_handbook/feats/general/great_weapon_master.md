@@ -1,12 +1,13 @@
----
-name: Great Weapon Master
+---name: Great Weapon Master
 type: feat
 category: general
-prerequisite: "Level 4+, Strength 13+"
+prerequisite: Level 4+, Strength 13+
 id: feat:great-weapon-master
-attribute_increase: ['STR']
+attribute_increase:
+- STR
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 4+, Strength 13+*

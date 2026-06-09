@@ -1,5 +1,4 @@
----
-name: Owlbear
+---name: Owlbear
 size: Large
 type: Large Celestial
 alignment: Chaotic Good
@@ -17,11 +16,25 @@ cr: 2 (XP 450; PB +2)
 traits: []
 actions:
 - name: Hooves
-  description: 'Melee Attack Roll: +6, reach 5 ft. Hit: 7 (1d6 + 4) Bludgeoning damage
-    plus 5 (2d4) Radiant damage.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 6
+      bonus: 4
+  - type: radiant
+    base:
+      dice: 2
+      die: 4
+      bonus: 0
+  type: utility
 
+---
 # Owlbear
 
 *Large Celestial, Chaotic Good*
+
+### Actions
+
+**Hooves.** Melee Attack Roll: +6, reach 5 ft. Hit: 7 (1d6 + 4) Bludgeoning damage plus 5 (2d4) Radiant damage.
 

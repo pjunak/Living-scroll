@@ -1,5 +1,4 @@
----
-name: Acid Arrow
+---name: Acid Arrow
 type: spell
 level: 2
 school: Evocation
@@ -17,6 +16,18 @@ classes:
 - Wizard
 id: spell:acid-arrow
 material_price: ''
+actions:
+- type: attack
+  damage:
+  - type: acid
+    base:
+      dice: 4
+      die: 4
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 4
+      mode: spell_level
 ---
 # Acid Arrow
 *2nd-Level Evocation (Wizard)*

@@ -1,5 +1,4 @@
----
-name: Wish
+---name: Wish
 type: spell
 level: 9
 school: Conjuration
@@ -16,6 +15,17 @@ classes:
 - Wizard
 id: spell:wish
 material_price: ''
+actions:
+- type: save
+  ability: fai
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: necrotic
+    base:
+      dice: 1
+      die: 10
+      bonus: 0
 ---
 # Wish
 *9th-Level Conjuration (Sorcerer, Wizard)*

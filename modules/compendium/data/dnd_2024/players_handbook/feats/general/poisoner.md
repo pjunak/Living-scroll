@@ -1,13 +1,16 @@
----
-name: Poisoner
+---name: Poisoner
 type: feat
 category: general
-prerequisite: "Level 4+"
+prerequisite: Level 4+
 id: feat:poisoner
-attribute_increase: ['DEX', 'INT']
+attribute_increase:
+- DEX
+- INT
 proficiency:
-  tools: ["Poisoner's Kit"]
+  tools:
+  - Poisoner's Kit
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 4+*

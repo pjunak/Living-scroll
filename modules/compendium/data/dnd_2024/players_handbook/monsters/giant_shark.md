@@ -1,5 +1,4 @@
----
-name: Giant Shark
+---name: Giant Shark
 size: Large
 type: Large Beast
 alignment: Unaligned
@@ -23,15 +22,33 @@ traits:
     the location of any other creature in contact with the same web.
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Piercing damage
-    plus 7 (2d6) Poison damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 8
+      bonus: 3
+  - type: poison
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+  type: utility
 - name: "Web (Recharge 5\u20136)"
-  description: 'Dexterity Saving Throw: DC 13, one creature the spider can see within
-    60 feet. Failure: The target has the Restrained condition until the web is destroyed
-    (AC 10; HP 5; Vulnerability to Fire damage; Immunity to Poison and Psychic damage).'
----
+  type: save
+  ability: dex
+  dc: 13
+  on_pass: none
+  on_fail: full
 
+---
 # Giant Shark
 
 *Large Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Piercing damage plus 7 (2d6) Poison damage.
+
+**Web (Recharge 5–6).** Dexterity Saving Throw: DC 13, one creature the spider can see within 60 feet. Failure: The target has the Restrained condition until the web is destroyed (AC 10; HP 5; Vulnerability to Fire damage; Immunity to Poison and Psychic damage).
 

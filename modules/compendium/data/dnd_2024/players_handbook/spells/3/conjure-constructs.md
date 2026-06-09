@@ -1,5 +1,4 @@
----
-name: Conjure Constructs
+---name: Conjure Constructs
 type: spell
 level: 3
 school: Conjuration
@@ -17,6 +16,17 @@ classes:
 - Wizard
 id: spell:conjure-constructs
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: force
+    base:
+      dice: 3
+      die: 6
+      bonus: 0
 ---
 # Conjure Constructs
 *3rd-Level Conjuration (Wizard)*

@@ -1,5 +1,4 @@
----
-name: Ogre
+---name: Ogre
 size: Large
 type: Large Fiend
 alignment: Lawful Evil
@@ -25,12 +24,26 @@ actions:
   description: The oni makes two Claw or Nightmare Ray attacks. It can replace one
     attack with a use of Spellcasting.
 - name: Claw
-  description: 'Melee Attack Roll: +7, reach 10 ft. Hit: 10 (1d12 + 4) Slashing damage
-    plus 9 (2d8) Necrotic damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 12
+      bonus: 4
+  - type: necrotic
+    base:
+      dice: 2
+      die: 8
+      bonus: 0
+  type: utility
 - name: Nightmare Ray
-  description: "Ranged Attack Roll: +5, range 60 ft. Hit: 9 (2d6 + 2) Psychic damage,\
-    \ and the target has the Frightened condition until the start of the oni\u2019\
-    s next turn."
+  damage:
+  - type: psychic
+    base:
+      dice: 2
+      die: 6
+      bonus: 2
+  type: utility
 - name: Shape-Shift
   description: "The oni shape-shifts into a Small or Medium Humanoid or a Large Giant,\
     \ or it returns to its true form. Other than its size, its game statistics are\
@@ -43,9 +56,15 @@ actions:
 - name: Invisibility
   description: The oni casts Invisibility on itself, requiring no spell components
     and using the same spellcasting ability as Spellcasting.
----
 
+---
 # Ogre
 
 *Large Fiend, Lawful Evil*
+
+### Actions
+
+**Claw.** Melee Attack Roll: +7, reach 10 ft. Hit: 10 (1d12 + 4) Slashing damage plus 9 (2d8) Necrotic damage.
+
+**Nightmare Ray.** Ranged Attack Roll: +5, range 60 ft. Hit: 9 (2d6 + 2) Psychic damage, and the target has the Frightened condition until the start of the oni’s next turn.
 

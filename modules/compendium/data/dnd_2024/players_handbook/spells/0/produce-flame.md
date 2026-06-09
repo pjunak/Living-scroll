@@ -1,5 +1,4 @@
----
-name: Produce Flame
+---name: Produce Flame
 type: spell
 level: 0
 school: Conjuration
@@ -16,6 +15,18 @@ classes:
 - Druid
 id: spell:produce-flame
 material_price: ''
+actions:
+- type: attack
+  damage:
+  - type: fire
+    base:
+      dice: 1
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 8
+      mode: character_level
 ---
 # Produce Flame
 *Conjuration Cantrip (Druid)*

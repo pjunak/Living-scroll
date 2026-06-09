@@ -1,5 +1,4 @@
----
-name: Bronze Dragon Wyrmling
+---name: Bronze Dragon Wyrmling
 size: Medium
 type: Medium Dragon (Metallic)
 alignment: Lawful Good
@@ -23,17 +22,42 @@ actions:
 - name: Multiattack
   description: The dragon makes two Rend attacks.
 - name: Rend
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 8 (1d10 + 3) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 10
+      bonus: 3
+  type: utility
 - name: "Lightning Breath (Recharge 5\u20136)"
-  description: 'Dexterity Saving Throw: DC 12, each creature in a 40-foot-long, 5-foot-wide
-    Line. Failure: 16 (3d10) Lightning damage. Success: Half damage.'
+  type: save
+  ability: dex
+  dc: 12
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: lightning
+    base:
+      dice: 3
+      die: 10
+      bonus: 0
 - name: Repulsion Breath
-  description: 'Strength Saving Throw: DC 12, each creature in a 30-foot Cone. Failure:
-    The target is pushed up to 30 feet straight away from the dragon and has the Prone
-    condition.'
----
+  type: save
+  ability: str
+  dc: 12
+  on_pass: none
+  on_fail: full
 
+---
 # Bronze Dragon Wyrmling
 
 *Medium Dragon (Metallic), Lawful Good*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +5, reach 5 ft. Hit: 8 (1d10 + 3) Slashing damage.
+
+**Lightning Breath (Recharge 5–6).** Dexterity Saving Throw: DC 12, each creature in a 40-foot-long, 5-foot-wide Line. Failure: 16 (3d10) Lightning damage. Success: Half damage.
+
+**Repulsion Breath.** Strength Saving Throw: DC 12, each creature in a 30-foot Cone. Failure: The target is pushed up to 30 feet straight away from the dragon and has the Prone condition.
 

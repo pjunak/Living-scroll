@@ -1,5 +1,4 @@
----
-name: Magic Initiate
+---name: Magic Initiate
 type: feat
 category: origin
 prerequisite: null
@@ -7,6 +6,7 @@ id: feat:magic-initiate
 attribute_increase: null
 proficiency: null
 expertise: null
+repeatable: true
 ---
 
 You gain the following benefits.

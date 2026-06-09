@@ -1,5 +1,4 @@
----
-name: Otyugh
+---name: Otyugh
 size: Large
 type: Large Monstrosity
 alignment: Unaligned
@@ -19,10 +18,20 @@ actions:
 - name: Multiattack
   description: The owlbear makes two Rend attacks.
 - name: Rend
-  description: 'Melee Attack Roll: +7, reach 5 ft. Hit: 14 (2d8 + 5) Slashing damage.'
----
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 8
+      bonus: 5
+  type: utility
 
+---
 # Otyugh
 
 *Large Monstrosity, Unaligned*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +7, reach 5 ft. Hit: 14 (2d8 + 5) Slashing damage.
 

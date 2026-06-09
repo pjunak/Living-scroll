@@ -1,5 +1,4 @@
----
-name: Earth Elemental
+---name: Earth Elemental
 size: Large
 type: Large Elemental (Genie)
 alignment: Neutral
@@ -36,10 +35,26 @@ actions:
   description: The efreeti makes three attacks, using Heated Blade or Hurl Flame in
     any combination.
 - name: Heated Blade
-  description: 'Melee Attack Roll: +10, reach 5 ft. Hit: 13 (2d6 + 6) Slashing damage
-    plus 13 (2d12) Fire damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 6
+      bonus: 6
+  - type: fire
+    base:
+      dice: 2
+      die: 12
+      bonus: 0
+  type: utility
 - name: Hurl Flame
-  description: 'Ranged Attack Roll: +8, range 120 ft. Hit: 24 (7d6) Fire damage.'
+  damage:
+  - type: fire
+    base:
+      dice: 7
+      die: 6
+      bonus: 0
+  type: utility
 - name: Spellcasting
   description: 'The efreeti casts one of the following spells, requiring no Material
     components and using Charisma as the spellcasting ability (spell save DC 16):'
@@ -48,9 +63,15 @@ actions:
 - name: '1/Day Each:'
   description: Gaseous Form, Invisibility, Major Image, Plane Shift, Tongues, Wall
     of Fire (level 7 version)
----
 
+---
 # Earth Elemental
 
 *Large Elemental (Genie), Neutral*
+
+### Actions
+
+**Heated Blade.** Melee Attack Roll: +10, reach 5 ft. Hit: 13 (2d6 + 6) Slashing damage plus 13 (2d12) Fire damage.
+
+**Hurl Flame.** Ranged Attack Roll: +8, range 120 ft. Hit: 24 (7d6) Fire damage.
 

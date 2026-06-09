@@ -1,5 +1,4 @@
----
-name: Cloaker
+---name: Cloaker
 size: Huge
 type: Huge Giant
 alignment: Neutral
@@ -21,11 +20,26 @@ actions:
     in any combination. It can replace one attack with a use of Spellcasting to cast
     Fog Cloud.
 - name: Thunderous Mace
-  description: 'Melee Attack Roll: +12, reach 10 ft. Hit: 21 (3d8 + 8) Bludgeoning
-    damage plus 7 (2d6) Thunder damage.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 3
+      die: 8
+      bonus: 8
+  - type: thunder
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+  type: utility
 - name: Thundercloud
-  description: 'Ranged Attack Roll: +12, range 240 ft. Hit: 18 (3d6 + 8) Thunder damage,
-    and the target has the Incapacitated condition until the end of its next turn.'
+  damage:
+  - type: thunder
+    base:
+      dice: 3
+      die: 6
+      bonus: 8
+  type: utility
 - name: Spellcasting
   description: 'The giant casts one of the following spells, requiring no Material
     components and using Charisma as the spellcasting ability (spell save DC 15):'
@@ -36,9 +50,15 @@ actions:
 - name: Misty Step
   description: The giant casts the Misty Step spell, using the same spellcasting ability
     as Spellcasting.
----
 
+---
 # Cloaker
 
 *Huge Giant, Neutral*
+
+### Actions
+
+**Thunderous Mace.** Melee Attack Roll: +12, reach 10 ft. Hit: 21 (3d8 + 8) Bludgeoning damage plus 7 (2d6) Thunder damage.
+
+**Thundercloud.** Ranged Attack Roll: +12, range 240 ft. Hit: 18 (3d6 + 8) Thunder damage, and the target has the Incapacitated condition until the end of its next turn.
 

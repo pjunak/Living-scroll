@@ -1,5 +1,4 @@
----
-name: Insect Plague
+---name: Insect Plague
 type: spell
 level: 5
 school: Conjuration
@@ -19,6 +18,21 @@ classes:
 - Sorcerer
 id: spell:insect-plague
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: piercing
+    base:
+      dice: 4
+      die: 10
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 10
+      mode: spell_level
 ---
 # Insect Plague
 *5th-Level Conjuration (Cleric, Druid, Sorcerer)*

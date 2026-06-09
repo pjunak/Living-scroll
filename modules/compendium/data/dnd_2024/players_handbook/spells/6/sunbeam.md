@@ -1,5 +1,4 @@
----
-name: Sunbeam
+---name: Sunbeam
 type: spell
 level: 6
 school: Evocation
@@ -20,6 +19,17 @@ classes:
 - Wizard
 id: spell:sunbeam
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: radiant
+    base:
+      dice: 6
+      die: 8
+      bonus: 0
 ---
 # Sunbeam
 *6th-Level Evocation (Cleric, Druid, Sorcerer, Wizard)*

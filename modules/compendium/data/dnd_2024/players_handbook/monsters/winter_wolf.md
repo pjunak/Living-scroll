@@ -1,5 +1,4 @@
----
-name: Winter Wolf
+---name: Winter Wolf
 size: Large
 type: Large Fey
 alignment: Neutral Evil
@@ -17,12 +16,20 @@ cr: 1/2 (XP 100; PB +2)
 traits: []
 actions:
 - name: Bite
-  description: "Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Piercing damage,\
-    \ and the next attack roll made against the target before the start of the worg\u2019\
-    s next turn has Advantage."
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 8
+      bonus: 3
+  type: utility
 
+---
 # Winter Wolf
 
 *Large Fey, Neutral Evil*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Piercing damage, and the next attack roll made against the target before the start of the worg’s next turn has Advantage.
 

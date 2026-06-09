@@ -1,5 +1,4 @@
----
-name: Dream
+---name: Dream
 type: spell
 level: 5
 school: Illusion
@@ -19,6 +18,17 @@ classes:
 - Wizard
 id: spell:dream
 material_price: ''
+actions:
+- type: save
+  ability: wis
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 3
+      die: 6
+      bonus: 0
 ---
 # Dream
 *5th-Level Illusion (Bard, Warlock, Wizard)*

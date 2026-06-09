@@ -1,5 +1,4 @@
----
-name: Vampires
+---name: Vampires
 size: Medium
 type: Medium Plant
 alignment: Unaligned
@@ -21,10 +20,20 @@ actions:
 - name: Multiattack
   description: The fungus makes two Rotting Touch attacks.
 - name: Rotting Touch
-  description: 'Melee Attack Roll: +2, reach 10 ft. Hit: 4 (1d8) Necrotic damage.'
----
+  damage:
+  - type: necrotic
+    base:
+      dice: 1
+      die: 8
+      bonus: 0
+  type: utility
 
+---
 # Vampires
 
 *Medium Plant, Unaligned*
+
+### Actions
+
+**Rotting Touch.** Melee Attack Roll: +2, reach 10 ft. Hit: 4 (1d8) Necrotic damage.
 

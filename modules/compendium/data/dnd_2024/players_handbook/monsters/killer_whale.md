@@ -1,5 +1,4 @@
----
-name: Killer Whale
+---name: Killer Whale
 size: Large
 type: Large Beast
 alignment: Unaligned
@@ -26,14 +25,28 @@ actions:
   description: The lion makes two Rend attacks. It can replace one attack with a use
     of Roar.
 - name: Rend
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 8
+      bonus: 3
+  type: utility
 - name: Roar
-  description: "Wisdom Saving Throw: DC 11, one creature within 15 feet. Failure:\
-    \ The target has the Frightened condition until the start of the lion\u2019s next\
-    \ turn."
----
+  type: save
+  ability: wis
+  dc: 11
+  on_pass: none
+  on_fail: full
 
+---
 # Killer Whale
 
 *Large Beast, Unaligned*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Slashing damage.
+
+**Roar.** Wisdom Saving Throw: DC 11, one creature within 15 feet. Failure: The target has the Frightened condition until the start of the lion’s next turn.
 

@@ -1,5 +1,4 @@
----
-name: Prismatic Spray
+---name: Prismatic Spray
 type: spell
 level: 7
 school: Evocation
@@ -18,6 +17,17 @@ classes:
 - Wizard
 id: spell:prismatic-spray
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: fire
+    base:
+      dice: 12
+      die: 6
+      bonus: 0
 ---
 # Prismatic Spray
 *7th-Level Evocation (Bard, Sorcerer, Wizard)*

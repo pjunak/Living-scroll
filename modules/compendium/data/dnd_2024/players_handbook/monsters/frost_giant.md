@@ -1,5 +1,4 @@
----
-name: Frost Giant
+---name: Frost Giant
 size: Medium
 type: Medium Elemental
 alignment: Chaotic Evil
@@ -24,10 +23,20 @@ actions:
 - name: Multiattack
   description: The gargoyle makes two Claw attacks.
 - name: Claw
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 7 (2d4 + 2) Slashing damage.'
----
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 4
+      bonus: 2
+  type: utility
 
+---
 # Frost Giant
 
 *Medium Elemental, Chaotic Evil*
+
+### Actions
+
+**Claw.** Melee Attack Roll: +4, reach 5 ft. Hit: 7 (2d4 + 2) Slashing damage.
 

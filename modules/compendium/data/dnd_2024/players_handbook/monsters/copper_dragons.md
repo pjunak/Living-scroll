@@ -1,5 +1,4 @@
----
-name: Copper Dragons
+---name: Copper Dragons
 size: Medium
 type: Medium Celestial
 alignment: Lawful Good
@@ -24,14 +23,25 @@ traits:
     \ creatures can communicate with it telepathically only if it allows them."
 actions:
 - name: Bite
-  description: "Melee Attack Roll: +7, reach 5 ft. Hit: 11 (1d12 + 5) Piercing damage,\
-    \ and the target has the Poisoned condition until the end of the couatl\u2019\
-    s next turn."
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 12
+      bonus: 5
+  type: utility
 - name: Constrict
-  description: 'Strength Saving Throw: DC 15, one Medium or smaller creature the couatl
-    can see within 5 feet. Failure: 8 (1d6 + 5) Bludgeoning damage. The target has
-    the Grappled condition (escape DC 13), and it has the Restrained condition until
-    the grapple ends.'
+  type: save
+  ability: str
+  dc: 15
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 6
+      bonus: 5
 - name: Spellcasting
   description: 'The couatl casts one of the following spells, requiring no spell components
     and using Wisdom as the spellcasting ability (spell save DC 15):'
@@ -44,9 +54,15 @@ actions:
 - name: Divine Aid (2/Day)
   description: The couatl casts Bless, Lesser Restoration, or Sanctuary, requiring
     no spell components and using the same spellcasting ability as Spellcasting.
----
 
+---
 # Copper Dragons
 
 *Medium Celestial, Lawful Good*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +7, reach 5 ft. Hit: 11 (1d12 + 5) Piercing damage, and the target has the Poisoned condition until the end of the couatl’s next turn.
+
+**Constrict.** Strength Saving Throw: DC 15, one Medium or smaller creature the couatl can see within 5 feet. Failure: 8 (1d6 + 5) Bludgeoning damage. The target has the Grappled condition (escape DC 13), and it has the Restrained condition until the grapple ends.
 

@@ -1,5 +1,4 @@
----
-name: Wall of Thorns
+---name: Wall of Thorns
 type: spell
 level: 6
 school: Conjuration
@@ -17,6 +16,17 @@ classes:
 - Druid
 id: spell:wall-of-thorns
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: piercing
+    base:
+      dice: 7
+      die: 8
+      bonus: 0
 ---
 # Wall of Thorns
 *6th-Level Conjuration (Druid)*

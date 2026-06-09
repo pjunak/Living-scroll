@@ -1,5 +1,4 @@
----
-name: Deer
+---name: Deer
 size: Large
 type: Large Beast
 alignment: Unaligned
@@ -21,11 +20,20 @@ traits:
     \ ally doesn\u2019t have the Incapacitated condition."
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 8 (1d10 + 3) Piercing damage.
-    If the target is a Large or smaller creature, it has the Prone condition.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 10
+      bonus: 3
+  type: utility
 
+---
 # Deer
 
 *Large Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +5, reach 5 ft. Hit: 8 (1d10 + 3) Piercing damage. If the target is a Large or smaller creature, it has the Prone condition.
 

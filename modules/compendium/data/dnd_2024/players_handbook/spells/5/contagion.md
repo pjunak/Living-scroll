@@ -1,5 +1,4 @@
----
-name: Contagion
+---name: Contagion
 type: spell
 level: 5
 school: Necromancy
@@ -17,6 +16,17 @@ classes:
 - Druid
 id: spell:contagion
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: necrotic
+    base:
+      dice: 11
+      die: 8
+      bonus: 0
 ---
 # Contagion
 *5th-Level Necromancy (Cleric, Druid)*

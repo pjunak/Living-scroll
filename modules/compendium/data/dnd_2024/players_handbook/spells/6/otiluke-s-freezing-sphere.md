@@ -1,5 +1,4 @@
----
-name: Otiluke's Freezing Sphere
+---name: Otiluke's Freezing Sphere
 type: spell
 level: 6
 school: Evocation
@@ -18,6 +17,21 @@ classes:
 - Wizard
 id: spell:otiluke-s-freezing-sphere
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: cold
+    base:
+      dice: 10
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: spell_level
 ---
 # Otiluke's Freezing Sphere
 *6th-Level Evocation (Sorcerer, Wizard)*

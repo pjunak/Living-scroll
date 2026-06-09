@@ -1,5 +1,4 @@
----
-name: Arms of Hadar
+---name: Arms of Hadar
 type: spell
 level: 1
 school: Conjuration
@@ -16,6 +15,21 @@ classes:
 - Warlock
 id: spell:arms-of-hadar
 material_price: ''
+actions:
+- type: save
+  ability: str
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: necrotic
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: spell_level
 ---
 # Arms of Hadar
 *1st-Level Conjuration (Warlock)*

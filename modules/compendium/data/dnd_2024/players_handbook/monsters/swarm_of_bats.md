@@ -1,5 +1,4 @@
----
-name: Swarm of Bats
+---name: Swarm of Bats
 size: Medium
 type: Medium Swarm of Tiny Beasts
 alignment: Unaligned
@@ -29,11 +28,25 @@ traits:
     \ swarm can\u2019t regain Hit Points or gain Temporary Hit Points."
 actions:
 - name: Bites
-  description: 'Melee Attack Roll: +3, reach 5 ft. Hit: 6 (2d4 + 1) Poison damage,
-    or 3 (1d4 + 1) Poison damage if the swarm is Bloodied.'
----
+  damage:
+  - type: poison
+    base:
+      dice: 2
+      die: 4
+      bonus: 1
+  - type: poison
+    base:
+      dice: 1
+      die: 4
+      bonus: 1
+  type: utility
 
+---
 # Swarm of Bats
 
 *Medium Swarm of Tiny Beasts, Unaligned*
+
+### Actions
+
+**Bites.** Melee Attack Roll: +3, reach 5 ft. Hit: 6 (2d4 + 1) Poison damage, or 3 (1d4 + 1) Poison damage if the swarm is Bloodied.
 

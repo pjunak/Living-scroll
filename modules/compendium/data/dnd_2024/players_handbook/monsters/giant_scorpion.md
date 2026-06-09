@@ -1,5 +1,4 @@
----
-name: Giant Scorpion
+---name: Giant Scorpion
 size: Huge
 type: Huge Beast
 alignment: Unaligned
@@ -21,11 +20,20 @@ actions:
 - name: Multiattack
   description: The shark makes two Bite attacks.
 - name: Bite
-  description: "Melee Attack Roll: +9 (with Advantage if the target doesn\u2019t have\
-    \ all its Hit Points), reach 5 ft. Hit: 22 (3d10 + 6) Piercing damage."
----
+  damage:
+  - type: piercing
+    base:
+      dice: 3
+      die: 10
+      bonus: 6
+  type: utility
 
+---
 # Giant Scorpion
 
 *Huge Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +9 (with Advantage if the target doesn’t have all its Hit Points), reach 5 ft. Hit: 22 (3d10 + 6) Piercing damage.
 

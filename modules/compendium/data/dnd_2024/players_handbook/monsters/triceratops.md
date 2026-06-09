@@ -1,5 +1,4 @@
----
-name: Triceratops
+---name: Triceratops
 size: Huge
 type: Huge Beast (Dinosaur)
 alignment: Unaligned
@@ -19,16 +18,30 @@ actions:
 - name: Multiattack
   description: The tyrannosaurus makes one Bite attack and one Tail attack.
 - name: Bite
-  description: "Melee Attack Roll: +10, reach 10 ft. Hit: 33 (4d12 + 7) Piercing damage.\
-    \ If the target is a Large or smaller creature, it has the Grappled condition\
-    \ (escape DC 17). While Grappled, the target has the Restrained condition and\
-    \ can\u2019t be targeted by the tyrannosaurus\u2019s Tail."
+  damage:
+  - type: piercing
+    base:
+      dice: 4
+      die: 12
+      bonus: 7
+  type: utility
 - name: Tail
-  description: 'Melee Attack Roll: +10, reach 15 ft. Hit: 25 (4d8 + 7) Bludgeoning
-    damage. If the target is a Huge or smaller creature, it has the Prone condition.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 4
+      die: 8
+      bonus: 7
+  type: utility
 
+---
 # Triceratops
 
 *Huge Beast (Dinosaur), Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +10, reach 10 ft. Hit: 33 (4d12 + 7) Piercing damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC 17). While Grappled, the target has the Restrained condition and can’t be targeted by the tyrannosaurus’s Tail.
+
+**Tail.** Melee Attack Roll: +10, reach 15 ft. Hit: 25 (4d8 + 7) Bludgeoning damage. If the target is a Huge or smaller creature, it has the Prone condition.
 

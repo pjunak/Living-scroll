@@ -44,6 +44,20 @@ progression:
 id: class:wizard
 multiclass_requirements:
   INT: 13
+management:
+  - id: spellbook
+    label: "Spellbook"
+    type: spell_collection
+    source: class_spell_list
+    initial_count: 6
+    gain_per_level: 2
+    description: "Spells transcribed into your spellbook."
+  - id: prepared
+    label: "Prepared Spells"
+    type: spell_preparation
+    source: spellbook
+    max_formula: "INT + level"
+    changeable_on: long_rest
 ---
 
 Wizards are defined by their exhaustive study of magic's inner workings. They cast spells of explosive fire, arcing lightning, subtle deception, and spectacular transformations. Their magic conjures monsters from other planes of existence, glimpses the future, or forms protective barriers. Their mightiest spells change one substance into another, call meteors from the sky, or open portals to other worlds.

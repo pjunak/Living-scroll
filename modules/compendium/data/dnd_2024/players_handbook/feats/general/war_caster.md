@@ -1,12 +1,15 @@
----
-name: War Caster
+---name: War Caster
 type: feat
 category: general
-prerequisite: "Level 4+, Spellcasting or Pact Magic Feature"
+prerequisite: Level 4+, Spellcasting or Pact Magic Feature
 id: feat:war-caster
-attribute_increase: ['INT', 'WIS', 'CHA']
+attribute_increase:
+- INT
+- WIS
+- CHA
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 4+, Spellcasting or Pact Magic Feature*

@@ -1,0 +1,54 @@
+{
+  "id": "53368616-fd7d-4f17-a919-8a0763b48192",
+  "modifiers": {
+    "Boon: Blessing of the Archmage": false,
+    "Feat: Elemental Adept": false,
+    "Feat: Resilient (Constitution)": false,
+    "Feat: Spell Sniper": false,
+    "Feat: War Caster": false,
+    "Agonizing Blast": false,
+    "Flame Mastery": false,
+    "Grasp of Hadar": false,
+    "Metamagic: Empowered Spell": false,
+    "Metamagic: Quickened Spell": false,
+    "Repelling Blast": false,
+    "Storm Channeling": false
+  },
+  "data": {
+    "version": "1.0",
+    "id": "5fcae2bc-2e45-45b8-bec7-e33da22a941f",
+    "identity": {
+      "name": "Test",
+      "ancestry": "Dwarf",
+      "ancestry_subtype": "",
+      "background": "Charlatan",
+      "alignment": "",
+      "player_name": "",
+      "portrait_path": "",
+      "xp": 0,
+      "level_cap": 20
+    },
+    "base_stats": {
+      "STR": 10,
+      "DEX": 9,
+      "CON": 14,
+      "INT": 10,
+      "WIS": 10,
+      "CHA": 10
+    },
+    "classes": [
+      {
+        "class_name": "Artificer",
+        "level": 1,
+        "subclass": null,
+        "feature_choices": {}
+      }
+    ],
+    "background_choices": {},
+    "equipment": [],
+    "notes": {},
+    "hp_mode": "average",
+    "hp_rolls": {},
+    "management_state": {}
+  }
+}

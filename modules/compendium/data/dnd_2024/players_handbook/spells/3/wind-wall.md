@@ -1,5 +1,4 @@
----
-name: Wind Wall
+---name: Wind Wall
 type: spell
 level: 3
 school: Evocation
@@ -18,6 +17,17 @@ classes:
 - Ranger
 id: spell:wind-wall
 material_price: ''
+actions:
+- type: save
+  ability: str
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 4
+      die: 8
+      bonus: 0
 ---
 # Wind Wall
 *3rd-Level Evocation (Druid, Ranger)*

@@ -1,5 +1,4 @@
----
-name: Spirit Guardians
+---name: Spirit Guardians
 type: spell
 level: 3
 school: Conjuration
@@ -17,6 +16,21 @@ classes:
 - Cleric
 id: spell:spirit-guardians
 material_price: ''
+actions:
+- type: save
+  ability: wis
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: radiant
+    base:
+      dice: 3
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 8
+      mode: spell_level
 ---
 # Spirit Guardians
 *3rd-Level Conjuration (Cleric)*

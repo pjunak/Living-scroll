@@ -47,13 +47,14 @@ class CharacterStore(QObject):
         """Get the current calculation engine."""
         return self._engine
 
-    def dispatch_update(self, new_sheet: CharacterSheet, new_modifiers: Dict[str, bool]) -> None:
+    def dispatch_update(self, new_sheet: CharacterSheet, new_modifiers: Dict[str, bool], data: Any = None) -> None:
         """
         Request a state change. 
         Replaces direct calls to `library.update_record`.
         """
+        payload_data = data if data is not None else self._record.data
         try:
-            self._library.update_record(self._record.identifier, new_sheet, new_modifiers)
+            self._library.update_record(self._record.identifier, new_sheet, new_modifiers, data=payload_data)
             
             # Reload fresh state
             self._record = self._library.get(self._record.identifier)

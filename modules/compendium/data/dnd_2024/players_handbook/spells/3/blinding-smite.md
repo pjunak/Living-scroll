@@ -1,5 +1,4 @@
----
-name: Blinding Smite
+---name: Blinding Smite
 type: spell
 level: 3
 school: Evocation
@@ -16,6 +15,21 @@ classes:
 - Paladin
 id: spell:blinding-smite
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: radiant
+    base:
+      dice: 3
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 8
+      mode: spell_level
 ---
 # Blinding Smite
 *3rd-Level Evocation (Paladin)*

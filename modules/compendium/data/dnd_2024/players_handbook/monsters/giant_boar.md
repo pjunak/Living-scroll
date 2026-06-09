@@ -1,5 +1,4 @@
----
-name: Giant Boar
+---name: Giant Boar
 size: Small
 type: Small Beast
 alignment: Unaligned
@@ -17,12 +16,20 @@ cr: 1/4 (XP 50; PB +2)
 traits: []
 actions:
 - name: Bite
-  description: "Melee Attack Roll: +4, reach 5 ft. Hit: 4 (1d4 + 2) Piercing damage,\
-    \ and the target has the Poisoned condition until the start of the centipede\u2019\
-    s next turn."
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 4
+      bonus: 2
+  type: utility
 
+---
 # Giant Boar
 
 *Small Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +4, reach 5 ft. Hit: 4 (1d4 + 2) Piercing damage, and the target has the Poisoned condition until the start of the centipede’s next turn.
 

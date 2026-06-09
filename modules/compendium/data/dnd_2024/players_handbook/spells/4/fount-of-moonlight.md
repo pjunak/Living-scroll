@@ -1,5 +1,4 @@
----
-name: Fount of Moonlight
+---name: Fount of Moonlight
 type: spell
 level: 4
 school: Evocation
@@ -17,6 +16,17 @@ classes:
 - Druid
 id: spell:fount-of-moonlight
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: radiant
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
 ---
 # Fount of Moonlight
 *4th-Level Evocation (Bard, Druid)*

@@ -39,7 +39,7 @@ class GlobalSettingsDialog(FramelessWindow):
         layout.setSpacing(16)
 
         heading = QLabel("Application Settings")
-        heading.setStyleSheet("font-size: 20px; font-weight: 600;")
+        heading.setProperty("class", "HeaderLabel")
         layout.addWidget(heading)
 
         # --- Ruleset Selection ---

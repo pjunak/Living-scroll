@@ -77,6 +77,13 @@ progression:
 id: class:cleric
 multiclass_requirements:
   WIS: 13
+management:
+  - id: prepared
+    label: "Prepared Spells"
+    type: spell_preparation
+    source: class_spell_list
+    max_formula: "WIS + level"
+    changeable_on: long_rest
 ---
 
 Clerics draw power from the realms of the gods and harness it to work miracles. Blessed by a deity, a pantheon, or another immortal entity, a Cleric can reach out to the divine magic of the Outer Planes—where gods dwell—and channel it to bolster people and battle foes.

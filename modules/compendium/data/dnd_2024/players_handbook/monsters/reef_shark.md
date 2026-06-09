@@ -1,5 +1,4 @@
----
-name: Reef Shark
+---name: Reef Shark
 size: Large
 type: Large Beast
 alignment: Unaligned
@@ -17,10 +16,20 @@ cr: 1/4 (XP 50; PB +2)
 traits: []
 actions:
 - name: Hooves
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Bludgeoning damage.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 8
+      bonus: 3
+  type: utility
 
+---
 # Reef Shark
 
 *Large Beast, Unaligned*
+
+### Actions
+
+**Hooves.** Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Bludgeoning damage.
 

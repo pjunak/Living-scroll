@@ -1,5 +1,4 @@
----
-name: Troll Limb
+---name: Troll Limb
 size: Large
 type: Large Celestial
 alignment: Lawful Good
@@ -26,9 +25,21 @@ actions:
 - name: Multiattack
   description: The unicorn makes one Hooves attack and one Radiant Horn attack.
 - name: Hooves
-  description: 'Melee Attack Roll: +7, reach 5 ft. Hit: 11 (2d6 + 4) Bludgeoning damage.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 6
+      bonus: 4
+  type: utility
 - name: Radiant Horn
-  description: 'Melee Attack Roll: +7, reach 5 ft. Hit: 9 (1d10 + 4) Radiant damage.'
+  damage:
+  - type: radiant
+    base:
+      dice: 1
+      die: 10
+      bonus: 4
+  type: utility
 - name: Spellcasting
   description: 'The unicorn casts one of the following spells, requiring no spell
     components and using Charisma as the spellcasting ability (spell save DC 14):'
@@ -49,9 +60,15 @@ actions:
     \ of itself. The target gains 10 (3d6) Temporary Hit Points, and its AC increases\
     \ by 2 until the end of the unicorn\u2019s next turn. The unicorn can\u2019t take\
     \ this action again until the start of its next turn."
----
 
+---
 # Troll Limb
 
 *Large Celestial, Lawful Good*
+
+### Actions
+
+**Hooves.** Melee Attack Roll: +7, reach 5 ft. Hit: 11 (2d6 + 4) Bludgeoning damage.
+
+**Radiant Horn.** Melee Attack Roll: +7, reach 5 ft. Hit: 9 (1d10 + 4) Radiant damage.
 

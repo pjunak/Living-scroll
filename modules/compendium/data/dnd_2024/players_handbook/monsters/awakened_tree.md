@@ -1,5 +1,4 @@
----
-name: Awakened Tree
+---name: Awakened Tree
 size: Huge
 type: Huge Plant
 alignment: Neutral
@@ -21,11 +20,20 @@ traits:
   description: Bludgeoning, Piercing
 actions:
 - name: Slam
-  description: 'Melee Attack Roll: +6, reach 10 ft. Hit: 14 (3d6 + 4) Bludgeoning
-    damage.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 3
+      die: 6
+      bonus: 4
+  type: utility
 
+---
 # Awakened Tree
 
 *Huge Plant, Neutral*
+
+### Actions
+
+**Slam.** Melee Attack Roll: +6, reach 10 ft. Hit: 14 (3d6 + 4) Bludgeoning damage.
 

@@ -1,5 +1,4 @@
----
-name: Merrow
+---name: Merrow
 size: Medium
 type: Medium Monstrosity
 alignment: Neutral
@@ -23,22 +22,49 @@ traits:
     made to escape this grapple have Disadvantage.
 actions:
 - name: Bite
-  description: "Melee Attack Roll: +5 (with Advantage if the target is Grappled by\
-    \ the mimic), reach 5 ft. Hit: 7 (1d8 + 3) Piercing damage\u2014or 12 (2d8 + 3)\
-    \ Piercing damage if the target is Grappled by the mimic\u2014plus 4 (1d8) Acid\
-    \ damage."
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 8
+      bonus: 3
+  - type: piercing
+    base:
+      dice: 2
+      die: 8
+      bonus: 3
+  - type: acid
+    base:
+      dice: 1
+      die: 8
+      bonus: 0
+  type: utility
 - name: Pseudopod
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Bludgeoning damage
-    plus 4 (1d8) Acid damage. If the target is a Large or smaller creature, it has
-    the Grappled condition (escape DC 13). Ability checks made to escape this grapple
-    have Disadvantage.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 8
+      bonus: 3
+  - type: acid
+    base:
+      dice: 1
+      die: 8
+      bonus: 0
+  type: utility
 - name: Shape-Shift
   description: "The mimic shape-shifts to resemble a Medium or Small object while\
     \ retaining its game statistics, or it returns to its true blob form. Any equipment\
     \ it is wearing or carrying isn\u2019t transformed."
----
 
+---
 # Merrow
 
 *Medium Monstrosity, Neutral*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +5 (with Advantage if the target is Grappled by the mimic), reach 5 ft. Hit: 7 (1d8 + 3) Piercing damage—or 12 (2d8 + 3) Piercing damage if the target is Grappled by the mimic—plus 4 (1d8) Acid damage.
+
+**Pseudopod.** Melee Attack Roll: +5, reach 5 ft. Hit: 7 (1d8 + 3) Bludgeoning damage plus 4 (1d8) Acid damage. If the target is a Large or smaller creature, it has the Grappled condition (escape DC 13). Ability checks made to escape this grapple have Disadvantage.
 

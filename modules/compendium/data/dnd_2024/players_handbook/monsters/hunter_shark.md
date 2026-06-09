@@ -1,5 +1,4 @@
----
-name: Hunter Shark
+---name: Hunter Shark
 size: Medium
 type: Medium Beast
 alignment: Unaligned
@@ -21,10 +20,20 @@ traits:
     \ ally doesn\u2019t have the Incapacitated condition."
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +2, reach 5 ft. Hit: 3 (1d6) Piercing damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
+  type: utility
 
+---
 # Hunter Shark
 
 *Medium Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +2, reach 5 ft. Hit: 3 (1d6) Piercing damage.
 

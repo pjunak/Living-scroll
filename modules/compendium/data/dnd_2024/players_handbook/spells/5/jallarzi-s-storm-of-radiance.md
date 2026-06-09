@@ -1,5 +1,4 @@
----
-name: Jallarzi's Storm of Radiance
+---name: Jallarzi's Storm of Radiance
 type: spell
 level: 5
 school: Evocation
@@ -18,6 +17,17 @@ classes:
 - Wizard
 id: spell:jallarzi-s-storm-of-radiance
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: radiant
+    base:
+      dice: 2
+      die: 10
+      bonus: 0
 ---
 # Jallarzi's Storm of Radiance
 *5th-Level Evocation (Warlock, Wizard)*

@@ -1,5 +1,4 @@
----
-name: Giant Constrictor Snake
+---name: Giant Constrictor Snake
 size: Medium
 type: Medium Beast
 alignment: Unaligned
@@ -19,12 +18,20 @@ traits:
   description: The crab can breathe air and water.
 actions:
 - name: Claw
-  description: 'Melee Attack Roll: +3, reach 5 ft. Hit: 4 (1d6 + 1) Bludgeoning damage.
-    If the target is a Medium or smaller creature, it has the Grappled condition (escape
-    DC 11) from one of two claws.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 6
+      bonus: 1
+  type: utility
 
+---
 # Giant Constrictor Snake
 
 *Medium Beast, Unaligned*
+
+### Actions
+
+**Claw.** Melee Attack Roll: +3, reach 5 ft. Hit: 4 (1d6 + 1) Bludgeoning damage. If the target is a Medium or smaller creature, it has the Grappled condition (escape DC 11) from one of two claws.
 

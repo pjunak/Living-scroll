@@ -1,5 +1,4 @@
----
-name: Wyvern
+---name: Wyvern
 size: Medium
 type: Medium Elemental
 alignment: Neutral
@@ -27,15 +26,33 @@ actions:
 - name: Multiattack
   description: The xorn makes one Bite attack and three Claw attacks.
 - name: Bite
-  description: 'Melee Attack Roll: +6, reach 5 ft. Hit: 17 (4d6 + 3) Piercing damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 4
+      die: 6
+      bonus: 3
+  type: utility
 - name: Claw
-  description: 'Melee Attack Roll: +6, reach 5 ft. Hit: 8 (1d10 + 3) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 10
+      bonus: 3
+  type: utility
 - name: Charge
   description: The xorn moves up to its Speed or Burrow Speed straight toward an enemy
     it can sense.
----
 
+---
 # Wyvern
 
 *Medium Elemental, Neutral*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +6, reach 5 ft. Hit: 17 (4d6 + 3) Piercing damage.
+
+**Claw.** Melee Attack Roll: +6, reach 5 ft. Hit: 8 (1d10 + 3) Slashing damage.
 

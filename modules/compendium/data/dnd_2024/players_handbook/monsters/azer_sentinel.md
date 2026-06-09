@@ -1,5 +1,4 @@
----
-name: Azer Sentinel
+---name: Azer Sentinel
 size: Huge
 type: Huge Fiend (Demon)
 alignment: Chaotic Evil
@@ -37,20 +36,43 @@ actions:
 - name: Multiattack
   description: The balor makes one Flame Whip attack and one Lightning Blade attack.
 - name: Flame Whip
-  description: 'Melee Attack Roll: +14, reach 30 ft. Hit: 18 (3d6 + 8) Force damage
-    plus 17 (5d6) Fire damage. If the target is a Huge or smaller creature, the balor
-    pulls the target up to 25 feet straight toward itself, and the target has the
-    Prone condition.'
+  damage:
+  - type: force
+    base:
+      dice: 3
+      die: 6
+      bonus: 8
+  - type: fire
+    base:
+      dice: 5
+      die: 6
+      bonus: 0
+  type: utility
 - name: Lightning Blade
-  description: "Melee Attack Roll: +14, reach 10 ft. Hit: 21 (3d8 + 8) Force damage\
-    \ plus 22 (4d10) Lightning damage, and the target can\u2019t take Reactions until\
-    \ the start of the balor\u2019s next turn."
+  damage:
+  - type: force
+    base:
+      dice: 3
+      die: 8
+      bonus: 8
+  - type: lightning
+    base:
+      dice: 4
+      die: 10
+      bonus: 0
+  type: utility
 - name: Teleport
   description: The balor teleports itself or a willing demon within 10 feet of itself
     up to 60 feet to an unoccupied space the balor can see.
----
 
+---
 # Azer Sentinel
 
 *Huge Fiend (Demon), Chaotic Evil*
+
+### Actions
+
+**Flame Whip.** Melee Attack Roll: +14, reach 30 ft. Hit: 18 (3d6 + 8) Force damage plus 17 (5d6) Fire damage. If the target is a Huge or smaller creature, the balor pulls the target up to 25 feet straight toward itself, and the target has the Prone condition.
+
+**Lightning Blade.** Melee Attack Roll: +14, reach 10 ft. Hit: 21 (3d8 + 8) Force damage plus 22 (4d10) Lightning damage, and the target can’t take Reactions until the start of the balor’s next turn.
 

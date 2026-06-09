@@ -1,5 +1,4 @@
----
-name: Pirates
+---name: Pirates
 size: Large
 type: Large Fiend (Devil)
 alignment: Lawful Evil
@@ -39,26 +38,59 @@ actions:
   description: The pit fiend makes one Bite attack, two Devilish Claw attacks, and
     one Fiery Mace attack.
 - name: Bite
-  description: "Melee Attack Roll: +14, reach 10 ft. Hit: 18 (3d6 + 8) Piercing damage.\
-    \ If the target is a creature, it must make the following saving throw. Constitution\
-    \ Saving Throw: DC 21. Failure: The target has the Poisoned condition. While Poisoned,\
-    \ the target can\u2019t regain Hit Points and takes 21 (6d6) Poison damage at\
-    \ the start of each of its turns, and it repeats the save at the end of each of\
-    \ its turns, ending the effect on itself on a success. After 1 minute, it succeeds\
-    \ automatically."
+  type: save
+  ability: con
+  dc: 21
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: piercing
+    base:
+      dice: 3
+      die: 6
+      bonus: 8
+  - type: poison
+    base:
+      dice: 6
+      die: 6
+      bonus: 0
 - name: Devilish Claw
-  description: 'Melee Attack Roll: +14, reach 10 ft. Hit: 26 (4d8 + 8) Necrotic damage.'
+  damage:
+  - type: necrotic
+    base:
+      dice: 4
+      die: 8
+      bonus: 8
+  type: utility
 - name: Fiery Mace
-  description: 'Melee Attack Roll: +14, reach 10 ft. Hit: 22 (4d6 + 8) Force damage
-    plus 21 (6d6) Fire damage.'
+  damage:
+  - type: force
+    base:
+      dice: 4
+      die: 6
+      bonus: 8
+  - type: fire
+    base:
+      dice: 6
+      die: 6
+      bonus: 0
+  type: utility
 - name: "Hellfire Spellcasting (Recharge 4\u20136)"
   description: The pit fiend casts Fireball (level 5 version) twice, requiring no
     Material components and using Charisma as the spellcasting ability (spell save
     DC 21). It can replace one Fireball with Hold Monster (level 7 version) or Wall
     of Fire.
----
 
+---
 # Pirates
 
 *Large Fiend (Devil), Lawful Evil*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +14, reach 10 ft. Hit: 18 (3d6 + 8) Piercing damage. If the target is a creature, it must make the following saving throw. Constitution Saving Throw: DC 21. Failure: The target has the Poisoned condition. While Poisoned, the target can’t regain Hit Points and takes 21 (6d6) Poison damage at the start of each of its turns, and it repeats the save at the end of each of its turns, ending the effect on itself on a success. After 1 minute, it succeeds automatically.
+
+**Devilish Claw.** Melee Attack Roll: +14, reach 10 ft. Hit: 26 (4d8 + 8) Necrotic damage.
+
+**Fiery Mace.** Melee Attack Roll: +14, reach 10 ft. Hit: 22 (4d6 + 8) Force damage plus 21 (6d6) Fire damage.
 

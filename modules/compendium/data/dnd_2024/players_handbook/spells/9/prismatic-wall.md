@@ -1,5 +1,4 @@
----
-name: Prismatic Wall
+---name: Prismatic Wall
 type: spell
 level: 9
 school: Abjuration
@@ -17,6 +16,17 @@ classes:
 - Wizard
 id: spell:prismatic-wall
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: fire
+    base:
+      dice: 12
+      die: 6
+      bonus: 0
 ---
 # Prismatic Wall
 *9th-Level Abjuration (Bard, Wizard)*

@@ -1,5 +1,4 @@
----
-name: Incubus
+---name: Incubus
 size: Large
 type: Large Elemental
 alignment: Neutral
@@ -31,16 +30,39 @@ actions:
   description: The stalker makes three Wind Swipe attacks. It can replace one attack
     with a use of Vortex.
 - name: Wind Swipe
-  description: 'Melee Attack Roll: +7, reach 5 ft. Hit: 11 (2d6 + 4) Force damage.'
+  damage:
+  - type: force
+    base:
+      dice: 2
+      die: 6
+      bonus: 4
+  type: utility
 - name: Vortex
-  description: "Constitution Saving Throw: DC 14, one Large or smaller creature in\
-    \ the stalker\u2019s space. Failure: 7 (1d8 + 3) Thunder damage, and the target\
-    \ has the Grappled condition (escape DC 13). Until the grapple ends, the target\
-    \ can\u2019t cast spells with a Verbal component and takes 7 (2d6) Thunder damage\
-    \ at the start of each of the stalker\u2019s turns."
----
+  type: save
+  ability: con
+  dc: 14
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: thunder
+    base:
+      dice: 1
+      die: 8
+      bonus: 3
+  - type: thunder
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
 
+---
 # Incubus
 
 *Large Elemental, Neutral*
+
+### Actions
+
+**Wind Swipe.** Melee Attack Roll: +7, reach 5 ft. Hit: 11 (2d6 + 4) Force damage.
+
+**Vortex.** Constitution Saving Throw: DC 14, one Large or smaller creature in the stalker’s space. Failure: 7 (1d8 + 3) Thunder damage, and the target has the Grappled condition (escape DC 13). Until the grapple ends, the target can’t cast spells with a Verbal component and takes 7 (2d6) Thunder damage at the start of each of the stalker’s turns.
 

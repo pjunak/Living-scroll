@@ -1,5 +1,4 @@
----
-name: Dimension Door
+---name: Dimension Door
 type: spell
 level: 4
 school: Conjuration
@@ -18,6 +17,14 @@ classes:
 - Wizard
 id: spell:dimension-door
 material_price: ''
+actions:
+- type: utility
+  damage:
+  - type: force
+    base:
+      dice: 4
+      die: 6
+      bonus: 0
 ---
 # Dimension Door
 *4th-Level Conjuration (Bard, Sorcerer, Warlock, Wizard)*

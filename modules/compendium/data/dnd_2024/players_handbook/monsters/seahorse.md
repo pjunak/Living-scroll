@@ -1,5 +1,4 @@
----
-name: Seahorse
+---name: Seahorse
 size: Tiny
 type: Tiny Beast
 alignment: Unaligned
@@ -23,11 +22,20 @@ traits:
     knows the location of any other creature in contact with the same web.
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 1 Piercing damage plus 2 (1d4)
-    Poison damage.'
----
+  damage:
+  - type: poison
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
+  type: utility
 
+---
 # Seahorse
 
 *Tiny Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +4, reach 5 ft. Hit: 1 Piercing damage plus 2 (1d4) Poison damage.
 

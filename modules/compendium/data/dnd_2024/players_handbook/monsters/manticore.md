@@ -1,5 +1,4 @@
----
-name: Manticore
+---name: Manticore
 size: Large
 type: Large Fiend (Demon)
 alignment: Chaotic Evil
@@ -32,13 +31,30 @@ actions:
 - name: Multiattack
   description: The marilith makes six Pact Blade attacks and uses Constrict.
 - name: Pact Blade
-  description: 'Melee Attack Roll: +10, reach 5 ft. Hit: 10 (1d10 + 5) Slashing damage
-    plus 7 (2d6) Necrotic damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 10
+      bonus: 5
+  - type: necrotic
+    base:
+      dice: 2
+      die: 6
+      bonus: 0
+  type: utility
 - name: Constrict
-  description: 'Strength Saving Throw: DC 17, one Medium or smaller creature the marilith
-    can see within 5 feet. Failure: 15 (2d10 + 4) Bludgeoning damage. The target has
-    the Grappled condition (escape DC 14), and it has the Restrained condition until
-    the grapple ends.'
+  type: save
+  ability: str
+  dc: 17
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 10
+      bonus: 4
 - name: "Teleport (Recharge 5\u20136)"
   description: The marilith teleports up to 120 feet to an unoccupied space it can
     see.
@@ -46,9 +62,15 @@ actions:
   description: 'Trigger: The marilith is hit by a melee attack roll while holding
     a weapon. Response: The marilith adds 5 to its AC against that attack, possibly
     causing it to miss.'
----
 
+---
 # Manticore
 
 *Large Fiend (Demon), Chaotic Evil*
+
+### Actions
+
+**Pact Blade.** Melee Attack Roll: +10, reach 5 ft. Hit: 10 (1d10 + 5) Slashing damage plus 7 (2d6) Necrotic damage.
+
+**Constrict.** Strength Saving Throw: DC 17, one Medium or smaller creature the marilith can see within 5 feet. Failure: 15 (2d10 + 4) Bludgeoning damage. The target has the Grappled condition (escape DC 14), and it has the Restrained condition until the grapple ends.
 

@@ -1,5 +1,4 @@
----
-name: Treant
+---name: Treant
 size: Large
 type: Large Giant
 alignment: Chaotic Evil
@@ -30,13 +29,23 @@ actions:
 - name: Multiattack
   description: The troll makes three Rend attacks.
 - name: Rend
-  description: 'Melee Attack Roll: +7, reach 10 ft. Hit: 11 (2d6 + 4) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 6
+      bonus: 4
+  type: utility
 - name: Charge
   description: The troll moves up to half its Speed straight toward an enemy it can
     see.
----
 
+---
 # Treant
 
 *Large Giant, Chaotic Evil*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +7, reach 10 ft. Hit: 11 (2d6 + 4) Slashing damage.
 

@@ -1,5 +1,4 @@
----
-name: Hydra
+---name: Hydra
 size: Large
 type: Large Fiend (Devil)
 alignment: Lawful Evil
@@ -29,21 +28,43 @@ actions:
   description: The devil makes three Ice Spear attacks. It can replace one attack
     with a Tail attack.
 - name: Ice Spear
-  description: "Melee or Ranged Attack Roll: +10, reach 5 ft. or range 30/120 ft.\
-    \ Hit: 14 (2d8 + 5) Piercing damage plus 10 (3d6) Cold damage. Until the end of\
-    \ its next turn, the target can\u2019t take a Bonus Action or Reaction, its Speed\
-    \ decreases by 10 feet, and it can move or take one action on its turn, not both.\
-    \ Hit or Miss: The spear magically returns to the devil\u2019s hand immediately\
-    \ after a ranged attack."
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 8
+      bonus: 5
+  - type: cold
+    base:
+      dice: 3
+      die: 6
+      bonus: 0
+  type: utility
 - name: Tail
-  description: 'Melee Attack Roll: +10, reach 10 ft. Hit: 15 (3d6 + 5) Bludgeoning
-    damage plus 18 (4d8) Cold damage.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 3
+      die: 6
+      bonus: 5
+  - type: cold
+    base:
+      dice: 4
+      die: 8
+      bonus: 0
+  type: utility
 - name: Ice Wall (Recharge 6)
   description: The devil casts Wall of Ice (level 8 version), requiring no spell components
     and using Intelligence as the spellcasting ability (spell save DC 17).
----
 
+---
 # Hydra
 
 *Large Fiend (Devil), Lawful Evil*
+
+### Actions
+
+**Ice Spear.** Melee or Ranged Attack Roll: +10, reach 5 ft. or range 30/120 ft. Hit: 14 (2d8 + 5) Piercing damage plus 10 (3d6) Cold damage. Until the end of its next turn, the target can’t take a Bonus Action or Reaction, its Speed decreases by 10 feet, and it can move or take one action on its turn, not both. Hit or Miss: The spear magically returns to the devil’s hand immediately after a ranged attack.
+
+**Tail.** Melee Attack Roll: +10, reach 10 ft. Hit: 15 (3d6 + 5) Bludgeoning damage plus 18 (4d8) Cold damage.
 

@@ -1,5 +1,4 @@
----
-name: Purple Worm
+---name: Purple Worm
 size: Tiny
 type: Tiny Fiend (Demon)
 alignment: Chaotic Evil
@@ -24,25 +23,36 @@ traits:
     magical effects.
 actions:
 - name: Rend
-  description: "Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Slashing damage,\
-    \ and the target has the Poisoned condition until the start of the quasit\u2019\
-    s next turn."
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 4
+      bonus: 3
+  type: utility
 - name: Invisibility
   description: The quasit casts Invisibility on itself, requiring no spell components
     and using Charisma as the spellcasting ability.
 - name: Scare (1/Day)
-  description: 'Wisdom Saving Throw: DC 10, one creature within 20 feet. Failure:
-    The target has the Frightened condition. At the end of each of its turns, the
-    target repeats the save, ending the effect on itself on a success. After 1 minute,
-    it succeeds automatically.'
+  type: save
+  ability: wis
+  dc: 10
+  on_pass: none
+  on_fail: full
 - name: Shape-Shift
   description: "The quasit shape-shifts to resemble a bat (Speed 10 ft., Fly 40 ft.),\
     \ a centipede (40 ft., Climb 40 ft.), or a toad (40 ft., Swim 40 ft.), or it returns\
     \ to its true form. Its game statistics are the same in each form, except for\
     \ its Speed. Any equipment it is wearing or carrying isn\u2019t transformed."
----
 
+---
 # Purple Worm
 
 *Tiny Fiend (Demon), Chaotic Evil*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Slashing damage, and the target has the Poisoned condition until the start of the quasit’s next turn.
+
+**Scare (1/Day).** Wisdom Saving Throw: DC 10, one creature within 20 feet. Failure: The target has the Frightened condition. At the end of each of its turns, the target repeats the save, ending the effect on itself on a success. After 1 minute, it succeeds automatically.
 

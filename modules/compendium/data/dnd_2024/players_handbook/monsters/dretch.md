@@ -1,5 +1,4 @@
----
-name: Dretch
+---name: Dretch
 size: Large
 type: Large Monstrosity
 alignment: Chaotic Evil
@@ -29,15 +28,33 @@ actions:
   description: The drider makes three attacks, using Foreleg or Poison Burst in any
     combination.
 - name: Foreleg
-  description: 'Melee Attack Roll: +7, reach 10 ft. Hit: 13 (2d8 + 4) Piercing damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 8
+      bonus: 4
+  type: utility
 - name: Poison Burst
-  description: 'Ranged Attack Roll: +6, range 120 ft. Hit: 13 (3d6 + 3) Poison damage.'
+  damage:
+  - type: poison
+    base:
+      dice: 3
+      die: 6
+      bonus: 3
+  type: utility
 - name: "Magic of the Spider Queen (Recharge 5\u20136)"
   description: The drider casts Darkness, Faerie Fire, or Web, requiring no Material
     components and using Wisdom as the spellcasting ability (spell save DC 14).
----
 
+---
 # Dretch
 
 *Large Monstrosity, Chaotic Evil*
+
+### Actions
+
+**Foreleg.** Melee Attack Roll: +7, reach 10 ft. Hit: 13 (2d8 + 4) Piercing damage.
+
+**Poison Burst.** Ranged Attack Roll: +6, range 120 ft. Hit: 13 (3d6 + 3) Poison damage.
 

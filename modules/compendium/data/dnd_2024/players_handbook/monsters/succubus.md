@@ -1,5 +1,4 @@
----
-name: Succubus
+---name: Succubus
 size: Gargantuan
 type: Gargantuan Monstrosity (Titan)
 alignment: Unaligned
@@ -36,26 +35,53 @@ actions:
   description: The tarrasque makes one Bite attack and three other attacks, using
     Claw or Tail in any combination.
 - name: Bite
-  description: "Melee Attack Roll: +19, reach 15 ft. Hit: 36 (4d12 + 10) Piercing\
-    \ damage, and the target has the Grappled condition (escape DC 20). Until the\
-    \ grapple ends, the target has the Restrained condition and can\u2019t teleport."
+  damage:
+  - type: piercing
+    base:
+      dice: 4
+      die: 12
+      bonus: 10
+  type: utility
 - name: Claw
-  description: 'Melee Attack Roll: +19, reach 15 ft. Hit: 28 (4d8 + 10) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 4
+      die: 8
+      bonus: 10
+  type: utility
 - name: Tail
-  description: 'Melee Attack Roll: +19, reach 30 ft. Hit: 23 (3d8 + 10) Bludgeoning
-    damage. If the target is a Huge or smaller creature, it has the Prone condition.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 3
+      die: 8
+      bonus: 10
+  type: utility
 - name: "Thunderous Bellow (Recharge 5\u20136)"
-  description: "Constitution Saving Throw: DC 27, each creature and each object that\
-    \ isn\u2019t being worn or carried in a 150-foot Cone. Failure: 78 (12d12) Thunder\
-    \ damage, and the target has the Deafened and Frightened conditions until the\
-    \ end of its next turn. Success: Half damage only."
+  type: save
+  ability: con
+  dc: 27
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: thunder
+    base:
+      dice: 12
+      die: 12
+      bonus: 0
 - name: Swallow
-  description: "Strength Saving Throw: DC 27, one Large or smaller creature Grappled\
-    \ by the tarrasque (it can have up to six creatures swallowed at a time). Failure:\
-    \ The target is swallowed, and the Grappled condition ends. A swallowed creature\
-    \ has the Blinded and Restrained conditions and can\u2019t teleport, it has Total\
-    \ Cover against attacks and other effects outside the tarrasque, and it takes\
-    \ 56 (16d6) Acid damage at the start of each of the tarrasque\u2019s turns."
+  type: save
+  ability: str
+  dc: 27
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: acid
+    base:
+      dice: 16
+      die: 6
+      bonus: 0
 - name: Onslaught
   description: The tarrasque moves up to half its Speed, and it makes one Claw or
     Tail attack.
@@ -65,9 +91,21 @@ actions:
     \ from itself. Creatures in that area lose Concentration and, if Medium or smaller,\
     \ have the Prone condition. The tarrasque can\u2019t take this action again until\
     \ the start of its next turn."
----
 
+---
 # Succubus
 
 *Gargantuan Monstrosity (Titan), Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +19, reach 15 ft. Hit: 36 (4d12 + 10) Piercing damage, and the target has the Grappled condition (escape DC 20). Until the grapple ends, the target has the Restrained condition and can’t teleport.
+
+**Claw.** Melee Attack Roll: +19, reach 15 ft. Hit: 28 (4d8 + 10) Slashing damage.
+
+**Tail.** Melee Attack Roll: +19, reach 30 ft. Hit: 23 (3d8 + 10) Bludgeoning damage. If the target is a Huge or smaller creature, it has the Prone condition.
+
+**Thunderous Bellow (Recharge 5–6).** Constitution Saving Throw: DC 27, each creature and each object that isn’t being worn or carried in a 150-foot Cone. Failure: 78 (12d12) Thunder damage, and the target has the Deafened and Frightened conditions until the end of its next turn. Success: Half damage only.
+
+**Swallow.** Strength Saving Throw: DC 27, one Large or smaller creature Grappled by the tarrasque (it can have up to six creatures swallowed at a time). Failure: The target is swallowed, and the Grappled condition ends. A swallowed creature has the Blinded and Restrained conditions and can’t teleport, it has Total Cover against attacks and other effects outside the tarrasque, and it takes 56 (16d6) Acid damage at the start of each of the tarrasque’s turns.
 

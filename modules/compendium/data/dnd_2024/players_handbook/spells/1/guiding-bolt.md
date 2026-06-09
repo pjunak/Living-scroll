@@ -1,5 +1,4 @@
----
-name: Guiding Bolt
+---name: Guiding Bolt
 type: spell
 level: 1
 school: Evocation
@@ -16,6 +15,18 @@ classes:
 - Cleric
 id: spell:guiding-bolt
 material_price: ''
+actions:
+- type: attack
+  damage:
+  - type: radiant
+    base:
+      dice: 4
+      die: 6
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: spell_level
 ---
 # Guiding Bolt
 *1st-Level Evocation (Cleric)*

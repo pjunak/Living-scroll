@@ -1,5 +1,4 @@
----
-name: Harm
+---name: Harm
 type: spell
 level: 6
 school: Necromancy
@@ -16,6 +15,17 @@ classes:
 - Cleric
 id: spell:harm
 material_price: ''
+actions:
+- type: save
+  ability: con
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: necrotic
+    base:
+      dice: 14
+      die: 6
+      bonus: 0
 ---
 # Harm
 *6th-Level Necromancy (Cleric)*

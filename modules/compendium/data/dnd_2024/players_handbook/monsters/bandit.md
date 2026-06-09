@@ -1,5 +1,4 @@
----
-name: Bandit
+---name: Bandit
 size: Medium
 type: Medium or Small Humanoid
 alignment: Neutral
@@ -17,13 +16,30 @@ cr: 1/8 (XP 25; PB +2)
 traits: []
 actions:
 - name: Scimitar
-  description: 'Melee Attack Roll: +3, reach 5 ft. Hit: 4 (1d6 + 1) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 6
+      bonus: 1
+  type: utility
 - name: Light Crossbow
-  description: 'Ranged Attack Roll: +3, range 80/320 ft. Hit: 5 (1d8 + 1) Piercing
-    damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 8
+      bonus: 1
+  type: utility
 
+---
 # Bandit
 
 *Medium or Small Humanoid, Neutral*
+
+### Actions
+
+**Scimitar.** Melee Attack Roll: +3, reach 5 ft. Hit: 4 (1d6 + 1) Slashing damage.
+
+**Light Crossbow.** Ranged Attack Roll: +3, range 80/320 ft. Hit: 5 (1d8 + 1) Piercing damage.
 

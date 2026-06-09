@@ -1,5 +1,4 @@
----
-name: Mordenkainen's Faithful Hound
+---name: Mordenkainen's Faithful Hound
 type: spell
 level: 4
 school: Conjuration
@@ -17,6 +16,17 @@ classes:
 - Wizard
 id: spell:mordenkainen-s-faithful-hound
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: force
+    base:
+      dice: 4
+      die: 8
+      bonus: 0
 ---
 # Mordenkainen's Faithful Hound
 *4th-Level Conjuration (Wizard)*

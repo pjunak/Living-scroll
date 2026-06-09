@@ -1,12 +1,14 @@
----
-name: Crusher
+---name: Crusher
 type: feat
 category: general
-prerequisite: "Level 4+"
+prerequisite: Level 4+
 id: feat:crusher
-attribute_increase: ["STR", "CON"]
+attribute_increase:
+- STR
+- CON
 proficiency: null
 expertise: null
+repeatable: false
 ---
 
 *Prerequisite: Level 4+*

@@ -1,5 +1,4 @@
----
-name: Blade Of Disaster
+---name: Blade Of Disaster
 type: spell
 level: 9
 school: Conjuration
@@ -18,6 +17,14 @@ classes:
 - Wizard
 id: spell:blade-of-disaster
 material_price: ''
+actions:
+- type: attack
+  damage:
+  - type: force
+    base:
+      dice: 10
+      die: 6
+      bonus: 0
 ---
 # Blade Of Disaster
 *9th-Level Conjuration (Sorcerer, Warlock, Wizard)*

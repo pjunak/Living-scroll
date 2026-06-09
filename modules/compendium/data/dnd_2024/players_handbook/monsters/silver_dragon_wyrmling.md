@@ -1,5 +1,4 @@
----
-name: Silver Dragon Wyrmling
+---name: Silver Dragon Wyrmling
 size: Medium
 type: Medium Dragon (Metallic)
 alignment: Lawful Good
@@ -21,19 +20,42 @@ actions:
 - name: Multiattack
   description: The dragon makes two Rend attacks.
 - name: Rend
-  description: 'Melee Attack Roll: +6, reach 5 ft. Hit: 9 (1d10 + 4) Piercing damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 10
+      bonus: 4
+  type: utility
 - name: "Cold Breath (Recharge 5\u20136)"
-  description: 'Constitution Saving Throw: DC 13, each creature in a 15-foot Cone.
-    Failure: 18 (4d8) Cold damage. Success: Half damage.'
+  type: save
+  ability: con
+  dc: 13
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: cold
+    base:
+      dice: 4
+      die: 8
+      bonus: 0
 - name: Paralyzing Breath
-  description: 'Constitution Saving Throw: DC 13, each creature in a 15-foot Cone.
-    First Failure: The target has the Incapacitated condition until the end of its
-    next turn, when it repeats the save. Second Failure: The target has the Paralyzed
-    condition, and it repeats the save at the end of each of its turns, ending the
-    effect on itself on a success. After 1 minute, it succeeds automatically.'
----
+  type: save
+  ability: con
+  dc: 13
+  on_pass: none
+  on_fail: full
 
+---
 # Silver Dragon Wyrmling
 
 *Medium Dragon (Metallic), Lawful Good*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +6, reach 5 ft. Hit: 9 (1d10 + 4) Piercing damage.
+
+**Cold Breath (Recharge 5–6).** Constitution Saving Throw: DC 13, each creature in a 15-foot Cone. Failure: 18 (4d8) Cold damage. Success: Half damage.
+
+**Paralyzing Breath.** Constitution Saving Throw: DC 13, each creature in a 15-foot Cone. First Failure: The target has the Incapacitated condition until the end of its next turn, when it repeats the save. Second Failure: The target has the Paralyzed condition, and it repeats the save at the end of each of its turns, ending the effect on itself on a success. After 1 minute, it succeeds automatically.
 

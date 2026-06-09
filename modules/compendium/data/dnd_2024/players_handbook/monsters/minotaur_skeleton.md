@@ -1,5 +1,4 @@
----
-name: Minotaur Skeleton
+---name: Minotaur Skeleton
 size: Large
 type: Large Undead
 alignment: Lawful Evil
@@ -21,16 +20,35 @@ traits:
   description: Poison; Exhaustion, Poisoned
 actions:
 - name: Gore
-  description: 'Melee Attack Roll: +6, reach 5 ft. Hit: 11 (2d6 + 4) Piercing damage.
-    If the target is a Large or smaller creature and the skeleton moved 20+ feet straight
-    toward it immediately before the hit, the target takes an extra 9 (2d8) Piercing
-    damage and has the Prone condition.'
+  damage:
+  - type: piercing
+    base:
+      dice: 2
+      die: 6
+      bonus: 4
+  - type: piercing
+    base:
+      dice: 2
+      die: 8
+      bonus: 0
+  type: utility
 - name: Slam
-  description: 'Melee Attack Roll: +6, reach 5 ft. Hit: 15 (2d10 + 4) Bludgeoning
-    damage.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 10
+      bonus: 4
+  type: utility
 
+---
 # Minotaur Skeleton
 
 *Large Undead, Lawful Evil*
+
+### Actions
+
+**Gore.** Melee Attack Roll: +6, reach 5 ft. Hit: 11 (2d6 + 4) Piercing damage. If the target is a Large or smaller creature and the skeleton moved 20+ feet straight toward it immediately before the hit, the target takes an extra 9 (2d8) Piercing damage and has the Prone condition.
+
+**Slam.** Melee Attack Roll: +6, reach 5 ft. Hit: 15 (2d10 + 4) Bludgeoning damage.
 

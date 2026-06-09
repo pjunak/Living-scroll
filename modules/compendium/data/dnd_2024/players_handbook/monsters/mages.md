@@ -1,5 +1,4 @@
----
-name: Mages
+---name: Mages
 size: Small
 type: Small Elemental
 alignment: Chaotic Neutral
@@ -23,16 +22,24 @@ traits:
     Fire damage. Success: Half damage.'
 actions:
 - name: Touch
-  description: "Melee Attack Roll: +4, reach 5 ft. Hit: 7 (2d4 + 2) Fire damage. If\
-    \ the target is a creature or a flammable object that isn\u2019t being worn or\
-    \ carried, it starts burning."
+  damage:
+  - type: fire
+    base:
+      dice: 2
+      die: 4
+      bonus: 2
+  type: utility
 - name: Ignited Illumination
   description: The magmin sets itself ablaze or extinguishes its flames. While ablaze,
     the magmin sheds Bright Light in a 10-foot radius and Dim Light for an additional
     10 feet.
----
 
+---
 # Mages
 
 *Small Elemental, Chaotic Neutral*
+
+### Actions
+
+**Touch.** Melee Attack Roll: +4, reach 5 ft. Hit: 7 (2d4 + 2) Fire damage. If the target is a creature or a flammable object that isn’t being worn or carried, it starts burning.
 

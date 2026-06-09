@@ -1,5 +1,4 @@
----
-name: Rust Monster
+---name: Rust Monster
 size: Medium
 type: Medium Fiend
 alignment: Lawful Evil
@@ -30,13 +29,23 @@ actions:
 - name: Multiattack
   description: The sahuagin makes two Claw attacks.
 - name: Claw
-  description: 'Melee Attack Roll: +3, reach 5 ft. Hit: 4 (1d6 + 1) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 1
+      die: 6
+      bonus: 1
+  type: utility
 - name: Aquatic Charge
   description: The sahuagin swims up to its Swim Speed straight toward an enemy it
     can see.
----
 
+---
 # Rust Monster
 
 *Medium Fiend, Lawful Evil*
+
+### Actions
+
+**Claw.** Melee Attack Roll: +3, reach 5 ft. Hit: 4 (1d6 + 1) Slashing damage.
 

@@ -1,5 +1,4 @@
----
-name: Giant Wasp
+---name: Giant Wasp
 size: Medium
 type: Medium Beast
 alignment: Unaligned
@@ -17,10 +16,20 @@ cr: 1/8 (XP 25; PB +2)
 traits: []
 actions:
 - name: Bite
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Piercing damage.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 4
+      bonus: 3
+  type: utility
 
+---
 # Giant Wasp
 
 *Medium Beast, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +5, reach 5 ft. Hit: 5 (1d4 + 3) Piercing damage.
 

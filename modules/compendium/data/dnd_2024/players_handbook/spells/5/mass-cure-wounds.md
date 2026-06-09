@@ -1,5 +1,4 @@
----
-name: Mass Cure Wounds
+---name: Mass Cure Wounds
 type: spell
 level: 5
 school: Abjuration
@@ -18,6 +17,13 @@ classes:
 - Druid
 id: spell:mass-cure-wounds
 material_price: ''
+actions:
+- type: heal
+  healing:
+    base:
+      dice: 5
+      die: 8
+      bonus: spellcasting_modifier
 ---
 # Mass Cure Wounds
 *5th-Level Abjuration (Bard, Cleric, Druid)*

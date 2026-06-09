@@ -1,5 +1,4 @@
----
-name: Ice Knife
+---name: Ice Knife
 type: spell
 level: 1
 school: Conjuration
@@ -18,6 +17,21 @@ classes:
 - Wizard
 id: spell:ice-knife
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 10
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 6
+      mode: spell_level
 ---
 # Ice Knife
 *1st-Level Conjuration (Druid, Sorcerer, Wizard)*

@@ -1,5 +1,4 @@
----
-name: Giant Rat
+---name: Giant Rat
 size: Large
 type: Large Beast
 alignment: Unaligned
@@ -19,15 +18,28 @@ traits:
   description: The seahorse can breathe only underwater.
 actions:
 - name: Ram
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 9 (2d6 + 2) Bludgeoning damage,
-    or 11 (2d8 + 2) Bludgeoning damage if the seahorse moved 20+ feet straight toward
-    the target immediately before the hit.'
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 6
+      bonus: 2
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 8
+      bonus: 2
+  type: utility
 - name: Bubble Dash
   description: While underwater, the seahorse moves up to half its Swim Speed without
     provoking Opportunity Attacks.
----
 
+---
 # Giant Rat
 
 *Large Beast, Unaligned*
+
+### Actions
+
+**Ram.** Melee Attack Roll: +4, reach 5 ft. Hit: 9 (2d6 + 2) Bludgeoning damage, or 11 (2d8 + 2) Bludgeoning damage if the seahorse moved 20+ feet straight toward the target immediately before the hit.
 

@@ -1,5 +1,4 @@
----
-name: Ancient Blue Dragon
+---name: Ancient Blue Dragon
 size: Gargantuan
 type: Gargantuan Dragon (Chromatic)
 alignment: Lawful Evil
@@ -24,11 +23,30 @@ actions:
   description: The dragon makes three Rend attacks. It can replace one attack with
     a use of Spellcasting to cast Shatter (level 3 version).
 - name: Rend
-  description: 'Melee Attack Roll: +16, reach 15 ft. Hit: 18 (2d8 + 9) Slashing damage
-    plus 11 (2d10) Lightning damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 8
+      bonus: 9
+  - type: lightning
+    base:
+      dice: 2
+      die: 10
+      bonus: 0
+  type: utility
 - name: "Lightning Breath (Recharge 5\u20136)"
-  description: 'Dexterity Saving Throw: DC 23, each creature in a 120-foot-long, 10-foot-wide
-    Line. Failure: 88 (16d10) Lightning damage. Success: Half damage.'
+  type: save
+  ability: dex
+  dc: 23
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: lightning
+    base:
+      dice: 16
+      die: 10
+      bonus: 0
 - name: Spellcasting
   description: 'The dragon casts one of the following spells, requiring no Material
     components and using Charisma as the spellcasting ability (spell save DC 22):'
@@ -45,9 +63,15 @@ actions:
     \ dragon can\u2019t take this action again until the start of its next turn."
 - name: Tail Swipe
   description: The dragon makes one Rend attack.
----
 
+---
 # Ancient Blue Dragon
 
 *Gargantuan Dragon (Chromatic), Lawful Evil*
+
+### Actions
+
+**Rend.** Melee Attack Roll: +16, reach 15 ft. Hit: 18 (2d8 + 9) Slashing damage plus 11 (2d10) Lightning damage.
+
+**Lightning Breath (Recharge 5–6).** Dexterity Saving Throw: DC 23, each creature in a 120-foot-long, 10-foot-wide Line. Failure: 88 (16d10) Lightning damage. Success: Half damage.
 

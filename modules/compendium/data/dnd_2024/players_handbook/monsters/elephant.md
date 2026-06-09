@@ -1,5 +1,4 @@
----
-name: Elephant
+---name: Elephant
 size: Large
 type: Large Beast
 alignment: Unaligned
@@ -17,13 +16,25 @@ cr: 1/4 (XP 50; PB +2)
 traits: []
 actions:
 - name: Ram
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 6 (1d6 + 3) Bludgeoning damage.
-    If the target is a Large or smaller creature and the elk moved 20+ feet straight
-    toward it immediately before the hit, the target takes an extra 3 (1d6) Bludgeoning
-    damage and has the Prone condition.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 6
+      bonus: 3
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 6
+      bonus: 0
+  type: utility
 
+---
 # Elephant
 
 *Large Beast, Unaligned*
+
+### Actions
+
+**Ram.** Melee Attack Roll: +5, reach 5 ft. Hit: 6 (1d6 + 3) Bludgeoning damage. If the target is a Large or smaller creature and the elk moved 20+ feet straight toward it immediately before the hit, the target takes an extra 3 (1d6) Bludgeoning damage and has the Prone condition.
 

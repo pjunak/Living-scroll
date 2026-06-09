@@ -1,5 +1,4 @@
----
-name: Couatl
+---name: Couatl
 size: Medium
 type: Medium Swarm of Tiny Undead
 alignment: Neutral Evil
@@ -26,12 +25,25 @@ traits:
     \ The swarm can\u2019t regain Hit Points or gain Temporary Hit Points."
 actions:
 - name: Swarm of Grasping Hands
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 20 (4d8 + 2) Necrotic damage,
-    or 11 (2d8 + 2) Necrotic damage if the swarm is Bloodied. If the target is a Medium
-    or smaller creature, it has the Prone condition.'
----
+  damage:
+  - type: necrotic
+    base:
+      dice: 4
+      die: 8
+      bonus: 2
+  - type: necrotic
+    base:
+      dice: 2
+      die: 8
+      bonus: 2
+  type: utility
 
+---
 # Couatl
 
 *Medium Swarm of Tiny Undead, Neutral Evil*
+
+### Actions
+
+**Swarm of Grasping Hands.** Melee Attack Roll: +4, reach 5 ft. Hit: 20 (4d8 + 2) Necrotic damage, or 11 (2d8 + 2) Necrotic damage if the swarm is Bloodied. If the target is a Medium or smaller creature, it has the Prone condition.
 

@@ -1,5 +1,4 @@
----
-name: Gibbering Mouther
+---name: Gibbering Mouther
 size: Large
 type: Large Fiend (Demon)
 alignment: Chaotic Evil
@@ -30,12 +29,25 @@ actions:
 - name: Multiattack
   description: The glabrezu makes two Pincer attacks and uses Pummel or Spellcasting.
 - name: Pincer
-  description: 'Melee Attack Roll: +9, reach 10 ft. Hit: 16 (2d10 + 5) Slashing damage.
-    If the target is a Medium or smaller creature, it has the Grappled condition (escape
-    DC 15) from one of two pincers.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 10
+      bonus: 5
+  type: utility
 - name: Pummel
-  description: 'Dexterity Saving Throw: DC 17, one creature Grappled by the glabrezu.
-    Failure: 15 (3d6 + 5) Bludgeoning damage. Success: Half damage.'
+  type: save
+  ability: dex
+  dc: 17
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 3
+      die: 6
+      bonus: 5
 - name: Spellcasting
   description: 'The glabrezu casts one of the following spells, requiring no Material
     components and using Intelligence as the spellcasting ability (spell save DC 16):'
@@ -43,9 +55,15 @@ actions:
   description: Darkness, Detect Magic, Dispel Magic
 - name: '1/Day Each:'
   description: Confusion, Fly, Power Word Stun
----
 
+---
 # Gibbering Mouther
 
 *Large Fiend (Demon), Chaotic Evil*
+
+### Actions
+
+**Pincer.** Melee Attack Roll: +9, reach 10 ft. Hit: 16 (2d10 + 5) Slashing damage. If the target is a Medium or smaller creature, it has the Grappled condition (escape DC 15) from one of two pincers.
+
+**Pummel.** Dexterity Saving Throw: DC 17, one creature Grappled by the glabrezu. Failure: 15 (3d6 + 5) Bludgeoning damage. Success: Half damage.
 

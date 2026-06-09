@@ -1,5 +1,4 @@
----
-name: Black Dragons
+---name: Black Dragons
 size: Large
 type: Large Ooze
 alignment: Unaligned
@@ -33,19 +32,26 @@ traits:
     without needing to make an ability check.
 actions:
 - name: Dissolving Pseudopod
-  description: "Melee Attack Roll: +5, reach 10 ft. Hit: 17 (4d6 + 3) Acid damage.\
-    \ Nonmagical armor worn by the target takes a \u22121 penalty to the AC it offers.\
-    \ The armor is destroyed if the penalty reduces its AC to 10. The penalty can\
-    \ be removed by casting the Mending spell on the armor."
+  damage:
+  - type: acid
+    base:
+      dice: 4
+      die: 6
+      bonus: 3
+  type: utility
 - name: Split
   description: "Trigger: While the pudding is Large or Medium and has 10+ Hit Points,\
     \ it becomes Bloodied or is subjected to Lightning or Slashing damage. Response:\
     \ The pudding splits into two new Black Puddings. Each new pudding is one size\
     \ smaller than the original pudding and acts on its Initiative. The original pudding\u2019\
     s Hit Points are divided evenly between the new puddings (round down)."
----
 
+---
 # Black Dragons
 
 *Large Ooze, Unaligned*
+
+### Actions
+
+**Dissolving Pseudopod.** Melee Attack Roll: +5, reach 10 ft. Hit: 17 (4d6 + 3) Acid damage. Nonmagical armor worn by the target takes a −1 penalty to the AC it offers. The armor is destroyed if the penalty reduces its AC to 10. The penalty can be removed by casting the Mending spell on the armor.
 

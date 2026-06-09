@@ -7,8 +7,8 @@ from PySide6.QtWidgets import QMainWindow, QVBoxLayout, QWidget
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt import NavigationToolbar2QT as NavigationToolbar
 
-from ..resources import get_app_icon
-from ..widgets import FramelessWindow
+from modules.core.ui.resources import get_app_icon
+from modules.core.ui.widgets import FramelessWindow
 
 
 class GraphWindow(FramelessWindow):

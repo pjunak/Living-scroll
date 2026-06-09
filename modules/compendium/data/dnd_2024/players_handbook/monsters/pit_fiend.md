@@ -1,5 +1,4 @@
----
-name: Pit Fiend
+---name: Pit Fiend
 size: Large
 type: Large Celestial (Angel)
 alignment: Lawful Good
@@ -32,12 +31,30 @@ actions:
 - name: Multiattack
   description: The planetar makes three Radiant Sword attacks or uses Holy Burst twice.
 - name: Radiant Sword
-  description: 'Melee Attack Roll: +12, reach 10 ft. Hit: 14 (2d6 + 7) Slashing damage
-    plus 18 (4d8) Radiant damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 6
+      bonus: 7
+  - type: radiant
+    base:
+      dice: 4
+      die: 8
+      bonus: 0
+  type: utility
 - name: Holy Burst
-  description: 'Dexterity Saving Throw: DC 20, each enemy in a 20-foot-radius Sphere
-    centered on a point the planetar can see within 120 feet. Failure: 24 (7d6) Radiant
-    damage. Success: Half damage.'
+  type: save
+  ability: dex
+  dc: 20
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: radiant
+    base:
+      dice: 7
+      die: 6
+      bonus: 0
 - name: Spellcasting
   description: 'The planetar casts one of the following spells, requiring no Material
     components and using Charisma as spellcasting ability (spell save DC 20):'
@@ -48,9 +65,15 @@ actions:
 - name: Divine Aid (2/Day)
   description: The planetar casts Cure Wounds, Invisibility, Lesser Restoration, or
     Remove Curse, using the same spellcasting ability as Spellcasting.
----
 
+---
 # Pit Fiend
 
 *Large Celestial (Angel), Lawful Good*
+
+### Actions
+
+**Radiant Sword.** Melee Attack Roll: +12, reach 10 ft. Hit: 14 (2d6 + 7) Slashing damage plus 18 (4d8) Radiant damage.
+
+**Holy Burst.** Dexterity Saving Throw: DC 20, each enemy in a 20-foot-radius Sphere centered on a point the planetar can see within 120 feet. Failure: 24 (7d6) Radiant damage. Success: Half damage.
 

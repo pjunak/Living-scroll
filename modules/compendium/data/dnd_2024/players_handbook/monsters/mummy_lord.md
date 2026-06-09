@@ -1,5 +1,4 @@
----
-name: Mummy Lord
+---name: Mummy Lord
 size: Medium
 type: Medium or Small Undead (Cleric)
 alignment: Lawful Evil
@@ -34,18 +33,38 @@ actions:
   description: The mummy makes one Rotting Fist or Channel Negative Energy attack,
     and it uses Dreadful Glare.
 - name: Rotting Fist
-  description: "Melee Attack Roll: +9, reach 5 ft. Hit: 15 (2d10 + 4) Bludgeoning\
-    \ damage plus 10 (3d6) Necrotic damage. If the target is a creature, it is cursed.\
-    \ While cursed, the target can\u2019t regain Hit Points, it gains no benefit from\
-    \ finishing a Long Rest, and its Hit Point maximum decreases by 10 (3d6) every\
-    \ 24 hours that elapse. A creature dies and turns to dust if reduced to 0 Hit\
-    \ Points by this attack."
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 2
+      die: 10
+      bonus: 4
+  - type: necrotic
+    base:
+      dice: 3
+      die: 6
+      bonus: 0
+  type: utility
 - name: Channel Negative Energy
-  description: 'Ranged Attack Roll: +9, range 60 ft. Hit: 25 (6d6 + 4) Necrotic damage.'
+  damage:
+  - type: necrotic
+    base:
+      dice: 6
+      die: 6
+      bonus: 4
+  type: utility
 - name: Dreadful Glare
-  description: "Wisdom Saving Throw: DC 17, one creature the mummy can see within\
-    \ 60 feet. Failure: 25 (6d6 + 4) Psychic damage, and the target has the Paralyzed\
-    \ condition until the end of the mummy\u2019s next turn."
+  type: save
+  ability: wis
+  dc: 17
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 6
+      die: 6
+      bonus: 4
 - name: Spellcasting
   description: 'The mummy casts one of the following spells, requiring no Material
     components and using Wisdom as the spellcasting ability (spell save DC 17, +9
@@ -69,9 +88,17 @@ actions:
     \ until the start of its next turn."
 - name: Necrotic Strike
   description: The mummy makes one Rotting Fist or Channel Negative Energy attack.
----
 
+---
 # Mummy Lord
 
 *Medium or Small Undead (Cleric), Lawful Evil*
+
+### Actions
+
+**Rotting Fist.** Melee Attack Roll: +9, reach 5 ft. Hit: 15 (2d10 + 4) Bludgeoning damage plus 10 (3d6) Necrotic damage. If the target is a creature, it is cursed. While cursed, the target can’t regain Hit Points, it gains no benefit from finishing a Long Rest, and its Hit Point maximum decreases by 10 (3d6) every 24 hours that elapse. A creature dies and turns to dust if reduced to 0 Hit Points by this attack.
+
+**Channel Negative Energy.** Ranged Attack Roll: +9, range 60 ft. Hit: 25 (6d6 + 4) Necrotic damage.
+
+**Dreadful Glare.** Wisdom Saving Throw: DC 17, one creature the mummy can see within 60 feet. Failure: 25 (6d6 + 4) Psychic damage, and the target has the Paralyzed condition until the end of the mummy’s next turn.
 

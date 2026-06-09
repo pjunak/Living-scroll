@@ -42,6 +42,7 @@ class Compendium:
         self._backgrounds = _index_by_name(_record_iterable_from(payload.get("backgrounds")))
         self._feats = _index_by_name(_record_iterable_from(payload.get("feats")))
         self._invocations = _index_by_name(_record_iterable_from(payload.get("invocations")))
+        self._species = _index_by_name(_record_iterable_from(payload.get("species")))
         self.point_buy = payload.get("point_buy", {})
         self._by_id: Dict[str, object] = {}
         self._display_by_id: Dict[str, str] = {}
@@ -189,6 +190,26 @@ class Compendium:
 
     def feat_record(self, name: str) -> Optional[dict]:
         return self._feats.get(_key(name))
+
+    def species_record(self, name: str) -> Optional[dict]:
+        """Look up a species/ancestry record by name."""
+        return self._species.get(_key(name))
+
+    def spells_for_class(self, class_name: str) -> List[dict]:
+        """Return all spells that list *class_name* in their `classes` key."""
+        target = _key(class_name)
+        spells = self._payload.get("spells", [])
+        result: List[dict] = []
+        if not isinstance(spells, list):
+            return result
+        for spell in spells:
+            if not isinstance(spell, Mapping):
+                continue
+            spell_classes = spell.get("classes") or []
+            if isinstance(spell_classes, list):
+                if any(_key(str(sc)) == target for sc in spell_classes):
+                    result.append(dict(spell))
+        return result
 
     def invocation_record(self, name: str) -> Optional[dict]:
         return self._invocations.get(_key(name))

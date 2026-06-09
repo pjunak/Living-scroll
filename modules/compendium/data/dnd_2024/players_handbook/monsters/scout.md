@@ -1,5 +1,4 @@
----
-name: Scout
+---name: Scout
 size: Medium
 type: Medium Fey
 alignment: Chaotic Evil
@@ -31,17 +30,37 @@ traits:
     \ The target is immune to this hag\u2019s Vile Appearance for 24 hours."
 actions:
 - name: Claw
-  description: 'Melee Attack Roll: +5, reach 5 ft. Hit: 10 (2d6 + 3) Slashing damage.'
+  damage:
+  - type: slashing
+    base:
+      dice: 2
+      die: 6
+      bonus: 3
+  type: utility
 - name: "Death Glare (Recharge 5\u20136)"
-  description: 'Wisdom Saving Throw: DC 11, one Frightened creature the hag can see
-    within 30 feet. Failure: If the target has 20 Hit Points or fewer, it drops to
-    0 Hit Points. Otherwise, the target takes 13 (3d8) Psychic damage.'
+  type: save
+  ability: wis
+  dc: 11
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: psychic
+    base:
+      dice: 3
+      die: 8
+      bonus: 0
 - name: Illusory Appearance
   description: "The hag casts Disguise Self, using Constitution as the spellcasting\
     \ ability (spell save DC 13). The spell\u2019s duration is 24 hours."
----
 
+---
 # Scout
 
 *Medium Fey, Chaotic Evil*
+
+### Actions
+
+**Claw.** Melee Attack Roll: +5, reach 5 ft. Hit: 10 (2d6 + 3) Slashing damage.
+
+**Death Glare (Recharge 5–6).** Wisdom Saving Throw: DC 11, one Frightened creature the hag can see within 30 feet. Failure: If the target has 20 Hit Points or fewer, it drops to 0 Hit Points. Otherwise, the target takes 13 (3d8) Psychic damage.
 

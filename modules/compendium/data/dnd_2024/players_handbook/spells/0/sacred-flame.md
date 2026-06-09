@@ -1,5 +1,4 @@
----
-name: Sacred Flame
+---name: Sacred Flame
 type: spell
 level: 0
 school: Evocation
@@ -16,6 +15,21 @@ classes:
 - Cleric
 id: spell:sacred-flame
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: none
+  on_fail: full
+  damage:
+  - type: radiant
+    base:
+      dice: 1
+      die: 8
+      bonus: 0
+    scaling:
+      dice_per_slot: 1
+      die: 8
+      mode: character_level
 ---
 # Sacred Flame
 *Evocation Cantrip (Cleric)*

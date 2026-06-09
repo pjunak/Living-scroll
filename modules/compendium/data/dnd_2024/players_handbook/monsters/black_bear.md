@@ -1,5 +1,4 @@
----
-name: Black Bear
+---name: Black Bear
 size: Small
 type: Small Beast
 alignment: Unaligned
@@ -21,11 +20,25 @@ traits:
     \ ally doesn\u2019t have the Incapacitated condition."
 actions:
 - name: Beak
-  description: 'Melee Attack Roll: +4, reach 5 ft. Hit: 4 (1d4 + 2) Piercing damage,
-    or 6 (1d8 + 2) Piercing damage if the target is Bloodied.'
----
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 4
+      bonus: 2
+  - type: piercing
+    base:
+      dice: 1
+      die: 8
+      bonus: 2
+  type: utility
 
+---
 # Black Bear
 
 *Small Beast, Unaligned*
+
+### Actions
+
+**Beak.** Melee Attack Roll: +4, reach 5 ft. Hit: 4 (1d4 + 2) Piercing damage, or 6 (1d8 + 2) Piercing damage if the target is Bloodied.
 

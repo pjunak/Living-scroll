@@ -1,5 +1,4 @@
----
-name: Meteor Swarm
+---name: Meteor Swarm
 type: spell
 level: 9
 school: Evocation
@@ -17,6 +16,17 @@ classes:
 - Wizard
 id: spell:meteor-swarm
 material_price: ''
+actions:
+- type: save
+  ability: dex
+  on_pass: half
+  on_fail: full
+  damage:
+  - type: fire
+    base:
+      dice: 20
+      die: 6
+      bonus: 0
 ---
 # Meteor Swarm
 *9th-Level Evocation (Sorcerer, Wizard)*

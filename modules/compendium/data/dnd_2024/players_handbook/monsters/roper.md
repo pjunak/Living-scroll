@@ -1,5 +1,4 @@
----
-name: Roper
+---name: Roper
 size: Medium
 type: Medium Monstrosity
 alignment: Unaligned
@@ -22,15 +21,19 @@ actions:
 - name: Multiattack
   description: The rust monster makes one Bite attack and uses Antennae twice.
 - name: Bite
-  description: 'Melee Attack Roll: +3, reach 5 ft. Hit: 5 (1d8 + 1) Piercing damage.'
+  damage:
+  - type: piercing
+    base:
+      dice: 1
+      die: 8
+      bonus: 1
+  type: utility
 - name: Antennae
-  description: "The rust monster targets one nonmagical metal object\u2014armor or\
-    \ a weapon\u2014worn or carried by a creature within 5 feet of itself. Dexterity\
-    \ Saving Throw: DC 11, the creature with the object. Failure: The object takes\
-    \ a \u22121 penalty to the AC it offers (armor) or to its attack rolls (weapon).\
-    \ Armor is destroyed if the penalty reduces its AC to 10, and a weapon is destroyed\
-    \ if its penalty reaches \u22125. The penalty can be removed by casting the Mending\
-    \ spell on the armor or weapon."
+  type: save
+  ability: dex
+  dc: 11
+  on_pass: none
+  on_fail: full
 - name: Destroy Metal
   description: "The rust monster touches a nonmagical metal object within 5 feet of\
     \ itself that isn\u2019t being worn or carried. The touch destroys a 1-foot Cube\
@@ -38,9 +41,15 @@ actions:
 - name: Reflexive Antennae
   description: 'Trigger: An attack roll hits the rust monster. Response: The rust
     monster uses Antennae.'
----
 
+---
 # Roper
 
 *Medium Monstrosity, Unaligned*
+
+### Actions
+
+**Bite.** Melee Attack Roll: +3, reach 5 ft. Hit: 5 (1d8 + 1) Piercing damage.
+
+**Antennae.** The rust monster targets one nonmagical metal object—armor or a weapon—worn or carried by a creature within 5 feet of itself. Dexterity Saving Throw: DC 11, the creature with the object. Failure: The object takes a −1 penalty to the AC it offers (armor) or to its attack rolls (weapon). Armor is destroyed if the penalty reduces its AC to 10, and a weapon is destroyed if its penalty reaches −5. The penalty can be removed by casting the Mending spell on the armor or weapon.
 

@@ -1,5 +1,4 @@
----
-name: Crocodile
+---name: Crocodile
 size: Medium
 type: Medium Beast
 alignment: Unaligned
@@ -20,10 +19,20 @@ traits:
     \ out of an enemy\u2019s reach."
 actions:
 - name: Ram
-  description: 'Melee Attack Roll: +2, reach 5 ft. Hit: 2 (1d4) Bludgeoning damage.'
----
+  damage:
+  - type: bludgeoning
+    base:
+      dice: 1
+      die: 4
+      bonus: 0
+  type: utility
 
+---
 # Crocodile
 
 *Medium Beast, Unaligned*
+
+### Actions
+
+**Ram.** Melee Attack Roll: +2, reach 5 ft. Hit: 2 (1d4) Bludgeoning damage.
 

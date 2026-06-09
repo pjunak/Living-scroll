@@ -90,7 +90,7 @@ class ClassOptionsGroup(QGroupBox):
         if not snapshot or not snapshot.groups:
             placeholder = QLabel("No class-specific options are currently available.")
             placeholder.setWordWrap(True)
-            placeholder.setStyleSheet("color: #777777;")
+            placeholder.setProperty("class", "DimLabel")
             self._container_layout.addWidget(placeholder)
             self._container_layout.addStretch()
             return
@@ -115,11 +115,11 @@ class ClassOptionsGroup(QGroupBox):
         helper_lines.append(f"Minimum Level: {group.min_level}")
         helper = QLabel("\n".join(helper_lines))
         helper.setWordWrap(True)
-        helper.setStyleSheet("color: #7a7a7a;")
+        helper.setProperty("class", "DimLabel")
         layout.addWidget(helper)
 
         status = QLabel()
-        status.setStyleSheet("color: #5f6b7c;")
+        status.setProperty("class", "StatusLabel")
         layout.addWidget(status)
         self._group_status_labels[group.key] = status
         self._group_defs[group.key] = group
@@ -131,7 +131,7 @@ class ClassOptionsGroup(QGroupBox):
             row.setSpacing(8)
             value_label = QLabel()
             value_label.setWordWrap(True)
-            value_label.setStyleSheet("color: #0f172a;")
+            value_label.setProperty("class", "DimLabel")
             stored = snapshot.selections.get(group.key, []) or []
             value_label.setText(", ".join(stored) if stored else "None")
             button = QPushButton("Choose…")
